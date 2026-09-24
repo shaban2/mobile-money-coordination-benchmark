@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "stage": "PILOT_RULES_AND_EXECUTION_FROZEN_NOT_CONFIRMATORY",
+  "frozenAt": "2026-09-20T14:08:54.439Z",
+  "project": "lubanga-coordination-pilot",
+  "postgresPort": 25432,
+  "sourceSha256": "abfe117fdd506d2e2eda9a4cec42fea7a0407f3c12557b72640f8b437b556455",
+  "protocolSha256": "0f4abd99afdf9836a8ce3297fc2ea88e5e5082d2ddc79c858983f828998822c2",
+  "frozenComposeSha256": "adeefa77cb4f4b533bdbbf181bf161e80b9bfe557c5f5dfd4cdf655728904e40",
+  "images": {
+    "adapter-service": {
+      "reference": "lubanga-coordination-pilot-adapter-service:latest",
+      "id": "sha256:8ab5300135b16d749d9564517bc9a8c74df74daff2ee88651976f2dc82a441b6",
+      "repoDigests": [
+        "lubanga-coordination-pilot-adapter-service@sha256:8ab5300135b16d749d9564517bc9a8c74df74daff2ee88651976f2dc82a441b6"
+      ],
+      "platform": "linux/arm64"
+    },
+    "callback-receiver": {
+      "reference": "lubanga-coordination-pilot-callback-receiver:latest",
+      "id": "sha256:7650037df3d234cba3cc5f7f0bfda52de742f8cf9c10fd3401b943409576af78",
+      "repoDigests": [
+        "lubanga-coordination-pilot-callback-receiver@sha256:7650037df3d234cba3cc5f7f0bfda52de742f8cf9c10fd3401b943409576af78"
+      ],
+      "platform": "linux/arm64"
+    },
+    "gateway-kafka-async": {
+      "reference": "lubanga-coordination-pilot-gateway-kafka-async:latest",
+      "id": "sha256:dce261bae432dde3762a6eb225c851c6b2bcc4b11f214ccdf470d7d9b185fa0b",
+      "repoDigests": [
+        "lubanga-coordination-pilot-gateway-kafka-async@sha256:dce261bae432dde3762a6eb225c851c6b2bcc4b11f214ccdf470d7d9b185fa0b"
+      ],
+      "platform": "linux/arm64"
+    },
+    "gateway-rest-async": {
+      "reference": "lubanga-coordination-pilot-gateway-rest-async:latest",
+      "id": "sha256:924f2f6b0e7483e01772032e7f635e0cc9239580a34147ae4bcc2a45945f8294",
+      "repoDigests": [
+        "lubanga-coordination-pilot-gateway-rest-async@sha256:924f2f6b0e7483e01772032e7f635e0cc9239580a34147ae4bcc2a45945f8294"
+      ],
+      "platform": "linux/arm64"
+    },
+    "grafana": {
+      "reference": "grafana/grafana:12.4.0",
+      "id": "sha256:b0ae311af06228bcfd4a620504b653db80f5b91e94dc3dc2a5b7dab202bcde20",
+      "repoDigests": [
+        "grafana/grafana@sha256:b0ae311af06228bcfd4a620504b653db80f5b91e94dc3dc2a5b7dab202bcde20"
+      ],
+      "platform": "linux/arm64"
+    },
+    "k6": {
+      "reference": "grafana/k6:1.8.0",
+      "id": "sha256:b992f241070f3f3a7d78096fa6020db1edcda49297ee8ed9eb0ab847ef3dcb32",
+      "repoDigests": [
+        "grafana/k6@sha256:b992f241070f3f3a7d78096fa6020db1edcda49297ee8ed9eb0ab847ef3dcb32"
+      ],
+      "platform": "linux/arm64"
+    },
+    "kafka-async": {
+      "reference": "lubanga-coordination-pilot-kafka-async:latest",
+      "id": "sha256:2f476791346220452455473057a57194c76cf8e3b16d09b4cea9a48e3ad1eb55",
+      "repoDigests": [
+        "lubanga-coordination-pilot-kafka-async@sha256:2f476791346220452455473057a57194c76cf8e3b16d09b4cea9a48e3ad1eb55"
+      ],
+      "platform": "linux/arm64"
+    },
+    "postgres": {
+      "reference": "postgres:17-alpine",
+      "id": "sha256:18cfe3ef5e6815560c98237d6216d1e5119702fb0f3894c8785dd58b8bbe5d73",
+      "repoDigests": [
+        "postgres@sha256:18cfe3ef5e6815560c98237d6216d1e5119702fb0f3894c8785dd58b8bbe5d73"
+      ],
+      "platform": "linux/arm64"
+    },
+    "prometheus": {
+      "reference": "prom/prometheus:v3.13.1",
+      "id": "sha256:3c42b892cf723fa54d2f262c37a0e1f80aa8c8ddb1da7b9b0df9455a35a7f893",
+      "repoDigests": [
+        "prom/prometheus@sha256:3c42b892cf723fa54d2f262c37a0e1f80aa8c8ddb1da7b9b0df9455a35a7f893"
+      ],
+      "platform": "linux/arm64"
+    },
+    "redpanda": {
+      "reference": "docker.redpanda.com/redpandadata/redpanda:v26.1.14",
+      "id": "sha256:e61a2b5ad26a7c37b50d04c4df42db84e5ddebaa2a453143942fb621b1b09498",
+      "repoDigests": [
+        "docker.redpanda.com/redpandadata/redpanda@sha256:e61a2b5ad26a7c37b50d04c4df42db84e5ddebaa2a453143942fb621b1b09498"
+      ],
+      "platform": "linux/arm64"
+    },
+    "rest-async": {
+      "reference": "lubanga-coordination-pilot-rest-async:latest",
+      "id": "sha256:723f99d47f27db38c903a78ff420c68ad4867771f4b6dafb95453e772e87dacd",
+      "repoDigests": [
+        "lubanga-coordination-pilot-rest-async@sha256:723f99d47f27db38c903a78ff420c68ad4867771f4b6dafb95453e772e87dacd"
+      ],
+      "platform": "linux/arm64"
+    },
+    "toxiproxy": {
+      "reference": "ghcr.io/shopify/toxiproxy:2.12.0",
+      "id": "sha256:9378ed52a28bc50edc1350f936f518f31fa95f0d15917d6eb40b8e376d1a214e",
+      "repoDigests": [
+        "ghcr.io/shopify/toxiproxy@sha256:9378ed52a28bc50edc1350f936f518f31fa95f0d15917d6eb40b8e376d1a214e"
+      ],
+      "platform": "linux/arm64"
+    },
+    "toxiproxy-init": {
+      "reference": "lubanga-coordination-pilot-toxiproxy-init:latest",
+      "id": "sha256:55af08ef368935dc01a602fc64c3b4c7c1a319a524eaf029c9eebe7ec788c634",
+      "repoDigests": [
+        "lubanga-coordination-pilot-toxiproxy-init@sha256:55af08ef368935dc01a602fc64c3b4c7c1a319a524eaf029c9eebe7ec788c634"
+      ],
+      "platform": "linux/arm64"
+    }
+  },
+  "pauseContainers": [
+    {
+      "id": "redacted-container-id-a",
+      "name": "external-container-a"
+    },
+    {
+      "id": "redacted-container-id-b",
+      "name": "external-container-b"
+    },
+    {
+      "id": "redacted-container-id-c",
+      "name": "external-container-c"
+    }
+  ],
+  "host": {
+    "hostname": "capture-host",
+    "cpuModel": "Apple M2",
+    "cpuCount": 8,
+    "totalMemoryBytes": 17179869184,
+    "dockerId": "redacted-docker-id",
+    "dockerVersion": "29.2.1",
+    "dockerCPUs": 8,
+    "dockerMemoryBytes": 8217341952,
+    "dockerArchitecture": "aarch64"
+  },
+  "approvals": {
+    "fullPilotAndMonitoring": true,
+    "pauseAndRestoreNamedExternalContainers": true,
+    "companionContainerUnavailableDuringPilot": true,
+    "restoreCompanionByController": false,
+    "shortScreeningTwoMinuteWarmupFourMinuteMeasurement": true,
+    "backlogClearanceDescriptive": true
+  },
+  "confirmatoryFreeze": false
+}

@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "kind": "CAPACITY_PILOT",
+  "protocolId": "queue-observation-v2-first-pair-2026-09-21",
+  "capacityRule": {
+    "version": "queue-observation-v2",
+    "policySha256": "7e62524653ad6db2a9fa3156b8825eb1a03b0480c2f35a50c6ad25c49eefdf1c"
+  },
+  "expectedRunCount": 2,
+  "runs": [
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "PILOT-001-screening-R4-K-A-1",
+      "block": "PILOT",
+      "phase": "screening",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 1,
+      "executionBlock": "PILOT-001-screening-R4-1",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-queue-observation-v2:PILOT-001-screening-R4:1",
+      "sequence": 1
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "PILOT-001-screening-R4-R-A-1",
+      "block": "PILOT",
+      "phase": "screening",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 1,
+      "executionBlock": "PILOT-001-screening-R4-1",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-queue-observation-v2:PILOT-001-screening-R4:1",
+      "sequence": 2
+    }
+  ],
+  "file": "pilot-batch-001.json"
+}

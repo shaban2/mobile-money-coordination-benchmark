@@ -1,0 +1,251 @@
+{
+  "experiment_run_id": "31700697-c2b5-43d8-b78d-f63393b8ea35",
+  "condition_id": "R-A",
+  "coordination_mode": "rest",
+  "client_mode": "async",
+  "offered_load": "4",
+  "network_profile": "standard",
+  "fault_scenario": "adapter-crash",
+  "random_seed": "lubanga-exploratory-adapter-r4-v1:PILOT-001-fault-R4:1",
+  "configuration": {
+    "block": "PILOT",
+    "phase": "fault",
+    "runId": "PILOT-001-fault-R4-R-A-1",
+    "apiPort": 8082,
+    "sequence": 1,
+    "clientMode": "async",
+    "randomSeed": "lubanga-exploratory-adapter-r4-v1:PILOT-001-fault-R4:1",
+    "repetition": 1,
+    "adapterMode": "http-service",
+    "conditionId": "R-A",
+    "gatewayPort": 8182,
+    "offeredRate": 4,
+    "eventBusType": "memory",
+    "faultScenario": "adapter-crash",
+    "composeProfile": "rest-async",
+    "eventNamespace": "rest-async",
+    "executionBlock": "PILOT-001-fault-R4-1",
+    "networkProfile": "standard",
+    "persistenceType": "postgres",
+    "coordinationMode": "rest",
+    "workerConcurrency": 4,
+    "workflowTimeoutMs": 90000,
+    "diagnosticsEnabled": true,
+    "offeredLoadPercent": null,
+    "recoveryIntervalMs": 1000,
+    "callbackMaxAttempts": 3,
+    "callbackRetryDelayMs": 1000,
+    "providerRetryDelayMs": 5000,
+    "providerRetryMaxAttempts": 8,
+    "databaseDiagnosticsEnabled": true
+  },
+  "manifest": {
+    "run": {
+      "block": "PILOT",
+      "phase": "fault",
+      "runId": "PILOT-001-fault-R4-R-A-1",
+      "apiPort": 8082,
+      "sequence": 1,
+      "randomSeed": "lubanga-exploratory-adapter-r4-v1:PILOT-001-fault-R4:1",
+      "repetition": 1,
+      "conditionId": "R-A",
+      "gatewayPort": 8182,
+      "offeredRate": 4,
+      "faultScenario": "adapter-crash",
+      "composeProfile": "rest-async",
+      "executionBlock": "PILOT-001-fault-R4-1",
+      "networkProfile": "standard",
+      "sustainableRate": 0,
+      "offeredLoadPercent": null
+    },
+    "host": {
+      "release": "27.0.0",
+      "cpuCount": 8,
+      "cpuModel": "Apple M2",
+      "hostname": "capture-host",
+      "platform": "darwin",
+      "totalMemoryBytes": 17179869184,
+      "freeMemoryBytesAtCapture": 91586560
+    },
+    "clock": {
+      "latency": "API ingress to COMMIT acknowledgement on application clock",
+      "workload": "k6 scenario.startTime on shared Docker host",
+      "wallClockUtc": "2026-09-21T04:13:56.350Z",
+      "monotonicNanoseconds": "431658307776041"
+    },
+    "study": {
+      "stage": "PILOT_ONLY",
+      "factor": "coordination architecture",
+      "capacityRule": {
+        "version": "queue-observation-v2",
+        "policySha256": "15c02e20073bfee0a062c0b8626d98123e8691c29b00d60f93a62256827405ad"
+      },
+      "comparedLevels": [
+        "REST orchestration",
+        "Kafka choreography"
+      ],
+      "fixedClientMode": "async",
+      "pilotProtocolId": "exploratory-adapter-r4-2026-09-21",
+      "fixedNetworkProfile": "standard",
+      "plannedMeasuredRuns": 2
+    },
+    "tools": {
+      "npm": "11.9.0",
+      "node": "v24.14.0",
+      "docker": "Docker version 29.2.1, build a5c7197",
+      "compose": "Docker Compose version v5.0.2",
+      "k6Image": "grafana/k6:1.8.0"
+    },
+    "checksums": {
+      "matrixSha256": "b13292b72e121dd3561a94a757f5c596d6ebdb1059e0b48dd63a527f19a5dfe7",
+      "composeSha256": "ce71fc011a2af940136af300bcd0fdc938765c3a516c7fb5c67b588db5b7c8ff",
+      "packageLockSha256": "5a05cd0ad285d4e800d647106042d6aa762a64457f8ec701306949427f0e5f18",
+      "frozenComposeSha256": "8b09be8c0610efbce6e6e087a3c275d4e28afafdf41bc231d21e216a7ea532fa",
+      "sourceSnapshotSha256": "7995e55285b54ac33365084157467ded4bf816377074c648a762ed76e58f0d77"
+    },
+    "createdAt": "2026-09-21T04:13:56.290Z",
+    "lifecycle": {
+      "drainSeconds": 600,
+      "faultAtSeconds": 240,
+      "warmupDuration": "5m",
+      "databaseLatencyMs": 100,
+      "adapterCrashSeconds": 30,
+      "measurementDuration": "10m",
+      "databaseFaultSeconds": 60
+    },
+    "dirtyFiles": [],
+    "diagnostics": {
+      "role": "supplemental diagnostic timing; not a scientific endpoint or threshold",
+      "slowMs": 10,
+      "enabled": true,
+      "maxSpans": 20000,
+      "intervalMs": 1000,
+      "maxSamples": 4096,
+      "schemaVersion": 1,
+      "eventLoopResolutionMs": 10
+    },
+    "schemaVersion": 5,
+    "composeProject": "lubanga-coordination-pilot",
+    "pilotSessionId": "2549db1f-ec11-4158-9545-a2f23a6dc00f",
+    "sourceRevision": null,
+    "containerImages": [
+      [
+        {
+          "ID": "sha256:fa430f04c3aeabf4a8e1ab3f18bac5bfbbf2cc261ff7d8d39e592163266aba29",
+          "Tag": "fa430f04c3aeabf4a8e1ab3f18bac5bfbbf2cc261ff7d8d39e592163266aba29",
+          "Size": 63721235,
+          "Created": "2026-09-21T03:54:28.364598255Z",
+          "Platform": "linux/arm64",
+          "Repository": "sha256",
+          "LastTagTime": "2026-09-21T03:54:28.595984256Z",
+          "ContainerName": "lubanga-coordination-pilot-toxiproxy-init-1"
+        },
+        {
+          "ID": "sha256:9863e9d64edf956f64eb29faef26b79165883b1a7f69eb8384f9b3344e39d2fd",
+          "Tag": "9863e9d64edf956f64eb29faef26b79165883b1a7f69eb8384f9b3344e39d2fd",
+          "Size": 63721236,
+          "Created": "2026-09-21T03:54:28.364598255Z",
+          "Platform": "linux/arm64",
+          "Repository": "sha256",
+          "LastTagTime": "2026-09-21T03:54:28.596380672Z",
+          "ContainerName": "lubanga-coordination-pilot-adapter-service-1"
+        },
+        {
+          "ID": "sha256:9378ed52a28bc50edc1350f936f518f31fa95f0d15917d6eb40b8e376d1a214e",
+          "Tag": "9378ed52a28bc50edc1350f936f518f31fa95f0d15917d6eb40b8e376d1a214e",
+          "Size": 6975652,
+          "Created": "2025-03-18T13:12:13.175597728Z",
+          "Platform": "linux/arm64",
+          "Repository": "sha256",
+          "LastTagTime": "2026-08-17T08:28:04.449024751Z",
+          "ContainerName": "lubanga-coordination-pilot-toxiproxy-1"
+        },
+        {
+          "ID": "sha256:6e1d9c3aa48a48af32401ef01c23b39fe1485663fedcf65a9c641689ecb92576",
+          "Tag": "6e1d9c3aa48a48af32401ef01c23b39fe1485663fedcf65a9c641689ecb92576",
+          "Size": 63384497,
+          "Created": "2026-09-20T05:30:59.594634671Z",
+          "Platform": "linux/arm64",
+          "Repository": "sha256",
+          "LastTagTime": "2026-09-21T03:54:28.138215339Z",
+          "ContainerName": "lubanga-coordination-pilot-gateway-rest-async-1"
+        },
+        {
+          "ID": "sha256:f854aa7c8b92a221a21e9549f485db7e722a653b16a895e99ddaed41bb023a9e",
+          "Tag": "f854aa7c8b92a221a21e9549f485db7e722a653b16a895e99ddaed41bb023a9e",
+          "Size": 63721231,
+          "Created": "2026-09-21T03:54:28.364598255Z",
+          "Platform": "linux/arm64",
+          "Repository": "sha256",
+          "LastTagTime": "2026-09-21T03:54:28.597780589Z",
+          "ContainerName": "lubanga-coordination-pilot-rest-async-1"
+        },
+        {
+          "ID": "sha256:96807bf8cee2456a28a965fcc0a45d407151a0cf414fa22e4bb79c6338318588",
+          "Tag": "96807bf8cee2456a28a965fcc0a45d407151a0cf414fa22e4bb79c6338318588",
+          "Size": 63721238,
+          "Created": "2026-09-21T03:54:28.364598255Z",
+          "Platform": "linux/arm64",
+          "Repository": "sha256",
+          "LastTagTime": "2026-09-21T03:54:28.597183756Z",
+          "ContainerName": "lubanga-coordination-pilot-callback-receiver-1"
+        },
+        {
+          "ID": "sha256:b0ae311af06228bcfd4a620504b653db80f5b91e94dc3dc2a5b7dab202bcde20",
+          "Tag": "b0ae311af06228bcfd4a620504b653db80f5b91e94dc3dc2a5b7dab202bcde20",
+          "Size": 196297285,
+          "Created": "2026-02-23T21:30:02.388357597Z",
+          "Platform": "linux/arm64",
+          "Repository": "sha256",
+          "LastTagTime": "2026-08-17T09:06:05.203294751Z",
+          "ContainerName": "lubanga-coordination-pilot-grafana-1"
+        },
+        {
+          "ID": "sha256:3c42b892cf723fa54d2f262c37a0e1f80aa8c8ddb1da7b9b0df9455a35a7f893",
+          "Tag": "3c42b892cf723fa54d2f262c37a0e1f80aa8c8ddb1da7b9b0df9455a35a7f893",
+          "Size": 98146559,
+          "Created": "2026-07-10T08:49:11.358103752Z",
+          "Platform": "linux/arm64",
+          "Repository": "sha256",
+          "LastTagTime": "2026-08-17T09:05:33.842439626Z",
+          "ContainerName": "lubanga-coordination-pilot-prometheus-1"
+        },
+        {
+          "ID": "sha256:18cfe3ef5e6815560c98237d6216d1e5119702fb0f3894c8785dd58b8bbe5d73",
+          "Tag": "18cfe3ef5e6815560c98237d6216d1e5119702fb0f3894c8785dd58b8bbe5d73",
+          "Size": 115030665,
+          "Created": "2026-08-13T19:17:36.198761367Z",
+          "Platform": "linux/arm64/v8",
+          "Repository": "sha256",
+          "LastTagTime": "2026-08-17T08:23:46.34483909Z",
+          "ContainerName": "lubanga-coordination-pilot-postgres-1"
+        }
+      ]
+    ],
+    "deepDiagnostics": {
+      "scope": "PostgreSQL plus Linux VM kernel and application-container cgroup, not macOS per-process pressure",
+      "enabled": true,
+      "limitation": "Sampling can miss brief waits; observer adds overhead; cumulative statistics can lag. No causal attribution or capacity threshold.",
+      "linuxCapture": "each docker-stats cycle, actual timestamps and collection cost recorded",
+      "databaseIntervalMs": 250,
+      "databaseMaxSamples": 8192,
+      "cumulativeCounterIntervalMs": 1000,
+      "databaseObserverConnections": 1
+    },
+    "resourceServices": [
+      "rest-async",
+      "gateway-rest-async",
+      "postgres",
+      "toxiproxy",
+      "adapter-service",
+      "callback-receiver",
+      "prometheus",
+      "grafana"
+    ],
+    "workloadNamespace": "pilot-001-fault-r4-r-a-1-1789964022427"
+  },
+  "started_at": "2026-09-21T04:18:57.933Z",
+  "completed_at": null,
+  "qualification_status": "RUNNING",
+  "exclusion_reason": null
+}

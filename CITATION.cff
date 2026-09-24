@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this benchmark, its evidence or its analysis, please cite it as below."
+type: software
+title: "REST Orchestration or Kafka Choreography Behind a Unified Telecom Mobile-Money P2P Transfer API: A Controlled Synthetic Benchmark"
+authors:
+  - family-names: Lubanga
+    given-names: Shaban
+    affiliation: "Department of Information Systems, Institut Teknologi Sepuluh Nopember, Surabaya, Indonesia"
+version: 1.0.0
+date-released: "2026-09-24"
+repository-code: "https://github.com/shaban2/mobile-money-coordination-benchmark"
+license: Apache-2.0
+keywords:
+  - mobile money
+  - REST orchestration
+  - Kafka choreography
+  - synthetic benchmark
+  - durable completion
+  - fault injection
+abstract: "A controlled synthetic benchmark comparing REST orchestration with Kafka choreography behind one asynchronous mobile-money P2P transfer API, measuring correct goodput, ingress-to-commit completion latency, fault response and ledger correctness. Includes the redacted run evidence, the reproducible analysis, and the paper draft."

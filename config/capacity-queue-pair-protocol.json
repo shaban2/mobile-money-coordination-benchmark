@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 2,
+  "kind": "CAPACITY_QUEUE_PILOT",
+  "protocolId": "capacity-queue-v1-first-pair-2026-09-21",
+  "ruleVersion": "queue-growth-v1",
+  "executionScope": "FIRST_SCREENING_PAIR_ONLY",
+  "stage": "PILOT_ONLY",
+  "randomSeed": "lubanga-capacity-queue-v1",
+  "warmupDuration": "5m",
+  "measurementDuration": "10m",
+  "screening": { "warmupDuration": "2m", "measurementDuration": "4m" },
+  "drainSeconds": 600,
+  "startRate": 4,
+  "maximumRate": 4,
+  "screeningReplicates": 1,
+  "maximumRuns": 2,
+  "maximumHours": 2,
+  "timeBudgetBasis": "active-sessions",
+  "pauseBoundary": "matched-pair",
+  "minimumFreeDiskGiB": 15,
+  "deepDiagnostics": true,
+  "latencyRole": "DESCRIPTIVE_NOT_A_CAPACITY_GATE",
+  "stability": {
+    "windowSeconds": 30,
+    "lastCompleteWindows": 6,
+    "maximumBacklogSlopePerSecond": 0,
+    "persistentMinuteIncreases": 3,
+    "minimumWorkloadCheckRate": 0.995,
+    "minimumOfferedLoadDelivery": 0.995,
+    "maximumDroppedIterations": 0,
+    "timingCompletenessRatio": 1
+  },
+  "faults": { "atSeconds": 240, "adapterCrashSeconds": 30, "databaseDelaySeconds": 60, "databaseLatencyMs": 100 },
+  "stopRules": [
+    "Only one fresh matched screening pair at 4 operations/second is authorized; stop for review after two runs.",
+    "Stop immediately for invalid evidence, safety failure, controller/cleanup failure, changed provenance or competing containers.",
+    "Retain performance failures and inconclusive observations; no automatic repeat, higher rate, confirmation or fault trial.",
+    "Pauses require a complete matched pair and verified cleanup/restoration; a completed pair cannot resume into more work.",
+    "Two hours is a cumulative safety ceiling, not a predicted finish time; preserve historical evidence and rules."
+  ]
+}

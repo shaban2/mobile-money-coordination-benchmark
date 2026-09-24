@@ -1,0 +1,257 @@
+{
+  "runId": "CAL-001-calibration-R4-R-A-2",
+  "conditionId": "R-A",
+  "phase": "calibration",
+  "rate": 4,
+  "sequence": 4,
+  "executionBlock": "CAL-001-calibration-R4-2",
+  "sessionId": "340ee065-ec34-4ab3-9394-5872b8538ed4",
+  "faultScenario": "none",
+  "recordedAt": "2026-09-20T16:35:03.277Z",
+  "status": "QUALIFIED",
+  "stability": null,
+  "calibration": {
+    "schemaVersion": 1,
+    "checks": {
+      "evidenceValid": true,
+      "safetyPassed": true,
+      "workloadChecks": true,
+      "terminalCallbacks": true,
+      "noFailedTransfers": true,
+      "noPendingAfterDrain": true,
+      "outcomesPresent": true
+    },
+    "passed": true,
+    "correctness": "PASSED",
+    "sustainedLoad": {
+      "decision": "DESCRIPTIVE_REVIEW_REQUIRED",
+      "capacityEstablished": false,
+      "measuredTransfers": {
+        "total": 1824,
+        "completed": 1824,
+        "failed": 0,
+        "pendingAfterDrain": 0
+      },
+      "correctGoodput": 3.04,
+      "completedDuringDrain": 0,
+      "maximumOutstanding": 2,
+      "windows": [
+        {
+          "startAt": "2026-09-20T16:24:57.541Z",
+          "endAt": "2026-09-20T16:25:27.541Z",
+          "complete": true,
+          "underLoad": true,
+          "correctGoodput": 3.033333333333333,
+          "p95DurableCompletionMs": 60.5,
+          "backlogAtEnd": 0,
+          "arrivals": 91
+        },
+        {
+          "startAt": "2026-09-20T16:25:27.541Z",
+          "endAt": "2026-09-20T16:25:57.541Z",
+          "complete": true,
+          "underLoad": true,
+          "correctGoodput": 3.033333333333333,
+          "p95DurableCompletionMs": 60.5,
+          "backlogAtEnd": 0,
+          "arrivals": 91
+        },
+        {
+          "startAt": "2026-09-20T16:25:57.541Z",
+          "endAt": "2026-09-20T16:26:27.541Z",
+          "complete": true,
+          "underLoad": true,
+          "correctGoodput": 3.033333333333333,
+          "p95DurableCompletionMs": 58.5,
+          "backlogAtEnd": 0,
+          "arrivals": 91
+        },
+        {
+          "startAt": "2026-09-20T16:26:27.541Z",
+          "endAt": "2026-09-20T16:26:57.541Z",
+          "complete": true,
+          "underLoad": true,
+          "correctGoodput": 3.033333333333333,
+          "p95DurableCompletionMs": 61.5,
+          "backlogAtEnd": 0,
+          "arrivals": 91
+        },
+        {
+          "startAt": "2026-09-20T16:26:57.541Z",
+          "endAt": "2026-09-20T16:27:27.541Z",
+          "complete": true,
+          "underLoad": true,
+          "correctGoodput": 3.066666666666667,
+          "p95DurableCompletionMs": 62.900000000000006,
+          "backlogAtEnd": 0,
+          "arrivals": 92
+        },
+        {
+          "startAt": "2026-09-20T16:27:27.541Z",
+          "endAt": "2026-09-20T16:27:57.541Z",
+          "complete": true,
+          "underLoad": true,
+          "correctGoodput": 3.033333333333333,
+          "p95DurableCompletionMs": 63,
+          "backlogAtEnd": 0,
+          "arrivals": 91
+        },
+        {
+          "startAt": "2026-09-20T16:27:57.541Z",
+          "endAt": "2026-09-20T16:28:27.541Z",
+          "complete": true,
+          "underLoad": true,
+          "correctGoodput": 3.033333333333333,
+          "p95DurableCompletionMs": 88.5,
+          "backlogAtEnd": 0,
+          "arrivals": 91
+        },
+        {
+          "startAt": "2026-09-20T16:28:27.541Z",
+          "endAt": "2026-09-20T16:28:57.541Z",
+          "complete": true,
+          "underLoad": true,
+          "correctGoodput": 3.033333333333333,
+          "p95DurableCompletionMs": 61,
+          "backlogAtEnd": 0,
+          "arrivals": 91
+        },
+        {
+          "startAt": "2026-09-20T16:28:57.541Z",
+          "endAt": "2026-09-20T16:29:27.541Z",
+          "complete": true,
+          "underLoad": true,
+          "correctGoodput": 3.033333333333333,
+          "p95DurableCompletionMs": 60,
+          "backlogAtEnd": 0,
+          "arrivals": 91
+        },
+        {
+          "startAt": "2026-09-20T16:29:27.541Z",
+          "endAt": "2026-09-20T16:29:57.541Z",
+          "complete": true,
+          "underLoad": true,
+          "correctGoodput": 3.066666666666667,
+          "p95DurableCompletionMs": 61,
+          "backlogAtEnd": 0,
+          "arrivals": 92
+        },
+        {
+          "startAt": "2026-09-20T16:29:57.541Z",
+          "endAt": "2026-09-20T16:30:27.541Z",
+          "complete": true,
+          "underLoad": true,
+          "correctGoodput": 3.033333333333333,
+          "p95DurableCompletionMs": 60,
+          "backlogAtEnd": 0,
+          "arrivals": 91
+        },
+        {
+          "startAt": "2026-09-20T16:30:27.541Z",
+          "endAt": "2026-09-20T16:30:57.541Z",
+          "complete": true,
+          "underLoad": true,
+          "correctGoodput": 3.033333333333333,
+          "p95DurableCompletionMs": 60.5,
+          "backlogAtEnd": 0,
+          "arrivals": 91
+        },
+        {
+          "startAt": "2026-09-20T16:30:57.541Z",
+          "endAt": "2026-09-20T16:31:27.541Z",
+          "complete": true,
+          "underLoad": true,
+          "correctGoodput": 3.033333333333333,
+          "p95DurableCompletionMs": 63.5,
+          "backlogAtEnd": 0,
+          "arrivals": 91
+        },
+        {
+          "startAt": "2026-09-20T16:31:27.541Z",
+          "endAt": "2026-09-20T16:31:57.541Z",
+          "complete": true,
+          "underLoad": true,
+          "correctGoodput": 3.033333333333333,
+          "p95DurableCompletionMs": 63.5,
+          "backlogAtEnd": 0,
+          "arrivals": 91
+        },
+        {
+          "startAt": "2026-09-20T16:31:57.541Z",
+          "endAt": "2026-09-20T16:32:27.541Z",
+          "complete": true,
+          "underLoad": true,
+          "correctGoodput": 3.066666666666667,
+          "p95DurableCompletionMs": 60,
+          "backlogAtEnd": 0,
+          "arrivals": 92
+        },
+        {
+          "startAt": "2026-09-20T16:32:27.541Z",
+          "endAt": "2026-09-20T16:32:57.541Z",
+          "complete": true,
+          "underLoad": true,
+          "correctGoodput": 3.033333333333333,
+          "p95DurableCompletionMs": 59.5,
+          "backlogAtEnd": 0,
+          "arrivals": 91
+        },
+        {
+          "startAt": "2026-09-20T16:32:57.541Z",
+          "endAt": "2026-09-20T16:33:27.541Z",
+          "complete": true,
+          "underLoad": true,
+          "correctGoodput": 3.033333333333333,
+          "p95DurableCompletionMs": 59.5,
+          "backlogAtEnd": 0,
+          "arrivals": 91
+        },
+        {
+          "startAt": "2026-09-20T16:33:27.541Z",
+          "endAt": "2026-09-20T16:33:57.541Z",
+          "complete": true,
+          "underLoad": true,
+          "correctGoodput": 3.033333333333333,
+          "p95DurableCompletionMs": 59.5,
+          "backlogAtEnd": 0,
+          "arrivals": 91
+        },
+        {
+          "startAt": "2026-09-20T16:33:57.541Z",
+          "endAt": "2026-09-20T16:34:27.541Z",
+          "complete": true,
+          "underLoad": true,
+          "correctGoodput": 3.033333333333333,
+          "p95DurableCompletionMs": 59.5,
+          "backlogAtEnd": 0,
+          "arrivals": 91
+        },
+        {
+          "startAt": "2026-09-20T16:34:27.541Z",
+          "endAt": "2026-09-20T16:34:57.541Z",
+          "complete": true,
+          "underLoad": true,
+          "correctGoodput": 3.066666666666667,
+          "p95DurableCompletionMs": 58.45,
+          "backlogAtEnd": 0,
+          "arrivals": 92
+        }
+      ]
+    },
+    "latency": {
+      "role": "DESCRIPTIVE_NOT_A_CAPACITY_GATE",
+      "overall": {
+        "count": 1824,
+        "median": 54,
+        "p95": 61,
+        "p99": 70
+      },
+      "windowP95MedianMs": 60.5,
+      "windowP95MaximumMs": 88.5
+    }
+  },
+  "evidenceRoot": "<repo>/results-calibration-v1-continuation-1",
+  "retained": false,
+  "attempt": 1,
+  "supersedesWarmupOnlyAttempt": null
+}

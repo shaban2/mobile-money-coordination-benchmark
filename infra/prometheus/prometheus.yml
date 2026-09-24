@@ -1,0 +1,10 @@
+global:
+  scrape_interval: 5s
+  evaluation_interval: 5s
+scrape_configs:
+  - job_name: rest-async
+    static_configs:
+      - targets: ['rest-async:8080']
+  - job_name: kafka-async
+    static_configs:
+      - targets: ['kafka-async:8080']

@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 2,
+  "startedAt": "2026-09-20T14:10:12.958Z",
+  "status": "REVIEW",
+  "records": [
+    {
+      "runId": "PILOT-001-screening-R4-K-A-1",
+      "conditionId": "K-A",
+      "phase": "screening",
+      "rate": 4,
+      "executionBlock": "PILOT-001-screening-R4-1",
+      "sessionId": "e15d31da-ebea-4029-8717-d58b1b37bc6c",
+      "faultScenario": "none",
+      "recordedAt": "2026-09-20T14:16:37.242Z",
+      "status": "QUALIFIED",
+      "stability": {
+        "status": "UNSTABLE",
+        "stable": false,
+        "checks": {
+          "fullDuration": true,
+          "evidenceValid": true,
+          "safetyPassed": true,
+          "workloadChecks": true,
+          "noFailedTransfers": true,
+          "noPendingAfterDrain": true,
+          "terminalCallbacks": true,
+          "sixCompleteWindows": true,
+          "backlogNotGrowing": true,
+          "p95Stable": false
+        },
+        "backlogSlopePerSecond": 0,
+        "medianWindowP95Ms": 171.25,
+        "windows": [
+          {
+            "startAt": "2026-09-20T14:13:31.880Z",
+            "endAt": "2026-09-20T14:14:01.880Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 170.5,
+            "backlogAtEnd": 0
+          },
+          {
+            "startAt": "2026-09-20T14:14:01.880Z",
+            "endAt": "2026-09-20T14:14:31.880Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 168.5,
+            "backlogAtEnd": 0
+          },
+          {
+            "startAt": "2026-09-20T14:14:31.880Z",
+            "endAt": "2026-09-20T14:15:01.880Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.066666666666667,
+            "p95DurableCompletionMs": 166.45,
+            "backlogAtEnd": 0
+          },
+          {
+            "startAt": "2026-09-20T14:15:01.880Z",
+            "endAt": "2026-09-20T14:15:31.880Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 201.5,
+            "backlogAtEnd": 0
+          },
+          {
+            "startAt": "2026-09-20T14:15:31.880Z",
+            "endAt": "2026-09-20T14:16:01.880Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 253.5,
+            "backlogAtEnd": 0
+          },
+          {
+            "startAt": "2026-09-20T14:16:01.880Z",
+            "endAt": "2026-09-20T14:16:31.880Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 172,
+            "backlogAtEnd": 0
+          }
+        ]
+      }
+    },
+    {
+      "runId": "PILOT-001-screening-R4-R-A-1",
+      "conditionId": "R-A",
+      "phase": "screening",
+      "rate": 4,
+      "executionBlock": "PILOT-001-screening-R4-1",
+      "sessionId": "e15d31da-ebea-4029-8717-d58b1b37bc6c",
+      "faultScenario": "none",
+      "recordedAt": "2026-09-20T14:22:56.355Z",
+      "status": "QUALIFIED",
+      "stability": {
+        "status": "UNSTABLE",
+        "stable": false,
+        "checks": {
+          "fullDuration": true,
+          "evidenceValid": true,
+          "safetyPassed": true,
+          "workloadChecks": true,
+          "noFailedTransfers": true,
+          "noPendingAfterDrain": true,
+          "terminalCallbacks": true,
+          "sixCompleteWindows": true,
+          "backlogNotGrowing": true,
+          "p95Stable": false
+        },
+        "backlogSlopePerSecond": 0,
+        "medianWindowP95Ms": 61.75,
+        "windows": [
+          {
+            "startAt": "2026-09-20T14:19:52.417Z",
+            "endAt": "2026-09-20T14:20:22.417Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 60,
+            "backlogAtEnd": 0
+          },
+          {
+            "startAt": "2026-09-20T14:20:22.417Z",
+            "endAt": "2026-09-20T14:20:52.417Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 62.5,
+            "backlogAtEnd": 0
+          },
+          {
+            "startAt": "2026-09-20T14:20:52.417Z",
+            "endAt": "2026-09-20T14:21:22.417Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.066666666666667,
+            "p95DurableCompletionMs": 66,
+            "backlogAtEnd": 0
+          },
+          {
+            "startAt": "2026-09-20T14:21:22.417Z",
+            "endAt": "2026-09-20T14:21:52.417Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 74.5,
+            "backlogAtEnd": 0
+          },
+          {
+            "startAt": "2026-09-20T14:21:52.417Z",
+            "endAt": "2026-09-20T14:22:22.417Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 61,
+            "backlogAtEnd": 0
+          },
+          {
+            "startAt": "2026-09-20T14:22:22.417Z",
+            "endAt": "2026-09-20T14:22:52.417Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 60,
+            "backlogAtEnd": 0
+          }
+        ]
+      }
+    }
+  ],
+  "batches": [
+    {
+      "schemaVersion": 1,
+      "kind": "CAPACITY_PILOT",
+      "protocolId": "capacity-pilot-v2-short-screening-pausable-2026-09-20",
+      "expectedRunCount": 2,
+      "runs": [
+        {
+          "conditionId": "K-A",
+          "composeProfile": "kafka-async",
+          "gatewayPort": 8184,
+          "apiPort": 8084,
+          "runId": "PILOT-001-screening-R4-K-A-1",
+          "block": "PILOT",
+          "phase": "screening",
+          "offeredRate": 4,
+          "offeredLoadPercent": null,
+          "repetition": 1,
+          "executionBlock": "PILOT-001-screening-R4-1",
+          "networkProfile": "standard",
+          "faultScenario": "none",
+          "randomSeed": "lubanga-capacity-pilot-v1:PILOT-001-screening-R4:1",
+          "sequence": 1
+        },
+        {
+          "conditionId": "R-A",
+          "composeProfile": "rest-async",
+          "gatewayPort": 8182,
+          "apiPort": 8082,
+          "runId": "PILOT-001-screening-R4-R-A-1",
+          "block": "PILOT",
+          "phase": "screening",
+          "offeredRate": 4,
+          "offeredLoadPercent": null,
+          "repetition": 1,
+          "executionBlock": "PILOT-001-screening-R4-1",
+          "networkProfile": "standard",
+          "faultScenario": "none",
+          "randomSeed": "lubanga-capacity-pilot-v1:PILOT-001-screening-R4:1",
+          "sequence": 2
+        }
+      ],
+      "file": "pilot-batch-001.json"
+    }
+  ],
+  "currentRun": null,
+  "sessions": [
+    {
+      "sessionId": "e15d31da-ebea-4029-8717-d58b1b37bc6c",
+      "startedAt": "2026-09-20T14:10:12.958Z",
+      "endedAt": "2026-09-20T14:22:57.895Z",
+      "pid": 23742,
+      "resumed": false,
+      "runIds": [
+        "PILOT-001-screening-R4-K-A-1",
+        "PILOT-001-screening-R4-R-A-1"
+      ],
+      "activeMs": 764937,
+      "status": "REVIEW",
+      "cleanup": {
+        "passed": true,
+        "checkedAt": "2026-09-20T14:22:57.393Z",
+        "project": "lubanga-coordination-pilot",
+        "remainingContainers": []
+      },
+      "restoreErrors": [],
+      "pausedContainers": [
+        {
+          "id": "redacted-container-id-a",
+          "name": "external-container-a"
+        },
+        {
+          "id": "redacted-container-id-b",
+          "name": "external-container-b"
+        },
+        {
+          "id": "redacted-container-id-c",
+          "name": "external-container-c"
+        }
+      ]
+    }
+  ],
+  "timing": {
+    "activeMs": 764937,
+    "pausedMs": 0,
+    "activeSince": null,
+    "pausedSince": null
+  },
+  "sessionId": "e15d31da-ebea-4029-8717-d58b1b37bc6c",
+  "pid": 23742,
+  "pauseRequested": null,
+  "cleanup": {
+    "passed": true,
+    "checkedAt": "2026-09-20T14:22:57.393Z",
+    "project": "lubanga-coordination-pilot",
+    "remainingContainers": []
+  },
+  "restoreErrors": [],
+  "containersRestoredAt": "2026-09-20T14:22:57.895Z",
+  "updatedAt": "2026-09-20T14:22:57.896Z",
+  "pausedContainers": [
+    {
+      "id": "redacted-container-id-a",
+      "name": "external-container-a"
+    },
+    {
+      "id": "redacted-container-id-b",
+      "name": "external-container-b"
+    },
+    {
+      "id": "redacted-container-id-c",
+      "name": "external-container-c"
+    }
+  ],
+  "capacityDecision": {
+    "action": "REVIEW",
+    "reason": "No stable rate established for R-A.",
+    "boundaries": {
+      "R-A": {
+        "lower": 0,
+        "upper": 4,
+        "confirmedRuns": 0,
+        "resolved": false
+      },
+      "K-A": {
+        "lower": 0,
+        "upper": 4,
+        "confirmedRuns": 0,
+        "resolved": false
+      }
+    }
+  },
+  "confirmatoryFrozen": false
+}

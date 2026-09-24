@@ -1,0 +1,213 @@
+x-app: &app
+  build: .
+  cpus: '${APP_CPUS:-2}'
+  mem_limit: '${APP_MEMORY:-1g}'
+  restart: unless-stopped
+  environment: &app-environment
+    PORT: 8080
+    WORKER_CONCURRENCY: 4
+    DIAGNOSTICS_ENABLED: 'true'
+    DATABASE_DIAGNOSTICS_ENABLED: '${DATABASE_DIAGNOSTICS_ENABLED:-false}'
+    PROVIDER_DELAY_MS: 25
+    SEND_HTTP_CALLBACKS: 'true'
+    PERSISTENCE_TYPE: postgres
+    DATABASE_URL: postgres://experiment:experiment@toxiproxy:15432/experiment
+    DEFAULT_PAYER_BALANCE: 100000000
+    KAFKAJS_NO_PARTITIONER_WARNING: 1
+    ADAPTER_BASE_URL: http://adapter-service:8095
+    PROVIDER_RETRY_MAX_ATTEMPTS: 8
+    PROVIDER_RETRY_DELAY_MS: 5000
+    WORKFLOW_TIMEOUT_MS: 90000
+    CALLBACK_MAX_ATTEMPTS: 3
+    CALLBACK_RETRY_DELAY_MS: 1000
+
+x-gateway: &gateway
+  build:
+    context: .
+    dockerfile: Dockerfile.gateway
+  restart: unless-stopped
+  cap_add: [NET_ADMIN]
+  environment: &gateway-environment
+    GATEWAY_PORT: 8070
+    CALLBACK_UPSTREAM: http://callback-receiver:8090
+  healthcheck:
+    test: ['CMD-SHELL', 'wget -q -O - http://127.0.0.1:8070/_gateway/health >/dev/null']
+    interval: 2s
+    timeout: 2s
+    retries: 30
+
+services:
+  rest-async:
+    <<: *app
+    profiles: [rest-async]
+    ports: ['8082:8080']
+    depends_on:
+      toxiproxy-init:
+        condition: service_completed_successfully
+      adapter-service:
+        condition: service_healthy
+    environment:
+      <<: *app-environment
+      COORDINATION_MODE: rest
+      CLIENT_MODE: async
+      EVENT_BUS_TYPE: memory
+      EXPERIMENT_CONDITION: R-A
+
+  gateway-rest-async:
+    <<: *gateway
+    profiles: [rest-async]
+    ports: ['8182:8070']
+    depends_on:
+      rest-async:
+        condition: service_started
+      callback-receiver:
+        condition: service_healthy
+    environment:
+      <<: *gateway-environment
+      API_UPSTREAM: http://rest-async:8080
+
+  kafka-async:
+    <<: *app
+    profiles: [kafka-async]
+    ports: ['8084:8080']
+    depends_on:
+      redpanda:
+        condition: service_healthy
+      toxiproxy-init:
+        condition: service_completed_successfully
+      adapter-service:
+        condition: service_healthy
+    environment:
+      <<: *app-environment
+      COORDINATION_MODE: kafka
+      CLIENT_MODE: async
+      EVENT_BUS_TYPE: kafka
+      KAFKA_BROKERS: redpanda:9092
+      EVENT_NAMESPACE: '${EVENT_NAMESPACE:-kafka-async-v2}'
+      EXPERIMENT_CONDITION: K-A
+
+  gateway-kafka-async:
+    <<: *gateway
+    profiles: [kafka-async]
+    ports: ['8184:8070']
+    depends_on:
+      kafka-async:
+        condition: service_started
+      callback-receiver:
+        condition: service_healthy
+    environment:
+      <<: *gateway-environment
+      API_UPSTREAM: http://kafka-async:8080
+
+  redpanda:
+    image: docker.redpanda.com/redpandadata/redpanda:v26.1.14
+    profiles: [kafka-async, research-infra]
+    command:
+      - redpanda
+      - start
+      - --mode=dev-container
+      - --smp=1
+      - --memory=1G
+      - --reserve-memory=0M
+      - --overprovisioned
+      - --kafka-addr=internal://0.0.0.0:9092,external://0.0.0.0:19092
+      - --advertise-kafka-addr=internal://redpanda:9092,external://localhost:19092
+    ports: ['19092:19092', '19644:9644']
+    healthcheck:
+      test: ['CMD-SHELL', 'rpk cluster health --exit-when-healthy']
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  postgres:
+    command: ['postgres', '-c', 'track_io_timing=${POSTGRES_IO_TIMING:-off}', '-c', 'track_wal_io_timing=${POSTGRES_IO_TIMING:-off}']
+    image: postgres:17-alpine
+    profiles: [rest-async, kafka-async, research-infra]
+    environment:
+      POSTGRES_USER: experiment
+      POSTGRES_PASSWORD: experiment
+      POSTGRES_DB: experiment
+    ports: ['${POSTGRES_PORT:-5432}:5432']
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U experiment']
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  toxiproxy:
+    image: ghcr.io/shopify/toxiproxy:2.12.0
+    profiles: [rest-async, kafka-async, research-infra]
+    ports: ['8474:8474', '15432:15432']
+
+  toxiproxy-init:
+    build: .
+    profiles: [rest-async, kafka-async, research-infra]
+    command: ['node', 'scripts/toxiproxy-controller.mjs', 'configure']
+    environment:
+      TOXIPROXY_URL: http://toxiproxy:8474
+      TOXIPROXY_LISTEN: 0.0.0.0:15432
+      POSTGRES_UPSTREAM: postgres:5432
+    depends_on:
+      postgres:
+        condition: service_healthy
+      toxiproxy:
+        condition: service_started
+
+  adapter-service:
+    build: .
+    profiles: [rest-async, kafka-async]
+    command: ['node', 'src/adapter-server.js']
+    environment:
+      ADAPTER_PORT: 8095
+      PROVIDER_DELAY_MS: 25
+      PROVIDER_JOURNAL_PATH: /provider-data/effects.jsonl
+    volumes:
+      - provider_data:/provider-data
+    ports: ['8095:8095']
+    healthcheck:
+      test: ['CMD-SHELL', 'wget -q -O - http://127.0.0.1:8095/health >/dev/null']
+      interval: 2s
+      timeout: 2s
+      retries: 20
+
+  callback-receiver:
+    build: .
+    profiles: [rest-async, kafka-async]
+    command: ['node', 'scripts/callback-receiver.mjs']
+    environment:
+      CALLBACK_PORT: 8090
+    ports: ['8090:8090']
+    healthcheck:
+      test: ['CMD-SHELL', 'wget -q -O - http://127.0.0.1:8090/health >/dev/null']
+      interval: 2s
+      timeout: 2s
+      retries: 20
+
+  prometheus:
+    image: prom/prometheus:v3.13.1
+    profiles: [observability]
+    ports: ['9090:9090']
+    volumes:
+      - ./infra/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+
+  grafana:
+    image: grafana/grafana:12.4.0
+    profiles: [observability]
+    ports: ['3000:3000']
+    volumes:
+      - ./infra/grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./infra/grafana/dashboards:/var/lib/grafana/dashboards:ro
+    depends_on: [prometheus]
+
+  k6:
+    image: grafana/k6:1.8.0
+    profiles: [tooling]
+    volumes:
+      - ./infra/k6:/scripts:ro
+      - ./results:/results
+
+volumes:
+  postgres_data:
+  provider_data:

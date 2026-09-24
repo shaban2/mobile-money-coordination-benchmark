@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 2,
+  "kind": "CAPACITY_QUEUE_PILOT",
+  "protocolId": "queue-observation-v2-first-pair-2026-09-21",
+  "ruleVersion": "queue-observation-v2",
+  "executionScope": "FIRST_SCREENING_PAIR_ONLY",
+  "stage": "DESCRIPTIVE_SCREENING_ONLY_NOT_CAPACITY",
+  "randomSeed": "lubanga-queue-observation-v2",
+  "warmupDuration": "5m",
+  "measurementDuration": "10m",
+  "screening": { "warmupDuration": "2m", "measurementDuration": "4m" },
+  "drainSeconds": 600,
+  "startRate": 4,
+  "maximumRate": 4,
+  "screeningReplicates": 1,
+  "maximumRuns": 2,
+  "maximumHours": 2,
+  "timeBudgetBasis": "active-sessions",
+  "pauseBoundary": "matched-pair",
+  "minimumFreeDiskGiB": 15,
+  "deepDiagnostics": true,
+  "latencyRole": "DESCRIPTIVE_NOT_A_CAPACITY_GATE",
+  "queueRole": "DESCRIPTIVE_SCREENING_NOT_CAPACITY_DECISION",
+  "observation": { "equalBlocks": 4, "automaticBoundaryDecision": null, "capacityEstablished": false },
+  "stability": {
+    "windowSeconds": 30,
+    "lastCompleteWindows": 6,
+    "minimumWorkloadCheckRate": 0.995,
+    "minimumOfferedLoadDelivery": 0.995,
+    "maximumDroppedIterations": 0,
+    "timingCompletenessRatio": 1
+  },
+  "faults": { "atSeconds": 240, "adapterCrashSeconds": 30, "databaseDelaySeconds": 60, "databaseLatencyMs": 100 },
+  "stopRules": [
+    "Only one matched no-fault screening pair at 4 operations/second is authorized; stop for review after two runs.",
+    "Stop immediately for invalid evidence, safety/correctness failure, controller/cleanup failure, changed provenance or competing containers.",
+    "Queue patterns and latency are descriptive; no stable flag, automatic capacity bound, repeat, higher rate, confirmation or fault trial.",
+    "Pause only at a complete matched pair with verified cleanup/restoration; pair completion cannot resume into more work.",
+    "Two hours is the cumulative safety ceiling, not a finish-time estimate. Preserve historical evidence and v1 launch hold."
+  ]
+}

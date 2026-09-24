@@ -1,0 +1,28 @@
+{
+  "checkedAt": "2026-09-20T14:09:54.208Z",
+  "passed": true,
+  "sourceSha256": "abfe117fdd506d2e2eda9a4cec42fea7a0407f3c12557b72640f8b437b556455",
+  "protocolSha256": "0f4abd99afdf9836a8ce3297fc2ea88e5e5082d2ddc79c858983f828998822c2",
+  "protocolIdenticalToV4": true,
+  "imageSources": {
+    "rest-async": "abfe117fdd506d2e2eda9a4cec42fea7a0407f3c12557b72640f8b437b556455",
+    "kafka-async": "abfe117fdd506d2e2eda9a4cec42fea7a0407f3c12557b72640f8b437b556455"
+  },
+  "approvedContainers": [
+    {
+      "id": "redacted-container-id-a",
+      "name": "external-container-a"
+    },
+    {
+      "id": "redacted-container-id-b",
+      "name": "external-container-b"
+    },
+    {
+      "id": "redacted-container-id-c",
+      "name": "external-container-c"
+    }
+  ],
+  "freeGiB": 41.72676467895508,
+  "experimentProjectsEmpty": true,
+  "priorRuns": 0
+}

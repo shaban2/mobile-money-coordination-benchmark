@@ -1,0 +1,69 @@
+{
+  "services": {
+    "adapter-service": {
+      "image": "sha256:9863e9d64edf956f64eb29faef26b79165883b1a7f69eb8384f9b3344e39d2fd",
+      "pull_policy": "never"
+    },
+    "callback-receiver": {
+      "image": "sha256:96807bf8cee2456a28a965fcc0a45d407151a0cf414fa22e4bb79c6338318588",
+      "pull_policy": "never"
+    },
+    "gateway-kafka-async": {
+      "image": "sha256:32f62c74c36d3f82df8e6350ed86689713a53dd3481a1a96b118fa363e9a6d62",
+      "pull_policy": "never"
+    },
+    "gateway-rest-async": {
+      "image": "sha256:6e1d9c3aa48a48af32401ef01c23b39fe1485663fedcf65a9c641689ecb92576",
+      "pull_policy": "never"
+    },
+    "grafana": {
+      "image": "sha256:b0ae311af06228bcfd4a620504b653db80f5b91e94dc3dc2a5b7dab202bcde20",
+      "pull_policy": "never"
+    },
+    "k6": {
+      "image": "sha256:b992f241070f3f3a7d78096fa6020db1edcda49297ee8ed9eb0ab847ef3dcb32",
+      "pull_policy": "never"
+    },
+    "kafka-async": {
+      "image": "sha256:778420ade8599410fe53ade17f211df9388c8f129ba7a70b7b56f1cca5d1e98d",
+      "pull_policy": "never",
+      "environment": {
+        "DATABASE_DIAGNOSTICS_ENABLED": "true"
+      }
+    },
+    "postgres": {
+      "image": "sha256:18cfe3ef5e6815560c98237d6216d1e5119702fb0f3894c8785dd58b8bbe5d73",
+      "pull_policy": "never",
+      "command": [
+        "postgres",
+        "-c",
+        "track_io_timing=on",
+        "-c",
+        "track_wal_io_timing=on"
+      ]
+    },
+    "prometheus": {
+      "image": "sha256:3c42b892cf723fa54d2f262c37a0e1f80aa8c8ddb1da7b9b0df9455a35a7f893",
+      "pull_policy": "never"
+    },
+    "redpanda": {
+      "image": "sha256:e61a2b5ad26a7c37b50d04c4df42db84e5ddebaa2a453143942fb621b1b09498",
+      "pull_policy": "never"
+    },
+    "rest-async": {
+      "image": "sha256:f854aa7c8b92a221a21e9549f485db7e722a653b16a895e99ddaed41bb023a9e",
+      "pull_policy": "never",
+      "environment": {
+        "DATABASE_DIAGNOSTICS_ENABLED": "true"
+      }
+    },
+    "toxiproxy": {
+      "image": "sha256:9378ed52a28bc50edc1350f936f518f31fa95f0d15917d6eb40b8e376d1a214e",
+      "pull_policy": "never"
+    },
+    "toxiproxy-init": {
+      "image": "sha256:fa430f04c3aeabf4a8e1ab3f18bac5bfbbf2cc261ff7d8d39e592163266aba29",
+      "pull_policy": "never"
+    }
+  }
+}

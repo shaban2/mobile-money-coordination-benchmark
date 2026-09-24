@@ -1,0 +1,6 @@
+{
+  "conditionId": "R-A",
+  "coordinationMode": "rest",
+  "clientMode": "async",
+  "description": "REST orchestration with one workflow controller; the client receives an acknowledgement and later obtains the final result by callback or status retrieval."
+}

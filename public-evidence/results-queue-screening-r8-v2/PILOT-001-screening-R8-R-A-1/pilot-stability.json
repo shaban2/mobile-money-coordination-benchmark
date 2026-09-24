@@ -1,0 +1,187 @@
+{
+  "runId": "PILOT-001-screening-R8-R-A-1",
+  "conditionId": "R-A",
+  "phase": "screening",
+  "rate": 8,
+  "executionBlock": "PILOT-001-screening-R8-1",
+  "sessionId": "2f1b90d8-b42b-47d6-a14e-bc8e8d324b2d",
+  "faultScenario": "none",
+  "recordedAt": "2026-09-21T04:01:09.931Z",
+  "status": "QUALIFIED",
+  "stability": {
+    "schemaVersion": 1,
+    "rule": {
+      "version": "queue-observation-v2",
+      "policySha256": "8b1f7f544cea90360aaa08bea97213c7565a1d27701b76c45a3b4f462c4ad672"
+    },
+    "status": "OBSERVATION_RECORDED",
+    "role": "DESCRIPTIVE_SCREENING_NOT_CAPACITY_DECISION",
+    "automaticBoundaryDecision": null,
+    "capacityEstablished": false,
+    "checks": {
+      "evidenceValid": true,
+      "fullDuration": true,
+      "protocolIdentity": true,
+      "diagnosticsHealthy": true,
+      "offeredLoadDelivered": true,
+      "completeTiming": true,
+      "completeWindows": true,
+      "queueAccounting": true,
+      "safetyPassed": true,
+      "workloadChecks": true,
+      "terminalCallbacks": true,
+      "noFailedTransfers": true,
+      "noPendingAfterDrain": true,
+      "correctCompletions": true
+    },
+    "queue": {
+      "version": "queue-observation-v2",
+      "status": "NO_INCREASE_AT_SAMPLED_BOUNDARIES",
+      "blocks": [
+        {
+          "firstBoundary": 1,
+          "lastBoundary": 2,
+          "min": 0,
+          "max": 0
+        },
+        {
+          "firstBoundary": 3,
+          "lastBoundary": 4,
+          "min": 0,
+          "max": 0
+        },
+        {
+          "firstBoundary": 5,
+          "lastBoundary": 6,
+          "min": 0,
+          "max": 0
+        },
+        {
+          "firstBoundary": 7,
+          "lastBoundary": 8,
+          "min": 0,
+          "max": 0
+        }
+      ],
+      "role": "DESCRIPTIVE_SCREENING_NOT_CAPACITY_DECISION",
+      "capacityEstablished": false,
+      "automaticBoundaryDecision": null
+    },
+    "windows": [
+      {
+        "startAt": "2026-09-21T03:57:06.227Z",
+        "endAt": "2026-09-21T03:57:36.227Z",
+        "complete": true,
+        "underLoad": true,
+        "correctGoodput": 6.066666666666666,
+        "p95DurableCompletionMs": 61,
+        "backlogAtEnd": 0,
+        "backlogAtStart": 0,
+        "arrivals": 182,
+        "terminalConfirmations": 182,
+        "balanced": true
+      },
+      {
+        "startAt": "2026-09-21T03:57:36.227Z",
+        "endAt": "2026-09-21T03:58:06.227Z",
+        "complete": true,
+        "underLoad": true,
+        "correctGoodput": 6.066666666666666,
+        "p95DurableCompletionMs": 57,
+        "backlogAtEnd": 0,
+        "backlogAtStart": 0,
+        "arrivals": 182,
+        "terminalConfirmations": 182,
+        "balanced": true
+      },
+      {
+        "startAt": "2026-09-21T03:58:06.227Z",
+        "endAt": "2026-09-21T03:58:36.227Z",
+        "complete": true,
+        "underLoad": true,
+        "correctGoodput": 6.1,
+        "p95DurableCompletionMs": 62.900000000000006,
+        "backlogAtEnd": 0,
+        "backlogAtStart": 0,
+        "arrivals": 183,
+        "terminalConfirmations": 183,
+        "balanced": true
+      },
+      {
+        "startAt": "2026-09-21T03:58:36.227Z",
+        "endAt": "2026-09-21T03:59:06.227Z",
+        "complete": true,
+        "underLoad": true,
+        "correctGoodput": 6.066666666666666,
+        "p95DurableCompletionMs": 61,
+        "backlogAtEnd": 0,
+        "backlogAtStart": 0,
+        "arrivals": 182,
+        "terminalConfirmations": 182,
+        "balanced": true
+      },
+      {
+        "startAt": "2026-09-21T03:59:06.227Z",
+        "endAt": "2026-09-21T03:59:36.227Z",
+        "complete": true,
+        "underLoad": true,
+        "correctGoodput": 6.1,
+        "p95DurableCompletionMs": 56,
+        "backlogAtEnd": 0,
+        "backlogAtStart": 0,
+        "arrivals": 183,
+        "terminalConfirmations": 183,
+        "balanced": true
+      },
+      {
+        "startAt": "2026-09-21T03:59:36.227Z",
+        "endAt": "2026-09-21T04:00:06.227Z",
+        "complete": true,
+        "underLoad": true,
+        "correctGoodput": 6.066666666666666,
+        "p95DurableCompletionMs": 58.89999999999998,
+        "backlogAtEnd": 0,
+        "backlogAtStart": 0,
+        "arrivals": 182,
+        "terminalConfirmations": 182,
+        "balanced": true
+      },
+      {
+        "startAt": "2026-09-21T04:00:06.227Z",
+        "endAt": "2026-09-21T04:00:36.227Z",
+        "complete": true,
+        "underLoad": true,
+        "correctGoodput": 6.066666666666666,
+        "p95DurableCompletionMs": 58,
+        "backlogAtEnd": 0,
+        "backlogAtStart": 0,
+        "arrivals": 182,
+        "terminalConfirmations": 182,
+        "balanced": true
+      },
+      {
+        "startAt": "2026-09-21T04:00:36.227Z",
+        "endAt": "2026-09-21T04:01:06.227Z",
+        "complete": true,
+        "underLoad": true,
+        "correctGoodput": 6.1,
+        "p95DurableCompletionMs": 58,
+        "backlogAtEnd": 0,
+        "backlogAtStart": 0,
+        "arrivals": 183,
+        "terminalConfirmations": 183,
+        "balanced": true
+      }
+    ],
+    "latency": {
+      "role": "DESCRIPTIVE_NOT_A_CAPACITY_GATE",
+      "overall": {
+        "count": 1459,
+        "median": 50,
+        "p95": 59,
+        "p99": 74.42000000000007
+      }
+    },
+    "completedDuringDrain": 0
+  }
+}

@@ -1,0 +1,9 @@
+FROM node:24-alpine
+
+RUN apk add --no-cache iproute2
+WORKDIR /app
+COPY src/network-gateway.js ./src/network-gateway.js
+COPY infra/netem ./infra/netem
+
+EXPOSE 8070
+CMD ["node", "src/network-gateway.js"]

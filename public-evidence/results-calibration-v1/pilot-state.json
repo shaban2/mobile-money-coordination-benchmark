@@ -1,0 +1,683 @@
+{
+  "schemaVersion": 2,
+  "startedAt": "2026-09-20T15:12:42.603Z",
+  "status": "INTERRUPTED",
+  "records": [
+    {
+      "runId": "CAL-001-calibration-R4-R-A-1",
+      "conditionId": "R-A",
+      "phase": "calibration",
+      "rate": 4,
+      "executionBlock": "CAL-001-calibration-R4-1",
+      "sessionId": "b01abb96-6a33-4905-8ff8-370ddae2c4c0",
+      "faultScenario": "none",
+      "recordedAt": "2026-09-20T15:28:04.232Z",
+      "status": "QUALIFIED",
+      "stability": null,
+      "calibration": {
+        "schemaVersion": 1,
+        "checks": {
+          "evidenceValid": true,
+          "safetyPassed": true,
+          "workloadChecks": true,
+          "terminalCallbacks": true,
+          "noFailedTransfers": true,
+          "noPendingAfterDrain": true,
+          "outcomesPresent": true
+        },
+        "passed": true,
+        "correctness": "PASSED",
+        "sustainedLoad": {
+          "decision": "DESCRIPTIVE_REVIEW_REQUIRED",
+          "capacityEstablished": false,
+          "measuredTransfers": {
+            "total": 1824,
+            "completed": 1824,
+            "failed": 0,
+            "pendingAfterDrain": 0
+          },
+          "correctGoodput": 3.04,
+          "completedDuringDrain": 0,
+          "maximumOutstanding": 1,
+          "windows": [
+            {
+              "startAt": "2026-09-20T15:17:58.623Z",
+              "endAt": "2026-09-20T15:18:28.623Z",
+              "complete": true,
+              "underLoad": true,
+              "correctGoodput": 3.033333333333333,
+              "p95DurableCompletionMs": 61,
+              "backlogAtEnd": 0,
+              "arrivals": 91
+            },
+            {
+              "startAt": "2026-09-20T15:18:28.623Z",
+              "endAt": "2026-09-20T15:18:58.623Z",
+              "complete": true,
+              "underLoad": true,
+              "correctGoodput": 3.033333333333333,
+              "p95DurableCompletionMs": 61,
+              "backlogAtEnd": 0,
+              "arrivals": 91
+            },
+            {
+              "startAt": "2026-09-20T15:18:58.623Z",
+              "endAt": "2026-09-20T15:19:28.623Z",
+              "complete": true,
+              "underLoad": true,
+              "correctGoodput": 3.033333333333333,
+              "p95DurableCompletionMs": 62.5,
+              "backlogAtEnd": 0,
+              "arrivals": 91
+            },
+            {
+              "startAt": "2026-09-20T15:19:28.623Z",
+              "endAt": "2026-09-20T15:19:58.623Z",
+              "complete": true,
+              "underLoad": true,
+              "correctGoodput": 3.033333333333333,
+              "p95DurableCompletionMs": 60,
+              "backlogAtEnd": 0,
+              "arrivals": 91
+            },
+            {
+              "startAt": "2026-09-20T15:19:58.623Z",
+              "endAt": "2026-09-20T15:20:28.623Z",
+              "complete": true,
+              "underLoad": true,
+              "correctGoodput": 3.066666666666667,
+              "p95DurableCompletionMs": 62,
+              "backlogAtEnd": 0,
+              "arrivals": 92
+            },
+            {
+              "startAt": "2026-09-20T15:20:28.623Z",
+              "endAt": "2026-09-20T15:20:58.623Z",
+              "complete": true,
+              "underLoad": true,
+              "correctGoodput": 3.033333333333333,
+              "p95DurableCompletionMs": 61,
+              "backlogAtEnd": 0,
+              "arrivals": 91
+            },
+            {
+              "startAt": "2026-09-20T15:20:58.623Z",
+              "endAt": "2026-09-20T15:21:28.623Z",
+              "complete": true,
+              "underLoad": true,
+              "correctGoodput": 3.033333333333333,
+              "p95DurableCompletionMs": 62.5,
+              "backlogAtEnd": 0,
+              "arrivals": 91
+            },
+            {
+              "startAt": "2026-09-20T15:21:28.623Z",
+              "endAt": "2026-09-20T15:21:58.623Z",
+              "complete": true,
+              "underLoad": true,
+              "correctGoodput": 3.033333333333333,
+              "p95DurableCompletionMs": 60,
+              "backlogAtEnd": 0,
+              "arrivals": 91
+            },
+            {
+              "startAt": "2026-09-20T15:21:58.623Z",
+              "endAt": "2026-09-20T15:22:28.623Z",
+              "complete": true,
+              "underLoad": true,
+              "correctGoodput": 3.033333333333333,
+              "p95DurableCompletionMs": 59.5,
+              "backlogAtEnd": 0,
+              "arrivals": 91
+            },
+            {
+              "startAt": "2026-09-20T15:22:28.623Z",
+              "endAt": "2026-09-20T15:22:58.623Z",
+              "complete": true,
+              "underLoad": true,
+              "correctGoodput": 3.066666666666667,
+              "p95DurableCompletionMs": 60.45,
+              "backlogAtEnd": 0,
+              "arrivals": 92
+            },
+            {
+              "startAt": "2026-09-20T15:22:58.623Z",
+              "endAt": "2026-09-20T15:23:28.623Z",
+              "complete": true,
+              "underLoad": true,
+              "correctGoodput": 3.033333333333333,
+              "p95DurableCompletionMs": 60,
+              "backlogAtEnd": 0,
+              "arrivals": 91
+            },
+            {
+              "startAt": "2026-09-20T15:23:28.623Z",
+              "endAt": "2026-09-20T15:23:58.623Z",
+              "complete": true,
+              "underLoad": true,
+              "correctGoodput": 3.033333333333333,
+              "p95DurableCompletionMs": 59,
+              "backlogAtEnd": 0,
+              "arrivals": 91
+            },
+            {
+              "startAt": "2026-09-20T15:23:58.623Z",
+              "endAt": "2026-09-20T15:24:28.623Z",
+              "complete": true,
+              "underLoad": true,
+              "correctGoodput": 3.033333333333333,
+              "p95DurableCompletionMs": 59,
+              "backlogAtEnd": 0,
+              "arrivals": 91
+            },
+            {
+              "startAt": "2026-09-20T15:24:28.623Z",
+              "endAt": "2026-09-20T15:24:58.623Z",
+              "complete": true,
+              "underLoad": true,
+              "correctGoodput": 3.033333333333333,
+              "p95DurableCompletionMs": 60,
+              "backlogAtEnd": 0,
+              "arrivals": 91
+            },
+            {
+              "startAt": "2026-09-20T15:24:58.623Z",
+              "endAt": "2026-09-20T15:25:28.623Z",
+              "complete": true,
+              "underLoad": true,
+              "correctGoodput": 3.066666666666667,
+              "p95DurableCompletionMs": 59.45,
+              "backlogAtEnd": 0,
+              "arrivals": 92
+            },
+            {
+              "startAt": "2026-09-20T15:25:28.623Z",
+              "endAt": "2026-09-20T15:25:58.623Z",
+              "complete": true,
+              "underLoad": true,
+              "correctGoodput": 3.033333333333333,
+              "p95DurableCompletionMs": 58.5,
+              "backlogAtEnd": 0,
+              "arrivals": 91
+            },
+            {
+              "startAt": "2026-09-20T15:25:58.623Z",
+              "endAt": "2026-09-20T15:26:28.623Z",
+              "complete": true,
+              "underLoad": true,
+              "correctGoodput": 3.033333333333333,
+              "p95DurableCompletionMs": 63,
+              "backlogAtEnd": 0,
+              "arrivals": 91
+            },
+            {
+              "startAt": "2026-09-20T15:26:28.623Z",
+              "endAt": "2026-09-20T15:26:58.623Z",
+              "complete": true,
+              "underLoad": true,
+              "correctGoodput": 3.033333333333333,
+              "p95DurableCompletionMs": 59.5,
+              "backlogAtEnd": 0,
+              "arrivals": 91
+            },
+            {
+              "startAt": "2026-09-20T15:26:58.623Z",
+              "endAt": "2026-09-20T15:27:28.623Z",
+              "complete": true,
+              "underLoad": true,
+              "correctGoodput": 3.033333333333333,
+              "p95DurableCompletionMs": 57,
+              "backlogAtEnd": 0,
+              "arrivals": 91
+            },
+            {
+              "startAt": "2026-09-20T15:27:28.623Z",
+              "endAt": "2026-09-20T15:27:58.623Z",
+              "complete": true,
+              "underLoad": true,
+              "correctGoodput": 3.066666666666667,
+              "p95DurableCompletionMs": 58,
+              "backlogAtEnd": 0,
+              "arrivals": 92
+            }
+          ]
+        },
+        "latency": {
+          "role": "DESCRIPTIVE_NOT_A_CAPACITY_GATE",
+          "overall": {
+            "count": 1824,
+            "median": 53,
+            "p95": 61,
+            "p99": 63.76999999999998
+          },
+          "windowP95MedianMs": 60,
+          "windowP95MaximumMs": 63
+        }
+      }
+    },
+    {
+      "runId": "CAL-001-calibration-R4-K-A-1",
+      "conditionId": "K-A",
+      "phase": "calibration",
+      "rate": 4,
+      "executionBlock": "CAL-001-calibration-R4-1",
+      "sessionId": "b01abb96-6a33-4905-8ff8-370ddae2c4c0",
+      "faultScenario": "none",
+      "recordedAt": "2026-09-20T15:43:27.207Z",
+      "status": "QUALIFIED",
+      "stability": null,
+      "calibration": {
+        "schemaVersion": 1,
+        "checks": {
+          "evidenceValid": true,
+          "safetyPassed": true,
+          "workloadChecks": true,
+          "terminalCallbacks": true,
+          "noFailedTransfers": true,
+          "noPendingAfterDrain": true,
+          "outcomesPresent": true
+        },
+        "passed": true,
+        "correctness": "PASSED",
+        "sustainedLoad": {
+          "decision": "DESCRIPTIVE_REVIEW_REQUIRED",
+          "capacityEstablished": false,
+          "measuredTransfers": {
+            "total": 1824,
+            "completed": 1824,
+            "failed": 0,
+            "pendingAfterDrain": 0
+          },
+          "correctGoodput": 3.04,
+          "completedDuringDrain": 0,
+          "maximumOutstanding": 2,
+          "windows": [
+            {
+              "startAt": "2026-09-20T15:33:21.345Z",
+              "endAt": "2026-09-20T15:33:51.345Z",
+              "complete": true,
+              "underLoad": true,
+              "correctGoodput": 3.033333333333333,
+              "p95DurableCompletionMs": 171,
+              "backlogAtEnd": 0,
+              "arrivals": 91
+            },
+            {
+              "startAt": "2026-09-20T15:33:51.345Z",
+              "endAt": "2026-09-20T15:34:21.345Z",
+              "complete": true,
+              "underLoad": true,
+              "correctGoodput": 3.033333333333333,
+              "p95DurableCompletionMs": 168,
+              "backlogAtEnd": 0,
+              "arrivals": 91
+            },
+            {
+              "startAt": "2026-09-20T15:34:21.345Z",
+              "endAt": "2026-09-20T15:34:51.345Z",
+              "complete": true,
+              "underLoad": true,
+              "correctGoodput": 3.033333333333333,
+              "p95DurableCompletionMs": 167.5,
+              "backlogAtEnd": 0,
+              "arrivals": 91
+            },
+            {
+              "startAt": "2026-09-20T15:34:51.345Z",
+              "endAt": "2026-09-20T15:35:21.345Z",
+              "complete": true,
+              "underLoad": true,
+              "correctGoodput": 3.033333333333333,
+              "p95DurableCompletionMs": 169,
+              "backlogAtEnd": 0,
+              "arrivals": 91
+            },
+            {
+              "startAt": "2026-09-20T15:35:21.345Z",
+              "endAt": "2026-09-20T15:35:51.345Z",
+              "complete": true,
+              "underLoad": true,
+              "correctGoodput": 3.066666666666667,
+              "p95DurableCompletionMs": 169.45,
+              "backlogAtEnd": 0,
+              "arrivals": 92
+            },
+            {
+              "startAt": "2026-09-20T15:35:51.345Z",
+              "endAt": "2026-09-20T15:36:21.345Z",
+              "complete": true,
+              "underLoad": true,
+              "correctGoodput": 3.033333333333333,
+              "p95DurableCompletionMs": 168,
+              "backlogAtEnd": 0,
+              "arrivals": 91
+            },
+            {
+              "startAt": "2026-09-20T15:36:21.345Z",
+              "endAt": "2026-09-20T15:36:51.345Z",
+              "complete": true,
+              "underLoad": true,
+              "correctGoodput": 3.033333333333333,
+              "p95DurableCompletionMs": 170.5,
+              "backlogAtEnd": 0,
+              "arrivals": 91
+            },
+            {
+              "startAt": "2026-09-20T15:36:51.345Z",
+              "endAt": "2026-09-20T15:37:21.345Z",
+              "complete": true,
+              "underLoad": true,
+              "correctGoodput": 3.033333333333333,
+              "p95DurableCompletionMs": 170.5,
+              "backlogAtEnd": 0,
+              "arrivals": 91
+            },
+            {
+              "startAt": "2026-09-20T15:37:21.345Z",
+              "endAt": "2026-09-20T15:37:51.345Z",
+              "complete": true,
+              "underLoad": true,
+              "correctGoodput": 3.033333333333333,
+              "p95DurableCompletionMs": 189.5,
+              "backlogAtEnd": 0,
+              "arrivals": 91
+            },
+            {
+              "startAt": "2026-09-20T15:37:51.345Z",
+              "endAt": "2026-09-20T15:38:21.345Z",
+              "complete": true,
+              "underLoad": true,
+              "correctGoodput": 3.066666666666667,
+              "p95DurableCompletionMs": 170.70000000000002,
+              "backlogAtEnd": 0,
+              "arrivals": 92
+            },
+            {
+              "startAt": "2026-09-20T15:38:21.345Z",
+              "endAt": "2026-09-20T15:38:51.345Z",
+              "complete": true,
+              "underLoad": true,
+              "correctGoodput": 3.033333333333333,
+              "p95DurableCompletionMs": 168.5,
+              "backlogAtEnd": 0,
+              "arrivals": 91
+            },
+            {
+              "startAt": "2026-09-20T15:38:51.345Z",
+              "endAt": "2026-09-20T15:39:21.345Z",
+              "complete": true,
+              "underLoad": true,
+              "correctGoodput": 3.033333333333333,
+              "p95DurableCompletionMs": 168.5,
+              "backlogAtEnd": 0,
+              "arrivals": 91
+            },
+            {
+              "startAt": "2026-09-20T15:39:21.345Z",
+              "endAt": "2026-09-20T15:39:51.345Z",
+              "complete": true,
+              "underLoad": true,
+              "correctGoodput": 3.033333333333333,
+              "p95DurableCompletionMs": 171.5,
+              "backlogAtEnd": 0,
+              "arrivals": 91
+            },
+            {
+              "startAt": "2026-09-20T15:39:51.345Z",
+              "endAt": "2026-09-20T15:40:21.345Z",
+              "complete": true,
+              "underLoad": true,
+              "correctGoodput": 3.033333333333333,
+              "p95DurableCompletionMs": 172.5,
+              "backlogAtEnd": 0,
+              "arrivals": 91
+            },
+            {
+              "startAt": "2026-09-20T15:40:21.345Z",
+              "endAt": "2026-09-20T15:40:51.345Z",
+              "complete": true,
+              "underLoad": true,
+              "correctGoodput": 3.066666666666667,
+              "p95DurableCompletionMs": 169,
+              "backlogAtEnd": 0,
+              "arrivals": 92
+            },
+            {
+              "startAt": "2026-09-20T15:40:51.345Z",
+              "endAt": "2026-09-20T15:41:21.345Z",
+              "complete": true,
+              "underLoad": true,
+              "correctGoodput": 3.033333333333333,
+              "p95DurableCompletionMs": 167,
+              "backlogAtEnd": 0,
+              "arrivals": 91
+            },
+            {
+              "startAt": "2026-09-20T15:41:21.345Z",
+              "endAt": "2026-09-20T15:41:51.345Z",
+              "complete": true,
+              "underLoad": true,
+              "correctGoodput": 3.033333333333333,
+              "p95DurableCompletionMs": 169.5,
+              "backlogAtEnd": 0,
+              "arrivals": 91
+            },
+            {
+              "startAt": "2026-09-20T15:41:51.345Z",
+              "endAt": "2026-09-20T15:42:21.345Z",
+              "complete": true,
+              "underLoad": true,
+              "correctGoodput": 3.033333333333333,
+              "p95DurableCompletionMs": 169,
+              "backlogAtEnd": 0,
+              "arrivals": 91
+            },
+            {
+              "startAt": "2026-09-20T15:42:21.345Z",
+              "endAt": "2026-09-20T15:42:51.345Z",
+              "complete": true,
+              "underLoad": true,
+              "correctGoodput": 3.033333333333333,
+              "p95DurableCompletionMs": 167,
+              "backlogAtEnd": 0,
+              "arrivals": 91
+            },
+            {
+              "startAt": "2026-09-20T15:42:51.345Z",
+              "endAt": "2026-09-20T15:43:21.345Z",
+              "complete": true,
+              "underLoad": true,
+              "correctGoodput": 3.066666666666667,
+              "p95DurableCompletionMs": 169,
+              "backlogAtEnd": 0,
+              "arrivals": 92
+            }
+          ]
+        },
+        "latency": {
+          "role": "DESCRIPTIVE_NOT_A_CAPACITY_GATE",
+          "overall": {
+            "count": 1824,
+            "median": 146,
+            "p95": 170,
+            "p99": 180.53999999999996
+          },
+          "windowP95MedianMs": 169,
+          "windowP95MaximumMs": 189.5
+        }
+      }
+    }
+  ],
+  "batches": [
+    {
+      "schemaVersion": 1,
+      "kind": "DIAGNOSTIC_CALIBRATION",
+      "protocolId": "diagnostic-calibration-v1-2026-09-20",
+      "expectedRunCount": 4,
+      "runs": [
+        {
+          "conditionId": "R-A",
+          "composeProfile": "rest-async",
+          "gatewayPort": 8182,
+          "apiPort": 8082,
+          "runId": "CAL-001-calibration-R4-R-A-1",
+          "block": "CALIBRATION",
+          "phase": "calibration",
+          "offeredRate": 4,
+          "offeredLoadPercent": null,
+          "repetition": 1,
+          "executionBlock": "CAL-001-calibration-R4-1",
+          "networkProfile": "standard",
+          "faultScenario": "none",
+          "randomSeed": "lubanga-calibration-v1:CAL-001-calibration-R4:1",
+          "sequence": 1
+        },
+        {
+          "conditionId": "K-A",
+          "composeProfile": "kafka-async",
+          "gatewayPort": 8184,
+          "apiPort": 8084,
+          "runId": "CAL-001-calibration-R4-K-A-1",
+          "block": "CALIBRATION",
+          "phase": "calibration",
+          "offeredRate": 4,
+          "offeredLoadPercent": null,
+          "repetition": 1,
+          "executionBlock": "CAL-001-calibration-R4-1",
+          "networkProfile": "standard",
+          "faultScenario": "none",
+          "randomSeed": "lubanga-calibration-v1:CAL-001-calibration-R4:1",
+          "sequence": 2
+        },
+        {
+          "conditionId": "K-A",
+          "composeProfile": "kafka-async",
+          "gatewayPort": 8184,
+          "apiPort": 8084,
+          "runId": "CAL-001-calibration-R4-K-A-2",
+          "block": "CALIBRATION",
+          "phase": "calibration",
+          "offeredRate": 4,
+          "offeredLoadPercent": null,
+          "repetition": 2,
+          "executionBlock": "CAL-001-calibration-R4-2",
+          "networkProfile": "standard",
+          "faultScenario": "none",
+          "randomSeed": "lubanga-calibration-v1:CAL-001-calibration-R4:2",
+          "sequence": 3
+        },
+        {
+          "conditionId": "R-A",
+          "composeProfile": "rest-async",
+          "gatewayPort": 8182,
+          "apiPort": 8082,
+          "runId": "CAL-001-calibration-R4-R-A-2",
+          "block": "CALIBRATION",
+          "phase": "calibration",
+          "offeredRate": 4,
+          "offeredLoadPercent": null,
+          "repetition": 2,
+          "executionBlock": "CAL-001-calibration-R4-2",
+          "networkProfile": "standard",
+          "faultScenario": "none",
+          "randomSeed": "lubanga-calibration-v1:CAL-001-calibration-R4:2",
+          "sequence": 4
+        }
+      ],
+      "file": "pilot-batch-001.json"
+    }
+  ],
+  "currentRun": {
+    "conditionId": "K-A",
+    "composeProfile": "kafka-async",
+    "gatewayPort": 8184,
+    "apiPort": 8084,
+    "runId": "CAL-001-calibration-R4-K-A-2",
+    "block": "CALIBRATION",
+    "phase": "calibration",
+    "offeredRate": 4,
+    "offeredLoadPercent": null,
+    "repetition": 2,
+    "executionBlock": "CAL-001-calibration-R4-2",
+    "networkProfile": "standard",
+    "faultScenario": "none",
+    "randomSeed": "lubanga-calibration-v1:CAL-001-calibration-R4:2",
+    "sequence": 3
+  },
+  "sessions": [
+    {
+      "sessionId": "b01abb96-6a33-4905-8ff8-370ddae2c4c0",
+      "startedAt": "2026-09-20T15:12:42.603Z",
+      "endedAt": "2026-09-20T15:47:37.858Z",
+      "pid": 84866,
+      "resumed": false,
+      "runIds": [
+        "CAL-001-calibration-R4-R-A-1",
+        "CAL-001-calibration-R4-K-A-1"
+      ],
+      "activeMs": 2095255,
+      "status": "INTERRUPTED",
+      "cleanup": {
+        "passed": true,
+        "checkedAt": "2026-09-20T15:47:37.297Z",
+        "project": "lubanga-coordination-pilot",
+        "remainingContainers": []
+      },
+      "restoreErrors": [],
+      "pausedContainers": [
+        {
+          "id": "redacted-container-id-a",
+          "name": "external-container-a"
+        },
+        {
+          "id": "redacted-container-id-b",
+          "name": "external-container-b"
+        },
+        {
+          "id": "redacted-container-id-c",
+          "name": "external-container-c"
+        }
+      ]
+    }
+  ],
+  "timing": {
+    "activeMs": 2095255,
+    "pausedMs": 0,
+    "activeSince": null,
+    "pausedSince": null
+  },
+  "sessionId": "b01abb96-6a33-4905-8ff8-370ddae2c4c0",
+  "pid": 84866,
+  "pauseRequested": null,
+  "cleanup": {
+    "passed": true,
+    "checkedAt": "2026-09-20T15:47:37.297Z",
+    "project": "lubanga-coordination-pilot",
+    "remainingContainers": []
+  },
+  "restoreErrors": [],
+  "containersRestoredAt": "2026-09-20T15:47:37.858Z",
+  "updatedAt": "2026-09-20T15:47:37.859Z",
+  "pausedContainers": [
+    {
+      "id": "redacted-container-id-a",
+      "name": "external-container-a"
+    },
+    {
+      "id": "redacted-container-id-b",
+      "name": "external-container-b"
+    },
+    {
+      "id": "redacted-container-id-c",
+      "name": "external-container-c"
+    }
+  ],
+  "calibrationDecision": {
+    "action": "RUN",
+    "phase": "calibration",
+    "rate": 4,
+    "repetitions": 2
+  },
+  "error": "Pilot interrupted by user or process signal.",
+  "confirmatoryFrozen": false
+}

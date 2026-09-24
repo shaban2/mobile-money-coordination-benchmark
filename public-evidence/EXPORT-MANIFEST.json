@@ -1,0 +1,3729 @@
+{
+  "schemaVersion": 1,
+  "exportedAt": "2026-09-24T06:26:54.917Z",
+  "privateRepositoryCommit": "15bf434e851a794bc35544989adf65aac817bf52",
+  "statement": "Redacted, analysis-sufficient export of the private evidence archive. originalSha256 is the SHA-256 of the file in the private repository at the stated commit; exportedSha256 is the SHA-256 of the file here. Redactions replace the capture host name, home paths, the Docker daemon identity, and names and identities of unrelated containers on the capture host with neutral tokens; no experiment number is affected because the analysis never reads those fields. Files not needed by the analysis (raw k6 metric streams, database diagnostics, container inspections, resolved compose files, logs) are not exported.",
+  "roots": [
+    "results-queue-screening-r8-v2",
+    "results-exploratory-adapter-r4-v1",
+    "results-exploratory-database-r4-v1",
+    "results-exploratory-adapter-k4-v1",
+    "results-exploratory-database-k4-v1",
+    "results-calibration-v1",
+    "results-calibration-v1-continuation-1",
+    "results-queue-screening-v2",
+    "results-capacity-pilot-v5"
+  ],
+  "runFiles": [
+    "manifest.json",
+    "run-outcomes.json",
+    "qualification.json",
+    "invariants.json",
+    "telemetry.json",
+    "traces.json",
+    "transfers.json",
+    "controller-state.json",
+    "measurement-clock.json",
+    "fault-evidence.json",
+    "adapter-fault-timing.json",
+    "client-attempts.json",
+    "measurement-summary.json",
+    "warmup-summary.json",
+    "diagnostics.json",
+    "docker-stats.jsonl",
+    "cleanup.json",
+    "pilot-stability.json",
+    "registered-run.json",
+    "end-checksums.json",
+    "calibration-assessment.json",
+    "clean-start.json",
+    "load-exit.json"
+  ],
+  "files": [
+    {
+      "path": "results-queue-screening-r8-v2/PILOT-001-screening-R8-K-A-1/manifest.json",
+      "originalSha256": "692a0f3f7de423c75145f39997b1d4f8b0421c1ebad5eeb9560d775e6884a798",
+      "exportedSha256": "abbe0f80b075cd388dd0fcedc66eaa23f36148d9048ae6f6661fc3f7a0ce9941",
+      "bytes": 8387,
+      "redactions": {
+        "capture-host": 1
+      }
+    },
+    {
+      "path": "results-queue-screening-r8-v2/PILOT-001-screening-R8-K-A-1/run-outcomes.json",
+      "originalSha256": "4534b43239d3120963aa7ab043ca1460e5cd0c90a5ced8a5b12c8f04984be880",
+      "exportedSha256": "4534b43239d3120963aa7ab043ca1460e5cd0c90a5ced8a5b12c8f04984be880",
+      "bytes": 624148,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-r8-v2/PILOT-001-screening-R8-K-A-1/qualification.json",
+      "originalSha256": "04759664977418c37734a88e0d93223f5441c711198df99144a28dec5ca0005e",
+      "exportedSha256": "04759664977418c37734a88e0d93223f5441c711198df99144a28dec5ca0005e",
+      "bytes": 1516,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-r8-v2/PILOT-001-screening-R8-K-A-1/invariants.json",
+      "originalSha256": "988dce4ad5acafe2917dfbe0084f634043f6066416fc42c9b27b1ac194e5093f",
+      "exportedSha256": "988dce4ad5acafe2917dfbe0084f634043f6066416fc42c9b27b1ac194e5093f",
+      "bytes": 64985,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-r8-v2/PILOT-001-screening-R8-K-A-1/telemetry.json",
+      "originalSha256": "2333da69121eb130aaacd58c30e5aa314864b6de6c97fd872a430cb5b4d97bbd",
+      "exportedSha256": "2333da69121eb130aaacd58c30e5aa314864b6de6c97fd872a430cb5b4d97bbd",
+      "bytes": 738,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-r8-v2/PILOT-001-screening-R8-K-A-1/traces.json",
+      "originalSha256": "4043a39898322834d4e0879ef2c810b0a6c6dac01564b6563ab167dc006838aa",
+      "exportedSha256": "4043a39898322834d4e0879ef2c810b0a6c6dac01564b6563ab167dc006838aa",
+      "bytes": 4679446,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-r8-v2/PILOT-001-screening-R8-K-A-1/transfers.json",
+      "originalSha256": "704228a0f57ee33e882f32cc2b85d836b0fceee5dd176cf95d5ad3069348a409",
+      "exportedSha256": "704228a0f57ee33e882f32cc2b85d836b0fceee5dd176cf95d5ad3069348a409",
+      "bytes": 1989336,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-r8-v2/PILOT-001-screening-R8-K-A-1/controller-state.json",
+      "originalSha256": "0a7def0152fd05a16f0ef8efe11ca4917a76c0ce6101bc1bf5d6ecb51766f683",
+      "exportedSha256": "0a7def0152fd05a16f0ef8efe11ca4917a76c0ce6101bc1bf5d6ecb51766f683",
+      "bytes": 856,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-r8-v2/PILOT-001-screening-R8-K-A-1/measurement-clock.json",
+      "originalSha256": "61af1d27e5ff11faefdac3e9b629a2589b26665224723e11cdfe9b560a50c316",
+      "exportedSha256": "6d98575c7abd099fbf29e34b7b356bf3d3f939f7b9c4ba48eef42af13d45bf83",
+      "bytes": 108,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-r8-v2/PILOT-001-screening-R8-K-A-1/client-attempts.json",
+      "originalSha256": "3e684122f033eb3f278f849e7642eefdb6d985fc106d049b3f67af3a4d87ccdf",
+      "exportedSha256": "ac0e1cc3a244f26e4f857db181667eb624a11ba5b49af329774bce0d32dec5e9",
+      "bytes": 865324,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-r8-v2/PILOT-001-screening-R8-K-A-1/measurement-summary.json",
+      "originalSha256": "dae8c99aec66d28826adf9274afd3e982117aa9308bbf317d94310028d868ac2",
+      "exportedSha256": "2e729dcfa82c72e654b57774b351869534b395056f7dd68cbda6f43eed52e1f8",
+      "bytes": 3818,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-r8-v2/PILOT-001-screening-R8-K-A-1/warmup-summary.json",
+      "originalSha256": "a0551b690bfd4339c0eb41806eb1136be58e008db0dd83f0181b28c68efe184d",
+      "exportedSha256": "f16518fec9e19ab4c922ffcff386d5e12cf8f07701452bb8f4ca5d40adaabc9d",
+      "bytes": 3733,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-r8-v2/PILOT-001-screening-R8-K-A-1/diagnostics.json",
+      "originalSha256": "06f16b7e34d22a8be6e6e0d8d9193911a4bbb7bd8046f56aa0fd60581f4c45c3",
+      "exportedSha256": "06f16b7e34d22a8be6e6e0d8d9193911a4bbb7bd8046f56aa0fd60581f4c45c3",
+      "bytes": 601926,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-r8-v2/PILOT-001-screening-R8-K-A-1/docker-stats.jsonl",
+      "originalSha256": "d715cec8b00f38d789d22dcbde911a942ba6f7410b3ceb44c3d4311e4ef37d1f",
+      "exportedSha256": "d715cec8b00f38d789d22dcbde911a942ba6f7410b3ceb44c3d4311e4ef37d1f",
+      "bytes": 1280980,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-r8-v2/PILOT-001-screening-R8-K-A-1/cleanup.json",
+      "originalSha256": "fda723586b508f0d5d24398572c6c61f1cb6d8de0ccb87821799df651ca0b72f",
+      "exportedSha256": "fda723586b508f0d5d24398572c6c61f1cb6d8de0ccb87821799df651ca0b72f",
+      "bytes": 136,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-r8-v2/PILOT-001-screening-R8-K-A-1/pilot-stability.json",
+      "originalSha256": "9a5620c269b20155eea5f04d4e3105c54e9fac1ecc5a8701971739ac94f77102",
+      "exportedSha256": "9a5620c269b20155eea5f04d4e3105c54e9fac1ecc5a8701971739ac94f77102",
+      "bytes": 5277,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-r8-v2/PILOT-001-screening-R8-K-A-1/registered-run.json",
+      "originalSha256": "42b67b29a2831ee5c1f696376246dfc6bb2532e978b6fc21ce1e17c548a12e16",
+      "exportedSha256": "81ef7f4a78af6dedf3bf618ad5e3d252f61a796a3a1ecc910707fb8936a770b4",
+      "bytes": 10319,
+      "redactions": {
+        "capture-host": 1
+      }
+    },
+    {
+      "path": "results-queue-screening-r8-v2/PILOT-001-screening-R8-K-A-1/end-checksums.json",
+      "originalSha256": "4f91256038982f2aae8d9c689d8ef28c402a37b49487f5d590862c63ae666e70",
+      "exportedSha256": "4f91256038982f2aae8d9c689d8ef28c402a37b49487f5d590862c63ae666e70",
+      "bytes": 454,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-r8-v2/PILOT-001-screening-R8-K-A-1/clean-start.json",
+      "originalSha256": "b32b3f588ef005c0b1fc155513b6cd18a52fa69fa6da0fac0ed4de8163119641",
+      "exportedSha256": "b32b3f588ef005c0b1fc155513b6cd18a52fa69fa6da0fac0ed4de8163119641",
+      "bytes": 136,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-r8-v2/PILOT-001-screening-R8-K-A-1/load-exit.json",
+      "originalSha256": "6380f7ebf1263a94abaaef4f5a1323cf0f4fbc88e37d8f1792ae68f163e18807",
+      "exportedSha256": "6380f7ebf1263a94abaaef4f5a1323cf0f4fbc88e37d8f1792ae68f163e18807",
+      "bytes": 34,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-r8-v2/PILOT-001-screening-R8-R-A-1/manifest.json",
+      "originalSha256": "029057e788814742ee8bdecc06c5b830eb323f04ad7634849756e74125e00284",
+      "exportedSha256": "8c3c8da74f3efbcdc42882813fabd79ddf2977ef3a8cf2503d8dcacced63f7c8",
+      "bytes": 7908,
+      "redactions": {
+        "capture-host": 1
+      }
+    },
+    {
+      "path": "results-queue-screening-r8-v2/PILOT-001-screening-R8-R-A-1/run-outcomes.json",
+      "originalSha256": "75a56a2ada926da32bc90a8e4d82831afe3fd792f0a7096d3c0a47297e5ab59e",
+      "exportedSha256": "75a56a2ada926da32bc90a8e4d82831afe3fd792f0a7096d3c0a47297e5ab59e",
+      "bytes": 622647,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-r8-v2/PILOT-001-screening-R8-R-A-1/qualification.json",
+      "originalSha256": "306b17a0ae082c72a28ff9606fba4c631be746ae266ddc2357656206f05f7d64",
+      "exportedSha256": "306b17a0ae082c72a28ff9606fba4c631be746ae266ddc2357656206f05f7d64",
+      "bytes": 1516,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-r8-v2/PILOT-001-screening-R8-R-A-1/invariants.json",
+      "originalSha256": "c89f4d05257fac45945e59db8e573204b51d85fd1d278e5b815d78fb2dfda2ac",
+      "exportedSha256": "c89f4d05257fac45945e59db8e573204b51d85fd1d278e5b815d78fb2dfda2ac",
+      "bytes": 64985,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-r8-v2/PILOT-001-screening-R8-R-A-1/telemetry.json",
+      "originalSha256": "13c18e6378576dae6b8e978624f6ed57c4693e72b2282d48c528a0d02fe8d5d9",
+      "exportedSha256": "13c18e6378576dae6b8e978624f6ed57c4693e72b2282d48c528a0d02fe8d5d9",
+      "bytes": 739,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-r8-v2/PILOT-001-screening-R8-R-A-1/traces.json",
+      "originalSha256": "2d4ff0676db14046f793414f4554e547aa34ca7cdbf20fa0c8d0a43062f408f2",
+      "exportedSha256": "2d4ff0676db14046f793414f4554e547aa34ca7cdbf20fa0c8d0a43062f408f2",
+      "bytes": 4679074,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-r8-v2/PILOT-001-screening-R8-R-A-1/transfers.json",
+      "originalSha256": "c06d2fdd1f8770487869d6bcb97db8583ac59f351f05646db359d113bf397df3",
+      "exportedSha256": "c06d2fdd1f8770487869d6bcb97db8583ac59f351f05646db359d113bf397df3",
+      "bytes": 1987876,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-r8-v2/PILOT-001-screening-R8-R-A-1/controller-state.json",
+      "originalSha256": "371f10e9d0e81771d0fc18d11acbcfd3b007ef7b6a0fc5211e51d5be7971e69d",
+      "exportedSha256": "371f10e9d0e81771d0fc18d11acbcfd3b007ef7b6a0fc5211e51d5be7971e69d",
+      "bytes": 856,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-r8-v2/PILOT-001-screening-R8-R-A-1/measurement-clock.json",
+      "originalSha256": "9b84f3ba153e87e2ccad4f7e67cb7e9754209503786ceea2ffba57a211b1b42a",
+      "exportedSha256": "221b42903a552b5d6230a939120f5e81bd4ca9ef1414b1e599d6aed9903ed822",
+      "bytes": 108,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-r8-v2/PILOT-001-screening-R8-R-A-1/client-attempts.json",
+      "originalSha256": "e7ab093e794052fa7fd2d004f8dd1dd46654d19487c42d9c6394cc7d265fa8b9",
+      "exportedSha256": "1901f051c3be3e2de4f2e45ea9ff1bbd5d254b365212e615fb7bd819fe01947c",
+      "bytes": 865321,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-r8-v2/PILOT-001-screening-R8-R-A-1/measurement-summary.json",
+      "originalSha256": "f96436ca335a821b93aab53a4b2c9fa742d6bd1c9cb4858e757be50e0b525880",
+      "exportedSha256": "8d2ae7614b8503e6d4c8f4d78018f880c529be746f318e17e5047328cd58a26a",
+      "bytes": 3771,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-r8-v2/PILOT-001-screening-R8-R-A-1/warmup-summary.json",
+      "originalSha256": "b24cf642eea01ef248a74baadee866f89ae24abdd8abc205d69b0da673bd06a2",
+      "exportedSha256": "48ec7e4f89b207a96eb3a0fd9088939300a271bdabedcdbcb27c80cb5395e28f",
+      "bytes": 3788,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-r8-v2/PILOT-001-screening-R8-R-A-1/diagnostics.json",
+      "originalSha256": "c776db89623779cefe4ed376152bed3db4e697a0a3f8f9379ee1bc918a985822",
+      "exportedSha256": "c776db89623779cefe4ed376152bed3db4e697a0a3f8f9379ee1bc918a985822",
+      "bytes": 603791,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-r8-v2/PILOT-001-screening-R8-R-A-1/docker-stats.jsonl",
+      "originalSha256": "8ecba2560435f8826e4def38aa31f9362ebbc309a27b32c0ca30e978e4bc97c7",
+      "exportedSha256": "8ecba2560435f8826e4def38aa31f9362ebbc309a27b32c0ca30e978e4bc97c7",
+      "bytes": 1245458,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-r8-v2/PILOT-001-screening-R8-R-A-1/cleanup.json",
+      "originalSha256": "6e1184186b290f8411d0370c0c1d0bd872669d36ea9515b2b21b1dfc20f93eb3",
+      "exportedSha256": "6e1184186b290f8411d0370c0c1d0bd872669d36ea9515b2b21b1dfc20f93eb3",
+      "bytes": 136,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-r8-v2/PILOT-001-screening-R8-R-A-1/pilot-stability.json",
+      "originalSha256": "ed8e8c7c4c3aae8e00e6303ae47e0328a926784d84c8f67266ce4fb762e534c1",
+      "exportedSha256": "ed8e8c7c4c3aae8e00e6303ae47e0328a926784d84c8f67266ce4fb762e534c1",
+      "bytes": 5245,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-r8-v2/PILOT-001-screening-R8-R-A-1/registered-run.json",
+      "originalSha256": "edb0e3e0c1f29f0da3d169f9d4d6fa0a2215bb8ecf5faa592ef75dd5aea57ec2",
+      "exportedSha256": "0536d142e291318b29ecbe315b38f3930e7b40a26ae4d66830c0a1bb4f545510",
+      "bytes": 9784,
+      "redactions": {
+        "capture-host": 1
+      }
+    },
+    {
+      "path": "results-queue-screening-r8-v2/PILOT-001-screening-R8-R-A-1/end-checksums.json",
+      "originalSha256": "4f91256038982f2aae8d9c689d8ef28c402a37b49487f5d590862c63ae666e70",
+      "exportedSha256": "4f91256038982f2aae8d9c689d8ef28c402a37b49487f5d590862c63ae666e70",
+      "bytes": 454,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-r8-v2/PILOT-001-screening-R8-R-A-1/clean-start.json",
+      "originalSha256": "831caeb21c38b2becdd0de2dbb5886fa5c7c9bdfabec4937b86f8f4a08228dd2",
+      "exportedSha256": "831caeb21c38b2becdd0de2dbb5886fa5c7c9bdfabec4937b86f8f4a08228dd2",
+      "bytes": 136,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-r8-v2/PILOT-001-screening-R8-R-A-1/load-exit.json",
+      "originalSha256": "6380f7ebf1263a94abaaef4f5a1323cf0f4fbc88e37d8f1792ae68f163e18807",
+      "exportedSha256": "6380f7ebf1263a94abaaef4f5a1323cf0f4fbc88e37d8f1792ae68f163e18807",
+      "bytes": 34,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-r8-v2/archive-checksum.json",
+      "originalSha256": "076a7168567f31f243ffb12d28f39b43da18ea8856f8236d36c81e5c8b021a25",
+      "exportedSha256": "076a7168567f31f243ffb12d28f39b43da18ea8856f8236d36c81e5c8b021a25",
+      "bytes": 83,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-r8-v2/experiment-summary.json",
+      "originalSha256": "983c4fc2385f3fdcbf502f30dab2571aceb8846ba997ff038ccf8616b5185f67",
+      "exportedSha256": "a776d80f1c90a5c959f6a77816cde2c6faca6ae0a45ceacf45a15e33444d6186",
+      "bytes": 2276,
+      "redactions": {
+        "<repo>": 1
+      }
+    },
+    {
+      "path": "results-queue-screening-r8-v2/freeze.json",
+      "originalSha256": "27362f625da1f65d902ddf3ef0de11ce308eac08b85b52c9ba0ea423978a961a",
+      "exportedSha256": "d267626cab8189ac7adec0156866225d9cb63c2cd4beb015a6770cca7e40758c",
+      "bytes": 6967,
+      "redactions": {
+        "redacted-container-id-a": 1,
+        "external-container-a": 1,
+        "redacted-container-id-b": 1,
+        "external-container-b": 1,
+        "redacted-container-id-c": 1,
+        "external-container-c": 1,
+        "capture-host": 1,
+        "redacted-docker-id": 1,
+        "pauseAndRestoreNamedExternalContainers": 1,
+        "companionContainerUnavailableDuringPilot": 1
+      }
+    },
+    {
+      "path": "results-queue-screening-r8-v2/frozen-compose.json",
+      "originalSha256": "8b09be8c0610efbce6e6e087a3c275d4e28afafdf41bc231d21e216a7ea532fa",
+      "exportedSha256": "8b09be8c0610efbce6e6e087a3c275d4e28afafdf41bc231d21e216a7ea532fa",
+      "bytes": 2236,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-r8-v2/isolation-events.jsonl",
+      "originalSha256": "cab7c46163111c1ba12b4f091979a98245c3bb61533ad97a3a84f12ad6b5052d",
+      "exportedSha256": "2619391e2b77448af5141f11264e7769e39ef5a339c310ee86f3160b07b8256e",
+      "bytes": 35419,
+      "redactions": {
+        "<repo>": 95
+      }
+    },
+    {
+      "path": "results-queue-screening-r8-v2/pilot-batch-001.json",
+      "originalSha256": "d85420c5adb6718d8dbb07536bba60ade9c3ab1f024a9b7dc8ff597c49f83d54",
+      "exportedSha256": "d85420c5adb6718d8dbb07536bba60ade9c3ab1f024a9b7dc8ff597c49f83d54",
+      "bytes": 1399,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-r8-v2/pilot-protocol.json",
+      "originalSha256": "b351006cb44718a99b1f0770517eb9f3e6c7a7e585e60af962141c1ba90b0fab",
+      "exportedSha256": "b351006cb44718a99b1f0770517eb9f3e6c7a7e585e60af962141c1ba90b0fab",
+      "bytes": 2529,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-r8-v2/pilot-state.json",
+      "originalSha256": "4c21387c8c9bc0e313b9e8e79b40ff4ee6a2852f853c2ce66f470a91665e06b9",
+      "exportedSha256": "74313658f3069f52ccec3387407af809bcc4672dfa733334bdca0d49871a5fe1",
+      "bytes": 15704,
+      "redactions": {
+        "redacted-container-id-a": 2,
+        "external-container-a": 2,
+        "redacted-container-id-b": 2,
+        "external-container-b": 2,
+        "redacted-container-id-c": 2,
+        "external-container-c": 2
+      }
+    },
+    {
+      "path": "results-queue-screening-r8-v2/prerequisite-review.json",
+      "originalSha256": "d5186453c6efae5cf77d22a153f9bdb9ae938546d939b05dd6797ad5dd2a9482",
+      "exportedSha256": "67053c003301a5eb38c53e656d42d4a5c53baf22e74b5bb025784fcfb606c62d",
+      "bytes": 15094,
+      "redactions": {
+        "the external stack": 1,
+        "<repo>": 1
+      }
+    },
+    {
+      "path": "results-queue-screening-r8-v2/run-index.jsonl",
+      "originalSha256": "5ff4f723f05799edafdbd25e9d67ee5f5e9eaf236ecec4cc2388b263e9df3c13",
+      "exportedSha256": "5ff4f723f05799edafdbd25e9d67ee5f5e9eaf236ecec4cc2388b263e9df3c13",
+      "bytes": 980,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-r8-v2/source-snapshot-application.tar.gz",
+      "originalPath": "results-queue-screening-r8-v2/source-snapshot.tar.gz",
+      "originalSha256": "73a16ba4023acfbc90e524ced9858c2855a8b297502b7cee7da1d6faf5b6b30a",
+      "exportedSha256": "853b5fe72aab25753088137194b81a879e8dceb9855b76b92945e3ec9899b062",
+      "applicationFiles": 53,
+      "droppedFiles": 110,
+      "droppedPrefixes": [
+        ".dockerignore",
+        "README.md",
+        "SOURCE_PROVENANCE.md",
+        "config",
+        "docs",
+        "scripts",
+        "src",
+        "test"
+      ]
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/PILOT-001-fault-R4-K-A-1/manifest.json",
+      "originalSha256": "59928e93c3f3948805cccc1da0bc1f645e529cb45e39474c9fb47961964f13ba",
+      "exportedSha256": "d59496a27d9978be7a0a5fcfd1b46d1122d01c9f8fb903e9dec9c5e6a95935fb",
+      "bytes": 8373,
+      "redactions": {
+        "capture-host": 1
+      }
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/PILOT-001-fault-R4-K-A-1/run-outcomes.json",
+      "originalSha256": "5d27f8587b2fb3dc2035bdab4689bcc5c0132420e9139b31651a24d546488480",
+      "exportedSha256": "5d27f8587b2fb3dc2035bdab4689bcc5c0132420e9139b31651a24d546488480",
+      "bytes": 776114,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/PILOT-001-fault-R4-K-A-1/qualification.json",
+      "originalSha256": "e5e27ff062eeb3798c83c8187e6080667b91072fec4e516f7bb9fac3bd77dfdf",
+      "exportedSha256": "e5e27ff062eeb3798c83c8187e6080667b91072fec4e516f7bb9fac3bd77dfdf",
+      "bytes": 1466,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/PILOT-001-fault-R4-K-A-1/invariants.json",
+      "originalSha256": "bf63169708f7f7e1be473d042dc01a720cf6bce58a1a562c493b35de3d0b850e",
+      "exportedSha256": "bf63169708f7f7e1be473d042dc01a720cf6bce58a1a562c493b35de3d0b850e",
+      "bytes": 81001,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/PILOT-001-fault-R4-K-A-1/telemetry.json",
+      "originalSha256": "8e0055d87b7f89d862ec8cc7382e80197ef6108c037249aed37574d905e24dcc",
+      "exportedSha256": "8e0055d87b7f89d862ec8cc7382e80197ef6108c037249aed37574d905e24dcc",
+      "bytes": 740,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/PILOT-001-fault-R4-K-A-1/traces.json",
+      "originalSha256": "44824b3cb1dae6618031b6fe086e1492d9ee36c3d037156ce7aaa0070d4aa282",
+      "exportedSha256": "44824b3cb1dae6618031b6fe086e1492d9ee36c3d037156ce7aaa0070d4aa282",
+      "bytes": 5843661,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/PILOT-001-fault-R4-K-A-1/transfers.json",
+      "originalSha256": "f566c9e88fa27bc07bd6209e7c9e77404761c77d85f50baf827effa0ce03a4c5",
+      "exportedSha256": "f566c9e88fa27bc07bd6209e7c9e77404761c77d85f50baf827effa0ce03a4c5",
+      "bytes": 2470788,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/PILOT-001-fault-R4-K-A-1/controller-state.json",
+      "originalSha256": "1e4b38ca8d658386df5a8079b14a084ce9737d010cdc1fd499d9f4a00913cccb",
+      "exportedSha256": "1e4b38ca8d658386df5a8079b14a084ce9737d010cdc1fd499d9f4a00913cccb",
+      "bytes": 856,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/PILOT-001-fault-R4-K-A-1/measurement-clock.json",
+      "originalSha256": "5473a04438723ba12b159b13171936e9dcb58aa4adea736ff92cf9cc2fd2e940",
+      "exportedSha256": "ec3441917fa6fc38cd8f6ab39e31dad83d966c3b972ff4dd3e9b90656cac5b81",
+      "bytes": 108,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/PILOT-001-fault-R4-K-A-1/fault-evidence.json",
+      "originalSha256": "68f2332fd0522b31dd6e76c3f918af75495ae8f5b80931c7ae53b6e97a54613c",
+      "exportedSha256": "68f2332fd0522b31dd6e76c3f918af75495ae8f5b80931c7ae53b6e97a54613c",
+      "bytes": 336,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/PILOT-001-fault-R4-K-A-1/adapter-fault-timing.json",
+      "originalSha256": "0c91cc56cb128ac82a5a8083dfc3cb0a17c26ae2f37001bdb59ce84d89b9b350",
+      "exportedSha256": "1dd0f5a9c4dcff3d701ee6d0cc996b9b887d7ee1f61635abb9493fe2d56a2edb",
+      "bytes": 200,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/PILOT-001-fault-R4-K-A-1/client-attempts.json",
+      "originalSha256": "9027e9ededf92dc38c042773302ea7b6911dcab3e62376f31c50cb959a1a0222",
+      "exportedSha256": "d6e8496f4b4496517047de45aaf824d266e2c7da835d679f90951c6e072d7b8f",
+      "bytes": 1064296,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/PILOT-001-fault-R4-K-A-1/measurement-summary.json",
+      "originalSha256": "6dd711c2397c24d8e7c201d4fa8f862ab9fcc9403080b128cf679fb3a762fb82",
+      "exportedSha256": "07d36825ba69a9ae485aae4e163640b143069d649cd955c62d133acfd65918ad",
+      "bytes": 3730,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/PILOT-001-fault-R4-K-A-1/warmup-summary.json",
+      "originalSha256": "1142e427ccbb836c4593f430b1ed9edb425ae2fd1d859087c59b9169da6220c2",
+      "exportedSha256": "bf7e61bbe01e7234c35c6ae29f3ecd58d7458a2d5cb90a32d4cbdd7663f07f9f",
+      "bytes": 3851,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/PILOT-001-fault-R4-K-A-1/diagnostics.json",
+      "originalSha256": "8b8b484d696a058589ff40b3b760cd8c69ab85952f0b475bbab4e126ebabfa08",
+      "exportedSha256": "8b8b484d696a058589ff40b3b760cd8c69ab85952f0b475bbab4e126ebabfa08",
+      "bytes": 942824,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/PILOT-001-fault-R4-K-A-1/docker-stats.jsonl",
+      "originalSha256": "ddd0d87c4d50f6b556866f0198bbf96f747465888cd2db13977cf40eaa2673ac",
+      "exportedSha256": "ddd0d87c4d50f6b556866f0198bbf96f747465888cd2db13977cf40eaa2673ac",
+      "bytes": 3188102,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/PILOT-001-fault-R4-K-A-1/cleanup.json",
+      "originalSha256": "c5640121d9f4907de723a555258da20b07af89f19113cbc8567de743b897b444",
+      "exportedSha256": "c5640121d9f4907de723a555258da20b07af89f19113cbc8567de743b897b444",
+      "bytes": 136,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/PILOT-001-fault-R4-K-A-1/pilot-stability.json",
+      "originalSha256": "9ca81373e1325b995f22a92bfdd6277779bcd79ff686f58a79723c1e6f40e2a0",
+      "exportedSha256": "9ca81373e1325b995f22a92bfdd6277779bcd79ff686f58a79723c1e6f40e2a0",
+      "bytes": 10673,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/PILOT-001-fault-R4-K-A-1/registered-run.json",
+      "originalSha256": "476bcfd4a83f09a3ff4a636b220f60efa5b195507a3ea9fb96e6dd073715d577",
+      "exportedSha256": "ba8797272cd98f41b81be96eee61d2f8b229071426d662e466052e9e58c367c3",
+      "bytes": 10295,
+      "redactions": {
+        "capture-host": 1
+      }
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/PILOT-001-fault-R4-K-A-1/end-checksums.json",
+      "originalSha256": "1db9b11ca5157f5d98f9739de2f07e10ba4dd110df40a02306850fbc04946e07",
+      "exportedSha256": "1db9b11ca5157f5d98f9739de2f07e10ba4dd110df40a02306850fbc04946e07",
+      "bytes": 454,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/PILOT-001-fault-R4-K-A-1/clean-start.json",
+      "originalSha256": "b6a00afd874f26f38b9884071fb8687d96cea3fec2c1d0550ee79fa3410b6522",
+      "exportedSha256": "b6a00afd874f26f38b9884071fb8687d96cea3fec2c1d0550ee79fa3410b6522",
+      "bytes": 136,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/PILOT-001-fault-R4-K-A-1/load-exit.json",
+      "originalSha256": "6380f7ebf1263a94abaaef4f5a1323cf0f4fbc88e37d8f1792ae68f163e18807",
+      "exportedSha256": "6380f7ebf1263a94abaaef4f5a1323cf0f4fbc88e37d8f1792ae68f163e18807",
+      "bytes": 34,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/PILOT-001-fault-R4-R-A-1/manifest.json",
+      "originalSha256": "4062c8a9d5ba50927fb81821662f516d4d73e9976fa6fdf395b15ef1ac52a4ed",
+      "exportedSha256": "0a67547681d94546805f1d53f68e0be0c04b4f9cce1ee13090322f8ef9b212eb",
+      "bytes": 7893,
+      "redactions": {
+        "capture-host": 1
+      }
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/PILOT-001-fault-R4-R-A-1/run-outcomes.json",
+      "originalSha256": "501ac98d53f314044973140c5b9ff6952459374bfcd0cc4c877a4cb100ee1998",
+      "exportedSha256": "501ac98d53f314044973140c5b9ff6952459374bfcd0cc4c877a4cb100ee1998",
+      "bytes": 774386,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/PILOT-001-fault-R4-R-A-1/qualification.json",
+      "originalSha256": "941eb6a41d1149e07d976277b9baecd6b1e9f6dc5566447caa4d472c2aea148e",
+      "exportedSha256": "941eb6a41d1149e07d976277b9baecd6b1e9f6dc5566447caa4d472c2aea148e",
+      "bytes": 1512,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/PILOT-001-fault-R4-R-A-1/invariants.json",
+      "originalSha256": "09b42506ff0b0a881f476689decaad372c4dbb06c89faa742d658e29d0266dec",
+      "exportedSha256": "09b42506ff0b0a881f476689decaad372c4dbb06c89faa742d658e29d0266dec",
+      "bytes": 81045,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/PILOT-001-fault-R4-R-A-1/telemetry.json",
+      "originalSha256": "d6919e11f8c27dd04da76e25d9818b384e68bb96f4100f26e2abe2d8fbc9a873",
+      "exportedSha256": "d6919e11f8c27dd04da76e25d9818b384e68bb96f4100f26e2abe2d8fbc9a873",
+      "bytes": 739,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/PILOT-001-fault-R4-R-A-1/traces.json",
+      "originalSha256": "dd68af2a3e7c3bc57ad0e6051e5265e3a0344c4fe93a0844b87046989283f849",
+      "exportedSha256": "dd68af2a3e7c3bc57ad0e6051e5265e3a0344c4fe93a0844b87046989283f849",
+      "bytes": 5854613,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/PILOT-001-fault-R4-R-A-1/transfers.json",
+      "originalSha256": "a37c7fcad88942ac9e5395e53af38036f89752224dfae7d8c868f8a6971be293",
+      "exportedSha256": "a37c7fcad88942ac9e5395e53af38036f89752224dfae7d8c868f8a6971be293",
+      "bytes": 2470318,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/PILOT-001-fault-R4-R-A-1/controller-state.json",
+      "originalSha256": "9f0ac256fd213f76159218235fee687b505efd8b2d36ce418420f739ad36c0ed",
+      "exportedSha256": "9f0ac256fd213f76159218235fee687b505efd8b2d36ce418420f739ad36c0ed",
+      "bytes": 856,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/PILOT-001-fault-R4-R-A-1/measurement-clock.json",
+      "originalSha256": "e8d2d0f7e8faf0d57078a5ade8d1abef2cf6f0551494257282a4528a25310e3d",
+      "exportedSha256": "a774339a11b6ac4c63e87abe8d494e461b4c6c16d95eb0f34568e19c35a8dc24",
+      "bytes": 108,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/PILOT-001-fault-R4-R-A-1/fault-evidence.json",
+      "originalSha256": "9947623395095ecc082a99d059f4c1d09ab83f370efeb9fb449840d2b89d0f80",
+      "exportedSha256": "9947623395095ecc082a99d059f4c1d09ab83f370efeb9fb449840d2b89d0f80",
+      "bytes": 336,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/PILOT-001-fault-R4-R-A-1/adapter-fault-timing.json",
+      "originalSha256": "8232e305bd9c322276bf64b666193917cf6b43f22a6fec3ecc435e40a148721f",
+      "exportedSha256": "ab7fc9a154810bf1e7c65ddb68a6b2e73fa4ccab0e6a388084452968f85095f7",
+      "bytes": 200,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/PILOT-001-fault-R4-R-A-1/client-attempts.json",
+      "originalSha256": "437a31c50ada620abb9fa9797b0eb21e75b61bfec83a790c7e0a33cd616fef60",
+      "exportedSha256": "7d58473d3bcf80b56a66302dbd97b9ea1310c296429bb8a2a87f36f62c96d63a",
+      "bytes": 1064762,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/PILOT-001-fault-R4-R-A-1/measurement-summary.json",
+      "originalSha256": "a96c911a322ab1f9cb5acad64001d599e24284e4f87ec19965d25daff166b20b",
+      "exportedSha256": "b6454c4a0b9ced80130824b1685147c879daa81e7d1cff51c097a27237e87108",
+      "bytes": 3793,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/PILOT-001-fault-R4-R-A-1/warmup-summary.json",
+      "originalSha256": "02affa1cc90886453791ea04c07d917a7cc6ebd197f4fb1e5bfac9b004e7f8f3",
+      "exportedSha256": "ba4a62e8e2717053a25ae767f087acaf7362319abcaaf96f4997cf05df5ccc2d",
+      "bytes": 3815,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/PILOT-001-fault-R4-R-A-1/diagnostics.json",
+      "originalSha256": "5d8915f8bfd14f91fde531dc7dd17f4a5b478838e0377240b75fdba46f167760",
+      "exportedSha256": "5d8915f8bfd14f91fde531dc7dd17f4a5b478838e0377240b75fdba46f167760",
+      "bytes": 946647,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/PILOT-001-fault-R4-R-A-1/docker-stats.jsonl",
+      "originalSha256": "d1dee13845f2a26f4c1def30b7a0aeea36c89e9accb36a886ef2df298cef7d00",
+      "exportedSha256": "d1dee13845f2a26f4c1def30b7a0aeea36c89e9accb36a886ef2df298cef7d00",
+      "bytes": 3083654,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/PILOT-001-fault-R4-R-A-1/cleanup.json",
+      "originalSha256": "fdeb793b7d352e1f2a4c1e8c820270a27d86c144e28a225e3fb922298f07c0cd",
+      "exportedSha256": "fdeb793b7d352e1f2a4c1e8c820270a27d86c144e28a225e3fb922298f07c0cd",
+      "bytes": 136,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/PILOT-001-fault-R4-R-A-1/pilot-stability.json",
+      "originalSha256": "e4a4272e094822505b9bbe458bd1f94d1b3b16fc3dff7925275b378ab72e2c58",
+      "exportedSha256": "e4a4272e094822505b9bbe458bd1f94d1b3b16fc3dff7925275b378ab72e2c58",
+      "bytes": 10645,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/PILOT-001-fault-R4-R-A-1/registered-run.json",
+      "originalSha256": "4bbe6a545967a15bff466a05d1688fadbbb4e284ebc9035378d7680fd4089509",
+      "exportedSha256": "487903c1cc16510db9684d233463e2155b9c89d1468e8e9243dec908298fcf3d",
+      "bytes": 9763,
+      "redactions": {
+        "capture-host": 1
+      }
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/PILOT-001-fault-R4-R-A-1/end-checksums.json",
+      "originalSha256": "1db9b11ca5157f5d98f9739de2f07e10ba4dd110df40a02306850fbc04946e07",
+      "exportedSha256": "1db9b11ca5157f5d98f9739de2f07e10ba4dd110df40a02306850fbc04946e07",
+      "bytes": 454,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/PILOT-001-fault-R4-R-A-1/clean-start.json",
+      "originalSha256": "2ef9a91f3f8e8a262b68b91e0f958f62e3589789e5d4ba5212803c8bd7b2397b",
+      "exportedSha256": "2ef9a91f3f8e8a262b68b91e0f958f62e3589789e5d4ba5212803c8bd7b2397b",
+      "bytes": 136,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/PILOT-001-fault-R4-R-A-1/load-exit.json",
+      "originalSha256": "6380f7ebf1263a94abaaef4f5a1323cf0f4fbc88e37d8f1792ae68f163e18807",
+      "exportedSha256": "6380f7ebf1263a94abaaef4f5a1323cf0f4fbc88e37d8f1792ae68f163e18807",
+      "bytes": 34,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/archive-checksum.json",
+      "originalSha256": "5bac598ada439642cdbfe6cbce848fe26ad1dc8d4854f90ccfef849a32372e70",
+      "exportedSha256": "5bac598ada439642cdbfe6cbce848fe26ad1dc8d4854f90ccfef849a32372e70",
+      "bytes": 83,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/experiment-summary.json",
+      "originalSha256": "04a78e160b3e2c236cf56b59dc6f3f379998081b2649721282cafc0b59d202a4",
+      "exportedSha256": "8dfbcd38e7eb9ce5278fa032b4b36de54af693d3fd5b4e744f46e58fc0529883",
+      "bytes": 2291,
+      "redactions": {
+        "<repo>": 1
+      }
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/freeze.json",
+      "originalSha256": "07af5eb7f7e5f7c76ab77992c1cb65abe93db636c381e46d27e726e0101d318e",
+      "exportedSha256": "103f15fc643ea07d199875c158ec0ce3a5ffa931e2deee3c183e9447af9c1a60",
+      "bytes": 6970,
+      "redactions": {
+        "redacted-container-id-a": 1,
+        "external-container-a": 1,
+        "redacted-container-id-b": 1,
+        "external-container-b": 1,
+        "redacted-container-id-c": 1,
+        "external-container-c": 1,
+        "capture-host": 1,
+        "redacted-docker-id": 1,
+        "pauseAndRestoreNamedExternalContainers": 1,
+        "companionContainerUnavailableDuringPilot": 1
+      }
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/frozen-compose.json",
+      "originalSha256": "8b09be8c0610efbce6e6e087a3c275d4e28afafdf41bc231d21e216a7ea532fa",
+      "exportedSha256": "8b09be8c0610efbce6e6e087a3c275d4e28afafdf41bc231d21e216a7ea532fa",
+      "bytes": 2236,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/isolation-events.jsonl",
+      "originalSha256": "6fe428e6d4278783784c7ee2afe5c83d227d4e46da60492f135db10e1fbe1480",
+      "exportedSha256": "0e783093c2c06985c7f1fe25877d5b915b707e86ddf48f8e07e960f4f74d89d2",
+      "bytes": 37771,
+      "redactions": {
+        "<repo>": 101
+      }
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/pilot-batch-001.json",
+      "originalSha256": "b13292b72e121dd3561a94a757f5c596d6ebdb1059e0b48dd63a527f19a5dfe7",
+      "exportedSha256": "b13292b72e121dd3561a94a757f5c596d6ebdb1059e0b48dd63a527f19a5dfe7",
+      "bytes": 1379,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/pilot-protocol.json",
+      "originalSha256": "c72aa1de0a6905e9912aa5d46fc933840b076aa96635a5476eadfb283945c052",
+      "exportedSha256": "c72aa1de0a6905e9912aa5d46fc933840b076aa96635a5476eadfb283945c052",
+      "bytes": 2673,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/pilot-state.json",
+      "originalSha256": "d30fb4c925d4fd6039c9d56584d32da4994d299a0ba77f89b192a5fb23ad6392",
+      "exportedSha256": "7c11b5396146f6ca9694d968480731cd20c21981d48586ca90116b5f8a533398",
+      "bytes": 27896,
+      "redactions": {
+        "redacted-container-id-a": 2,
+        "external-container-a": 2,
+        "redacted-container-id-b": 2,
+        "external-container-b": 2,
+        "redacted-container-id-c": 2,
+        "external-container-c": 2
+      }
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/prerequisite-review.json",
+      "originalSha256": "949c10c49ba62d890847a23e6499551286e063117c12da8e7287a575c7a174c5",
+      "exportedSha256": "910764cced87661877e12f86e79fc312476d7e457ab79e313583d6e353ffd0db",
+      "bytes": 15458,
+      "redactions": {
+        "the external stack": 1,
+        "<repo>": 1
+      }
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/run-index.jsonl",
+      "originalSha256": "55871b5759271b2839ca2ae6587afab76a108221193b494efcff5f02a2e4f5d0",
+      "exportedSha256": "55871b5759271b2839ca2ae6587afab76a108221193b494efcff5f02a2e4f5d0",
+      "bytes": 972,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-r4-v1/source-snapshot-application.tar.gz",
+      "originalPath": "results-exploratory-adapter-r4-v1/source-snapshot.tar.gz",
+      "originalSha256": "00aa781bd11dba42d9872a1473a9809abfaf67d5db74618b82f0d1024eff2064",
+      "exportedSha256": "515dad7ad85890c2bdcb82bf4d4f690358c7c684f454fbab6c96cd6de44bc5f0",
+      "applicationFiles": 53,
+      "droppedFiles": 110,
+      "droppedPrefixes": [
+        ".dockerignore",
+        "README.md",
+        "SOURCE_PROVENANCE.md",
+        "config",
+        "docs",
+        "scripts",
+        "src",
+        "test"
+      ]
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/PILOT-001-fault-R4-K-A-1/manifest.json",
+      "originalSha256": "1c6a17f322f60efd87fb368fdaf1b4d0e53237d7afd077dda4f5c1093d7d100e",
+      "exportedSha256": "b84f1367ed74c8ad716f5dd54339532a45d43e0bb250c06c2f991657afb6b6ff",
+      "bytes": 8375,
+      "redactions": {
+        "capture-host": 1
+      }
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/PILOT-001-fault-R4-K-A-1/run-outcomes.json",
+      "originalSha256": "cba52e81240625fdedbc71f81863d35c69b514aab1ca1671a4768e73bebaba47",
+      "exportedSha256": "cba52e81240625fdedbc71f81863d35c69b514aab1ca1671a4768e73bebaba47",
+      "bytes": 776306,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/PILOT-001-fault-R4-K-A-1/qualification.json",
+      "originalSha256": "8d31189dcd670669dcaaf418822cea3d7ddae111739e5a6cdc4bb6f014d07fa6",
+      "exportedSha256": "8d31189dcd670669dcaaf418822cea3d7ddae111739e5a6cdc4bb6f014d07fa6",
+      "bytes": 1512,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/PILOT-001-fault-R4-K-A-1/invariants.json",
+      "originalSha256": "7805eb6e515626c8f5cb09ad7b4733e258058a66e030ce100b8e8654e4c7b3f4",
+      "exportedSha256": "7805eb6e515626c8f5cb09ad7b4733e258058a66e030ce100b8e8654e4c7b3f4",
+      "bytes": 81045,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/PILOT-001-fault-R4-K-A-1/telemetry.json",
+      "originalSha256": "4c81c3469d48b67d46fa69272abaf4dfe85581f6f04eaccf81a817b47d473d4b",
+      "exportedSha256": "4c81c3469d48b67d46fa69272abaf4dfe85581f6f04eaccf81a817b47d473d4b",
+      "bytes": 741,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/PILOT-001-fault-R4-K-A-1/traces.json",
+      "originalSha256": "9152b1cf19efbcb6bbb3ebc38257d2fe8bc75e20699e7acc3980b5b1f9879194",
+      "exportedSha256": "9152b1cf19efbcb6bbb3ebc38257d2fe8bc75e20699e7acc3980b5b1f9879194",
+      "bytes": 5845883,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/PILOT-001-fault-R4-K-A-1/transfers.json",
+      "originalSha256": "341ed41d20165d039c335da3a961e6d93a5af1b56a1d4768c9663ac769655402",
+      "exportedSha256": "341ed41d20165d039c335da3a961e6d93a5af1b56a1d4768c9663ac769655402",
+      "bytes": 2472143,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/PILOT-001-fault-R4-K-A-1/controller-state.json",
+      "originalSha256": "253f844800d5b4eaa73f4d1d6f52f7dd82d88a74bc43dcb823ce936f0569553d",
+      "exportedSha256": "253f844800d5b4eaa73f4d1d6f52f7dd82d88a74bc43dcb823ce936f0569553d",
+      "bytes": 856,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/PILOT-001-fault-R4-K-A-1/measurement-clock.json",
+      "originalSha256": "c5102b06db007ba30142b970796ea3ecbb12607be85824d4357af4adad8cb048",
+      "exportedSha256": "e75ed21ab88b53f68245cf032eb8e0567c9a375e65d37ad3c97369e126db3847",
+      "bytes": 108,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/PILOT-001-fault-R4-K-A-1/fault-evidence.json",
+      "originalSha256": "4f06acfff276328aea816a40cc00314d470fcd5d726d5d11f098a91cd05a061e",
+      "exportedSha256": "4f06acfff276328aea816a40cc00314d470fcd5d726d5d11f098a91cd05a061e",
+      "bytes": 330,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/PILOT-001-fault-R4-K-A-1/client-attempts.json",
+      "originalSha256": "0f286232e8433fb26d63198ad943c688b747d6c5d978267687ad3b05cb136b02",
+      "exportedSha256": "122108184d3f7703f76f3040efbaee52846ecb0c179ad7f09331a2a203382ea7",
+      "bytes": 1064762,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/PILOT-001-fault-R4-K-A-1/measurement-summary.json",
+      "originalSha256": "6ca24a18cb1a1db29004d21f8be23973754a3a0946d914fdec90eec35fe5e9de",
+      "exportedSha256": "c21a24b0f6a6857027633939a0df2855ee71944cb0f29e7ffda1e22aa377e90a",
+      "bytes": 3812,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/PILOT-001-fault-R4-K-A-1/warmup-summary.json",
+      "originalSha256": "b1a34cca7033e14bdb1c7adde145e97f8c4e6bc5e2ca9b2be6d8c90073fdcc9f",
+      "exportedSha256": "dd537525d3dcbc6b366b69098dbaaa5c7f78b254505089a2721d7abce92a58e1",
+      "bytes": 3810,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/PILOT-001-fault-R4-K-A-1/diagnostics.json",
+      "originalSha256": "5a68fc2faaa224213536db70cb25b3a03d12ac26f0b6b68cd52edd6709b080e0",
+      "exportedSha256": "5a68fc2faaa224213536db70cb25b3a03d12ac26f0b6b68cd52edd6709b080e0",
+      "bytes": 2659959,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/PILOT-001-fault-R4-K-A-1/docker-stats.jsonl",
+      "originalSha256": "b4f8f7cc5c0cb444fd3223f1530045507d14c2fdfcf22bfd4a1f8948f052435b",
+      "exportedSha256": "b4f8f7cc5c0cb444fd3223f1530045507d14c2fdfcf22bfd4a1f8948f052435b",
+      "bytes": 3182579,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/PILOT-001-fault-R4-K-A-1/cleanup.json",
+      "originalSha256": "1767c4524d0a3b08196294b28fbe1eed059f2ac973b9b20f38e4f1707b8c7fdf",
+      "exportedSha256": "1767c4524d0a3b08196294b28fbe1eed059f2ac973b9b20f38e4f1707b8c7fdf",
+      "bytes": 136,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/PILOT-001-fault-R4-K-A-1/pilot-stability.json",
+      "originalSha256": "07ff54d04371a01424baaa3e73b48f78e4a1f6a3a2c7b47e12117c28cc1e55ed",
+      "exportedSha256": "07ff54d04371a01424baaa3e73b48f78e4a1f6a3a2c7b47e12117c28cc1e55ed",
+      "bytes": 10668,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/PILOT-001-fault-R4-K-A-1/registered-run.json",
+      "originalSha256": "6fc0daa34d146338a026c242853d637c1768e448300c697ee99c8b9bccdc2846",
+      "exportedSha256": "a0beb6a7cccc97d862a82aaf752f9715170771455c7c2845287c648eef18c574",
+      "bytes": 10301,
+      "redactions": {
+        "capture-host": 1
+      }
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/PILOT-001-fault-R4-K-A-1/end-checksums.json",
+      "originalSha256": "9e678a76287d336dd1373b5f1f5e4ca0418c76ff47ebb4c6ad0eecbd04c8dc47",
+      "exportedSha256": "9e678a76287d336dd1373b5f1f5e4ca0418c76ff47ebb4c6ad0eecbd04c8dc47",
+      "bytes": 454,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/PILOT-001-fault-R4-K-A-1/clean-start.json",
+      "originalSha256": "9c43b579612a8635b615436c711a9fece21d9e7900006576dad1060f1132a282",
+      "exportedSha256": "9c43b579612a8635b615436c711a9fece21d9e7900006576dad1060f1132a282",
+      "bytes": 136,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/PILOT-001-fault-R4-K-A-1/load-exit.json",
+      "originalSha256": "6380f7ebf1263a94abaaef4f5a1323cf0f4fbc88e37d8f1792ae68f163e18807",
+      "exportedSha256": "6380f7ebf1263a94abaaef4f5a1323cf0f4fbc88e37d8f1792ae68f163e18807",
+      "bytes": 34,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/PILOT-001-fault-R4-R-A-1/manifest.json",
+      "originalSha256": "b915d8437f98b39aea8493e4361ac42f258f8d842fc94848fd7dafc9b90a5538",
+      "exportedSha256": "6dab8208df5de543b80a972f66f2cd75fc6dee09eef36e5b8f6bdb78e2a07332",
+      "bytes": 7896,
+      "redactions": {
+        "capture-host": 1
+      }
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/PILOT-001-fault-R4-R-A-1/run-outcomes.json",
+      "originalSha256": "f303bb370bd160b42f684fe0c008b04c24c77d385a970bae252639e728d4fc72",
+      "exportedSha256": "f303bb370bd160b42f684fe0c008b04c24c77d385a970bae252639e728d4fc72",
+      "bytes": 774666,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/PILOT-001-fault-R4-R-A-1/qualification.json",
+      "originalSha256": "dd8dfca98ecef93cec960ed99260f4d05c0806d0d425091de2090ca451482e36",
+      "exportedSha256": "dd8dfca98ecef93cec960ed99260f4d05c0806d0d425091de2090ca451482e36",
+      "bytes": 1512,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/PILOT-001-fault-R4-R-A-1/invariants.json",
+      "originalSha256": "96182d9286eef45f145b21309aaaff5d116184defee138865359e76289917c66",
+      "exportedSha256": "96182d9286eef45f145b21309aaaff5d116184defee138865359e76289917c66",
+      "bytes": 81045,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/PILOT-001-fault-R4-R-A-1/telemetry.json",
+      "originalSha256": "065e52cc38f7c9c12a36c3eaaa4e1b1f0e0332ebdabf6a62398252d38a0b4f1f",
+      "exportedSha256": "065e52cc38f7c9c12a36c3eaaa4e1b1f0e0332ebdabf6a62398252d38a0b4f1f",
+      "bytes": 740,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/PILOT-001-fault-R4-R-A-1/traces.json",
+      "originalSha256": "273537533be5df03973a33908ed2e2435d88e7b9ac0dd7687cc3c39fedb22104",
+      "exportedSha256": "273537533be5df03973a33908ed2e2435d88e7b9ac0dd7687cc3c39fedb22104",
+      "bytes": 5844023,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/PILOT-001-fault-R4-R-A-1/transfers.json",
+      "originalSha256": "497e78f475cb0be0cf365077d02636193d9b811207171fae70d59da3d5728ac5",
+      "exportedSha256": "497e78f475cb0be0cf365077d02636193d9b811207171fae70d59da3d5728ac5",
+      "bytes": 2470318,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/PILOT-001-fault-R4-R-A-1/controller-state.json",
+      "originalSha256": "db0fdcdf6b756dd48479240043c0e0742e7dce34c24cee1d4c682016450df850",
+      "exportedSha256": "db0fdcdf6b756dd48479240043c0e0742e7dce34c24cee1d4c682016450df850",
+      "bytes": 856,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/PILOT-001-fault-R4-R-A-1/measurement-clock.json",
+      "originalSha256": "f8ba57afe44747aab8aaa104611a659cf96444683175fa1410700c9ce1a06fe7",
+      "exportedSha256": "511dae9ccb884aae16e9498701bf359fbb731d139284c0a1c3569e9f85d55d72",
+      "bytes": 108,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/PILOT-001-fault-R4-R-A-1/fault-evidence.json",
+      "originalSha256": "d8390bf5700a8f73bbe31d500626572add6c4a22a56d672fca3a5a999703514f",
+      "exportedSha256": "d8390bf5700a8f73bbe31d500626572add6c4a22a56d672fca3a5a999703514f",
+      "bytes": 330,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/PILOT-001-fault-R4-R-A-1/client-attempts.json",
+      "originalSha256": "bcb6eb59e458a87da3402ed37891ae8171168c05472d456402dbead1c072de42",
+      "exportedSha256": "fd31ca3043b996155f4296a76b7b1f0877ec8d493ba32672958f94e8884a0faf",
+      "bytes": 1064772,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/PILOT-001-fault-R4-R-A-1/measurement-summary.json",
+      "originalSha256": "ff5a3df7e0560eb43abecf62edbb246c91e347355c1dc2377bc1fefb1dd3c4a0",
+      "exportedSha256": "3291efe436a42b10c0de6ee5955adf717542aefced440beeb18afe47c54b9408",
+      "bytes": 3839,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/PILOT-001-fault-R4-R-A-1/warmup-summary.json",
+      "originalSha256": "aba420acf5cd8b581f22c657658233ca44791bb0379bb016f0a377671424d238",
+      "exportedSha256": "a13d1c33c295826809a77154a1c9f955a88e2a3d935acb278f5f78cc83e18e38",
+      "bytes": 3794,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/PILOT-001-fault-R4-R-A-1/diagnostics.json",
+      "originalSha256": "a9941624eb1aed76e640d0810ec34ec6d48e56fc23b38946ae8913b3ceab723b",
+      "exportedSha256": "a9941624eb1aed76e640d0810ec34ec6d48e56fc23b38946ae8913b3ceab723b",
+      "bytes": 2402242,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/PILOT-001-fault-R4-R-A-1/docker-stats.jsonl",
+      "originalSha256": "429296f817a981b4b58d6b1a62277896d9b4a3862368d2c80388909498411a1b",
+      "exportedSha256": "429296f817a981b4b58d6b1a62277896d9b4a3862368d2c80388909498411a1b",
+      "bytes": 3088733,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/PILOT-001-fault-R4-R-A-1/cleanup.json",
+      "originalSha256": "50eb3156398ae742bbd5b18ee01dbfae492df5f05ad90b2e08882422815a2195",
+      "exportedSha256": "50eb3156398ae742bbd5b18ee01dbfae492df5f05ad90b2e08882422815a2195",
+      "bytes": 136,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/PILOT-001-fault-R4-R-A-1/pilot-stability.json",
+      "originalSha256": "5f6942ab627d17d9cd2166b76823d3d28a7ce18696f91b4e93c3c522363b4b56",
+      "exportedSha256": "5f6942ab627d17d9cd2166b76823d3d28a7ce18696f91b4e93c3c522363b4b56",
+      "bytes": 10689,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/PILOT-001-fault-R4-R-A-1/registered-run.json",
+      "originalSha256": "7ee173d804e01f5514e67e557edd3b66a64a0b51155ad3ff498ac928c8f0ac7b",
+      "exportedSha256": "d63cc96d1bd88d44001d3d65b0f74c5a5d14405bc43bf347ad701f15636376f1",
+      "bytes": 9770,
+      "redactions": {
+        "capture-host": 1
+      }
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/PILOT-001-fault-R4-R-A-1/end-checksums.json",
+      "originalSha256": "9e678a76287d336dd1373b5f1f5e4ca0418c76ff47ebb4c6ad0eecbd04c8dc47",
+      "exportedSha256": "9e678a76287d336dd1373b5f1f5e4ca0418c76ff47ebb4c6ad0eecbd04c8dc47",
+      "bytes": 454,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/PILOT-001-fault-R4-R-A-1/clean-start.json",
+      "originalSha256": "438a21d0f8c0860b2dd8da1dd9e6dbd7557e663d95862b45d18568e7cbd8d900",
+      "exportedSha256": "438a21d0f8c0860b2dd8da1dd9e6dbd7557e663d95862b45d18568e7cbd8d900",
+      "bytes": 136,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/PILOT-001-fault-R4-R-A-1/load-exit.json",
+      "originalSha256": "6380f7ebf1263a94abaaef4f5a1323cf0f4fbc88e37d8f1792ae68f163e18807",
+      "exportedSha256": "6380f7ebf1263a94abaaef4f5a1323cf0f4fbc88e37d8f1792ae68f163e18807",
+      "bytes": 34,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/archive-checksum.json",
+      "originalSha256": "8af5815aab93f0d7a588545b0de59766e0c8655869ccd12f4a649d05773debd2",
+      "exportedSha256": "8af5815aab93f0d7a588545b0de59766e0c8655869ccd12f4a649d05773debd2",
+      "bytes": 83,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/experiment-summary.json",
+      "originalSha256": "b2519e80e91cf1e4fbb373d44bc4e74eccc344a746388d8e4003a781cb4f7663",
+      "exportedSha256": "cd4c28b90cdad4c387495c5f5ed03cc019c9a243cb7aaccbf87ecc92632220ba",
+      "bytes": 2296,
+      "redactions": {
+        "<repo>": 1
+      }
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/freeze.json",
+      "originalSha256": "ae57e4aa0074be86f672eae27a07a193df08c9808cb5dc8f196ac1d8bbd20281",
+      "exportedSha256": "190e80e913a912bf8084f642de9a518f51aa32c9aca4e60407ab5504e2fd625c",
+      "bytes": 6975,
+      "redactions": {
+        "redacted-container-id-a": 1,
+        "external-container-a": 1,
+        "redacted-container-id-b": 1,
+        "external-container-b": 1,
+        "redacted-container-id-c": 1,
+        "external-container-c": 1,
+        "capture-host": 1,
+        "redacted-docker-id": 1,
+        "pauseAndRestoreNamedExternalContainers": 1,
+        "companionContainerUnavailableDuringPilot": 1
+      }
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/frozen-compose.json",
+      "originalSha256": "8b09be8c0610efbce6e6e087a3c275d4e28afafdf41bc231d21e216a7ea532fa",
+      "exportedSha256": "8b09be8c0610efbce6e6e087a3c275d4e28afafdf41bc231d21e216a7ea532fa",
+      "bytes": 2236,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/isolation-events.jsonl",
+      "originalSha256": "b32d3edaa091d4cd85143b5a4cbf1aecb3e2f56c6768be4366af6fd240847501",
+      "exportedSha256": "d51c3ea00af1ddc478cb7c0cc4ea7a632b4a37c17e88cb8c1e05848587a20860",
+      "bytes": 35574,
+      "redactions": {
+        "<repo>": 95
+      }
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/pilot-batch-001.json",
+      "originalSha256": "2f6c582bdcf4859957be4a3135ed952f2a833d096e82102ff119597895615fad",
+      "exportedSha256": "2f6c582bdcf4859957be4a3135ed952f2a833d096e82102ff119597895615fad",
+      "bytes": 1384,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/pilot-protocol.json",
+      "originalSha256": "5b0ac859021fa36581ff22e22fe74e6d4af3d3bd2a2addc0411988b0ddb594bf",
+      "exportedSha256": "5b0ac859021fa36581ff22e22fe74e6d4af3d3bd2a2addc0411988b0ddb594bf",
+      "bytes": 2680,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/pilot-state.json",
+      "originalSha256": "ae4ed18a58351d98bc6da6dfe6f7292a6a078b4d05a0ab7267883ecad32c081b",
+      "exportedSha256": "063943e54c8ae307044d06fe73b80b7217cf9f84e7ab91157436f5e8eb828d8a",
+      "bytes": 27940,
+      "redactions": {
+        "redacted-container-id-a": 2,
+        "external-container-a": 2,
+        "redacted-container-id-b": 2,
+        "external-container-b": 2,
+        "redacted-container-id-c": 2,
+        "external-container-c": 2
+      }
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/prerequisite-review.json",
+      "originalSha256": "1ae5c669ee45a4aa10b8596b18ddef62b1051402fcd5a1ee67cbe4dc024d033c",
+      "exportedSha256": "816efe029a0e926f67c34609424448eb8b4ac6291adb8a6e3f1c136f885468af",
+      "bytes": 17630,
+      "redactions": {
+        "the external stack": 1,
+        "<repo>": 1
+      }
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/run-index.jsonl",
+      "originalSha256": "30dbbdf0b28dd97f63e922973b46fe7dc1d0e2eba09d6b45072d24bae143612e",
+      "exportedSha256": "30dbbdf0b28dd97f63e922973b46fe7dc1d0e2eba09d6b45072d24bae143612e",
+      "bytes": 972,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-r4-v1/source-snapshot-application.tar.gz",
+      "originalPath": "results-exploratory-database-r4-v1/source-snapshot.tar.gz",
+      "originalSha256": "96b52192b5c579ab337ec60f9460f8e94acb5c8137c12e16c45eec23b9562550",
+      "exportedSha256": "3cfb91758444eb5988675474ac6e2441b318d4fd66b00710c4e82e630026a879",
+      "applicationFiles": 53,
+      "droppedFiles": 110,
+      "droppedPrefixes": [
+        ".dockerignore",
+        "README.md",
+        "SOURCE_PROVENANCE.md",
+        "config",
+        "docs",
+        "scripts",
+        "src",
+        "test"
+      ]
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/PILOT-001-fault-R4-K-A-1/manifest.json",
+      "originalSha256": "a03eecb7a5a87fd70ed9d71b5c2f62078b0139bdcae5b3feea6ed4bb0f23164f",
+      "exportedSha256": "1a2ab41c09f903d360ceeb151050825afdf75fccb41e34108891e19e6841612b",
+      "bytes": 8511,
+      "redactions": {
+        "capture-host": 1
+      }
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/PILOT-001-fault-R4-K-A-1/run-outcomes.json",
+      "originalSha256": "19352f123b9a15a36f58b5fd6272beaf49443538167cc91164d408aea002acb6",
+      "exportedSha256": "19352f123b9a15a36f58b5fd6272beaf49443538167cc91164d408aea002acb6",
+      "bytes": 776171,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/PILOT-001-fault-R4-K-A-1/qualification.json",
+      "originalSha256": "26f7cd811c2bf8f937f7ea91734d284aee7071c70b99e5f124511b460a9858fc",
+      "exportedSha256": "26f7cd811c2bf8f937f7ea91734d284aee7071c70b99e5f124511b460a9858fc",
+      "bytes": 1512,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/PILOT-001-fault-R4-K-A-1/invariants.json",
+      "originalSha256": "c2be02876c730ce592052ac57d3dbd0fdb1d98a7dc63973d5f002fe4bbfb3807",
+      "exportedSha256": "c2be02876c730ce592052ac57d3dbd0fdb1d98a7dc63973d5f002fe4bbfb3807",
+      "bytes": 81045,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/PILOT-001-fault-R4-K-A-1/telemetry.json",
+      "originalSha256": "4aa80b65a9844c3370c8b07b687a3fc8b10a98aa6730c025bb3a1fcae6f2b26f",
+      "exportedSha256": "4aa80b65a9844c3370c8b07b687a3fc8b10a98aa6730c025bb3a1fcae6f2b26f",
+      "bytes": 741,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/PILOT-001-fault-R4-K-A-1/traces.json",
+      "originalSha256": "412d4fc683cdec7d48174a2df2bb77a1b175d6b0b87b55b7c124cdfcf0ac31f1",
+      "exportedSha256": "412d4fc683cdec7d48174a2df2bb77a1b175d6b0b87b55b7c124cdfcf0ac31f1",
+      "bytes": 5846402,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/PILOT-001-fault-R4-K-A-1/transfers.json",
+      "originalSha256": "e6aef550e139ecc5cf2eccb203c489cd0cb78bc5819a20af9b78faa5f9c6fc86",
+      "exportedSha256": "e6aef550e139ecc5cf2eccb203c489cd0cb78bc5819a20af9b78faa5f9c6fc86",
+      "bytes": 2472191,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/PILOT-001-fault-R4-K-A-1/controller-state.json",
+      "originalSha256": "a7ff551abe3b3892240563869eba626595ea336a2f04fc4cf8ac60545a4d8cd3",
+      "exportedSha256": "a7ff551abe3b3892240563869eba626595ea336a2f04fc4cf8ac60545a4d8cd3",
+      "bytes": 856,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/PILOT-001-fault-R4-K-A-1/measurement-clock.json",
+      "originalSha256": "8a3c388530d1b290d1c0eb4b3a87f578b4db3ec7ada8ca0e550a4fcd13efb689",
+      "exportedSha256": "1d710e7b545351a92f9b5abccbd7e86b9475f82434543c2014b9bb9c4f1f7f44",
+      "bytes": 108,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/PILOT-001-fault-R4-K-A-1/fault-evidence.json",
+      "originalSha256": "b28f9a13689faa83c5ffedaba5e3e02bb617170e8cbff2219234f1d640ad85a7",
+      "exportedSha256": "b28f9a13689faa83c5ffedaba5e3e02bb617170e8cbff2219234f1d640ad85a7",
+      "bytes": 336,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/PILOT-001-fault-R4-K-A-1/adapter-fault-timing.json",
+      "originalSha256": "2cd9ccd0f4a6b593c9eea1ed91e4a98e1e70d31ddcb91ceefa14f70b8bd07010",
+      "exportedSha256": "9f66cd79f6856b9ec9a75375ce40b57d2e9ffe0848e1552462c6b61727b7fa7a",
+      "bytes": 200,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/PILOT-001-fault-R4-K-A-1/client-attempts.json",
+      "originalSha256": "6331eef452e242d51c669f8487d350ac1b789d7eaae78f01efaaacdf1597ebcf",
+      "exportedSha256": "0b31260fba9d08732434794ea5f8b9fbbdaeb69232a6311c057b83e0db025e6a",
+      "bytes": 1064764,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/PILOT-001-fault-R4-K-A-1/measurement-summary.json",
+      "originalSha256": "3cb26aa70734bc742236050c4205a479ecb0bcebe31c1ca6cb95e3beb346d8f0",
+      "exportedSha256": "c0641ad5b6fb155e86afec438dc8303549f9ef51d0c010cb03c8ecb1e1ae421c",
+      "bytes": 3835,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/PILOT-001-fault-R4-K-A-1/warmup-summary.json",
+      "originalSha256": "66ce3dbdfd94da740d786ffc4c759e2b1ea8b8c608800efe8235acdaa93ed7f2",
+      "exportedSha256": "30795e06d312a9507c6acdbdfdb2db93c096d9f2a5820297ef44885e43a1b0e8",
+      "bytes": 3740,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/PILOT-001-fault-R4-K-A-1/diagnostics.json",
+      "originalSha256": "54e5b572279fb544625b24b4e5ed05e5837843c4776c36666b8ab07af0c59986",
+      "exportedSha256": "54e5b572279fb544625b24b4e5ed05e5837843c4776c36666b8ab07af0c59986",
+      "bytes": 960637,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/PILOT-001-fault-R4-K-A-1/docker-stats.jsonl",
+      "originalSha256": "c6ce801be9c3105dd195265f73807020a818e523777f577dfc3cc0f3ec41c1a6",
+      "exportedSha256": "c6ce801be9c3105dd195265f73807020a818e523777f577dfc3cc0f3ec41c1a6",
+      "bytes": 3181173,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/PILOT-001-fault-R4-K-A-1/cleanup.json",
+      "originalSha256": "dd2a14f96c54e4aeb405f1c47d60808770ecd5a039bfa33a190290040d11ea71",
+      "exportedSha256": "dd2a14f96c54e4aeb405f1c47d60808770ecd5a039bfa33a190290040d11ea71",
+      "bytes": 136,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/PILOT-001-fault-R4-K-A-1/pilot-stability.json",
+      "originalSha256": "c1d0840fd61cb251620f0be7d05d7e5a390f8b544c314dcbc06d1939536dc25f",
+      "exportedSha256": "c1d0840fd61cb251620f0be7d05d7e5a390f8b544c314dcbc06d1939536dc25f",
+      "bytes": 10687,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/PILOT-001-fault-R4-K-A-1/registered-run.json",
+      "originalSha256": "4af68666deff6b7267c4f16e096d2b7e3a110279eeba5e6f89e09ee797081e1f",
+      "exportedSha256": "f5cff586177087f5e1d0dbfddbc90ae2d6dfcb4763503b7d3d8b9ef398c6d5f1",
+      "bytes": 10439,
+      "redactions": {
+        "capture-host": 1
+      }
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/PILOT-001-fault-R4-K-A-1/end-checksums.json",
+      "originalSha256": "6f293d9a36ac0564a13dea3ccabb904edf942427b24b133f47f58e69fdf7dbb1",
+      "exportedSha256": "6f293d9a36ac0564a13dea3ccabb904edf942427b24b133f47f58e69fdf7dbb1",
+      "bytes": 454,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/PILOT-001-fault-R4-K-A-1/clean-start.json",
+      "originalSha256": "bae499710d21ff72bcbccf7b58b45737dadb2b61c186f55eda856839720bb2c8",
+      "exportedSha256": "bae499710d21ff72bcbccf7b58b45737dadb2b61c186f55eda856839720bb2c8",
+      "bytes": 136,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/PILOT-001-fault-R4-K-A-1/load-exit.json",
+      "originalSha256": "6380f7ebf1263a94abaaef4f5a1323cf0f4fbc88e37d8f1792ae68f163e18807",
+      "exportedSha256": "6380f7ebf1263a94abaaef4f5a1323cf0f4fbc88e37d8f1792ae68f163e18807",
+      "bytes": 34,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/PILOT-001-fault-R4-R-A-1/manifest.json",
+      "originalSha256": "7493f897e68bce75449c774e120453673aa6d4240b90d6e50e29a19c7eba6c70",
+      "exportedSha256": "0e744b726f4fa6d92b710a9de40e519096ed2d9dafaff520c39f130e9dde3eec",
+      "bytes": 8034,
+      "redactions": {
+        "capture-host": 1
+      }
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/PILOT-001-fault-R4-R-A-1/run-outcomes.json",
+      "originalSha256": "1c9d3351340a903b97a343691acf6cd9b631b548a9f81064497dfc872f219145",
+      "exportedSha256": "1c9d3351340a903b97a343691acf6cd9b631b548a9f81064497dfc872f219145",
+      "bytes": 774390,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/PILOT-001-fault-R4-R-A-1/qualification.json",
+      "originalSha256": "81c0cc584e0f5c2c39a591293d02323fb70be6cd947d1f6d840ea75ff58fed13",
+      "exportedSha256": "81c0cc584e0f5c2c39a591293d02323fb70be6cd947d1f6d840ea75ff58fed13",
+      "bytes": 1512,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/PILOT-001-fault-R4-R-A-1/invariants.json",
+      "originalSha256": "ed25674bbe13b6529c1dd7ec6ba0b62a9476ae6f13608a07921ee19f11f78c4c",
+      "exportedSha256": "ed25674bbe13b6529c1dd7ec6ba0b62a9476ae6f13608a07921ee19f11f78c4c",
+      "bytes": 81045,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/PILOT-001-fault-R4-R-A-1/telemetry.json",
+      "originalSha256": "b727f3cac707bae00f4769e7fef0f4d1a1ea5a10bc972c5179d5bad4645ee367",
+      "exportedSha256": "b727f3cac707bae00f4769e7fef0f4d1a1ea5a10bc972c5179d5bad4645ee367",
+      "bytes": 739,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/PILOT-001-fault-R4-R-A-1/traces.json",
+      "originalSha256": "d85873d6751abf7878fed4d03b84140a22d185159fba14e7a1bfec3a786b0601",
+      "exportedSha256": "d85873d6751abf7878fed4d03b84140a22d185159fba14e7a1bfec3a786b0601",
+      "bytes": 5854220,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/PILOT-001-fault-R4-R-A-1/transfers.json",
+      "originalSha256": "3e2a194e34b696c30f22db81ee691e3090a57115328d76ea9529f7c97e38dc86",
+      "exportedSha256": "3e2a194e34b696c30f22db81ee691e3090a57115328d76ea9529f7c97e38dc86",
+      "bytes": 2470366,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/PILOT-001-fault-R4-R-A-1/controller-state.json",
+      "originalSha256": "357102bb567bf5ff0336d19165d0f855ec5f2181dc5ddc4b3fc18f0434cad7d0",
+      "exportedSha256": "357102bb567bf5ff0336d19165d0f855ec5f2181dc5ddc4b3fc18f0434cad7d0",
+      "bytes": 856,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/PILOT-001-fault-R4-R-A-1/measurement-clock.json",
+      "originalSha256": "74d869cf3c931976df76df7b6e57edb9c81799acafbb095904f153b75e12e919",
+      "exportedSha256": "e7ce63c0aa76a773692330899202e088fef4356e822ee2534fe750d57a79e4cd",
+      "bytes": 108,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/PILOT-001-fault-R4-R-A-1/fault-evidence.json",
+      "originalSha256": "e37b398321bf2a954bb9a2885712ee7b8d1ab83d2e30a3be382eb62e297ae645",
+      "exportedSha256": "e37b398321bf2a954bb9a2885712ee7b8d1ab83d2e30a3be382eb62e297ae645",
+      "bytes": 336,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/PILOT-001-fault-R4-R-A-1/adapter-fault-timing.json",
+      "originalSha256": "0f08c22e286e94dbe65a31136e62ef35877e6e1d32a681264a5f6b3aea1fec33",
+      "exportedSha256": "60e82e6f824e7eb1f195640ecafcfded40191f50b1c81e8d140443af95018c51",
+      "bytes": 200,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/PILOT-001-fault-R4-R-A-1/client-attempts.json",
+      "originalSha256": "2c32aa65496e2a9bce86eabcecdda1936927e738f57f31bfb5e020cdead4917e",
+      "exportedSha256": "283a020c6d9c8118c8910890f858e486648d42458fea771335542bcb081b107c",
+      "bytes": 1064756,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/PILOT-001-fault-R4-R-A-1/measurement-summary.json",
+      "originalSha256": "f002743064bcbabaa3e95a6d5d1b72d9755d3dfbcd211ea4b96e773d5ab0417e",
+      "exportedSha256": "c2993d138d5acb8f9606327f02ad7eced9e17d0ebfbf21a0fd72cdd1670171c6",
+      "bytes": 3804,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/PILOT-001-fault-R4-R-A-1/warmup-summary.json",
+      "originalSha256": "29c765e4cd229700d9f698fcf5b195ac03cde95c5a819bd2df2c0d29b0980a87",
+      "exportedSha256": "d7c8f181d3fc26e2e6ab7ed11909bf65e2bbe967a17ec0a90e54eabbc5203abc",
+      "bytes": 3722,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/PILOT-001-fault-R4-R-A-1/diagnostics.json",
+      "originalSha256": "72a022caba29658f73f0b49a34dddcab299e9c093773ff0474ed160425f4f768",
+      "exportedSha256": "72a022caba29658f73f0b49a34dddcab299e9c093773ff0474ed160425f4f768",
+      "bytes": 957289,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/PILOT-001-fault-R4-R-A-1/docker-stats.jsonl",
+      "originalSha256": "d4c5e4265fcefa1da834674bed0cd63eb9d6fcc5ccdd07a11299905c531cbc5a",
+      "exportedSha256": "d4c5e4265fcefa1da834674bed0cd63eb9d6fcc5ccdd07a11299905c531cbc5a",
+      "bytes": 3087323,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/PILOT-001-fault-R4-R-A-1/cleanup.json",
+      "originalSha256": "f9f415245cfedc5db2b6570b1a160ac3171e870fcec3bf328c621d38a354d53a",
+      "exportedSha256": "f9f415245cfedc5db2b6570b1a160ac3171e870fcec3bf328c621d38a354d53a",
+      "bytes": 136,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/PILOT-001-fault-R4-R-A-1/pilot-stability.json",
+      "originalSha256": "b4c8f3c88673cf0ba15b0c893ddd3837b396afb18bae227250100f3f1e20d6c3",
+      "exportedSha256": "b4c8f3c88673cf0ba15b0c893ddd3837b396afb18bae227250100f3f1e20d6c3",
+      "bytes": 10653,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/PILOT-001-fault-R4-R-A-1/registered-run.json",
+      "originalSha256": "70e4496d453ce917dd4c96bea6092a887074ebbeba7a5ca24d3f97f97ff21821",
+      "exportedSha256": "1b25ab62b468470f8c3c58bb26a3a9985742161643c62762ab788b64f7d62b27",
+      "bytes": 9910,
+      "redactions": {
+        "capture-host": 1
+      }
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/PILOT-001-fault-R4-R-A-1/end-checksums.json",
+      "originalSha256": "6f293d9a36ac0564a13dea3ccabb904edf942427b24b133f47f58e69fdf7dbb1",
+      "exportedSha256": "6f293d9a36ac0564a13dea3ccabb904edf942427b24b133f47f58e69fdf7dbb1",
+      "bytes": 454,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/PILOT-001-fault-R4-R-A-1/clean-start.json",
+      "originalSha256": "2f5e60869c6bc530ccb6930748073c5e4ec53b8dfb130f50674bf7f3579e3eec",
+      "exportedSha256": "2f5e60869c6bc530ccb6930748073c5e4ec53b8dfb130f50674bf7f3579e3eec",
+      "bytes": 136,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/PILOT-001-fault-R4-R-A-1/load-exit.json",
+      "originalSha256": "6380f7ebf1263a94abaaef4f5a1323cf0f4fbc88e37d8f1792ae68f163e18807",
+      "exportedSha256": "6380f7ebf1263a94abaaef4f5a1323cf0f4fbc88e37d8f1792ae68f163e18807",
+      "bytes": 34,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/archive-checksum.json",
+      "originalSha256": "9fb4bf1bdbabd9d08ac6065674788c384d8bb8c0cc738d5ebd7baf66cddebd77",
+      "exportedSha256": "9fb4bf1bdbabd9d08ac6065674788c384d8bb8c0cc738d5ebd7baf66cddebd77",
+      "bytes": 83,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/experiment-summary.json",
+      "originalSha256": "93707fa345d95072a762d87cd25894e5743e8ca249f918e3193a66ecda1d3253",
+      "exportedSha256": "f8bf6b1da1927620a9e6ab525d88b9b30726d6da8d73715e1f7fccde4e79ca7a",
+      "bytes": 2292,
+      "redactions": {
+        "<repo>": 1
+      }
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/freeze.json",
+      "originalSha256": "76d3e6172b380e41580dcbd07eebc805b73dfc936d349a1b0e566dec59d39ded",
+      "exportedSha256": "bb35595ae41196786207218ba841ce9c44fe4d58dd34f2d01f43530dba604f74",
+      "bytes": 6974,
+      "redactions": {
+        "redacted-container-id-a": 1,
+        "external-container-a": 1,
+        "redacted-container-id-b": 1,
+        "external-container-b": 1,
+        "redacted-container-id-c": 1,
+        "external-container-c": 1,
+        "capture-host": 1,
+        "redacted-docker-id": 1,
+        "pauseAndRestoreNamedExternalContainers": 1,
+        "companionContainerUnavailableDuringPilot": 1
+      }
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/frozen-compose.json",
+      "originalSha256": "2559c4dfefeec97729ff511ed5457612d53a19e7229ce025fbe2f9f4e7b136b9",
+      "exportedSha256": "2559c4dfefeec97729ff511ed5457612d53a19e7229ce025fbe2f9f4e7b136b9",
+      "bytes": 2236,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/isolation-events.jsonl",
+      "originalSha256": "48d620b2316415ff062f93f441220b778f2274e4c89e68afbb7c0d3a4d571bff",
+      "exportedSha256": "733cd03673657c9724613f67edee54bac5d69456a61931c3c7a5522e7bde3803",
+      "bytes": 37771,
+      "redactions": {
+        "<repo>": 101
+      }
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/pilot-batch-001.json",
+      "originalSha256": "9f339d85e19a8a60d25f6fc95cc0622a677194a38b795e561247777d1f8670be",
+      "exportedSha256": "9f339d85e19a8a60d25f6fc95cc0622a677194a38b795e561247777d1f8670be",
+      "bytes": 1379,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/pilot-protocol.json",
+      "originalSha256": "cdff98db0e285efb0395cf6222df0f5eb72e758c1ff5feef831c543ed19a157d",
+      "exportedSha256": "cdff98db0e285efb0395cf6222df0f5eb72e758c1ff5feef831c543ed19a157d",
+      "bytes": 2677,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/pilot-state.json",
+      "originalSha256": "d3eb75c3af63814c8dbc9fb3d2fe0bd488c84b878272aa2d7098532edbd282e2",
+      "exportedSha256": "01ffdcedc5f2738d73f9094ccaafb8347b87ceb91cafe98cef8249c24941ee84",
+      "bytes": 27918,
+      "redactions": {
+        "redacted-container-id-a": 2,
+        "external-container-a": 2,
+        "redacted-container-id-b": 2,
+        "external-container-b": 2,
+        "redacted-container-id-c": 2,
+        "external-container-c": 2
+      }
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/prerequisite-review.json",
+      "originalSha256": "3c3274b407b6b054f017e0bd40857331bb293978f8eae125ae9e82a221244fde",
+      "exportedSha256": "42565012d301d66442004256bb14023abd10cc04fc9eaeefcb5a0ff41ac789a7",
+      "bytes": 17118,
+      "redactions": {
+        "<repo>": 1
+      }
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/run-index.jsonl",
+      "originalSha256": "085f98a06f7318e584818aafc8215d7b7ee980a96e52c1adf2719bece6b91712",
+      "exportedSha256": "085f98a06f7318e584818aafc8215d7b7ee980a96e52c1adf2719bece6b91712",
+      "bytes": 972,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-adapter-k4-v1/source-snapshot-application.tar.gz",
+      "originalPath": "results-exploratory-adapter-k4-v1/source-snapshot.tar.gz",
+      "originalSha256": "d22fb300a0366ade878b84762bdee6edbf7d2c3a7c42d0ed9117d3a675b01c15",
+      "exportedSha256": "259af02283677add4771a851fe5101c42fdd8fc1c458294bf3dface186fb5a5a",
+      "applicationFiles": 53,
+      "droppedFiles": 123,
+      "droppedPrefixes": [
+        ".dockerignore",
+        "README.md",
+        "SOURCE_PROVENANCE.md",
+        "config",
+        "docs",
+        "scripts",
+        "src",
+        "test"
+      ]
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/PILOT-001-fault-R4-K-A-1/manifest.json",
+      "originalSha256": "88fb5dadab29f2690d7697a3eebbf24008726e13919389f5c93216a236c3be76",
+      "exportedSha256": "a7d51cc65ad6a86a5dce501b7234e2e0b43bdf4c5cbdcc7d9f71a826fd377dae",
+      "bytes": 8617,
+      "redactions": {
+        "capture-host": 1
+      }
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/PILOT-001-fault-R4-K-A-1/run-outcomes.json",
+      "originalSha256": "f232f6f934d320eae3eb98e8ef270766c6b23f5750bcb92d03c572100b7ab58c",
+      "exportedSha256": "f232f6f934d320eae3eb98e8ef270766c6b23f5750bcb92d03c572100b7ab58c",
+      "bytes": 776304,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/PILOT-001-fault-R4-K-A-1/qualification.json",
+      "originalSha256": "e36f74eefe41d415a43502c17079054e00737059910927973b4d8132d6e2fdf9",
+      "exportedSha256": "e36f74eefe41d415a43502c17079054e00737059910927973b4d8132d6e2fdf9",
+      "bytes": 1512,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/PILOT-001-fault-R4-K-A-1/invariants.json",
+      "originalSha256": "9feb5ca40dae095ab710685cf930f86cc2fcec0c3456cce5150c52805b0bdd86",
+      "exportedSha256": "9feb5ca40dae095ab710685cf930f86cc2fcec0c3456cce5150c52805b0bdd86",
+      "bytes": 81045,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/PILOT-001-fault-R4-K-A-1/telemetry.json",
+      "originalSha256": "abfce260578875a2d6c807f179c2cad95bb652780fac78ff26ce84d622515699",
+      "exportedSha256": "abfce260578875a2d6c807f179c2cad95bb652780fac78ff26ce84d622515699",
+      "bytes": 740,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/PILOT-001-fault-R4-K-A-1/traces.json",
+      "originalSha256": "738211488fab9163d70f5341484a163677bb13b73f801af1eeb50fde07d7fe74",
+      "exportedSha256": "738211488fab9163d70f5341484a163677bb13b73f801af1eeb50fde07d7fe74",
+      "bytes": 5843279,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/PILOT-001-fault-R4-K-A-1/transfers.json",
+      "originalSha256": "e73b9641701b2b43452859c102fa6b5d57200d1a103d2f6a1efdcf0cd40e5e53",
+      "exportedSha256": "e73b9641701b2b43452859c102fa6b5d57200d1a103d2f6a1efdcf0cd40e5e53",
+      "bytes": 2472191,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/PILOT-001-fault-R4-K-A-1/controller-state.json",
+      "originalSha256": "66064caee87206bdde631991c12d310bc4c501c0bbe04006049085f47b501fbb",
+      "exportedSha256": "66064caee87206bdde631991c12d310bc4c501c0bbe04006049085f47b501fbb",
+      "bytes": 856,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/PILOT-001-fault-R4-K-A-1/measurement-clock.json",
+      "originalSha256": "ad9e07218cc40df8061e81b9ceded3019847f30abee1efac12a2870f0ec165e3",
+      "exportedSha256": "fe6d26bbcd9aa0ae81a90e03d202f7f4ec2adc9c20a6e37ab7bb0b69b687594a",
+      "bytes": 108,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/PILOT-001-fault-R4-K-A-1/fault-evidence.json",
+      "originalSha256": "228f64bb0790c094e9ae100134993f553ba7d37084138a16881eb5b82e0e50fb",
+      "exportedSha256": "228f64bb0790c094e9ae100134993f553ba7d37084138a16881eb5b82e0e50fb",
+      "bytes": 330,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/PILOT-001-fault-R4-K-A-1/client-attempts.json",
+      "originalSha256": "b4b3ea5e1ca672d8867c87d17ed77f60571a1e3431772ed9cfc943df40e61de4",
+      "exportedSha256": "14157e376cf2b0c410ae226ebc4b40154b6779d7db00fb99741c3a1e88d0c962",
+      "bytes": 1064779,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/PILOT-001-fault-R4-K-A-1/measurement-summary.json",
+      "originalSha256": "90310afc14eb0eb77601e8ef8634b03f8e18b065ba988d2230b3326118e84847",
+      "exportedSha256": "0cd4e4154bdbe7ddab6d38ddc7e15802af6bfe17fe6e0675476f17d138020208",
+      "bytes": 3829,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/PILOT-001-fault-R4-K-A-1/warmup-summary.json",
+      "originalSha256": "18df4bb67781733548952a6de13ae553296ae672b2300873e5153e9e9e0ded8c",
+      "exportedSha256": "0802d8e364d6afcbcad4b783a72202036750bbf8d01def679e5f0ed32ee6ed76",
+      "bytes": 3756,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/PILOT-001-fault-R4-K-A-1/diagnostics.json",
+      "originalSha256": "9a0a9805cd50666a89541dc1a107759af6717b44e70bbea0b087f8d3b23fb28b",
+      "exportedSha256": "9a0a9805cd50666a89541dc1a107759af6717b44e70bbea0b087f8d3b23fb28b",
+      "bytes": 2539861,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/PILOT-001-fault-R4-K-A-1/docker-stats.jsonl",
+      "originalSha256": "2f385fbc1b8c912895935903a6437c9833e155a598c554171b6d9c674ca93891",
+      "exportedSha256": "2f385fbc1b8c912895935903a6437c9833e155a598c554171b6d9c674ca93891",
+      "bytes": 3186220,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/PILOT-001-fault-R4-K-A-1/cleanup.json",
+      "originalSha256": "00136e3ce36057e345624191a0e23c7d3cef166fdfd8f96dec65ad203ad6b51d",
+      "exportedSha256": "00136e3ce36057e345624191a0e23c7d3cef166fdfd8f96dec65ad203ad6b51d",
+      "bytes": 136,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/PILOT-001-fault-R4-K-A-1/pilot-stability.json",
+      "originalSha256": "23c7ecf1475ee5577adf8aa841f4254fc9d71f40a58f44f0a378d45cfc34c489",
+      "exportedSha256": "23c7ecf1475ee5577adf8aa841f4254fc9d71f40a58f44f0a378d45cfc34c489",
+      "bytes": 10666,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/PILOT-001-fault-R4-K-A-1/registered-run.json",
+      "originalSha256": "92e5f48e88acb6824e898be69201599df2a13c86d2080bb1c3d5c8c3e69ae5dc",
+      "exportedSha256": "6d1906bb3a3ba2d3739497d3568a320bbe225a8050b5397db228769656f65bc9",
+      "bytes": 10553,
+      "redactions": {
+        "capture-host": 1
+      }
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/PILOT-001-fault-R4-K-A-1/end-checksums.json",
+      "originalSha256": "f3a3ef62a45bd279788a717ca2c8b8c0d03c89e4c43e12e9dcc29e750a618e5e",
+      "exportedSha256": "f3a3ef62a45bd279788a717ca2c8b8c0d03c89e4c43e12e9dcc29e750a618e5e",
+      "bytes": 454,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/PILOT-001-fault-R4-K-A-1/clean-start.json",
+      "originalSha256": "22a64459d0cfe2a523ff281a8becf6a9f00ac78b5e9fcb4746ad5f5aed4e2657",
+      "exportedSha256": "22a64459d0cfe2a523ff281a8becf6a9f00ac78b5e9fcb4746ad5f5aed4e2657",
+      "bytes": 136,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/PILOT-001-fault-R4-K-A-1/load-exit.json",
+      "originalSha256": "6380f7ebf1263a94abaaef4f5a1323cf0f4fbc88e37d8f1792ae68f163e18807",
+      "exportedSha256": "6380f7ebf1263a94abaaef4f5a1323cf0f4fbc88e37d8f1792ae68f163e18807",
+      "bytes": 34,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/PILOT-001-fault-R4-R-A-1/manifest.json",
+      "originalSha256": "3e0c8b754c20046f8a1b6c4789a962188a9051ee22a501ce12afac4022f3d784",
+      "exportedSha256": "dd5c5ee51a9d1d43fc7c3afb8aab5d939027c1bb9663b7be28381d701f96c07a",
+      "bytes": 8140,
+      "redactions": {
+        "capture-host": 1
+      }
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/PILOT-001-fault-R4-R-A-1/run-outcomes.json",
+      "originalSha256": "b3139c39f512568caf83b306afe129078686286a2af188b11b057e458bb4830b",
+      "exportedSha256": "b3139c39f512568caf83b306afe129078686286a2af188b11b057e458bb4830b",
+      "bytes": 774596,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/PILOT-001-fault-R4-R-A-1/qualification.json",
+      "originalSha256": "697762fe5ae052b5585d1ebe5adc7c72ce8f8cfc7131da9106e90b6230dc5acd",
+      "exportedSha256": "697762fe5ae052b5585d1ebe5adc7c72ce8f8cfc7131da9106e90b6230dc5acd",
+      "bytes": 1512,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/PILOT-001-fault-R4-R-A-1/invariants.json",
+      "originalSha256": "e0827e4abca5def323345f3481a9df22230806ef48cb700a9d5385712ccdceb3",
+      "exportedSha256": "e0827e4abca5def323345f3481a9df22230806ef48cb700a9d5385712ccdceb3",
+      "bytes": 81045,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/PILOT-001-fault-R4-R-A-1/telemetry.json",
+      "originalSha256": "040adb4acb2ee1c3329ef69fba68fc3d729f46484e05ba98859c7d38c4138316",
+      "exportedSha256": "040adb4acb2ee1c3329ef69fba68fc3d729f46484e05ba98859c7d38c4138316",
+      "bytes": 742,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/PILOT-001-fault-R4-R-A-1/traces.json",
+      "originalSha256": "891f753686ef2c8bab1a9c7649a26c03c3c06cc363b51639c4cefaaf9b8c8165",
+      "exportedSha256": "891f753686ef2c8bab1a9c7649a26c03c3c06cc363b51639c4cefaaf9b8c8165",
+      "bytes": 5843279,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/PILOT-001-fault-R4-R-A-1/transfers.json",
+      "originalSha256": "ff1414ca093fc96f5a21a81991421fe74d659a66f594ca1d0b6cc43834977ba8",
+      "exportedSha256": "ff1414ca093fc96f5a21a81991421fe74d659a66f594ca1d0b6cc43834977ba8",
+      "bytes": 2470366,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/PILOT-001-fault-R4-R-A-1/controller-state.json",
+      "originalSha256": "1f54c285e41b236b42d40ce6725926ba96ed4ad5d6198cf8a57b6ab11a2dd17e",
+      "exportedSha256": "1f54c285e41b236b42d40ce6725926ba96ed4ad5d6198cf8a57b6ab11a2dd17e",
+      "bytes": 856,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/PILOT-001-fault-R4-R-A-1/measurement-clock.json",
+      "originalSha256": "cba62ff3f6253396a525d8c077f6f538b4101e41d157987d3fd72b117e635d4d",
+      "exportedSha256": "dd6bd541b8f308143a03735446940c670470b9302dcdb518a17ea80d0e3226f0",
+      "bytes": 108,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/PILOT-001-fault-R4-R-A-1/fault-evidence.json",
+      "originalSha256": "ebd564c8cdb9cabd5716a763404df47055064b2659a3110a84da6deb14bd3fa1",
+      "exportedSha256": "ebd564c8cdb9cabd5716a763404df47055064b2659a3110a84da6deb14bd3fa1",
+      "bytes": 330,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/PILOT-001-fault-R4-R-A-1/client-attempts.json",
+      "originalSha256": "4239a7446af1aac10cec4c119b6d3b2b7a6005607021a82ef551694f1a78aae2",
+      "exportedSha256": "0c2306883b971f53bd3b1a80f1bb50fe32cc468144c0da9c39d3f08d1a67210d",
+      "bytes": 1064733,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/PILOT-001-fault-R4-R-A-1/measurement-summary.json",
+      "originalSha256": "31ac58a44feecd0707c1d11674cad478de268f4493ad83aa92192097ca90e290",
+      "exportedSha256": "5b1f4c47fdbaa2f2c0993bb7bf13eace45e16cdbddd035b08d7e4997b751ec15",
+      "bytes": 3833,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/PILOT-001-fault-R4-R-A-1/warmup-summary.json",
+      "originalSha256": "3a5d84e7f0e4984be0c00e233865a39054d698d499531ae924476b1ea3925859",
+      "exportedSha256": "a80caec9357d17e6e8564492f45511096d2e37b5f714bb382ccc4aee6f3d7095",
+      "bytes": 3812,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/PILOT-001-fault-R4-R-A-1/diagnostics.json",
+      "originalSha256": "d6fc6e6cf9008b161ef3a8a20a71e18b1a615b536abb36fc61f86d472da83818",
+      "exportedSha256": "d6fc6e6cf9008b161ef3a8a20a71e18b1a615b536abb36fc61f86d472da83818",
+      "bytes": 2407229,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/PILOT-001-fault-R4-R-A-1/docker-stats.jsonl",
+      "originalSha256": "ac8262f0fb515fd93f44958cb27326429cbafa4ef575dca2f0d9c69000471127",
+      "exportedSha256": "ac8262f0fb515fd93f44958cb27326429cbafa4ef575dca2f0d9c69000471127",
+      "bytes": 3093612,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/PILOT-001-fault-R4-R-A-1/cleanup.json",
+      "originalSha256": "1f42d0d7676b616705ce2b93a5f1a10cc86b57e34237939bf8db3a511880dfcf",
+      "exportedSha256": "1f42d0d7676b616705ce2b93a5f1a10cc86b57e34237939bf8db3a511880dfcf",
+      "bytes": 136,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/PILOT-001-fault-R4-R-A-1/pilot-stability.json",
+      "originalSha256": "582d51fa1eef6040dfed3dbe9dace4fb7b7acd6f5ae52508818c18335ad68d20",
+      "exportedSha256": "582d51fa1eef6040dfed3dbe9dace4fb7b7acd6f5ae52508818c18335ad68d20",
+      "bytes": 10627,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/PILOT-001-fault-R4-R-A-1/registered-run.json",
+      "originalSha256": "70f5e2cf88a327a30512787357778728a0d3e4a8d67843df57dd574615c8d13a",
+      "exportedSha256": "bc7f5700382d738ae3a1e45a7e90b6769c2b92c1afb94544f6d8c4f7e3c03d02",
+      "bytes": 10024,
+      "redactions": {
+        "capture-host": 1
+      }
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/PILOT-001-fault-R4-R-A-1/end-checksums.json",
+      "originalSha256": "f3a3ef62a45bd279788a717ca2c8b8c0d03c89e4c43e12e9dcc29e750a618e5e",
+      "exportedSha256": "f3a3ef62a45bd279788a717ca2c8b8c0d03c89e4c43e12e9dcc29e750a618e5e",
+      "bytes": 454,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/PILOT-001-fault-R4-R-A-1/clean-start.json",
+      "originalSha256": "1dc6cf4736c221bc711407ffa5af44fe0f785d73a2fc508fdcd9db35dfef3df0",
+      "exportedSha256": "1dc6cf4736c221bc711407ffa5af44fe0f785d73a2fc508fdcd9db35dfef3df0",
+      "bytes": 136,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/PILOT-001-fault-R4-R-A-1/load-exit.json",
+      "originalSha256": "6380f7ebf1263a94abaaef4f5a1323cf0f4fbc88e37d8f1792ae68f163e18807",
+      "exportedSha256": "6380f7ebf1263a94abaaef4f5a1323cf0f4fbc88e37d8f1792ae68f163e18807",
+      "bytes": 34,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/archive-checksum.json",
+      "originalSha256": "09465bb1537fc59eeb25c58a7036b94812740bf579722998578309e982872a8b",
+      "exportedSha256": "09465bb1537fc59eeb25c58a7036b94812740bf579722998578309e982872a8b",
+      "bytes": 83,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/experiment-summary.json",
+      "originalSha256": "2e7779723ae2fd856d02a54789569d01334e9efcc12cd9a56b7efee89fb8d815",
+      "exportedSha256": "09b672b5426ed27caca03901e9a9d6430b92a14e1f2f59d65970fcc65bbc5b19",
+      "bytes": 2286,
+      "redactions": {
+        "<repo>": 1
+      }
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/freeze.json",
+      "originalSha256": "81189b7dc175bddc540a9d33c688ec3567aaabc77b173ffb364a2bc7e37f089a",
+      "exportedSha256": "3bc2aad2e733d2db8393f71d427d607aab4772086492c5d6074ac82d82776510",
+      "bytes": 6975,
+      "redactions": {
+        "redacted-container-id-a": 1,
+        "external-container-a": 1,
+        "redacted-container-id-b": 1,
+        "external-container-b": 1,
+        "redacted-container-id-c": 1,
+        "external-container-c": 1,
+        "capture-host": 1,
+        "redacted-docker-id": 1,
+        "pauseAndRestoreNamedExternalContainers": 1,
+        "companionContainerUnavailableDuringPilot": 1
+      }
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/frozen-compose.json",
+      "originalSha256": "2559c4dfefeec97729ff511ed5457612d53a19e7229ce025fbe2f9f4e7b136b9",
+      "exportedSha256": "2559c4dfefeec97729ff511ed5457612d53a19e7229ce025fbe2f9f4e7b136b9",
+      "bytes": 2236,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/isolation-events.jsonl",
+      "originalSha256": "186dc067ff11060c6100259cc87e9d72d55f08592f814d66cbab08a0b44f9406",
+      "exportedSha256": "4ece397dff6c2ff7844b469d814260e33e2131c0ee5932495f5824ca8695badb",
+      "bytes": 35574,
+      "redactions": {
+        "<repo>": 95
+      }
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/pilot-batch-001.json",
+      "originalSha256": "2ec95b5adade726b5afae47db22d4abdf8de7d7172540e23df85df8853e5b90c",
+      "exportedSha256": "2ec95b5adade726b5afae47db22d4abdf8de7d7172540e23df85df8853e5b90c",
+      "bytes": 1384,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/pilot-protocol.json",
+      "originalSha256": "aecbf38cf4b9ada7b68b1a1b2495f4a5d7c450f946a515cbc5063e11b47b4f79",
+      "exportedSha256": "aecbf38cf4b9ada7b68b1a1b2495f4a5d7c450f946a515cbc5063e11b47b4f79",
+      "bytes": 2680,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/pilot-state.json",
+      "originalSha256": "fb829911d999bc117ecb24a7ee081120a8fc8b2ef5ce2bc2b665ce6eb66308fe",
+      "exportedSha256": "628ca780f172f032b00fa96aba51523350248d16e9b8b0ca6d31f25cdcdec6df",
+      "bytes": 27876,
+      "redactions": {
+        "redacted-container-id-a": 2,
+        "external-container-a": 2,
+        "redacted-container-id-b": 2,
+        "external-container-b": 2,
+        "redacted-container-id-c": 2,
+        "external-container-c": 2
+      }
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/prerequisite-review.json",
+      "originalSha256": "6fbca22cd6c89a43c58fd8b64f7ff2fef196368a396d68273a13f69593dc6f76",
+      "exportedSha256": "1a7f788c8df22050e374b9917f15d0cceb0135404b90eaf56c625e2e3ee6fc7a",
+      "bytes": 17212,
+      "redactions": {
+        "<repo>": 1
+      }
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/run-index.jsonl",
+      "originalSha256": "1141ab382c100f6534cfe0267f585459d198031de79ca7ab1caec4ccc83f24c4",
+      "exportedSha256": "1141ab382c100f6534cfe0267f585459d198031de79ca7ab1caec4ccc83f24c4",
+      "bytes": 972,
+      "redactions": {}
+    },
+    {
+      "path": "results-exploratory-database-k4-v1/source-snapshot-application.tar.gz",
+      "originalPath": "results-exploratory-database-k4-v1/source-snapshot.tar.gz",
+      "originalSha256": "2247961bad7a72ad7ef619242a7bc42e21ad232103d66e030a82e5d34131a915",
+      "exportedSha256": "ad2d51793c5f7412c8d867b61179aad1aa3a3cc09d93c975ec0e05ce803c1488",
+      "applicationFiles": 53,
+      "droppedFiles": 123,
+      "droppedPrefixes": [
+        ".dockerignore",
+        "README.md",
+        "SOURCE_PROVENANCE.md",
+        "config",
+        "docs",
+        "scripts",
+        "src",
+        "test"
+      ]
+    },
+    {
+      "path": "results-calibration-v1/CAL-001-calibration-R4-K-A-1/manifest.json",
+      "originalSha256": "07ede3a2a5a1fb4ed187d1f320cf089f2e6731fcb42d9b5ac708ec6b7118523e",
+      "exportedSha256": "8c52f5f9c9c2925c2c1c1b85fd0681e3a8a5c387ee8b44d82843b14c25d4ff73",
+      "bytes": 8252,
+      "redactions": {
+        "capture-host": 1
+      }
+    },
+    {
+      "path": "results-calibration-v1/CAL-001-calibration-R4-K-A-1/run-outcomes.json",
+      "originalSha256": "c2f0cf2e69d889971b94e941e5e2cf4d3fa8b0cdc0dacf72d37f9085d70fb689",
+      "exportedSha256": "c2f0cf2e69d889971b94e941e5e2cf4d3fa8b0cdc0dacf72d37f9085d70fb689",
+      "bytes": 782678,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1/CAL-001-calibration-R4-K-A-1/qualification.json",
+      "originalSha256": "475e0e43d840172e3136c70854ec5db37a6d38edf7819a6cfa271de09bb91181",
+      "exportedSha256": "475e0e43d840172e3136c70854ec5db37a6d38edf7819a6cfa271de09bb91181",
+      "bytes": 1516,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1/CAL-001-calibration-R4-K-A-1/invariants.json",
+      "originalSha256": "fdf9f1962d7906a692e9e6e3fd041e87369050acbf763358e438b03aa457f880",
+      "exportedSha256": "fdf9f1962d7906a692e9e6e3fd041e87369050acbf763358e438b03aa457f880",
+      "bytes": 81045,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1/CAL-001-calibration-R4-K-A-1/telemetry.json",
+      "originalSha256": "9bfcc1ef4893d303db4483d44e96a3e5723701c22670698c47218ff24f4b3d7b",
+      "exportedSha256": "9bfcc1ef4893d303db4483d44e96a3e5723701c22670698c47218ff24f4b3d7b",
+      "bytes": 740,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1/CAL-001-calibration-R4-K-A-1/traces.json",
+      "originalSha256": "bbf240db25f1bf438c96767ec3341c6226c70f5d208a2b4472b322eab8371ae8",
+      "exportedSha256": "bbf240db25f1bf438c96767ec3341c6226c70f5d208a2b4472b322eab8371ae8",
+      "bytes": 5851699,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1/CAL-001-calibration-R4-K-A-1/transfers.json",
+      "originalSha256": "9c19cbfaca66dddfab84af1b83a783a83bceff21241ceeeedaf87c8d14c73690",
+      "exportedSha256": "9c19cbfaca66dddfab84af1b83a783a83bceff21241ceeeedaf87c8d14c73690",
+      "bytes": 2486751,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1/CAL-001-calibration-R4-K-A-1/controller-state.json",
+      "originalSha256": "77db00d5bb73a8d8b2820fea03bd7558db1b4036a33f30793a72d13cbc34d0a3",
+      "exportedSha256": "77db00d5bb73a8d8b2820fea03bd7558db1b4036a33f30793a72d13cbc34d0a3",
+      "bytes": 856,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1/CAL-001-calibration-R4-K-A-1/measurement-clock.json",
+      "originalSha256": "4f7ef99829b1695da801c5acf7519ba2ce881c2c307168e8ca130577df3ca315",
+      "exportedSha256": "0ac611b44a39b475db4ff7fedd60f1a09be01b7fde00a8059934270d6640725c",
+      "bytes": 108,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1/CAL-001-calibration-R4-K-A-1/client-attempts.json",
+      "originalSha256": "8f62bea8b4cf3bfd349ed4d64def7611e335132991519bbadc088b1f7cab2da6",
+      "exportedSha256": "e80cb216354624aa93b3cd6de513ab1a2538ba38aca9945cf064445e03eca536",
+      "bytes": 1082058,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1/CAL-001-calibration-R4-K-A-1/measurement-summary.json",
+      "originalSha256": "78cd243c4e6d4e50a6478fde15f281cd20bee175dd140365c934a7f9a8829b27",
+      "exportedSha256": "d7325b36e831484757935f9cffc5e5432a881fc68b344f3957ff12f8165e67cc",
+      "bytes": 3823,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1/CAL-001-calibration-R4-K-A-1/warmup-summary.json",
+      "originalSha256": "8298d506613427f3cb21fe7d5896dd512780da70e81487498b28ac18542190e4",
+      "exportedSha256": "392665511a0be9afc8a85d5871412cce71899ab9091538167d9841108ee82fca",
+      "bytes": 3794,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1/CAL-001-calibration-R4-K-A-1/diagnostics.json",
+      "originalSha256": "e2f41416af850960c7c4659fda241c6e4ff54d2dba6c7e545af48636f54c8199",
+      "exportedSha256": "e2f41416af850960c7c4659fda241c6e4ff54d2dba6c7e545af48636f54c8199",
+      "bytes": 907608,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1/CAL-001-calibration-R4-K-A-1/docker-stats.jsonl",
+      "originalSha256": "6a76109eda16c0b4e399804b65b97bf221513599913df84783248b4d3057658c",
+      "exportedSha256": "6a76109eda16c0b4e399804b65b97bf221513599913df84783248b4d3057658c",
+      "bytes": 3191061,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1/CAL-001-calibration-R4-K-A-1/cleanup.json",
+      "originalSha256": "0552516e030ca85f4f9f9259ee3a0f05a60c1143667c88a5cdd394fa22226e3d",
+      "exportedSha256": "0552516e030ca85f4f9f9259ee3a0f05a60c1143667c88a5cdd394fa22226e3d",
+      "bytes": 136,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1/CAL-001-calibration-R4-K-A-1/registered-run.json",
+      "originalSha256": "12963c10014a53b5af6c821bad8867fdda125dbf9aad3502eb988d758b1acada",
+      "exportedSha256": "140e18292c8d6471e595f8f7f6403e4ea928679b3c69c64eb7172eb38df65eb1",
+      "bytes": 10158,
+      "redactions": {
+        "capture-host": 1
+      }
+    },
+    {
+      "path": "results-calibration-v1/CAL-001-calibration-R4-K-A-1/end-checksums.json",
+      "originalSha256": "8163c7b8b48a79f69f979fad7d5d95c4988458e76a7e1d904a82ac33e2771fc7",
+      "exportedSha256": "8163c7b8b48a79f69f979fad7d5d95c4988458e76a7e1d904a82ac33e2771fc7",
+      "bytes": 454,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1/CAL-001-calibration-R4-K-A-1/calibration-assessment.json",
+      "originalSha256": "ccfdf8d93b92fe11ed874d72ecd65357809bbffc05592ee812f038702f061285",
+      "exportedSha256": "ccfdf8d93b92fe11ed874d72ecd65357809bbffc05592ee812f038702f061285",
+      "bytes": 7664,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1/CAL-001-calibration-R4-K-A-1/clean-start.json",
+      "originalSha256": "50e57fe1c072273b67fee958136fdc68347044f3bedc333897883fb279ad6e37",
+      "exportedSha256": "50e57fe1c072273b67fee958136fdc68347044f3bedc333897883fb279ad6e37",
+      "bytes": 136,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1/CAL-001-calibration-R4-K-A-1/load-exit.json",
+      "originalSha256": "6380f7ebf1263a94abaaef4f5a1323cf0f4fbc88e37d8f1792ae68f163e18807",
+      "exportedSha256": "6380f7ebf1263a94abaaef4f5a1323cf0f4fbc88e37d8f1792ae68f163e18807",
+      "bytes": 34,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1/CAL-001-calibration-R4-K-A-2/manifest.json",
+      "originalSha256": "5e4b8b8aa40d88c608f530292d9529e6eddbc23a05bfbfec22dbcb8ec8bac842",
+      "exportedSha256": "5b2652bc87e8dde934ec3a75d0d801a39dcd65a08b66f0f5319ca3f15ed5b834",
+      "bytes": 8252,
+      "redactions": {
+        "capture-host": 1
+      }
+    },
+    {
+      "path": "results-calibration-v1/CAL-001-calibration-R4-K-A-2/controller-state.json",
+      "originalSha256": "6b89e567887a5a682812c3e6769884e8dd114e011455b1c18504ec7e2b75e3d3",
+      "exportedSha256": "6b89e567887a5a682812c3e6769884e8dd114e011455b1c18504ec7e2b75e3d3",
+      "bytes": 223,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1/CAL-001-calibration-R4-K-A-2/warmup-summary.json",
+      "originalSha256": "71c8cee25165b6333efef51d29a8081df229898e9206d900d4559b8db4ddd841",
+      "exportedSha256": "628c9b8619a3cacbaa198264d3f16742d37813d83de99aa3f9a97b8dfa6e94b7",
+      "bytes": 3800,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1/CAL-001-calibration-R4-K-A-2/clean-start.json",
+      "originalSha256": "ef7983c5549b964abf00e02d1a79bf5ebca491e9ee462e0e9af707164277ccb2",
+      "exportedSha256": "ef7983c5549b964abf00e02d1a79bf5ebca491e9ee462e0e9af707164277ccb2",
+      "bytes": 136,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1/CAL-001-calibration-R4-R-A-1/manifest.json",
+      "originalSha256": "b8b40cbf73dfcb0b2bae41b58458a4dd3bdf25044c03cf79d3c111c2bb5c18c9",
+      "exportedSha256": "426f6efed1a3708a74d3c6c6be358b26d8d5cdec500219f60bd4e6ef7bbabf3f",
+      "bytes": 7770,
+      "redactions": {
+        "capture-host": 1
+      }
+    },
+    {
+      "path": "results-calibration-v1/CAL-001-calibration-R4-R-A-1/run-outcomes.json",
+      "originalSha256": "0fef794ccc2789fa0b3f09494791a55e5c9d896dd7eaa0b49b68cace3ab53945",
+      "exportedSha256": "0fef794ccc2789fa0b3f09494791a55e5c9d896dd7eaa0b49b68cace3ab53945",
+      "bytes": 780767,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1/CAL-001-calibration-R4-R-A-1/qualification.json",
+      "originalSha256": "31bce67fce59c2c02f78e49c6f55dd8e4e4ca8af29f2cc817d3840e8dfdb6a08",
+      "exportedSha256": "31bce67fce59c2c02f78e49c6f55dd8e4e4ca8af29f2cc817d3840e8dfdb6a08",
+      "bytes": 1470,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1/CAL-001-calibration-R4-R-A-1/invariants.json",
+      "originalSha256": "4e06c6fe701de481ec2f88d096a3e81b4f70f4e745deb86d41b2cb7754da06bf",
+      "exportedSha256": "4e06c6fe701de481ec2f88d096a3e81b4f70f4e745deb86d41b2cb7754da06bf",
+      "bytes": 81001,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1/CAL-001-calibration-R4-R-A-1/telemetry.json",
+      "originalSha256": "08152cbcb2ac027c2335b21ef10be2df3e46b86f5b1e3247ed3ad763a339d024",
+      "exportedSha256": "08152cbcb2ac027c2335b21ef10be2df3e46b86f5b1e3247ed3ad763a339d024",
+      "bytes": 739,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1/CAL-001-calibration-R4-R-A-1/traces.json",
+      "originalSha256": "e98fd0d65da8b80ee5451a817734cca3251549c70244aae9860c652bc002ef58",
+      "exportedSha256": "e98fd0d65da8b80ee5451a817734cca3251549c70244aae9860c652bc002ef58",
+      "bytes": 5848582,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1/CAL-001-calibration-R4-R-A-1/transfers.json",
+      "originalSha256": "5c26bf9fff0fc032688057e3b7304134e9ecf9764989fedf47210215ad404b6d",
+      "exportedSha256": "5c26bf9fff0fc032688057e3b7304134e9ecf9764989fedf47210215ad404b6d",
+      "bytes": 2483564,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1/CAL-001-calibration-R4-R-A-1/controller-state.json",
+      "originalSha256": "2dbfd8f093d63977ec8ca1bb930dc009661f9e5ba977655ea1c768cca04e3226",
+      "exportedSha256": "2dbfd8f093d63977ec8ca1bb930dc009661f9e5ba977655ea1c768cca04e3226",
+      "bytes": 856,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1/CAL-001-calibration-R4-R-A-1/measurement-clock.json",
+      "originalSha256": "8172fbf3bfb127e29098f8e467985560f5b182933eb92e5df46cb0fc08d63874",
+      "exportedSha256": "2646adabe36fb026d8b7cbfbea287738dfeb71720f8794beb4e535c24ed22cd2",
+      "bytes": 108,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1/CAL-001-calibration-R4-R-A-1/client-attempts.json",
+      "originalSha256": "e1b96c5019049ba9fd96010a9498b0d1874a63943ef0bdaa666895b21c71d62b",
+      "exportedSha256": "05522a6857c5b327b3eda25c28bac5b49d4f62daff50cbc87ee9e617c91cceaf",
+      "bytes": 1081564,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1/CAL-001-calibration-R4-R-A-1/measurement-summary.json",
+      "originalSha256": "1c113bcbb366a8ad33eaa77b3bd4e5b334b2969e174722046547ad1e55c0f94d",
+      "exportedSha256": "8e54c741bed3a0140559e573fc08ffca6672dd4d53f264de0716a3128d0a18c4",
+      "bytes": 3734,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1/CAL-001-calibration-R4-R-A-1/warmup-summary.json",
+      "originalSha256": "e7b8c85489a08be42fdf7488ad4bf605fc6d86be338a9984e4dfe31a31014452",
+      "exportedSha256": "f3b35a7780de815aef64e94b3178d1955af2b3511a284487709d5042130aa816",
+      "bytes": 3725,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1/CAL-001-calibration-R4-R-A-1/diagnostics.json",
+      "originalSha256": "c248a4a3260c848e3a0cbb49893263d00a16b79b3150c7fdd5c4b7317b671d27",
+      "exportedSha256": "c248a4a3260c848e3a0cbb49893263d00a16b79b3150c7fdd5c4b7317b671d27",
+      "bytes": 933145,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1/CAL-001-calibration-R4-R-A-1/docker-stats.jsonl",
+      "originalSha256": "937af73453a499226e457ea84c23a0f84372e0b98a35611f94c66117d5d27b71",
+      "exportedSha256": "937af73453a499226e457ea84c23a0f84372e0b98a35611f94c66117d5d27b71",
+      "bytes": 3099469,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1/CAL-001-calibration-R4-R-A-1/cleanup.json",
+      "originalSha256": "b173d40b448fde3d98efabb7e115dfa1786a2a069fdf3af6c01d0b92d96c33a5",
+      "exportedSha256": "b173d40b448fde3d98efabb7e115dfa1786a2a069fdf3af6c01d0b92d96c33a5",
+      "bytes": 136,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1/CAL-001-calibration-R4-R-A-1/registered-run.json",
+      "originalSha256": "c194979c00d7f510df797f7b3b304933af93a2b1e1cf7b9adf67f7eee6c371d6",
+      "exportedSha256": "d41ea442956da0f59ed146403f6d8515134a32bde8edb1ec68fdee77b1891c3b",
+      "bytes": 9620,
+      "redactions": {
+        "capture-host": 1
+      }
+    },
+    {
+      "path": "results-calibration-v1/CAL-001-calibration-R4-R-A-1/end-checksums.json",
+      "originalSha256": "8163c7b8b48a79f69f979fad7d5d95c4988458e76a7e1d904a82ac33e2771fc7",
+      "exportedSha256": "8163c7b8b48a79f69f979fad7d5d95c4988458e76a7e1d904a82ac33e2771fc7",
+      "bytes": 454,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1/CAL-001-calibration-R4-R-A-1/calibration-assessment.json",
+      "originalSha256": "7e2b81d7ea0868613c1a03e88b577d913c92e0fb192803ae24e668ad7513af7c",
+      "exportedSha256": "7e2b81d7ea0868613c1a03e88b577d913c92e0fb192803ae24e668ad7513af7c",
+      "bytes": 7617,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1/CAL-001-calibration-R4-R-A-1/clean-start.json",
+      "originalSha256": "a1a767097393d8ff6aeb37e6751ab290d7d2afb72525606fa79e151e37fe5ef5",
+      "exportedSha256": "a1a767097393d8ff6aeb37e6751ab290d7d2afb72525606fa79e151e37fe5ef5",
+      "bytes": 136,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1/CAL-001-calibration-R4-R-A-1/load-exit.json",
+      "originalSha256": "6380f7ebf1263a94abaaef4f5a1323cf0f4fbc88e37d8f1792ae68f163e18807",
+      "exportedSha256": "6380f7ebf1263a94abaaef4f5a1323cf0f4fbc88e37d8f1792ae68f163e18807",
+      "bytes": 34,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1/archive-checksum.json",
+      "originalSha256": "175c5d19d9709b7224d4d4e19ac20eef3ecd5cc8fd562f297d629e21ee6986f7",
+      "exportedSha256": "175c5d19d9709b7224d4d4e19ac20eef3ecd5cc8fd562f297d629e21ee6986f7",
+      "bytes": 83,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1/experiment-summary.json",
+      "originalSha256": "e3e48f7d53ec339200314c78e6dca5c84b19d983cebff00fb0174fa5d693fcda",
+      "exportedSha256": "decc90e23ced579c294126215b44ac0d5649a0c65a95c807f548070b41732017",
+      "bytes": 2241,
+      "redactions": {
+        "<repo>": 1
+      }
+    },
+    {
+      "path": "results-calibration-v1/freeze.json",
+      "originalSha256": "e0e0cce4fde3ff32023d175e8d6b096decf51d437f5e726f99eeeb9b49e1a51b",
+      "exportedSha256": "5af929412e95dece60852bd4ccade5cbfa37a630da45a5ec121dd8e39aad0db4",
+      "bytes": 6248,
+      "redactions": {
+        "redacted-container-id-a": 1,
+        "external-container-a": 1,
+        "redacted-container-id-b": 1,
+        "external-container-b": 1,
+        "redacted-container-id-c": 1,
+        "external-container-c": 1,
+        "capture-host": 1,
+        "redacted-docker-id": 1,
+        "pauseAndRestoreNamedExternalContainers": 1,
+        "companionContainerUnavailableDuringPilot": 1
+      }
+    },
+    {
+      "path": "results-calibration-v1/frozen-compose.json",
+      "originalSha256": "cd59a600efcb50cf6cfa9994aa3c5aac1038ee9cad3d69314a8aa0ef24ebeab9",
+      "exportedSha256": "cd59a600efcb50cf6cfa9994aa3c5aac1038ee9cad3d69314a8aa0ef24ebeab9",
+      "bytes": 2236,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1/monitor-isolation-incident.json",
+      "originalSha256": "a01cdff97fdcb396560f4f6053739c523075e6eb22133477c55d0eaf8e32e544",
+      "exportedSha256": "4b2ef372ac525e7377715f7c3c51841065272d235d4ccd1b291ee63661cf1160",
+      "bytes": 1627,
+      "redactions": {
+        "redacted-container-id-e": 1,
+        "external-container-e": 1,
+        "external-image:latest": 1,
+        "the external stack": 1,
+        "External": 1
+      }
+    },
+    {
+      "path": "results-calibration-v1/pilot-batch-001.json",
+      "originalSha256": "f3016565640ab72b81d37a29a628debbc4543346f4e33d83975122b18996994a",
+      "exportedSha256": "f3016565640ab72b81d37a29a628debbc4543346f4e33d83975122b18996994a",
+      "bytes": 2302,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1/pilot-protocol.json",
+      "originalSha256": "d20f1999be3740c9b34ad8a5ea688639f7e84c7bf58399db6fa250a4da8a13a6",
+      "exportedSha256": "f870084aebbc53bdc667189e484cfab852e56b5cb69f91ce02ba8b7ef2e67cf8",
+      "bytes": 1561,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1/pilot-state.json",
+      "originalSha256": "86e7bdd961009694dec3f072b9cd1d54e9b7bd23c21b1da3a16e4c534e5ad63a",
+      "exportedSha256": "ce77bde5ea407423a704ec51420dd944c6098cb3b583938b730db72d3ca7ad0e",
+      "bytes": 22495,
+      "redactions": {
+        "redacted-container-id-a": 2,
+        "external-container-a": 2,
+        "redacted-container-id-b": 2,
+        "external-container-b": 2,
+        "redacted-container-id-c": 2,
+        "external-container-c": 2
+      }
+    },
+    {
+      "path": "results-calibration-v1/run-index.jsonl",
+      "originalSha256": "9c8548972d79242c48ff6ac6faec5fb080b45e06218ac39961e6569bb7b4b0a5",
+      "exportedSha256": "9c8548972d79242c48ff6ac6faec5fb080b45e06218ac39961e6569bb7b4b0a5",
+      "bytes": 980,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1/source-snapshot-application.tar.gz",
+      "originalPath": "results-calibration-v1/source-snapshot.tar.gz",
+      "originalSha256": "103d7f2d085d5e04d19169e4fff3d6f107aa55d6c424c16c4510cf1bdad36336",
+      "exportedSha256": "78fc999b565fab02aadb17b0b36e342ef6bbdfc8e9aba01c9de0ba8ef09a6296",
+      "applicationFiles": 53,
+      "droppedFiles": 87,
+      "droppedPrefixes": [
+        ".dockerignore",
+        "README.md",
+        "SOURCE_PROVENANCE.md",
+        "config",
+        "docs",
+        "scripts",
+        "src",
+        "test"
+      ]
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/CAL-001-calibration-R4-K-A-2/manifest.json",
+      "originalSha256": "217a2663c87883f9c0b5039a050f514a9004b73dc1b15b9f18cdc94a3896f49e",
+      "exportedSha256": "653a6afbb3edf401185d2b1bd51b66ce40a52b27eae4ca7273d04ebdea0954dd",
+      "bytes": 8251,
+      "redactions": {
+        "capture-host": 1
+      }
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/CAL-001-calibration-R4-K-A-2/run-outcomes.json",
+      "originalSha256": "37951568b5af9eb5dbacc9f371b73fb39ce8c1dda947925eee6688725b72c060",
+      "exportedSha256": "37951568b5af9eb5dbacc9f371b73fb39ce8c1dda947925eee6688725b72c060",
+      "bytes": 782614,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/CAL-001-calibration-R4-K-A-2/qualification.json",
+      "originalSha256": "3b5a6bafae5afa5f637833ca5469f9a1db0259bca1161aea5d27230b10f7afe3",
+      "exportedSha256": "3b5a6bafae5afa5f637833ca5469f9a1db0259bca1161aea5d27230b10f7afe3",
+      "bytes": 1470,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/CAL-001-calibration-R4-K-A-2/invariants.json",
+      "originalSha256": "bb9f5b84b600ea4697d95eb382a6ca9ef70b5da93cd4b393a301131672143ace",
+      "exportedSha256": "bb9f5b84b600ea4697d95eb382a6ca9ef70b5da93cd4b393a301131672143ace",
+      "bytes": 81001,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/CAL-001-calibration-R4-K-A-2/telemetry.json",
+      "originalSha256": "5c9cf3461ef9536da6466def91a44322f535a21a1be8dbff12c67f134eba30c2",
+      "exportedSha256": "5c9cf3461ef9536da6466def91a44322f535a21a1be8dbff12c67f134eba30c2",
+      "bytes": 740,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/CAL-001-calibration-R4-K-A-2/traces.json",
+      "originalSha256": "1b50533e0628d73cbf63df7a246d8a748658a66322d12b57676fb9b6f2c5d751",
+      "exportedSha256": "1b50533e0628d73cbf63df7a246d8a748658a66322d12b57676fb9b6f2c5d751",
+      "bytes": 5848582,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/CAL-001-calibration-R4-K-A-2/transfers.json",
+      "originalSha256": "25af5b32158abc371168abcee4897a586c66144a029ae940eda7586a4622a986",
+      "exportedSha256": "25af5b32158abc371168abcee4897a586c66144a029ae940eda7586a4622a986",
+      "bytes": 2485388,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/CAL-001-calibration-R4-K-A-2/controller-state.json",
+      "originalSha256": "cb2f481c98d1f3fa485f54331a8548b935da5233725728d9291b9518d9b89a16",
+      "exportedSha256": "cb2f481c98d1f3fa485f54331a8548b935da5233725728d9291b9518d9b89a16",
+      "bytes": 856,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/CAL-001-calibration-R4-K-A-2/measurement-clock.json",
+      "originalSha256": "ec8da483690c7c87634aa5f551d46577c76e97a42e8269896598cb617a829e5e",
+      "exportedSha256": "368773f78cd37b0de829050270b5e0295c130b3a5600432a68d2973f1cb1a6f6",
+      "bytes": 108,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/CAL-001-calibration-R4-K-A-2/client-attempts.json",
+      "originalSha256": "ab95c0cec44cf3d7cd99f58cadd5284c57e6219da1a8f35bdd50687e11568c2c",
+      "exportedSha256": "b629a1a1831a5e5c1672872695e9a389a4a0013616e4985e78727706b92a5290",
+      "bytes": 1081592,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/CAL-001-calibration-R4-K-A-2/measurement-summary.json",
+      "originalSha256": "b0b605f8caa10c9898493f71bd5d6c13243b8f65399b9a8957de67a0b95ce2ba",
+      "exportedSha256": "a7b5e4e98c385be3a79f87be172f417eb9613c2ea1cd28dc87b70d4a9f806e2d",
+      "bytes": 3740,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/CAL-001-calibration-R4-K-A-2/warmup-summary.json",
+      "originalSha256": "9f7f6d6eb8a8076ffdc7ae31cacdc9e746a1ce9af33fbc72883d11eb888a3115",
+      "exportedSha256": "d6cd8f0956b667128ed30b4b3feadd7906d35f813cdb4399e7d45fe16fd5c81b",
+      "bytes": 3732,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/CAL-001-calibration-R4-K-A-2/diagnostics.json",
+      "originalSha256": "485fe0d329982caba817ecd7c6c4a3da5cd468e5f5e63a946c304f469d9a612b",
+      "exportedSha256": "485fe0d329982caba817ecd7c6c4a3da5cd468e5f5e63a946c304f469d9a612b",
+      "bytes": 941938,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/CAL-001-calibration-R4-K-A-2/docker-stats.jsonl",
+      "originalSha256": "dbcca5abd7509bb9a41d01cef134c54ed2daedfef4e65f94c05e3c6c132569f1",
+      "exportedSha256": "dbcca5abd7509bb9a41d01cef134c54ed2daedfef4e65f94c05e3c6c132569f1",
+      "bytes": 3193620,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/CAL-001-calibration-R4-K-A-2/cleanup.json",
+      "originalSha256": "0bfddd394ac1b78ba1cff12ffd8a6edf22d405ddb3efec563801ca73af961ea8",
+      "exportedSha256": "0bfddd394ac1b78ba1cff12ffd8a6edf22d405ddb3efec563801ca73af961ea8",
+      "bytes": 136,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/CAL-001-calibration-R4-K-A-2/registered-run.json",
+      "originalSha256": "c752815400f9163bbc587ef79184c40a49ef88f14536c1805d4cf9ee9a542985",
+      "exportedSha256": "7731fc6218b9c1a53fba97f8d50b0a2ab9b62223cbd476783724b68530970f98",
+      "bytes": 10157,
+      "redactions": {
+        "capture-host": 1
+      }
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/CAL-001-calibration-R4-K-A-2/end-checksums.json",
+      "originalSha256": "8163c7b8b48a79f69f979fad7d5d95c4988458e76a7e1d904a82ac33e2771fc7",
+      "exportedSha256": "8163c7b8b48a79f69f979fad7d5d95c4988458e76a7e1d904a82ac33e2771fc7",
+      "bytes": 454,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/CAL-001-calibration-R4-K-A-2/calibration-assessment.json",
+      "originalSha256": "23ed9caa35118f86ad7f286299a0891d609425a715af0623021791d7c7a8b5da",
+      "exportedSha256": "e8dc3f39dabf1a5ce02558a7c53430ec86d20f4d7e7816cab2ab17d9b45e660d",
+      "bytes": 7860,
+      "redactions": {
+        "<repo>": 2
+      }
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/CAL-001-calibration-R4-K-A-2/clean-start.json",
+      "originalSha256": "6f2a8e8f6d728b00549d83659a24d7249c0b7dde05f21e5f89d02ae6479dc754",
+      "exportedSha256": "6f2a8e8f6d728b00549d83659a24d7249c0b7dde05f21e5f89d02ae6479dc754",
+      "bytes": 136,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/CAL-001-calibration-R4-K-A-2/load-exit.json",
+      "originalSha256": "6380f7ebf1263a94abaaef4f5a1323cf0f4fbc88e37d8f1792ae68f163e18807",
+      "exportedSha256": "6380f7ebf1263a94abaaef4f5a1323cf0f4fbc88e37d8f1792ae68f163e18807",
+      "bytes": 34,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/CAL-001-calibration-R4-R-A-2/manifest.json",
+      "originalSha256": "62c2aaf5a4b80d9a3d00b49fb58b7b1fff13b155156d0abb5bf2246a83b158ec",
+      "exportedSha256": "279559c032f0ca5c94fa8f2d7cd32249995707c04334d9b80a6f3e1d5883493f",
+      "bytes": 7770,
+      "redactions": {
+        "capture-host": 1
+      }
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/CAL-001-calibration-R4-R-A-2/run-outcomes.json",
+      "originalSha256": "6f5290baece90fb294309c4c3f11d96a420fc51e1841f53c0627fd5cb08e0c61",
+      "exportedSha256": "6f5290baece90fb294309c4c3f11d96a420fc51e1841f53c0627fd5cb08e0c61",
+      "bytes": 780830,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/CAL-001-calibration-R4-R-A-2/qualification.json",
+      "originalSha256": "e80ca3dfc6ba4ba067dc7ad2d8ac70f21d248df35e46369139ad33bfd305af2e",
+      "exportedSha256": "e80ca3dfc6ba4ba067dc7ad2d8ac70f21d248df35e46369139ad33bfd305af2e",
+      "bytes": 1516,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/CAL-001-calibration-R4-R-A-2/invariants.json",
+      "originalSha256": "cbcfa229a1511fa6fb46f49f03f51041eb463d13e3cc5a97e38020d019570cec",
+      "exportedSha256": "cbcfa229a1511fa6fb46f49f03f51041eb463d13e3cc5a97e38020d019570cec",
+      "bytes": 81045,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/CAL-001-calibration-R4-R-A-2/telemetry.json",
+      "originalSha256": "3f6ef83008ccd5e664cd66c9e724c7d288eab1b8de523d28613b22986e8d1927",
+      "exportedSha256": "3f6ef83008ccd5e664cd66c9e724c7d288eab1b8de523d28613b22986e8d1927",
+      "bytes": 739,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/CAL-001-calibration-R4-R-A-2/traces.json",
+      "originalSha256": "cd3213e0ad6ac63cede34cb856fdf9eb75430144779de18f04ef0b91a0c1d26d",
+      "exportedSha256": "cd3213e0ad6ac63cede34cb856fdf9eb75430144779de18f04ef0b91a0c1d26d",
+      "bytes": 5851699,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/CAL-001-calibration-R4-R-A-2/transfers.json",
+      "originalSha256": "9e5a85f09734754f5a57a242326d46b01d3bfbb2f68332c679d6648b6a7cd70f",
+      "exportedSha256": "9e5a85f09734754f5a57a242326d46b01d3bfbb2f68332c679d6648b6a7cd70f",
+      "bytes": 2484926,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/CAL-001-calibration-R4-R-A-2/controller-state.json",
+      "originalSha256": "841028c2b6ecba1b57429a7b119b2cd78b68ff96ca4339fc53d786b6291297f4",
+      "exportedSha256": "841028c2b6ecba1b57429a7b119b2cd78b68ff96ca4339fc53d786b6291297f4",
+      "bytes": 856,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/CAL-001-calibration-R4-R-A-2/measurement-clock.json",
+      "originalSha256": "6653db78966ebcfde98dc94db61d65b443d530d5b6791354fe98b2671ea03331",
+      "exportedSha256": "cb1a5ac5d54ec725e689cc48f641d5d0d6b9076ffa4bdcd366638c39a555c97e",
+      "bytes": 108,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/CAL-001-calibration-R4-R-A-2/client-attempts.json",
+      "originalSha256": "8b7b9939926ad567b379904413f1797433c47a2078a84dbf69a1732326305733",
+      "exportedSha256": "fafa3ff1a41956eb3e7ff30185d5b45452317022efbea9e2d6804d98a2561c7c",
+      "bytes": 1082043,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/CAL-001-calibration-R4-R-A-2/measurement-summary.json",
+      "originalSha256": "d424369f66a96f1857b2308e40fd9503c5a6b4ff3df33f37317b604157a651f2",
+      "exportedSha256": "d60dfea73b0561c671e6e5d57f8109927aab0dc987b09880f843c2ef74c24d26",
+      "bytes": 3805,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/CAL-001-calibration-R4-R-A-2/warmup-summary.json",
+      "originalSha256": "e276ed7d3c2b151de95dcd40aa4ca56c21fb2fb7c2272ddd03beb127ba0aecc1",
+      "exportedSha256": "6f77e13f4506eec0df7a45219c098a33825bcde3bf5a6b86b34cfa38d2f2462e",
+      "bytes": 3804,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/CAL-001-calibration-R4-R-A-2/diagnostics.json",
+      "originalSha256": "43797926bdd03d5b8a00a45db8e3adcd4b172d075d1405c638d3e83b3c2626e3",
+      "exportedSha256": "43797926bdd03d5b8a00a45db8e3adcd4b172d075d1405c638d3e83b3c2626e3",
+      "bytes": 936939,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/CAL-001-calibration-R4-R-A-2/docker-stats.jsonl",
+      "originalSha256": "17e496d6f53cd503ba38d723a2a9b857160a053a6a012264cd6023ad39f3357f",
+      "exportedSha256": "17e496d6f53cd503ba38d723a2a9b857160a053a6a012264cd6023ad39f3357f",
+      "bytes": 3089102,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/CAL-001-calibration-R4-R-A-2/cleanup.json",
+      "originalSha256": "6f1fb877aa777f924a97ff047aa15ac9f6ed56698bb28f219ae0d97e62b353f7",
+      "exportedSha256": "6f1fb877aa777f924a97ff047aa15ac9f6ed56698bb28f219ae0d97e62b353f7",
+      "bytes": 136,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/CAL-001-calibration-R4-R-A-2/registered-run.json",
+      "originalSha256": "0786a2f5568137a0fb3cd491533a7f17f170e344e39f66c713672e46915dae6a",
+      "exportedSha256": "2fd163a9731283eee16fdddc4ed82dcbd23302f4e7c50c0b50c56165b9235874",
+      "bytes": 9620,
+      "redactions": {
+        "capture-host": 1
+      }
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/CAL-001-calibration-R4-R-A-2/end-checksums.json",
+      "originalSha256": "8163c7b8b48a79f69f979fad7d5d95c4988458e76a7e1d904a82ac33e2771fc7",
+      "exportedSha256": "8163c7b8b48a79f69f979fad7d5d95c4988458e76a7e1d904a82ac33e2771fc7",
+      "bytes": 454,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/CAL-001-calibration-R4-R-A-2/calibration-assessment.json",
+      "originalSha256": "f5a2a1fd91ea6fd86e63f134d2f9f736eb2b0b208b3ad8add5841128297dcfa9",
+      "exportedSha256": "b65863014132699090fceac8a8cbafdb1cbc646a8a3d342707188495721b3061",
+      "bytes": 7792,
+      "redactions": {
+        "<repo>": 1
+      }
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/CAL-001-calibration-R4-R-A-2/clean-start.json",
+      "originalSha256": "893e1f2acaa4546beb8072d527a4d7ed9f06bc5ec41fe4b65182bd605c61f59e",
+      "exportedSha256": "893e1f2acaa4546beb8072d527a4d7ed9f06bc5ec41fe4b65182bd605c61f59e",
+      "bytes": 136,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/CAL-001-calibration-R4-R-A-2/load-exit.json",
+      "originalSha256": "6380f7ebf1263a94abaaef4f5a1323cf0f4fbc88e37d8f1792ae68f163e18807",
+      "exportedSha256": "6380f7ebf1263a94abaaef4f5a1323cf0f4fbc88e37d8f1792ae68f163e18807",
+      "bytes": 34,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/continuation-plan-checksum.json",
+      "originalSha256": "ea983824bbc36c842257f49c0b94c4442967f6bb116aca8f5f2b1ea74c4a2ea5",
+      "exportedSha256": "ea983824bbc36c842257f49c0b94c4442967f6bb116aca8f5f2b1ea74c4a2ea5",
+      "bytes": 83,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/continuation-plan.json",
+      "originalSha256": "caa166e9d56765a1ea9beca95267e4fb434d362d10fd03b8c854c43625ad33be",
+      "exportedSha256": "8eb2ec0209c550be4e942d94b226b0b0ecb3f33d3fbd8748033be93d8488ad3e",
+      "bytes": 15377,
+      "redactions": {
+        "<repo>": 2,
+        "the external stack": 1
+      }
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/experiment-summary.json",
+      "originalSha256": "e910d0f98a4f8f443a5dd1c2abfa5e6ddedc7540ff4af8fe16fe3f4f872d9232",
+      "exportedSha256": "2a18141c6f499fb16c82a9a0b5f8fc17d936f7684adee135c343690c93c85c48",
+      "bytes": 2714,
+      "redactions": {
+        "<repo>": 1
+      }
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/freeze.json",
+      "originalSha256": "e0e0cce4fde3ff32023d175e8d6b096decf51d437f5e726f99eeeb9b49e1a51b",
+      "exportedSha256": "5af929412e95dece60852bd4ccade5cbfa37a630da45a5ec121dd8e39aad0db4",
+      "bytes": 6248,
+      "redactions": {
+        "redacted-container-id-a": 1,
+        "external-container-a": 1,
+        "redacted-container-id-b": 1,
+        "external-container-b": 1,
+        "redacted-container-id-c": 1,
+        "external-container-c": 1,
+        "capture-host": 1,
+        "redacted-docker-id": 1,
+        "pauseAndRestoreNamedExternalContainers": 1,
+        "companionContainerUnavailableDuringPilot": 1
+      }
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/frozen-compose.json",
+      "originalSha256": "cd59a600efcb50cf6cfa9994aa3c5aac1038ee9cad3d69314a8aa0ef24ebeab9",
+      "exportedSha256": "cd59a600efcb50cf6cfa9994aa3c5aac1038ee9cad3d69314a8aa0ef24ebeab9",
+      "bytes": 2236,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/isolation-events.jsonl",
+      "originalSha256": "d01f32a2d4f7920782e3509bfadc30df6c2cb28c5dbdb92f8dcdc68b02ef5734",
+      "exportedSha256": "d01f32a2d4f7920782e3509bfadc30df6c2cb28c5dbdb92f8dcdc68b02ef5734",
+      "bytes": 9040,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/pilot-batch-001.json",
+      "originalSha256": "f3016565640ab72b81d37a29a628debbc4543346f4e33d83975122b18996994a",
+      "exportedSha256": "f3016565640ab72b81d37a29a628debbc4543346f4e33d83975122b18996994a",
+      "bytes": 2302,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/pilot-protocol.json",
+      "originalSha256": "d20f1999be3740c9b34ad8a5ea688639f7e84c7bf58399db6fa250a4da8a13a6",
+      "exportedSha256": "f870084aebbc53bdc667189e484cfab852e56b5cb69f91ce02ba8b7ef2e67cf8",
+      "bytes": 1561,
+      "redactions": {}
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/pilot-state.json",
+      "originalSha256": "12e778ae8ba202cdbdda25d9f00f9dba4c2a9914792962193eb6bdf5aed53bf5",
+      "exportedSha256": "14573d36bb9a077d03cdecc57a7de22e35f5115b2a4bfd2be20400b64acb2b2f",
+      "bytes": 37290,
+      "redactions": {
+        "<repo>": 6,
+        "redacted-container-id-a": 2,
+        "external-container-a": 2,
+        "redacted-container-id-b": 2,
+        "external-container-b": 2,
+        "redacted-container-id-c": 2,
+        "external-container-c": 2
+      }
+    },
+    {
+      "path": "results-calibration-v1-continuation-1/run-index.jsonl",
+      "originalSha256": "90f812993ba43db59b6c0f8b46f297ae5b72dce77ba4d3a71ba46f4de565734a",
+      "exportedSha256": "90f812993ba43db59b6c0f8b46f297ae5b72dce77ba4d3a71ba46f4de565734a",
+      "bytes": 980,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-v2/PILOT-001-screening-R4-K-A-1/manifest.json",
+      "originalSha256": "edfe025d85a46081cf7027d99a0e5afe1019329c41e4fe76a55ccb71998aa204",
+      "exportedSha256": "96bba67c33f77e5283968de3f8acd1db367c51edf03f8febfc5d1e9be886e215",
+      "bytes": 8386,
+      "redactions": {
+        "capture-host": 1
+      }
+    },
+    {
+      "path": "results-queue-screening-v2/PILOT-001-screening-R4-K-A-1/run-outcomes.json",
+      "originalSha256": "ec4db28918aa99a2b2180d29aa8527070b83822d5643ab1bddd97634e5fce4a9",
+      "exportedSha256": "ec4db28918aa99a2b2180d29aa8527070b83822d5643ab1bddd97634e5fce4a9",
+      "bytes": 313170,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-v2/PILOT-001-screening-R4-K-A-1/qualification.json",
+      "originalSha256": "8b6501b9db07a0489c72a6531bd5ac7abe8805dd62f929f5550d04b42838bc47",
+      "exportedSha256": "8b6501b9db07a0489c72a6531bd5ac7abe8805dd62f929f5550d04b42838bc47",
+      "bytes": 1515,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-v2/PILOT-001-screening-R4-K-A-1/invariants.json",
+      "originalSha256": "471b322868ee248b7ede372d9a75008119568daad6048a072ad7654ffc44580d",
+      "exportedSha256": "471b322868ee248b7ede372d9a75008119568daad6048a072ad7654ffc44580d",
+      "bytes": 32863,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-v2/PILOT-001-screening-R4-K-A-1/telemetry.json",
+      "originalSha256": "84afc84c5add64d07c4d590504f736676330f455e5751c75d1eae6f660a98a74",
+      "exportedSha256": "84afc84c5add64d07c4d590504f736676330f455e5751c75d1eae6f660a98a74",
+      "bytes": 732,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-v2/PILOT-001-screening-R4-K-A-1/traces.json",
+      "originalSha256": "d6963cb1bd079eaedfd051e4561cd4215d4ef0be6c200fd2661c385884de6512",
+      "exportedSha256": "d6963cb1bd079eaedfd051e4561cd4215d4ef0be6c200fd2661c385884de6512",
+      "bytes": 2338929,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-v2/PILOT-001-screening-R4-K-A-1/transfers.json",
+      "originalSha256": "1e82c3af4f5c4287b65998054aeb3b91ed9c59753585b17e6ad3d8eb98fe3a53",
+      "exportedSha256": "1e82c3af4f5c4287b65998054aeb3b91ed9c59753585b17e6ad3d8eb98fe3a53",
+      "bytes": 994550,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-v2/PILOT-001-screening-R4-K-A-1/controller-state.json",
+      "originalSha256": "57f008bbe755010f3ac34a7f086b2cf59e3298a6040a98e756ff78eaf4b9a432",
+      "exportedSha256": "57f008bbe755010f3ac34a7f086b2cf59e3298a6040a98e756ff78eaf4b9a432",
+      "bytes": 856,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-v2/PILOT-001-screening-R4-K-A-1/measurement-clock.json",
+      "originalSha256": "bf2befea9e11a78485b27ee3b89f32f7b287794bcec31352c6408081baef84e6",
+      "exportedSha256": "cf924fbfac5a851599ad720679201482685be6a2eface50ecefa7614a20b879f",
+      "bytes": 108,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-v2/PILOT-001-screening-R4-K-A-1/client-attempts.json",
+      "originalSha256": "768323df0c051a0b31ce34576cd053fdcd94e8a4d5da6d72dc8ad1f00e542035",
+      "exportedSha256": "22837bf3be90e9e397a9e54ded9048bb10534314073c83610516fbd225bc4d34",
+      "bytes": 431971,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-v2/PILOT-001-screening-R4-K-A-1/measurement-summary.json",
+      "originalSha256": "38f79114e88abb64975c08b0b40402a3533a7b13968fae78f57ee6f790f590cf",
+      "exportedSha256": "7a6d7d9414aa9fa48d6dce60678c45626703ab2cf707640a544689fa7920f87b",
+      "bytes": 3804,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-v2/PILOT-001-screening-R4-K-A-1/warmup-summary.json",
+      "originalSha256": "a0fd314d9a82f8f7a1a1f1d526c62d364ff6d116ae299bfc9310ba9e9cb06184",
+      "exportedSha256": "9f54d48c21c25b09801f006716d43cfc21e6c15a658048a7aa5af86b20377b70",
+      "bytes": 3725,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-v2/PILOT-001-screening-R4-K-A-1/diagnostics.json",
+      "originalSha256": "9c664ffbc0fedeb760c3da47ab18ba72a4ae768730668b9be7cdf6d024ec4d2c",
+      "exportedSha256": "9c664ffbc0fedeb760c3da47ab18ba72a4ae768730668b9be7cdf6d024ec4d2c",
+      "bytes": 377372,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-v2/PILOT-001-screening-R4-K-A-1/docker-stats.jsonl",
+      "originalSha256": "925d4fb37111cc8cf2e66d63e11f77590eca298eb428059c298a7d519f0613e1",
+      "exportedSha256": "925d4fb37111cc8cf2e66d63e11f77590eca298eb428059c298a7d519f0613e1",
+      "bytes": 1281020,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-v2/PILOT-001-screening-R4-K-A-1/cleanup.json",
+      "originalSha256": "6735385af6c8ef5aa178fcf4bbc40c6f77d83b006a2c5718ef15df9a41e35a69",
+      "exportedSha256": "6735385af6c8ef5aa178fcf4bbc40c6f77d83b006a2c5718ef15df9a41e35a69",
+      "bytes": 136,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-v2/PILOT-001-screening-R4-K-A-1/pilot-stability.json",
+      "originalSha256": "ad24698bc0a70e0a2be3e95a689eaee3a63d119971c436d3b38b78af828e8bf0",
+      "exportedSha256": "ad24698bc0a70e0a2be3e95a689eaee3a63d119971c436d3b38b78af828e8bf0",
+      "bytes": 5270,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-v2/PILOT-001-screening-R4-K-A-1/registered-run.json",
+      "originalSha256": "572726fd0c92dae655a8e7eb01785258720b9ffe8aa3e6a7cd9030059e2362be",
+      "exportedSha256": "864a1e503caf83796d0dac42b90f58d53bd71a9769583a3ff1f0d53c4e5b9e19",
+      "bytes": 10304,
+      "redactions": {
+        "capture-host": 1
+      }
+    },
+    {
+      "path": "results-queue-screening-v2/PILOT-001-screening-R4-K-A-1/end-checksums.json",
+      "originalSha256": "17c00f5b2a67c13ce1e3d3a6e0997f4222f28117281a0b394aff9c33c57f2dec",
+      "exportedSha256": "17c00f5b2a67c13ce1e3d3a6e0997f4222f28117281a0b394aff9c33c57f2dec",
+      "bytes": 454,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-v2/PILOT-001-screening-R4-K-A-1/clean-start.json",
+      "originalSha256": "c0934f7c9bc30f2998a27c29e38313f6218258651cf5e9e941b0a836ab2667dd",
+      "exportedSha256": "c0934f7c9bc30f2998a27c29e38313f6218258651cf5e9e941b0a836ab2667dd",
+      "bytes": 136,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-v2/PILOT-001-screening-R4-K-A-1/load-exit.json",
+      "originalSha256": "6380f7ebf1263a94abaaef4f5a1323cf0f4fbc88e37d8f1792ae68f163e18807",
+      "exportedSha256": "6380f7ebf1263a94abaaef4f5a1323cf0f4fbc88e37d8f1792ae68f163e18807",
+      "bytes": 34,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-v2/PILOT-001-screening-R4-R-A-1/manifest.json",
+      "originalSha256": "f39cf0378b2ae2e21bcfb7be305787808cca5fe345a3ac1ce1ebe35daf8aa6d5",
+      "exportedSha256": "a5c582c7e20cc6b987fa6bd6d91932d7c5b05aed277125d84afc8dcd4daba212",
+      "bytes": 7908,
+      "redactions": {
+        "capture-host": 1
+      }
+    },
+    {
+      "path": "results-queue-screening-v2/PILOT-001-screening-R4-R-A-1/run-outcomes.json",
+      "originalSha256": "b72836415a29c8f508a994b75e6d122d968a0f7e82a4c943a40f15f500a84c5e",
+      "exportedSha256": "b72836415a29c8f508a994b75e6d122d968a0f7e82a4c943a40f15f500a84c5e",
+      "bytes": 312416,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-v2/PILOT-001-screening-R4-R-A-1/qualification.json",
+      "originalSha256": "158ad99894ecfd9576fc2ce23fe4587bd4e4c9b53b4f1ce37e96486129167fb4",
+      "exportedSha256": "158ad99894ecfd9576fc2ce23fe4587bd4e4c9b53b4f1ce37e96486129167fb4",
+      "bytes": 1515,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-v2/PILOT-001-screening-R4-R-A-1/invariants.json",
+      "originalSha256": "ad818b0b7e939084114aabb950b7b81707f03bcd5f304a52c9abce12677d1786",
+      "exportedSha256": "ad818b0b7e939084114aabb950b7b81707f03bcd5f304a52c9abce12677d1786",
+      "bytes": 32863,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-v2/PILOT-001-screening-R4-R-A-1/telemetry.json",
+      "originalSha256": "934ed69abca8c70440d18a9576b9e731e127b62a28bc4536b4339bb3d861c9d7",
+      "exportedSha256": "934ed69abca8c70440d18a9576b9e731e127b62a28bc4536b4339bb3d861c9d7",
+      "bytes": 732,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-v2/PILOT-001-screening-R4-R-A-1/traces.json",
+      "originalSha256": "4fb23e49d42053d7e90c34f5bc2eb853200675e22daf0be783dbef3af8a3719b",
+      "exportedSha256": "4fb23e49d42053d7e90c34f5bc2eb853200675e22daf0be783dbef3af8a3719b",
+      "bytes": 2339671,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-v2/PILOT-001-screening-R4-R-A-1/transfers.json",
+      "originalSha256": "f75b61a70058a71547351cb3b26022115251019735990378f627b23115416250",
+      "exportedSha256": "f75b61a70058a71547351cb3b26022115251019735990378f627b23115416250",
+      "bytes": 993820,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-v2/PILOT-001-screening-R4-R-A-1/controller-state.json",
+      "originalSha256": "c2aa0a62f16e982e689af3a6f73711e1217f739c871a2e9c349788bfd402c20f",
+      "exportedSha256": "c2aa0a62f16e982e689af3a6f73711e1217f739c871a2e9c349788bfd402c20f",
+      "bytes": 856,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-v2/PILOT-001-screening-R4-R-A-1/measurement-clock.json",
+      "originalSha256": "e2956235c215f064494f0f1800da5e730b8525114733aa9edac79245195274d3",
+      "exportedSha256": "d3e843b350039c7d80e8e1821b43678eaf209c109276b421aed6c5eaecb448f1",
+      "bytes": 108,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-v2/PILOT-001-screening-R4-R-A-1/client-attempts.json",
+      "originalSha256": "d2550885f94ac3577985e5746adbf31e6734e71b0baba379a097c22c729c6fd8",
+      "exportedSha256": "606001899bc8822c0fd405b7448d76b0b22d158cd11c85189e13975cb0f106b4",
+      "bytes": 431998,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-v2/PILOT-001-screening-R4-R-A-1/measurement-summary.json",
+      "originalSha256": "44ba8a54206b3bb11567fc8a60f70c8e9e34f679b97d70bebaf179f5d63f9a17",
+      "exportedSha256": "eca9aa69065275290e071c134181d76cddeca451c45ee19bd5f98a6da07b33e3",
+      "bytes": 3784,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-v2/PILOT-001-screening-R4-R-A-1/warmup-summary.json",
+      "originalSha256": "1c982a65e1b897e0c89f08a421db12f565bbe790b62744b150effd7a6942dba2",
+      "exportedSha256": "e5468c90bc512563d75d9c7c9aaae407e6ecef16f038c452a965a67704614e7c",
+      "bytes": 3717,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-v2/PILOT-001-screening-R4-R-A-1/diagnostics.json",
+      "originalSha256": "45d8ce0266941da9405fcccf8555ee15d9eae820585dd064f75e3a2e0fbbc047",
+      "exportedSha256": "45d8ce0266941da9405fcccf8555ee15d9eae820585dd064f75e3a2e0fbbc047",
+      "bytes": 369483,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-v2/PILOT-001-screening-R4-R-A-1/docker-stats.jsonl",
+      "originalSha256": "75ac2ff8ef5049907b0207b20f0fa203e82da2631c4c79d5c6872b9c53dc6ffd",
+      "exportedSha256": "75ac2ff8ef5049907b0207b20f0fa203e82da2631c4c79d5c6872b9c53dc6ffd",
+      "bytes": 1244032,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-v2/PILOT-001-screening-R4-R-A-1/cleanup.json",
+      "originalSha256": "48f8ab53add57b020a7213613a580d6340f3c1bfa4e9df495a6a89c823012f60",
+      "exportedSha256": "48f8ab53add57b020a7213613a580d6340f3c1bfa4e9df495a6a89c823012f60",
+      "bytes": 136,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-v2/PILOT-001-screening-R4-R-A-1/pilot-stability.json",
+      "originalSha256": "676f11a859545737f8980b327b3cb558286bc433f815d508eb424e9d7c47a3d3",
+      "exportedSha256": "676f11a859545737f8980b327b3cb558286bc433f815d508eb424e9d7c47a3d3",
+      "bytes": 5246,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-v2/PILOT-001-screening-R4-R-A-1/registered-run.json",
+      "originalSha256": "47775b3c65a55af5062275e31710823f81cde56e20658381d4f4100f7106b70a",
+      "exportedSha256": "b38a6ae273a4d00d264bfb3792a622b3d034dbb1b2ccf3337a034f114f69d45a",
+      "bytes": 9770,
+      "redactions": {
+        "capture-host": 1
+      }
+    },
+    {
+      "path": "results-queue-screening-v2/PILOT-001-screening-R4-R-A-1/end-checksums.json",
+      "originalSha256": "17c00f5b2a67c13ce1e3d3a6e0997f4222f28117281a0b394aff9c33c57f2dec",
+      "exportedSha256": "17c00f5b2a67c13ce1e3d3a6e0997f4222f28117281a0b394aff9c33c57f2dec",
+      "bytes": 454,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-v2/PILOT-001-screening-R4-R-A-1/clean-start.json",
+      "originalSha256": "b188c4937cc497d5f77400435565053438c15fbbc4f83dc7937a39b279f56d53",
+      "exportedSha256": "b188c4937cc497d5f77400435565053438c15fbbc4f83dc7937a39b279f56d53",
+      "bytes": 136,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-v2/PILOT-001-screening-R4-R-A-1/load-exit.json",
+      "originalSha256": "6380f7ebf1263a94abaaef4f5a1323cf0f4fbc88e37d8f1792ae68f163e18807",
+      "exportedSha256": "6380f7ebf1263a94abaaef4f5a1323cf0f4fbc88e37d8f1792ae68f163e18807",
+      "bytes": 34,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-v2/archive-checksum.json",
+      "originalSha256": "2be6302e1ef12964d33e610cc240fa53dfd5976b70e37656a5eed5027c236333",
+      "exportedSha256": "2be6302e1ef12964d33e610cc240fa53dfd5976b70e37656a5eed5027c236333",
+      "bytes": 83,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-v2/experiment-summary.json",
+      "originalSha256": "fd190ce815b6ebc4066714bda689fcc3bf6d4fb2fc9c9fda0d08c75c136f0691",
+      "exportedSha256": "4fe7195e1740a644a14f6060d7fd31c2446735cc3fc2d74b8bb0d9e1fda2c7eb",
+      "bytes": 2237,
+      "redactions": {
+        "<repo>": 1
+      }
+    },
+    {
+      "path": "results-queue-screening-v2/freeze.json",
+      "originalSha256": "5faf9f183b197f4ea2f4766b10a0db66ea88a2f2cbd1478a87da96a945c3fdfa",
+      "exportedSha256": "f554bc3e221dc570adaac26d2c29fe67c7764f8f32f5bacd8b0c4c2a9fea3c73",
+      "bytes": 6497,
+      "redactions": {
+        "redacted-container-id-a": 1,
+        "external-container-a": 1,
+        "redacted-container-id-b": 1,
+        "external-container-b": 1,
+        "redacted-container-id-c": 1,
+        "external-container-c": 1,
+        "capture-host": 1,
+        "redacted-docker-id": 1,
+        "pauseAndRestoreNamedExternalContainers": 1,
+        "companionContainerUnavailableDuringPilot": 1
+      }
+    },
+    {
+      "path": "results-queue-screening-v2/frozen-compose.json",
+      "originalSha256": "d9590e0af130850f73d4d7f91615a1ab295e082bfe7d57d42597fae99ecfbac4",
+      "exportedSha256": "d9590e0af130850f73d4d7f91615a1ab295e082bfe7d57d42597fae99ecfbac4",
+      "bytes": 2236,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-v2/isolation-events.jsonl",
+      "originalSha256": "da021c6cd531e27c4c4d2cf7046471e87bfbd99a40c26b2e6ac7a9e5e065689a",
+      "exportedSha256": "2f7968b78a025705cb427cb53027fd563f6723989c1da18ac8a008e58091e714",
+      "bytes": 35326,
+      "redactions": {
+        "<repo>": 95
+      }
+    },
+    {
+      "path": "results-queue-screening-v2/pilot-batch-001.json",
+      "originalSha256": "fdc178021823f4eda65f090514f328897aeda86b423434c7a17e490c06017dd6",
+      "exportedSha256": "fdc178021823f4eda65f090514f328897aeda86b423434c7a17e490c06017dd6",
+      "bytes": 1392,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-v2/pilot-protocol.json",
+      "originalSha256": "fca070ac31524f14a44b5a3195f7c4e2a1432f043b82ef5fff1a0da768bc92b9",
+      "exportedSha256": "0ab9fa080b839bb2219f17aa19c4efcc3c99d0c21bb4b8bb81ac3065a6fc448b",
+      "bytes": 1985,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-v2/pilot-state.json",
+      "originalSha256": "4d4cdeba80dfd1a909979ce5ce303526e6b84dfc12670c366799572e4b626758",
+      "exportedSha256": "5294607da0f7b7ad0e3d73f12c74a06d2e596b703846d18e28a53b83574e6c2a",
+      "bytes": 15691,
+      "redactions": {
+        "redacted-container-id-a": 2,
+        "external-container-a": 2,
+        "redacted-container-id-b": 2,
+        "external-container-b": 2,
+        "redacted-container-id-c": 2,
+        "external-container-c": 2
+      }
+    },
+    {
+      "path": "results-queue-screening-v2/run-index.jsonl",
+      "originalSha256": "00758287125073a2ab54ad3ce2ea0c1526c63944c83ecefeab9de745fc4e6e17",
+      "exportedSha256": "00758287125073a2ab54ad3ce2ea0c1526c63944c83ecefeab9de745fc4e6e17",
+      "bytes": 980,
+      "redactions": {}
+    },
+    {
+      "path": "results-queue-screening-v2/source-snapshot-application.tar.gz",
+      "originalPath": "results-queue-screening-v2/source-snapshot.tar.gz",
+      "originalSha256": "857210d47eddc0018790fa2d81261f47a881bff5894a5e03473d565f6299fbe3",
+      "exportedSha256": "4a8ba324d7bd4da7b62c930c5c8b993b1c93881f2810e0ca4a024bd569fed40f",
+      "applicationFiles": 53,
+      "droppedFiles": 102,
+      "droppedPrefixes": [
+        ".dockerignore",
+        "README.md",
+        "SOURCE_PROVENANCE.md",
+        "config",
+        "docs",
+        "scripts",
+        "src",
+        "test"
+      ]
+    },
+    {
+      "path": "results-capacity-pilot-v5/PILOT-001-screening-R4-K-A-1/manifest.json",
+      "originalSha256": "e8a781a2b089ae210839d285b8c6bec7703da04262d1b14e8b76bcd1b62d4b3e",
+      "exportedSha256": "9a8e0c98a29be71af39c193d9ed07e9b9947d40cac2d01acfaa7daf2577049cd",
+      "bytes": 7685,
+      "redactions": {
+        "capture-host": 1
+      }
+    },
+    {
+      "path": "results-capacity-pilot-v5/PILOT-001-screening-R4-K-A-1/run-outcomes.json",
+      "originalSha256": "132d16d0e690e45c30580c32807a81a8982388206c9c1bcaa2f35948a06733bb",
+      "exportedSha256": "132d16d0e690e45c30580c32807a81a8982388206c9c1bcaa2f35948a06733bb",
+      "bytes": 313163,
+      "redactions": {}
+    },
+    {
+      "path": "results-capacity-pilot-v5/PILOT-001-screening-R4-K-A-1/qualification.json",
+      "originalSha256": "b145c1640216555b249d71ed66f6298d7dfee98f0d616e17c7d6ff56a694be9b",
+      "exportedSha256": "b145c1640216555b249d71ed66f6298d7dfee98f0d616e17c7d6ff56a694be9b",
+      "bytes": 1515,
+      "redactions": {}
+    },
+    {
+      "path": "results-capacity-pilot-v5/PILOT-001-screening-R4-K-A-1/invariants.json",
+      "originalSha256": "fd02367003a3385dfab5016c1490c8bee4029aa256e06ac3f1016d867e4bcfa1",
+      "exportedSha256": "fd02367003a3385dfab5016c1490c8bee4029aa256e06ac3f1016d867e4bcfa1",
+      "bytes": 32863,
+      "redactions": {}
+    },
+    {
+      "path": "results-capacity-pilot-v5/PILOT-001-screening-R4-K-A-1/telemetry.json",
+      "originalSha256": "ae3bd1a2d6a5fa4f8a39f0c7de72122d0bc2c9b7f8dde840da8999b4f0e368e3",
+      "exportedSha256": "ae3bd1a2d6a5fa4f8a39f0c7de72122d0bc2c9b7f8dde840da8999b4f0e368e3",
+      "bytes": 731,
+      "redactions": {}
+    },
+    {
+      "path": "results-capacity-pilot-v5/PILOT-001-screening-R4-K-A-1/traces.json",
+      "originalSha256": "bbe48daffbc22995436951f9e481fb5ba08208d1f6ee1bd150218ff3965f48e9",
+      "exportedSha256": "bbe48daffbc22995436951f9e481fb5ba08208d1f6ee1bd150218ff3965f48e9",
+      "bytes": 2338929,
+      "redactions": {}
+    },
+    {
+      "path": "results-capacity-pilot-v5/PILOT-001-screening-R4-K-A-1/transfers.json",
+      "originalSha256": "6c103763de57a6a3280e9bc247a786accb30cacda97482ea4830baac8f929ac0",
+      "exportedSha256": "6c103763de57a6a3280e9bc247a786accb30cacda97482ea4830baac8f929ac0",
+      "bytes": 994550,
+      "redactions": {}
+    },
+    {
+      "path": "results-capacity-pilot-v5/PILOT-001-screening-R4-K-A-1/controller-state.json",
+      "originalSha256": "88006a279907d2c22e4b7970d4be4086f2a28d1dec938dea07e9e7bdf3608313",
+      "exportedSha256": "88006a279907d2c22e4b7970d4be4086f2a28d1dec938dea07e9e7bdf3608313",
+      "bytes": 856,
+      "redactions": {}
+    },
+    {
+      "path": "results-capacity-pilot-v5/PILOT-001-screening-R4-K-A-1/measurement-clock.json",
+      "originalSha256": "30c023ecaf57672260bfac5bdb95ce51d043e798c5e9cf63a3f93b3d49690f1b",
+      "exportedSha256": "f611a1c20efbb1e447135c1a56bedc00159acb730d5a79c8ff63fba3dfde3ee4",
+      "bytes": 108,
+      "redactions": {}
+    },
+    {
+      "path": "results-capacity-pilot-v5/PILOT-001-screening-R4-K-A-1/client-attempts.json",
+      "originalSha256": "40d86e52819e435f07f5897dc8b15823f72346a800f83184f8a8f316b428cabe",
+      "exportedSha256": "0620e39aa044ed7ab90a017fb63c2aa10c4e89acfb685521f71cc31bef15fe05",
+      "bytes": 431992,
+      "redactions": {}
+    },
+    {
+      "path": "results-capacity-pilot-v5/PILOT-001-screening-R4-K-A-1/measurement-summary.json",
+      "originalSha256": "1eacf3a3363feb7cf6baf5de36d2ee3be4ffc55f42b65ae5d3d10229b150103d",
+      "exportedSha256": "0cf2ffe8f31f2ef2fc2446ca7e6e274c303bb8e2f610920ade84a36ba6554cfc",
+      "bytes": 3779,
+      "redactions": {}
+    },
+    {
+      "path": "results-capacity-pilot-v5/PILOT-001-screening-R4-K-A-1/warmup-summary.json",
+      "originalSha256": "bce5e45dbd37968d8b0d6919540f2f81f0c3ca4bf26e8418b169fd68c4772f09",
+      "exportedSha256": "b81df4e31791525dc93caefd18a1b340c3a64ce10149de66dc28cfff89ef7e90",
+      "bytes": 3793,
+      "redactions": {}
+    },
+    {
+      "path": "results-capacity-pilot-v5/PILOT-001-screening-R4-K-A-1/diagnostics.json",
+      "originalSha256": "55c7cc5b87ba72cf2dff1a9f3db2e23ad9326ed44bf97a04f9ee9c5e8c9a60aa",
+      "exportedSha256": "55c7cc5b87ba72cf2dff1a9f3db2e23ad9326ed44bf97a04f9ee9c5e8c9a60aa",
+      "bytes": 394681,
+      "redactions": {}
+    },
+    {
+      "path": "results-capacity-pilot-v5/PILOT-001-screening-R4-K-A-1/docker-stats.jsonl",
+      "originalSha256": "8ae8e67893048e227a5b444fd68f75b2af3e54ef6b94514ad11d79a5ef8712e8",
+      "exportedSha256": "8ae8e67893048e227a5b444fd68f75b2af3e54ef6b94514ad11d79a5ef8712e8",
+      "bytes": 420286,
+      "redactions": {}
+    },
+    {
+      "path": "results-capacity-pilot-v5/PILOT-001-screening-R4-K-A-1/cleanup.json",
+      "originalSha256": "9bc50433f1183c8123aa4c1368f8c58ab0ca1c6f638e0ef1abb78c980bd08b56",
+      "exportedSha256": "9bc50433f1183c8123aa4c1368f8c58ab0ca1c6f638e0ef1abb78c980bd08b56",
+      "bytes": 136,
+      "redactions": {}
+    },
+    {
+      "path": "results-capacity-pilot-v5/PILOT-001-screening-R4-K-A-1/pilot-stability.json",
+      "originalSha256": "f8c4b0c04e137ffa595675096a5bb5e27893cb7e877a0680d579a1c13cf635fd",
+      "exportedSha256": "f8c4b0c04e137ffa595675096a5bb5e27893cb7e877a0680d579a1c13cf635fd",
+      "bytes": 2436,
+      "redactions": {}
+    },
+    {
+      "path": "results-capacity-pilot-v5/PILOT-001-screening-R4-K-A-1/registered-run.json",
+      "originalSha256": "6d7f896b332069cdd34acc4125a52d6e5495ab4f73dcec2113e16d0930dffa36",
+      "exportedSha256": "c726c897f6523f9e578423f2de7a13b1d891d3290e1a00a6309c3fc41bded48d",
+      "bytes": 9529,
+      "redactions": {
+        "capture-host": 1
+      }
+    },
+    {
+      "path": "results-capacity-pilot-v5/PILOT-001-screening-R4-K-A-1/end-checksums.json",
+      "originalSha256": "04bd4539dbdc07f350f353d458f6fa2ce7333e4a797617e2cfd9f9f511796db2",
+      "exportedSha256": "04bd4539dbdc07f350f353d458f6fa2ce7333e4a797617e2cfd9f9f511796db2",
+      "bytes": 454,
+      "redactions": {}
+    },
+    {
+      "path": "results-capacity-pilot-v5/PILOT-001-screening-R4-K-A-1/clean-start.json",
+      "originalSha256": "27df9cbeb9fac5623ad34553444f703a1d8640bebc5ac6886688ae7c095f5429",
+      "exportedSha256": "27df9cbeb9fac5623ad34553444f703a1d8640bebc5ac6886688ae7c095f5429",
+      "bytes": 136,
+      "redactions": {}
+    },
+    {
+      "path": "results-capacity-pilot-v5/PILOT-001-screening-R4-K-A-1/load-exit.json",
+      "originalSha256": "6380f7ebf1263a94abaaef4f5a1323cf0f4fbc88e37d8f1792ae68f163e18807",
+      "exportedSha256": "6380f7ebf1263a94abaaef4f5a1323cf0f4fbc88e37d8f1792ae68f163e18807",
+      "bytes": 34,
+      "redactions": {}
+    },
+    {
+      "path": "results-capacity-pilot-v5/PILOT-001-screening-R4-R-A-1/manifest.json",
+      "originalSha256": "047404ba994d0a7b47bd71f2ca74d81f5f25f6cb7a6c398c47f1e2988ebcff8b",
+      "exportedSha256": "3142b54ca0dd03bf751d68a29ac71a11b7651a472250716fd34a9f0afa04115f",
+      "bytes": 7207,
+      "redactions": {
+        "capture-host": 1
+      }
+    },
+    {
+      "path": "results-capacity-pilot-v5/PILOT-001-screening-R4-R-A-1/run-outcomes.json",
+      "originalSha256": "e6908f5d46b7bd277a99229542f1f03fa964827a5d44ba82176ea4fc676f9194",
+      "exportedSha256": "e6908f5d46b7bd277a99229542f1f03fa964827a5d44ba82176ea4fc676f9194",
+      "bytes": 312417,
+      "redactions": {}
+    },
+    {
+      "path": "results-capacity-pilot-v5/PILOT-001-screening-R4-R-A-1/qualification.json",
+      "originalSha256": "8daf0d326463e9adee7a48e801fa2e84f71396060ae3dcd429dab5bbc8df9aa2",
+      "exportedSha256": "8daf0d326463e9adee7a48e801fa2e84f71396060ae3dcd429dab5bbc8df9aa2",
+      "bytes": 1515,
+      "redactions": {}
+    },
+    {
+      "path": "results-capacity-pilot-v5/PILOT-001-screening-R4-R-A-1/invariants.json",
+      "originalSha256": "bccc190a4c726dd860a3e0db7f0c190b1f82fee32bbd353891be66cc18d948e3",
+      "exportedSha256": "bccc190a4c726dd860a3e0db7f0c190b1f82fee32bbd353891be66cc18d948e3",
+      "bytes": 32863,
+      "redactions": {}
+    },
+    {
+      "path": "results-capacity-pilot-v5/PILOT-001-screening-R4-R-A-1/telemetry.json",
+      "originalSha256": "8a64d7210e53f4c6ad240743bc66431ba28b340e7d118bcfd5a850a4f0763732",
+      "exportedSha256": "8a64d7210e53f4c6ad240743bc66431ba28b340e7d118bcfd5a850a4f0763732",
+      "bytes": 732,
+      "redactions": {}
+    },
+    {
+      "path": "results-capacity-pilot-v5/PILOT-001-screening-R4-R-A-1/traces.json",
+      "originalSha256": "c2b675ef982ab42234993656046ade34565adba26eaf4602cd8f679d46ec5fb0",
+      "exportedSha256": "c2b675ef982ab42234993656046ade34565adba26eaf4602cd8f679d46ec5fb0",
+      "bytes": 2339671,
+      "redactions": {}
+    },
+    {
+      "path": "results-capacity-pilot-v5/PILOT-001-screening-R4-R-A-1/transfers.json",
+      "originalSha256": "e20b520b7dea38dc4e947ac07167fead58d9e36df0e4337e11df6452f9faf735",
+      "exportedSha256": "e20b520b7dea38dc4e947ac07167fead58d9e36df0e4337e11df6452f9faf735",
+      "bytes": 993820,
+      "redactions": {}
+    },
+    {
+      "path": "results-capacity-pilot-v5/PILOT-001-screening-R4-R-A-1/controller-state.json",
+      "originalSha256": "6fde0163b0a2b0978b259d53452c97ec639add7c6d765ceecc30d27c1bae862e",
+      "exportedSha256": "6fde0163b0a2b0978b259d53452c97ec639add7c6d765ceecc30d27c1bae862e",
+      "bytes": 856,
+      "redactions": {}
+    },
+    {
+      "path": "results-capacity-pilot-v5/PILOT-001-screening-R4-R-A-1/measurement-clock.json",
+      "originalSha256": "4ebae109880400b49ff32c4ce0270933b0032b37f514a9d18d6bca9d5a1d490f",
+      "exportedSha256": "c8e4bbe145eb5a3dcdfd5b8c0a2de07edb57b0385e6c4e49be95676e9fa549f6",
+      "bytes": 108,
+      "redactions": {}
+    },
+    {
+      "path": "results-capacity-pilot-v5/PILOT-001-screening-R4-R-A-1/client-attempts.json",
+      "originalSha256": "c88372f9959c25ee52172e1e57986da8dec62a36496f6d404a8e0660c8e1a857",
+      "exportedSha256": "09eee584cd9c95e38b3dd8e1ea55143d532995cae5fa72a28a2b2f7b61e9ad8a",
+      "bytes": 431989,
+      "redactions": {}
+    },
+    {
+      "path": "results-capacity-pilot-v5/PILOT-001-screening-R4-R-A-1/measurement-summary.json",
+      "originalSha256": "f365dfae1beeab38e109a4fc541348a8ea4947ae172a8916e08eee494acbc4e1",
+      "exportedSha256": "3da21cec8569a30ff4d9ad1aa54482b8817933d8da65090d3179b8dc1f2f55b3",
+      "bytes": 3785,
+      "redactions": {}
+    },
+    {
+      "path": "results-capacity-pilot-v5/PILOT-001-screening-R4-R-A-1/warmup-summary.json",
+      "originalSha256": "af2978c7d011a85abf99fa85a5b32e3a29113b8346c8be406a466f479fc7b5f5",
+      "exportedSha256": "99e642dd9fe1b40bae2fb93ddf182703b43fd4fd8e16d232bc59d5f02bd393f4",
+      "bytes": 3793,
+      "redactions": {}
+    },
+    {
+      "path": "results-capacity-pilot-v5/PILOT-001-screening-R4-R-A-1/diagnostics.json",
+      "originalSha256": "3e085f0ad948d345aa11eba1fddd547b4ab8d80921dac76c89fd56e017674048",
+      "exportedSha256": "3e085f0ad948d345aa11eba1fddd547b4ab8d80921dac76c89fd56e017674048",
+      "bytes": 375784,
+      "redactions": {}
+    },
+    {
+      "path": "results-capacity-pilot-v5/PILOT-001-screening-R4-R-A-1/docker-stats.jsonl",
+      "originalSha256": "a69bcbb097a8557df754940d8b2a0f9dc0e181005ac77c7e7964813b04085d00",
+      "exportedSha256": "a69bcbb097a8557df754940d8b2a0f9dc0e181005ac77c7e7964813b04085d00",
+      "bytes": 383241,
+      "redactions": {}
+    },
+    {
+      "path": "results-capacity-pilot-v5/PILOT-001-screening-R4-R-A-1/cleanup.json",
+      "originalSha256": "190a98f332df3ee7aa7d960c77e360ebdf9f7f3356664425d6294cf8b7595b1a",
+      "exportedSha256": "190a98f332df3ee7aa7d960c77e360ebdf9f7f3356664425d6294cf8b7595b1a",
+      "bytes": 136,
+      "redactions": {}
+    },
+    {
+      "path": "results-capacity-pilot-v5/PILOT-001-screening-R4-R-A-1/pilot-stability.json",
+      "originalSha256": "1aebe546f01b3d931a7443ac9db21d097f0b761039fa40142008b00fddeeddd6",
+      "exportedSha256": "1aebe546f01b3d931a7443ac9db21d097f0b761039fa40142008b00fddeeddd6",
+      "bytes": 2422,
+      "redactions": {}
+    },
+    {
+      "path": "results-capacity-pilot-v5/PILOT-001-screening-R4-R-A-1/registered-run.json",
+      "originalSha256": "4c8fd07b54ff2c525de4f6daadc7accab6dfe5b618dc2317971e50447c4e4dd9",
+      "exportedSha256": "843f91fceaa0ad62ccefca6c5699f2973f9481035531c08ee764e3e556c1652f",
+      "bytes": 8995,
+      "redactions": {
+        "capture-host": 1
+      }
+    },
+    {
+      "path": "results-capacity-pilot-v5/PILOT-001-screening-R4-R-A-1/end-checksums.json",
+      "originalSha256": "04bd4539dbdc07f350f353d458f6fa2ce7333e4a797617e2cfd9f9f511796db2",
+      "exportedSha256": "04bd4539dbdc07f350f353d458f6fa2ce7333e4a797617e2cfd9f9f511796db2",
+      "bytes": 454,
+      "redactions": {}
+    },
+    {
+      "path": "results-capacity-pilot-v5/PILOT-001-screening-R4-R-A-1/clean-start.json",
+      "originalSha256": "588d0b0a4940d763898a968ce19aef72e8cd5008cca2aa02c1cb45641d10c73e",
+      "exportedSha256": "588d0b0a4940d763898a968ce19aef72e8cd5008cca2aa02c1cb45641d10c73e",
+      "bytes": 136,
+      "redactions": {}
+    },
+    {
+      "path": "results-capacity-pilot-v5/PILOT-001-screening-R4-R-A-1/load-exit.json",
+      "originalSha256": "6380f7ebf1263a94abaaef4f5a1323cf0f4fbc88e37d8f1792ae68f163e18807",
+      "exportedSha256": "6380f7ebf1263a94abaaef4f5a1323cf0f4fbc88e37d8f1792ae68f163e18807",
+      "bytes": 34,
+      "redactions": {}
+    },
+    {
+      "path": "results-capacity-pilot-v5/archive-checksum.json",
+      "originalSha256": "d8a5c22f3f9932fd3de1f945bf22f6f71f3c5ac629b6109a16821c837f352a1f",
+      "exportedSha256": "d8a5c22f3f9932fd3de1f945bf22f6f71f3c5ac629b6109a16821c837f352a1f",
+      "bytes": 83,
+      "redactions": {}
+    },
+    {
+      "path": "results-capacity-pilot-v5/experiment-summary.json",
+      "originalSha256": "f96024f71f3c4fd4c20a3857a8846056362d6ead5443b964f510d87bd1e7a81e",
+      "exportedSha256": "49358b9a3d0906215ea31c81fcfd8003dce4c5dc8fc58e1ebaebd78e4e2ce1bb",
+      "bytes": 2236,
+      "redactions": {
+        "<repo>": 1
+      }
+    },
+    {
+      "path": "results-capacity-pilot-v5/freeze.json",
+      "originalSha256": "423537771c80f8302c71d411d0df4a52f1016720a02e9bfb8a61e57a8b15408f",
+      "exportedSha256": "ee482515a2bb3030638294aa744da6734d8178d9ee60249da64866d117881fc3",
+      "bytes": 6036,
+      "redactions": {
+        "redacted-container-id-a": 1,
+        "external-container-a": 1,
+        "redacted-container-id-b": 1,
+        "external-container-b": 1,
+        "redacted-container-id-c": 1,
+        "external-container-c": 1,
+        "capture-host": 1,
+        "redacted-docker-id": 1,
+        "pauseAndRestoreNamedExternalContainers": 1,
+        "companionContainerUnavailableDuringPilot": 1
+      }
+    },
+    {
+      "path": "results-capacity-pilot-v5/frozen-compose.json",
+      "originalSha256": "adeefa77cb4f4b533bdbbf181bf161e80b9bfe557c5f5dfd4cdf655728904e40",
+      "exportedSha256": "adeefa77cb4f4b533bdbbf181bf161e80b9bfe557c5f5dfd4cdf655728904e40",
+      "bytes": 1939,
+      "redactions": {}
+    },
+    {
+      "path": "results-capacity-pilot-v5/pilot-batch-001.json",
+      "originalSha256": "5dee2a56b597fdde8fec8217ea03cbd3e48a1eb82ffa4e52c00bc1470bcfbf28",
+      "exportedSha256": "5dee2a56b597fdde8fec8217ea03cbd3e48a1eb82ffa4e52c00bc1470bcfbf28",
+      "bytes": 1246,
+      "redactions": {}
+    },
+    {
+      "path": "results-capacity-pilot-v5/pilot-protocol.json",
+      "originalSha256": "0f4abd99afdf9836a8ce3297fc2ea88e5e5082d2ddc79c858983f828998822c2",
+      "exportedSha256": "2e3c3bfd42acf5328357a2fde5cd44ad7c62069fdf8d39596f5b850d395e6cb8",
+      "bytes": 2146,
+      "redactions": {}
+    },
+    {
+      "path": "results-capacity-pilot-v5/pilot-state.json",
+      "originalSha256": "0bbdbe4e1519e35f840d7b776ba35c140df1c3bb0da2c7d037ff27c7bf908228",
+      "exportedSha256": "200c3e9ca4031fc68c6ca7c7fb4c0659c2b8a44edfc1ef9b26fb54fbf76e3a07",
+      "bytes": 9237,
+      "redactions": {
+        "redacted-container-id-a": 2,
+        "external-container-a": 2,
+        "redacted-container-id-b": 2,
+        "external-container-b": 2,
+        "redacted-container-id-c": 2,
+        "external-container-c": 2
+      }
+    },
+    {
+      "path": "results-capacity-pilot-v5/preflight.json",
+      "originalSha256": "55228022309ec9633da4628e3182fa47ad02c7f9235b1984f4fcd253524f5c77",
+      "exportedSha256": "94444344fc45b4c31fea256e177885f397cd982a016600072d79a82136136613",
+      "bytes": 850,
+      "redactions": {
+        "redacted-container-id-a": 1,
+        "external-container-a": 1,
+        "redacted-container-id-b": 1,
+        "external-container-b": 1,
+        "redacted-container-id-c": 1,
+        "external-container-c": 1
+      }
+    },
+    {
+      "path": "results-capacity-pilot-v5/run-index.jsonl",
+      "originalSha256": "f8c187c4e18cf6337b57df3c13a283281783ab72a83820e04c281ed6e862d2d9",
+      "exportedSha256": "f8c187c4e18cf6337b57df3c13a283281783ab72a83820e04c281ed6e862d2d9",
+      "bytes": 980,
+      "redactions": {}
+    },
+    {
+      "path": "results-capacity-pilot-v5/source-snapshot-application.tar.gz",
+      "originalPath": "results-capacity-pilot-v5/source-snapshot.tar.gz",
+      "originalSha256": "5d321887db0490a7c51ffc5092fe4ab7ff068aca42cfde4fe6105ca121cb1667",
+      "exportedSha256": "ac46ad0d289fda0b92ac4caa98382c6fa9ae931d29d9114c33d4f9510261ca35",
+      "applicationFiles": 52,
+      "droppedFiles": 76,
+      "droppedPrefixes": [
+        ".dockerignore",
+        "README.md",
+        "SOURCE_PROVENANCE.md",
+        "config",
+        "docs",
+        "scripts",
+        "src",
+        "test"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "conditionId": "K-A",
+  "coordinationMode": "kafka",
+  "clientMode": "async",
+  "description": "Kafka choreography with local event-driven decisions; the client receives an acknowledgement and later obtains the final result by callback or status retrieval."
+}

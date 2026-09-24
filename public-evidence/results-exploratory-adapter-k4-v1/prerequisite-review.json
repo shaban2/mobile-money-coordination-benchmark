@@ -1,0 +1,290 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-09-22T05:07:47.309Z",
+  "decision": "APPROVED_NEXT_EXPLORATORY_PAIR",
+  "nextProtocolId": "exploratory-adapter-k4-2026-09-22",
+  "currentSourceSha256": "713bbfc648f17748ee41371e73ead83efb43dfab5eac8b1301505b5731c2dcb7",
+  "note": "Inspected results-exploratory-database-r4-v1 on 22 September 2026: status EXPLORATORY_PAIR_COMPLETE_REVIEW_REQUIRED, one ended session, runs PILOT-001-fault-R4-R-A-1 and PILOT-001-fault-R4-K-A-1 both QUALIFIED with recovery and clearance observed (not censored), cleanup passed with no restore errors, no pause request, isolation events all foreign=false, source 7995e552 with pinned images. adapter-k4 is an implementation-rebuild stage: the repository was renamed to mobile-money-coordination-experiment, so package.json and package-lock.json differ from the archived source only in the package name, and the paper analysis/build scripts plus the two new protocol files changed the source hash to 713bbfc6. Application images are rebuilt; infrastructure images are pinned from the predecessor freeze. Order is seeded Kafka first. Approved by the researcher for two fixed 4 ops/s fault pairs only.",
+  "predecessor": {
+    "root": "<repo>/results-exploratory-database-r4-v1",
+    "protocolId": "exploratory-database-r4-2026-09-21",
+    "sourceSha256": "7995e55285b54ac33365084157467ded4bf816377074c648a762ed76e58f0d77",
+    "status": "EXPLORATORY_PAIR_COMPLETE_REVIEW_REQUIRED",
+    "sessionId": "8b20cd29-ea64-4206-96d3-a9dc724cd382",
+    "endedAt": "2026-09-21T05:22:11.905Z",
+    "pausedByUser": false,
+    "runs": [
+      {
+        "runId": "PILOT-001-fault-R4-R-A-1",
+        "conditionId": "R-A",
+        "rate": 4,
+        "phase": "fault",
+        "faultScenario": "database-delay",
+        "status": "QUALIFIED",
+        "checks": {
+          "evidenceValid": true,
+          "fullDuration": true,
+          "protocolIdentity": true,
+          "diagnosticsHealthy": true,
+          "offeredLoadDelivered": true,
+          "completeTiming": true,
+          "completeWindows": true,
+          "queueAccounting": true,
+          "safetyPassed": true,
+          "workloadChecks": true,
+          "terminalCallbacks": true,
+          "noFailedTransfers": true,
+          "noPendingAfterDrain": true,
+          "correctCompletions": true,
+          "faultEvidence": true
+        },
+        "queue": {
+          "version": "queue-observation-v2",
+          "status": "MIXED_RISES_AND_FALLS_REVIEW",
+          "blocks": [
+            {
+              "firstBoundary": 1,
+              "lastBoundary": 5,
+              "min": 0,
+              "max": 0
+            },
+            {
+              "firstBoundary": 6,
+              "lastBoundary": 10,
+              "min": 0,
+              "max": 111
+            },
+            {
+              "firstBoundary": 11,
+              "lastBoundary": 15,
+              "min": 0,
+              "max": 0
+            },
+            {
+              "firstBoundary": 16,
+              "lastBoundary": 20,
+              "min": 0,
+              "max": 0
+            }
+          ],
+          "role": "DESCRIPTIVE_FAULT_RESPONSE_NOT_CAPACITY_DECISION",
+          "capacityEstablished": false,
+          "automaticBoundaryDecision": null
+        },
+        "counts": {
+          "total": 1824,
+          "completed": 1824,
+          "failed": 0,
+          "pendingAfterDrain": 0
+        },
+        "goodput": 3.04,
+        "latency": {
+          "count": 1824,
+          "median": 55,
+          "p95": 19237.149999999998,
+          "p99": 33206.22999999999
+        },
+        "fault": {
+          "scenario": "database-delay",
+          "injectedAt": "2026-09-21T05:00:42.055Z",
+          "clearedAt": "2026-09-21T05:01:42.179Z",
+          "recoveryEstimable": true,
+          "backlogEstimable": true,
+          "baseline": {
+            "windows": 3,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 61.39999999999998,
+            "backlogUpper": 0
+          },
+          "recoveryTimeSeconds": 119.749,
+          "recoveryCensored": false,
+          "recoveryObservationSeconds": 299.749,
+          "backlogClearanceSeconds": 59.749,
+          "backlogClearanceCensored": false,
+          "backlogObservationSeconds": 301.022
+        },
+        "completedDuringDrain": 0
+      },
+      {
+        "runId": "PILOT-001-fault-R4-K-A-1",
+        "conditionId": "K-A",
+        "rate": 4,
+        "phase": "fault",
+        "faultScenario": "database-delay",
+        "status": "QUALIFIED",
+        "checks": {
+          "evidenceValid": true,
+          "fullDuration": true,
+          "protocolIdentity": true,
+          "diagnosticsHealthy": true,
+          "offeredLoadDelivered": true,
+          "completeTiming": true,
+          "completeWindows": true,
+          "queueAccounting": true,
+          "safetyPassed": true,
+          "workloadChecks": true,
+          "terminalCallbacks": true,
+          "noFailedTransfers": true,
+          "noPendingAfterDrain": true,
+          "correctCompletions": true,
+          "faultEvidence": true
+        },
+        "queue": {
+          "version": "queue-observation-v2",
+          "status": "MIXED_RISES_AND_FALLS_REVIEW",
+          "blocks": [
+            {
+              "firstBoundary": 1,
+              "lastBoundary": 5,
+              "min": 0,
+              "max": 0
+            },
+            {
+              "firstBoundary": 6,
+              "lastBoundary": 10,
+              "min": 0,
+              "max": 168
+            },
+            {
+              "firstBoundary": 11,
+              "lastBoundary": 15,
+              "min": 0,
+              "max": 0
+            },
+            {
+              "firstBoundary": 16,
+              "lastBoundary": 20,
+              "min": 0,
+              "max": 0
+            }
+          ],
+          "role": "DESCRIPTIVE_FAULT_RESPONSE_NOT_CAPACITY_DECISION",
+          "capacityEstablished": false,
+          "automaticBoundaryDecision": null
+        },
+        "counts": {
+          "total": 1824,
+          "completed": 1824,
+          "failed": 0,
+          "pendingAfterDrain": 0
+        },
+        "goodput": 3.04,
+        "latency": {
+          "count": 1824,
+          "median": 148,
+          "p95": 28776.799999999996,
+          "p99": 50408.54
+        },
+        "fault": {
+          "scenario": "database-delay",
+          "injectedAt": "2026-09-21T05:16:05.870Z",
+          "clearedAt": "2026-09-21T05:17:05.990Z",
+          "recoveryEstimable": true,
+          "backlogEstimable": true,
+          "baseline": {
+            "windows": 3,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 170,
+            "backlogUpper": 0
+          },
+          "recoveryTimeSeconds": 119.742,
+          "recoveryCensored": false,
+          "recoveryObservationSeconds": 299.742,
+          "backlogClearanceSeconds": 59.742,
+          "backlogClearanceCensored": false,
+          "backlogObservationSeconds": 300.904
+        },
+        "completedDuringDrain": 0
+      }
+    ],
+    "capacityEstablished": false,
+    "files": {
+      "PILOT-001-fault-R4-K-A-1/callbacks.json": "af7eb36b19c06dcd1e596f8382796c37d9f554c0578538f7840c3e6f52cb6f70",
+      "PILOT-001-fault-R4-K-A-1/clean-start.json": "9c43b579612a8635b615436c711a9fece21d9e7900006576dad1060f1132a282",
+      "PILOT-001-fault-R4-K-A-1/cleanup.json": "1767c4524d0a3b08196294b28fbe1eed059f2ac973b9b20f38e4f1707b8c7fdf",
+      "PILOT-001-fault-R4-K-A-1/client-attempts.json": "0f286232e8433fb26d63198ad943c688b747d6c5d978267687ad3b05cb136b02",
+      "PILOT-001-fault-R4-K-A-1/compose.log": "db816c712141cdf06a947fb2f34d54a8e0fd37a5013e04802b6f6624b0838fc8",
+      "PILOT-001-fault-R4-K-A-1/container-inspect.json": "c07f2446e12f3d1ef603c5ab872f3f4007538ba87ee627ba9f0816dd62fd77d7",
+      "PILOT-001-fault-R4-K-A-1/controller-state.json": "253f844800d5b4eaa73f4d1d6f52f7dd82d88a74bc43dcb823ce936f0569553d",
+      "PILOT-001-fault-R4-K-A-1/database-diagnostics.json": "7743c0a541c4d3bb98c6cbababa7dd33097dbe2b3670a827e537ea712d0e0fb7",
+      "PILOT-001-fault-R4-K-A-1/diagnostics.json": "5a68fc2faaa224213536db70cb25b3a03d12ac26f0b6b68cd52edd6709b080e0",
+      "PILOT-001-fault-R4-K-A-1/docker-stats-collector.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "PILOT-001-fault-R4-K-A-1/docker-stats.jsonl": "b4f8f7cc5c0cb444fd3223f1530045507d14c2fdfcf22bfd4a1f8948f052435b",
+      "PILOT-001-fault-R4-K-A-1/end-checksums.json": "9e678a76287d336dd1373b5f1f5e4ca0418c76ff47ebb4c6ad0eecbd04c8dc47",
+      "PILOT-001-fault-R4-K-A-1/fault-evidence.json": "4f06acfff276328aea816a40cc00314d470fcd5d726d5d11f098a91cd05a061e",
+      "PILOT-001-fault-R4-K-A-1/fault.log": "669bf24188a230a90a408805aefcbc8a741c7d0024137b1326323c2906cfa3db",
+      "PILOT-001-fault-R4-K-A-1/invariants.json": "7805eb6e515626c8f5cb09ad7b4733e258058a66e030ce100b8e8654e4c7b3f4",
+      "PILOT-001-fault-R4-K-A-1/isolation.json": "980e4cbfa7aaca77807f0e67576e92ca5e30b0f89935bb21b0e65ca0ab3e7fd1",
+      "PILOT-001-fault-R4-K-A-1/load-exit.json": "6380f7ebf1263a94abaaef4f5a1323cf0f4fbc88e37d8f1792ae68f163e18807",
+      "PILOT-001-fault-R4-K-A-1/manifest.json": "1c6a17f322f60efd87fb368fdaf1b4d0e53237d7afd077dda4f5c1093d7d100e",
+      "PILOT-001-fault-R4-K-A-1/measurement-clock.json": "c5102b06db007ba30142b970796ea3ecbb12607be85824d4357af4adad8cb048",
+      "PILOT-001-fault-R4-K-A-1/measurement-metrics.json": "86ae041bb190269a4ee42f826ff7d85df66bdfd08a45e83a4e09598e6c1e44de",
+      "PILOT-001-fault-R4-K-A-1/measurement-summary.json": "6ca24a18cb1a1db29004d21f8be23973754a3a0946d914fdec90eec35fe5e9de",
+      "PILOT-001-fault-R4-K-A-1/measurement.log": "eaa360ab6d78704277bf105d1b4fdcaf9445e431dad4a00676a2aa18b076358c",
+      "PILOT-001-fault-R4-K-A-1/pilot-stability.json": "07ff54d04371a01424baaa3e73b48f78e4a1f6a3a2c7b47e12117c28cc1e55ed",
+      "PILOT-001-fault-R4-K-A-1/provider-attempt-timings.json": "2f397c085df7ff9b783b1ee0a49c3c1ab60a8c8a548ce58615b85daa2646fa54",
+      "PILOT-001-fault-R4-K-A-1/qualification.json": "8d31189dcd670669dcaaf418822cea3d7ddae111739e5a6cdc4bb6f014d07fa6",
+      "PILOT-001-fault-R4-K-A-1/registered-run.json": "6fc0daa34d146338a026c242853d637c1768e448300c697ee99c8b9bccdc2846",
+      "PILOT-001-fault-R4-K-A-1/resolved-compose.json": "4a444f89a340072b1433452b0e146cfbe6cf1b111f2177231fdab21b8b513c90",
+      "PILOT-001-fault-R4-K-A-1/resolved-compose.yaml": "ab322a0550873f6509711b00f3dfc7c64db00c7f1b3f4d68cb81a96a677c24a7",
+      "PILOT-001-fault-R4-K-A-1/run-outcomes.json": "cba52e81240625fdedbc71f81863d35c69b514aab1ca1671a4768e73bebaba47",
+      "PILOT-001-fault-R4-K-A-1/telemetry.json": "4c81c3469d48b67d46fa69272abaf4dfe85581f6f04eaccf81a817b47d473d4b",
+      "PILOT-001-fault-R4-K-A-1/traces.json": "9152b1cf19efbcb6bbb3ebc38257d2fe8bc75e20699e7acc3980b5b1f9879194",
+      "PILOT-001-fault-R4-K-A-1/transfers.json": "341ed41d20165d039c335da3a961e6d93a5af1b56a1d4768c9663ac769655402",
+      "PILOT-001-fault-R4-K-A-1/warmup-summary.json": "b1a34cca7033e14bdb1c7adde145e97f8c4e6bc5e2ca9b2be6d8c90073fdcc9f",
+      "PILOT-001-fault-R4-K-A-1/warmup.log": "53ed42a5b1fc24062452ffd3531a4b965113e8b11017879a34840e276f8abec9",
+      "PILOT-001-fault-R4-K-A-1-controller.log": "7ac3615b86e02d0fd79954340bc574c5ddc57458ae4efd20ca5fe5f4bd955d4f",
+      "PILOT-001-fault-R4-R-A-1/callbacks.json": "2e552fe70c9c99bb7c5561bd49c46e7ae66bb25abb746e610b6ac358e8ab3947",
+      "PILOT-001-fault-R4-R-A-1/clean-start.json": "438a21d0f8c0860b2dd8da1dd9e6dbd7557e663d95862b45d18568e7cbd8d900",
+      "PILOT-001-fault-R4-R-A-1/cleanup.json": "50eb3156398ae742bbd5b18ee01dbfae492df5f05ad90b2e08882422815a2195",
+      "PILOT-001-fault-R4-R-A-1/client-attempts.json": "bcb6eb59e458a87da3402ed37891ae8171168c05472d456402dbead1c072de42",
+      "PILOT-001-fault-R4-R-A-1/compose.log": "dd8b8af309133a1defe12934ea3654f30e540072178898c2d3472c79d4f77b51",
+      "PILOT-001-fault-R4-R-A-1/container-inspect.json": "0a9ccb7cb2e492c6f0b07048959722db3b6fdb5b1969c435daae689dbc14d152",
+      "PILOT-001-fault-R4-R-A-1/controller-state.json": "db0fdcdf6b756dd48479240043c0e0742e7dce34c24cee1d4c682016450df850",
+      "PILOT-001-fault-R4-R-A-1/database-diagnostics.json": "f1ab066b133c41c13f168e6c9d180ce5835d7aef46481b89a0883472b54c1111",
+      "PILOT-001-fault-R4-R-A-1/diagnostics.json": "a9941624eb1aed76e640d0810ec34ec6d48e56fc23b38946ae8913b3ceab723b",
+      "PILOT-001-fault-R4-R-A-1/docker-stats-collector.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "PILOT-001-fault-R4-R-A-1/docker-stats.jsonl": "429296f817a981b4b58d6b1a62277896d9b4a3862368d2c80388909498411a1b",
+      "PILOT-001-fault-R4-R-A-1/end-checksums.json": "9e678a76287d336dd1373b5f1f5e4ca0418c76ff47ebb4c6ad0eecbd04c8dc47",
+      "PILOT-001-fault-R4-R-A-1/fault-evidence.json": "d8390bf5700a8f73bbe31d500626572add6c4a22a56d672fca3a5a999703514f",
+      "PILOT-001-fault-R4-R-A-1/fault.log": "669bf24188a230a90a408805aefcbc8a741c7d0024137b1326323c2906cfa3db",
+      "PILOT-001-fault-R4-R-A-1/invariants.json": "96182d9286eef45f145b21309aaaff5d116184defee138865359e76289917c66",
+      "PILOT-001-fault-R4-R-A-1/isolation.json": "d1c5e14fecddfe84048dd6d96c86291669a9ced4205a31f0062792e9dbc5421b",
+      "PILOT-001-fault-R4-R-A-1/load-exit.json": "6380f7ebf1263a94abaaef4f5a1323cf0f4fbc88e37d8f1792ae68f163e18807",
+      "PILOT-001-fault-R4-R-A-1/manifest.json": "b915d8437f98b39aea8493e4361ac42f258f8d842fc94848fd7dafc9b90a5538",
+      "PILOT-001-fault-R4-R-A-1/measurement-clock.json": "f8ba57afe44747aab8aaa104611a659cf96444683175fa1410700c9ce1a06fe7",
+      "PILOT-001-fault-R4-R-A-1/measurement-metrics.json": "4b245c7859d764ce43ae0e6f2ed128efd449289a02942926951a6c7e59124561",
+      "PILOT-001-fault-R4-R-A-1/measurement-summary.json": "ff5a3df7e0560eb43abecf62edbb246c91e347355c1dc2377bc1fefb1dd3c4a0",
+      "PILOT-001-fault-R4-R-A-1/measurement.log": "f10987134a9dc1f25804db75e33521892d5b4afefa02a966eaaa1cac630d6e17",
+      "PILOT-001-fault-R4-R-A-1/pilot-stability.json": "5f6942ab627d17d9cd2166b76823d3d28a7ce18696f91b4e93c3c522363b4b56",
+      "PILOT-001-fault-R4-R-A-1/provider-attempt-timings.json": "7e06211aec5332ce412cbf69350e3c5ffccedf7b3c39a51c5cd8ed254ee3876d",
+      "PILOT-001-fault-R4-R-A-1/qualification.json": "dd8dfca98ecef93cec960ed99260f4d05c0806d0d425091de2090ca451482e36",
+      "PILOT-001-fault-R4-R-A-1/registered-run.json": "7ee173d804e01f5514e67e557edd3b66a64a0b51155ad3ff498ac928c8f0ac7b",
+      "PILOT-001-fault-R4-R-A-1/resolved-compose.json": "39afc6206289ce230f5aab603cda59d2391d75c80e474c7af036fafd5667082e",
+      "PILOT-001-fault-R4-R-A-1/resolved-compose.yaml": "15ccccf4111df5eda5f60325bf1b4e765e054d03dca39adea5ad32c7a92732bc",
+      "PILOT-001-fault-R4-R-A-1/run-outcomes.json": "f303bb370bd160b42f684fe0c008b04c24c77d385a970bae252639e728d4fc72",
+      "PILOT-001-fault-R4-R-A-1/telemetry.json": "065e52cc38f7c9c12a36c3eaaa4e1b1f0e0332ebdabf6a62398252d38a0b4f1f",
+      "PILOT-001-fault-R4-R-A-1/traces.json": "273537533be5df03973a33908ed2e2435d88e7b9ac0dd7687cc3c39fedb22104",
+      "PILOT-001-fault-R4-R-A-1/transfers.json": "497e78f475cb0be0cf365077d02636193d9b811207171fae70d59da3d5728ac5",
+      "PILOT-001-fault-R4-R-A-1/warmup-summary.json": "aba420acf5cd8b581f22c657658233ca44791bb0379bb016f0a377671424d238",
+      "PILOT-001-fault-R4-R-A-1/warmup.log": "3907a5bbd51b789d85ac575cc87ad0dc4d5423c56f7f7e0205a33249fa0fdf57",
+      "PILOT-001-fault-R4-R-A-1-controller.log": "93eea2673e1789d09ce02702345eea09060b53b456bafcd93594fd1417ff66b2",
+      "archive-checksum.json": "8af5815aab93f0d7a588545b0de59766e0c8655869ccd12f4a649d05773debd2",
+      "controller-invocation-1789966288288.json": "b1237833dc3f5d3db25e5289018935c33a99680aae5d7275225b087dd5f0a76e",
+      "controller-invocation-1789967207559.json": "4a1ffb77ce02b814f9213ca8573cf891f0ee37647df3ec62195a93159f2ee434",
+      "experiment-summary.json": "b2519e80e91cf1e4fbb373d44bc4e74eccc344a746388d8e4003a781cb4f7663",
+      "freeze.json": "ae57e4aa0074be86f672eae27a07a193df08c9808cb5dc8f196ac1d8bbd20281",
+      "frozen-compose.json": "8b09be8c0610efbce6e6e087a3c275d4e28afafdf41bc231d21e216a7ea532fa",
+      "isolation-events.jsonl": "b32d3edaa091d4cd85143b5a4cbf1aecb3e2f56c6768be4366af6fd240847501",
+      "launcher.json": "a4d7eaa49b8ff90844b07eb4c22f492b115bf5ae1714166c264c7cf48d6dd2f3",
+      "launcher.log": "8c2dcdc6aca376886bf235f4b0253c3bd114e4f101db80ef93ed5f8811f0cc31",
+      "pilot-batch-001.json": "2f6c582bdcf4859957be4a3135ed952f2a833d096e82102ff119597895615fad",
+      "pilot-protocol.json": "5b0ac859021fa36581ff22e22fe74e6d4af3d3bd2a2addc0411988b0ddb594bf",
+      "pilot-state.json": "ae4ed18a58351d98bc6da6dfe6f7292a6a078b4d05a0ab7267883ecad32c081b",
+      "pilot.log": "8c2dcdc6aca376886bf235f4b0253c3bd114e4f101db80ef93ed5f8811f0cc31",
+      "prerequisite-review.json": "1ae5c669ee45a4aa10b8596b18ddef62b1051402fcd5a1ee67cbe4dc024d033c",
+      "run-index.jsonl": "30dbbdf0b28dd97f63e922973b46fe7dc1d0e2eba09d6b45072d24bae143612e",
+      "source-snapshot.tar.gz": "96b52192b5c579ab337ec60f9460f8e94acb5c8137c12e16c45eec23b9562550"
+    }
+  }
+}

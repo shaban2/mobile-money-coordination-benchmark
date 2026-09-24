@@ -1,0 +1,858 @@
+{
+  "schemaVersion": 2,
+  "startedAt": "2026-09-21T04:13:39.815Z",
+  "status": "EXPLORATORY_PAIR_COMPLETE_REVIEW_REQUIRED",
+  "records": [
+    {
+      "runId": "PILOT-001-fault-R4-R-A-1",
+      "conditionId": "R-A",
+      "phase": "fault",
+      "rate": 4,
+      "executionBlock": "PILOT-001-fault-R4-1",
+      "sessionId": "2549db1f-ec11-4158-9545-a2f23a6dc00f",
+      "faultScenario": "adapter-crash",
+      "recordedAt": "2026-09-21T04:29:03.102Z",
+      "status": "QUALIFIED",
+      "stability": {
+        "schemaVersion": 1,
+        "rule": {
+          "version": "queue-observation-v2",
+          "policySha256": "15c02e20073bfee0a062c0b8626d98123e8691c29b00d60f93a62256827405ad"
+        },
+        "status": "OBSERVATION_RECORDED",
+        "role": "DESCRIPTIVE_FAULT_RESPONSE_NOT_CAPACITY_DECISION",
+        "automaticBoundaryDecision": null,
+        "capacityEstablished": false,
+        "checks": {
+          "evidenceValid": true,
+          "fullDuration": true,
+          "protocolIdentity": true,
+          "diagnosticsHealthy": true,
+          "offeredLoadDelivered": true,
+          "completeTiming": true,
+          "completeWindows": true,
+          "queueAccounting": true,
+          "safetyPassed": true,
+          "workloadChecks": true,
+          "terminalCallbacks": true,
+          "noFailedTransfers": true,
+          "noPendingAfterDrain": true,
+          "correctCompletions": true,
+          "faultEvidence": true
+        },
+        "queue": {
+          "version": "queue-observation-v2",
+          "status": "MIXED_RISES_AND_FALLS_REVIEW",
+          "blocks": [
+            {
+              "firstBoundary": 1,
+              "lastBoundary": 5,
+              "min": 0,
+              "max": 0
+            },
+            {
+              "firstBoundary": 6,
+              "lastBoundary": 10,
+              "min": 0,
+              "max": 90
+            },
+            {
+              "firstBoundary": 11,
+              "lastBoundary": 15,
+              "min": 0,
+              "max": 0
+            },
+            {
+              "firstBoundary": 16,
+              "lastBoundary": 20,
+              "min": 0,
+              "max": 0
+            }
+          ],
+          "role": "DESCRIPTIVE_FAULT_RESPONSE_NOT_CAPACITY_DECISION",
+          "capacityEstablished": false,
+          "automaticBoundaryDecision": null
+        },
+        "windows": [
+          {
+            "startAt": "2026-09-21T04:18:58.418Z",
+            "endAt": "2026-09-21T04:19:28.418Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 65,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T04:19:28.418Z",
+            "endAt": "2026-09-21T04:19:58.418Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 62.5,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T04:19:58.418Z",
+            "endAt": "2026-09-21T04:20:28.418Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 63,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T04:20:28.418Z",
+            "endAt": "2026-09-21T04:20:58.418Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 64,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T04:20:58.418Z",
+            "endAt": "2026-09-21T04:21:28.418Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.066666666666667,
+            "p95DurableCompletionMs": 62,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 92,
+            "terminalConfirmations": 92,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T04:21:28.418Z",
+            "endAt": "2026-09-21T04:21:58.418Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 63,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T04:21:58.418Z",
+            "endAt": "2026-09-21T04:22:28.418Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 64.5,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T04:22:28.418Z",
+            "endAt": "2026-09-21T04:22:58.418Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 63.5,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T04:22:58.418Z",
+            "endAt": "2026-09-21T04:23:28.418Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 0.03333333333333333,
+            "p95DurableCompletionMs": 53,
+            "backlogAtEnd": 90,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 1,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T04:23:28.418Z",
+            "endAt": "2026-09-21T04:23:58.418Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 6.066666666666666,
+            "p95DurableCompletionMs": 28106.399999999998,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 90,
+            "arrivals": 92,
+            "terminalConfirmations": 182,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T04:23:58.418Z",
+            "endAt": "2026-09-21T04:24:28.418Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 63,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T04:24:28.418Z",
+            "endAt": "2026-09-21T04:24:58.418Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 62.5,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T04:24:58.418Z",
+            "endAt": "2026-09-21T04:25:28.418Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 63,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T04:25:28.418Z",
+            "endAt": "2026-09-21T04:25:58.418Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 60,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T04:25:58.418Z",
+            "endAt": "2026-09-21T04:26:28.418Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.066666666666667,
+            "p95DurableCompletionMs": 67.45,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 92,
+            "terminalConfirmations": 92,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T04:26:28.418Z",
+            "endAt": "2026-09-21T04:26:58.418Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 65,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T04:26:58.418Z",
+            "endAt": "2026-09-21T04:27:28.418Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 63.5,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T04:27:28.418Z",
+            "endAt": "2026-09-21T04:27:58.418Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 63,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T04:27:58.418Z",
+            "endAt": "2026-09-21T04:28:28.418Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 62,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T04:28:28.418Z",
+            "endAt": "2026-09-21T04:28:58.418Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.066666666666667,
+            "p95DurableCompletionMs": 63.45,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 92,
+            "terminalConfirmations": 92,
+            "balanced": true
+          }
+        ],
+        "latency": {
+          "role": "DESCRIPTIVE_NOT_A_CAPACITY_GATE",
+          "overall": {
+            "count": 1824,
+            "median": 55,
+            "p95": 2479.399999999978,
+            "p99": 25135.329999999994
+          }
+        },
+        "fault": {
+          "role": "DESCRIPTIVE_WITH_CENSORING_NO_WINNER",
+          "scenario": "adapter-crash",
+          "injectedAt": "2026-09-21T04:22:58.754Z",
+          "clearedAt": "2026-09-21T04:23:29.201Z",
+          "recoveryEstimable": true,
+          "backlogEstimable": true,
+          "baseline": {
+            "windows": 3,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 64,
+            "backlogUpper": 0
+          },
+          "recoveryTimeSeconds": 119.217,
+          "recoveryCensored": false,
+          "recoveryObservationSeconds": 329.217,
+          "backlogClearanceSeconds": 59.217,
+          "backlogClearanceCensored": false,
+          "backlogObservationSeconds": 330.578
+        },
+        "completedDuringDrain": 0
+      }
+    },
+    {
+      "runId": "PILOT-001-fault-R4-K-A-1",
+      "conditionId": "K-A",
+      "phase": "fault",
+      "rate": 4,
+      "executionBlock": "PILOT-001-fault-R4-1",
+      "sessionId": "2549db1f-ec11-4158-9545-a2f23a6dc00f",
+      "faultScenario": "adapter-crash",
+      "recordedAt": "2026-09-21T04:44:29.123Z",
+      "status": "QUALIFIED",
+      "stability": {
+        "schemaVersion": 1,
+        "rule": {
+          "version": "queue-observation-v2",
+          "policySha256": "15c02e20073bfee0a062c0b8626d98123e8691c29b00d60f93a62256827405ad"
+        },
+        "status": "OBSERVATION_RECORDED",
+        "role": "DESCRIPTIVE_FAULT_RESPONSE_NOT_CAPACITY_DECISION",
+        "automaticBoundaryDecision": null,
+        "capacityEstablished": false,
+        "checks": {
+          "evidenceValid": true,
+          "fullDuration": true,
+          "protocolIdentity": true,
+          "diagnosticsHealthy": true,
+          "offeredLoadDelivered": true,
+          "completeTiming": true,
+          "completeWindows": true,
+          "queueAccounting": true,
+          "safetyPassed": true,
+          "workloadChecks": true,
+          "terminalCallbacks": true,
+          "noFailedTransfers": true,
+          "noPendingAfterDrain": true,
+          "correctCompletions": true,
+          "faultEvidence": true
+        },
+        "queue": {
+          "version": "queue-observation-v2",
+          "status": "MIXED_RISES_AND_FALLS_REVIEW",
+          "blocks": [
+            {
+              "firstBoundary": 1,
+              "lastBoundary": 5,
+              "min": 0,
+              "max": 0
+            },
+            {
+              "firstBoundary": 6,
+              "lastBoundary": 10,
+              "min": 0,
+              "max": 90
+            },
+            {
+              "firstBoundary": 11,
+              "lastBoundary": 15,
+              "min": 0,
+              "max": 0
+            },
+            {
+              "firstBoundary": 16,
+              "lastBoundary": 20,
+              "min": 0,
+              "max": 0
+            }
+          ],
+          "role": "DESCRIPTIVE_FAULT_RESPONSE_NOT_CAPACITY_DECISION",
+          "capacityEstablished": false,
+          "automaticBoundaryDecision": null
+        },
+        "windows": [
+          {
+            "startAt": "2026-09-21T04:34:23.261Z",
+            "endAt": "2026-09-21T04:34:53.261Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 165,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T04:34:53.261Z",
+            "endAt": "2026-09-21T04:35:23.261Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 164,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T04:35:23.261Z",
+            "endAt": "2026-09-21T04:35:53.261Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 168,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T04:35:53.261Z",
+            "endAt": "2026-09-21T04:36:23.261Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 168,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T04:36:23.261Z",
+            "endAt": "2026-09-21T04:36:53.261Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.066666666666667,
+            "p95DurableCompletionMs": 172.45,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 92,
+            "terminalConfirmations": 92,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T04:36:53.261Z",
+            "endAt": "2026-09-21T04:37:23.261Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 190.5,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T04:37:23.261Z",
+            "endAt": "2026-09-21T04:37:53.261Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 167,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T04:37:53.261Z",
+            "endAt": "2026-09-21T04:38:23.261Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 214.5,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T04:38:23.261Z",
+            "endAt": "2026-09-21T04:38:53.261Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 0.03333333333333333,
+            "p95DurableCompletionMs": 130,
+            "backlogAtEnd": 90,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 1,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T04:38:53.261Z",
+            "endAt": "2026-09-21T04:39:23.261Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 6.066666666666666,
+            "p95DurableCompletionMs": 33141.75,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 90,
+            "arrivals": 92,
+            "terminalConfirmations": 182,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T04:39:23.261Z",
+            "endAt": "2026-09-21T04:39:53.261Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 169,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T04:39:53.261Z",
+            "endAt": "2026-09-21T04:40:23.261Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 167.5,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T04:40:23.261Z",
+            "endAt": "2026-09-21T04:40:53.261Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 167.5,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T04:40:53.261Z",
+            "endAt": "2026-09-21T04:41:23.261Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 172.5,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T04:41:23.261Z",
+            "endAt": "2026-09-21T04:41:53.261Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.066666666666667,
+            "p95DurableCompletionMs": 167.45,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 92,
+            "terminalConfirmations": 92,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T04:41:53.261Z",
+            "endAt": "2026-09-21T04:42:23.261Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 182,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T04:42:23.261Z",
+            "endAt": "2026-09-21T04:42:53.261Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 171.5,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T04:42:53.261Z",
+            "endAt": "2026-09-21T04:43:23.261Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 167,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T04:43:23.261Z",
+            "endAt": "2026-09-21T04:43:53.261Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 173,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T04:43:53.261Z",
+            "endAt": "2026-09-21T04:44:23.261Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.066666666666667,
+            "p95DurableCompletionMs": 171,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 92,
+            "terminalConfirmations": 92,
+            "balanced": true
+          }
+        ],
+        "latency": {
+          "role": "DESCRIPTIVE_NOT_A_CAPACITY_GATE",
+          "overall": {
+            "count": 1824,
+            "median": 147,
+            "p95": 6708.749999999978,
+            "p99": 30576.499999999996
+          }
+        },
+        "fault": {
+          "role": "DESCRIPTIVE_WITH_CENSORING_NO_WINNER",
+          "scenario": "adapter-crash",
+          "injectedAt": "2026-09-21T04:38:23.651Z",
+          "clearedAt": "2026-09-21T04:38:54.095Z",
+          "recoveryEstimable": true,
+          "backlogEstimable": true,
+          "baseline": {
+            "windows": 3,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 195.59999999999968,
+            "backlogUpper": 0
+          },
+          "recoveryTimeSeconds": 119.166,
+          "recoveryCensored": false,
+          "recoveryObservationSeconds": 329.166,
+          "backlogClearanceSeconds": 59.166,
+          "backlogClearanceCensored": false,
+          "backlogObservationSeconds": 331.613
+        },
+        "completedDuringDrain": 0
+      }
+    }
+  ],
+  "batches": [
+    {
+      "schemaVersion": 1,
+      "kind": "CAPACITY_PILOT",
+      "protocolId": "exploratory-adapter-r4-2026-09-21",
+      "capacityRule": {
+        "version": "queue-observation-v2",
+        "policySha256": "15c02e20073bfee0a062c0b8626d98123e8691c29b00d60f93a62256827405ad"
+      },
+      "expectedRunCount": 2,
+      "runs": [
+        {
+          "conditionId": "R-A",
+          "composeProfile": "rest-async",
+          "gatewayPort": 8182,
+          "apiPort": 8082,
+          "runId": "PILOT-001-fault-R4-R-A-1",
+          "block": "PILOT",
+          "phase": "fault",
+          "offeredRate": 4,
+          "offeredLoadPercent": null,
+          "repetition": 1,
+          "executionBlock": "PILOT-001-fault-R4-1",
+          "networkProfile": "standard",
+          "faultScenario": "adapter-crash",
+          "randomSeed": "lubanga-exploratory-adapter-r4-v1:PILOT-001-fault-R4:1",
+          "sequence": 1
+        },
+        {
+          "conditionId": "K-A",
+          "composeProfile": "kafka-async",
+          "gatewayPort": 8184,
+          "apiPort": 8084,
+          "runId": "PILOT-001-fault-R4-K-A-1",
+          "block": "PILOT",
+          "phase": "fault",
+          "offeredRate": 4,
+          "offeredLoadPercent": null,
+          "repetition": 1,
+          "executionBlock": "PILOT-001-fault-R4-1",
+          "networkProfile": "standard",
+          "faultScenario": "adapter-crash",
+          "randomSeed": "lubanga-exploratory-adapter-r4-v1:PILOT-001-fault-R4:1",
+          "sequence": 2
+        }
+      ],
+      "file": "pilot-batch-001.json"
+    }
+  ],
+  "currentRun": null,
+  "sessions": [
+    {
+      "sessionId": "2549db1f-ec11-4158-9545-a2f23a6dc00f",
+      "startedAt": "2026-09-21T04:13:39.815Z",
+      "endedAt": "2026-09-21T04:44:29.873Z",
+      "pid": 42994,
+      "resumed": false,
+      "runIds": [
+        "PILOT-001-fault-R4-R-A-1",
+        "PILOT-001-fault-R4-K-A-1"
+      ],
+      "activeMs": 1850058,
+      "status": "EXPLORATORY_PAIR_COMPLETE_REVIEW_REQUIRED",
+      "cleanup": {
+        "passed": true,
+        "checkedAt": "2026-09-21T04:44:29.219Z",
+        "project": "lubanga-coordination-pilot",
+        "remainingContainers": []
+      },
+      "restoreErrors": [],
+      "pausedContainers": [
+        {
+          "id": "redacted-container-id-a",
+          "name": "external-container-a"
+        },
+        {
+          "id": "redacted-container-id-b",
+          "name": "external-container-b"
+        },
+        {
+          "id": "redacted-container-id-c",
+          "name": "external-container-c"
+        }
+      ]
+    }
+  ],
+  "timing": {
+    "activeMs": 1850058,
+    "pausedMs": 0,
+    "activeSince": null,
+    "pausedSince": null
+  },
+  "sessionId": "2549db1f-ec11-4158-9545-a2f23a6dc00f",
+  "pid": 42994,
+  "pauseRequested": null,
+  "cleanup": {
+    "passed": true,
+    "checkedAt": "2026-09-21T04:44:29.219Z",
+    "project": "lubanga-coordination-pilot",
+    "remainingContainers": []
+  },
+  "restoreErrors": [],
+  "containersRestoredAt": "2026-09-21T04:44:29.873Z",
+  "updatedAt": "2026-09-21T04:44:29.874Z",
+  "pausedContainers": [
+    {
+      "id": "redacted-container-id-a",
+      "name": "external-container-a"
+    },
+    {
+      "id": "redacted-container-id-b",
+      "name": "external-container-b"
+    },
+    {
+      "id": "redacted-container-id-c",
+      "name": "external-container-c"
+    }
+  ],
+  "capacityDecision": {
+    "action": "EXPLORATORY_PAIR_COMPLETE_REVIEW_REQUIRED",
+    "capacityEstablished": false
+  },
+  "confirmatoryFrozen": false
+}

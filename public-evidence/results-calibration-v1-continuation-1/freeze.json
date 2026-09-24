@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "stage": "DIAGNOSTIC_CALIBRATION_FROZEN_NOT_CAPACITY_EVIDENCE",
+  "frozenAt": "2026-09-20T15:12:11.737Z",
+  "project": "lubanga-coordination-pilot",
+  "postgresPort": 25432,
+  "sourceSha256": "566eec698cb5d96eff09b8d0fb8bf2cd69dd3b9d9bac9a5da5ecc8765909189b",
+  "protocolSha256": "d20f1999be3740c9b34ad8a5ea688639f7e84c7bf58399db6fa250a4da8a13a6",
+  "frozenComposeSha256": "cd59a600efcb50cf6cfa9994aa3c5aac1038ee9cad3d69314a8aa0ef24ebeab9",
+  "images": {
+    "adapter-service": {
+      "reference": "lubanga-coordination-pilot-adapter-service:latest",
+      "id": "sha256:5048e64ef64ba57b86111ef8da3e3c2a9ffc8c5337bc96034a3707260d5ce1cf",
+      "repoDigests": [
+        "lubanga-coordination-pilot-adapter-service@sha256:5048e64ef64ba57b86111ef8da3e3c2a9ffc8c5337bc96034a3707260d5ce1cf"
+      ],
+      "platform": "linux/arm64"
+    },
+    "callback-receiver": {
+      "reference": "lubanga-coordination-pilot-callback-receiver:latest",
+      "id": "sha256:427359ee2a6631079b320c8ef3ee4611c25c1e07c44b996a9ef374b204188e8f",
+      "repoDigests": [
+        "lubanga-coordination-pilot-callback-receiver@sha256:427359ee2a6631079b320c8ef3ee4611c25c1e07c44b996a9ef374b204188e8f"
+      ],
+      "platform": "linux/arm64"
+    },
+    "gateway-kafka-async": {
+      "reference": "lubanga-coordination-pilot-gateway-kafka-async:latest",
+      "id": "sha256:261608ea9a8c5b21d9a504b542ef2cff43823539b92364a12802227ef6f1b201",
+      "repoDigests": [
+        "lubanga-coordination-pilot-gateway-kafka-async@sha256:261608ea9a8c5b21d9a504b542ef2cff43823539b92364a12802227ef6f1b201"
+      ],
+      "platform": "linux/arm64"
+    },
+    "gateway-rest-async": {
+      "reference": "lubanga-coordination-pilot-gateway-rest-async:latest",
+      "id": "sha256:9fd4567f5a29656d76fcf31a4acccc9a26215f476b302a7a8169357eaf96c403",
+      "repoDigests": [
+        "lubanga-coordination-pilot-gateway-rest-async@sha256:9fd4567f5a29656d76fcf31a4acccc9a26215f476b302a7a8169357eaf96c403"
+      ],
+      "platform": "linux/arm64"
+    },
+    "grafana": {
+      "reference": "grafana/grafana:12.4.0",
+      "id": "sha256:b0ae311af06228bcfd4a620504b653db80f5b91e94dc3dc2a5b7dab202bcde20",
+      "repoDigests": [
+        "grafana/grafana@sha256:b0ae311af06228bcfd4a620504b653db80f5b91e94dc3dc2a5b7dab202bcde20"
+      ],
+      "platform": "linux/arm64"
+    },
+    "k6": {
+      "reference": "grafana/k6:1.8.0",
+      "id": "sha256:b992f241070f3f3a7d78096fa6020db1edcda49297ee8ed9eb0ab847ef3dcb32",
+      "repoDigests": [
+        "grafana/k6@sha256:b992f241070f3f3a7d78096fa6020db1edcda49297ee8ed9eb0ab847ef3dcb32"
+      ],
+      "platform": "linux/arm64"
+    },
+    "kafka-async": {
+      "reference": "lubanga-coordination-pilot-kafka-async:latest",
+      "id": "sha256:4557e32a05488b0a010ea44eb38ba41f82f6294e1e7af3ffdafc446d503f43e8",
+      "repoDigests": [
+        "lubanga-coordination-pilot-kafka-async@sha256:4557e32a05488b0a010ea44eb38ba41f82f6294e1e7af3ffdafc446d503f43e8"
+      ],
+      "platform": "linux/arm64"
+    },
+    "postgres": {
+      "reference": "postgres:17-alpine",
+      "id": "sha256:18cfe3ef5e6815560c98237d6216d1e5119702fb0f3894c8785dd58b8bbe5d73",
+      "repoDigests": [
+        "postgres@sha256:18cfe3ef5e6815560c98237d6216d1e5119702fb0f3894c8785dd58b8bbe5d73"
+      ],
+      "platform": "linux/arm64"
+    },
+    "prometheus": {
+      "reference": "prom/prometheus:v3.13.1",
+      "id": "sha256:3c42b892cf723fa54d2f262c37a0e1f80aa8c8ddb1da7b9b0df9455a35a7f893",
+      "repoDigests": [
+        "prom/prometheus@sha256:3c42b892cf723fa54d2f262c37a0e1f80aa8c8ddb1da7b9b0df9455a35a7f893"
+      ],
+      "platform": "linux/arm64"
+    },
+    "redpanda": {
+      "reference": "docker.redpanda.com/redpandadata/redpanda:v26.1.14",
+      "id": "sha256:e61a2b5ad26a7c37b50d04c4df42db84e5ddebaa2a453143942fb621b1b09498",
+      "repoDigests": [
+        "docker.redpanda.com/redpandadata/redpanda@sha256:e61a2b5ad26a7c37b50d04c4df42db84e5ddebaa2a453143942fb621b1b09498"
+      ],
+      "platform": "linux/arm64"
+    },
+    "rest-async": {
+      "reference": "lubanga-coordination-pilot-rest-async:latest",
+      "id": "sha256:68ac404c345af5081ef0ef48707d4a736fa51b4643f62f05e0a655f8f976d23e",
+      "repoDigests": [
+        "lubanga-coordination-pilot-rest-async@sha256:68ac404c345af5081ef0ef48707d4a736fa51b4643f62f05e0a655f8f976d23e"
+      ],
+      "platform": "linux/arm64"
+    },
+    "toxiproxy": {
+      "reference": "ghcr.io/shopify/toxiproxy:2.12.0",
+      "id": "sha256:9378ed52a28bc50edc1350f936f518f31fa95f0d15917d6eb40b8e376d1a214e",
+      "repoDigests": [
+        "ghcr.io/shopify/toxiproxy@sha256:9378ed52a28bc50edc1350f936f518f31fa95f0d15917d6eb40b8e376d1a214e"
+      ],
+      "platform": "linux/arm64"
+    },
+    "toxiproxy-init": {
+      "reference": "lubanga-coordination-pilot-toxiproxy-init:latest",
+      "id": "sha256:df33e9cb7c130f8197dd8673e1e7f26ecff9f1dec436e3212c0be0cb31f437f2",
+      "repoDigests": [
+        "lubanga-coordination-pilot-toxiproxy-init@sha256:df33e9cb7c130f8197dd8673e1e7f26ecff9f1dec436e3212c0be0cb31f437f2"
+      ],
+      "platform": "linux/arm64"
+    }
+  },
+  "pauseContainers": [
+    {
+      "id": "redacted-container-id-a",
+      "name": "external-container-a"
+    },
+    {
+      "id": "redacted-container-id-b",
+      "name": "external-container-b"
+    },
+    {
+      "id": "redacted-container-id-c",
+      "name": "external-container-c"
+    }
+  ],
+  "approvalSource": "results-capacity-pilot-v5/freeze.json",
+  "approvalSourceSha256": "423537771c80f8302c71d411d0df4a52f1016720a02e9bfb8a61e57a8b15408f",
+  "host": {
+    "hostname": "capture-host",
+    "cpuModel": "Apple M2",
+    "cpuCount": 8,
+    "totalMemoryBytes": 17179869184,
+    "dockerId": "redacted-docker-id",
+    "dockerVersion": "29.2.1",
+    "dockerCPUs": 8,
+    "dockerMemoryBytes": 8217341952,
+    "dockerArchitecture": "aarch64"
+  },
+  "approvals": {
+    "fullPilotAndMonitoring": true,
+    "pauseAndRestoreNamedExternalContainers": true,
+    "companionContainerUnavailableDuringPilot": true,
+    "restoreCompanionByController": false,
+    "fourRunsFourOperationsPerSecondFiveMinuteWarmupTenMinuteMeasurement": true,
+    "noFaultsOrCapacitySearch": true,
+    "backlogClearanceDescriptive": true
+  },
+  "confirmatoryFreeze": false
+}

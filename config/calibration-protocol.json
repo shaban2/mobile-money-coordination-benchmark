@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 2,
+  "kind": "DIAGNOSTIC_CALIBRATION",
+  "protocolId": "diagnostic-calibration-v1-2026-09-20",
+  "stage": "CALIBRATION_ONLY_NOT_CAPACITY_EVIDENCE",
+  "randomSeed": "lubanga-calibration-v1",
+  "warmupDuration": "5m",
+  "measurementDuration": "10m",
+  "drainSeconds": 600,
+  "rate": 4,
+  "pairs": 2,
+  "maximumRuns": 4,
+  "maximumHours": 3,
+  "timeBudgetBasis": "active-sessions",
+  "pauseBoundary": "matched-pair",
+  "minimumFreeDiskGiB": 15,
+  "minimumWorkloadCheckRate": 0.995,
+  "capacityDefinition": "Highest correctly sustained offered rate without a persistently growing queue; latency reported separately.",
+  "sustainedLoadDecision": "DESCRIPTIVE_REVIEW_REQUIRED_NO_NUMERICAL_CAPACITY_THRESHOLD",
+  "latencyRole": "DESCRIPTIVE_NOT_AN_OVERLOAD_BOUNDARY",
+  "faults": { "atSeconds": 240, "adapterCrashSeconds": 30, "databaseDelaySeconds": 60, "databaseLatencyMs": 100 },
+  "stopRules": [
+    "Exactly four sequential runs, no injected faults, no adaptive rate search or extra repetitions.",
+    "Stop for invalid evidence, controller/cleanup failure, failed correctness checks, missing terminal callbacks, pending or failed transfers, or generator limitation.",
+    "Record queue evolution and latency without deriving capacity or automatically progressing to capacity search.",
+    "Pause only after a complete matched pair, with cleanup and approved-container restoration verified.",
+    "After four runs, stop for calibration review. No numerical overload criterion or confirmatory protocol is frozen here."
+  ]
+}

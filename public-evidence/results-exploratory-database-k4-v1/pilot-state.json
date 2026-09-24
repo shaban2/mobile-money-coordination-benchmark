@@ -1,0 +1,858 @@
+{
+  "schemaVersion": 2,
+  "startedAt": "2026-09-22T05:39:40.084Z",
+  "status": "EXPLORATORY_PAIR_COMPLETE_REVIEW_REQUIRED",
+  "records": [
+    {
+      "runId": "PILOT-001-fault-R4-K-A-1",
+      "conditionId": "K-A",
+      "phase": "fault",
+      "rate": 4,
+      "executionBlock": "PILOT-001-fault-R4-1",
+      "sessionId": "9acd2a83-b914-4d44-ac88-addfd570e88d",
+      "faultScenario": "database-delay",
+      "recordedAt": "2026-09-22T05:55:06.045Z",
+      "status": "QUALIFIED",
+      "stability": {
+        "schemaVersion": 1,
+        "rule": {
+          "version": "queue-observation-v2",
+          "policySha256": "efb8ab46dc456e5090536afb4e398d95ee1eb0bc184465a21517acfe433f7cc4"
+        },
+        "status": "OBSERVATION_RECORDED",
+        "role": "DESCRIPTIVE_FAULT_RESPONSE_NOT_CAPACITY_DECISION",
+        "automaticBoundaryDecision": null,
+        "capacityEstablished": false,
+        "checks": {
+          "evidenceValid": true,
+          "fullDuration": true,
+          "protocolIdentity": true,
+          "diagnosticsHealthy": true,
+          "offeredLoadDelivered": true,
+          "completeTiming": true,
+          "completeWindows": true,
+          "queueAccounting": true,
+          "safetyPassed": true,
+          "workloadChecks": true,
+          "terminalCallbacks": true,
+          "noFailedTransfers": true,
+          "noPendingAfterDrain": true,
+          "correctCompletions": true,
+          "faultEvidence": true
+        },
+        "queue": {
+          "version": "queue-observation-v2",
+          "status": "MIXED_RISES_AND_FALLS_REVIEW",
+          "blocks": [
+            {
+              "firstBoundary": 1,
+              "lastBoundary": 5,
+              "min": 0,
+              "max": 0
+            },
+            {
+              "firstBoundary": 6,
+              "lastBoundary": 10,
+              "min": 0,
+              "max": 170
+            },
+            {
+              "firstBoundary": 11,
+              "lastBoundary": 15,
+              "min": 0,
+              "max": 0
+            },
+            {
+              "firstBoundary": 16,
+              "lastBoundary": 20,
+              "min": 0,
+              "max": 0
+            }
+          ],
+          "role": "DESCRIPTIVE_FAULT_RESPONSE_NOT_CAPACITY_DECISION",
+          "capacityEstablished": false,
+          "automaticBoundaryDecision": null
+        },
+        "windows": [
+          {
+            "startAt": "2026-09-22T05:45:01.420Z",
+            "endAt": "2026-09-22T05:45:31.420Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 172,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-22T05:45:31.420Z",
+            "endAt": "2026-09-22T05:46:01.420Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 170.5,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-22T05:46:01.420Z",
+            "endAt": "2026-09-22T05:46:31.420Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 171.5,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-22T05:46:31.420Z",
+            "endAt": "2026-09-22T05:47:01.420Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 170,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-22T05:47:01.420Z",
+            "endAt": "2026-09-22T05:47:31.420Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.066666666666667,
+            "p95DurableCompletionMs": 172.45,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 92,
+            "terminalConfirmations": 92,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-22T05:47:31.420Z",
+            "endAt": "2026-09-22T05:48:01.420Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 168.5,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-22T05:48:01.420Z",
+            "endAt": "2026-09-22T05:48:31.420Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 169,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-22T05:48:31.420Z",
+            "endAt": "2026-09-22T05:49:01.420Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 166.5,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-22T05:49:01.420Z",
+            "endAt": "2026-09-22T05:49:31.420Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 0.16666666666666666,
+            "p95DurableCompletionMs": 19320.8,
+            "backlogAtEnd": 86,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 5,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-22T05:49:31.420Z",
+            "endAt": "2026-09-22T05:50:01.420Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 0.26666666666666666,
+            "p95DurableCompletionMs": 54898.35,
+            "backlogAtEnd": 170,
+            "backlogAtStart": 86,
+            "arrivals": 92,
+            "terminalConfirmations": 8,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-22T05:50:01.420Z",
+            "endAt": "2026-09-22T05:50:31.420Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 8.7,
+            "p95DurableCompletionMs": 52324,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 170,
+            "arrivals": 91,
+            "terminalConfirmations": 261,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-22T05:50:31.420Z",
+            "endAt": "2026-09-22T05:51:01.420Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 170,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-22T05:51:01.420Z",
+            "endAt": "2026-09-22T05:51:31.420Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 169,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-22T05:51:31.420Z",
+            "endAt": "2026-09-22T05:52:01.420Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 169.5,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-22T05:52:01.420Z",
+            "endAt": "2026-09-22T05:52:31.420Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.066666666666667,
+            "p95DurableCompletionMs": 171.35000000000002,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 92,
+            "terminalConfirmations": 92,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-22T05:52:31.420Z",
+            "endAt": "2026-09-22T05:53:01.420Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 165.5,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-22T05:53:01.420Z",
+            "endAt": "2026-09-22T05:53:31.420Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 170.5,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-22T05:53:31.420Z",
+            "endAt": "2026-09-22T05:54:01.420Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 169,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-22T05:54:01.420Z",
+            "endAt": "2026-09-22T05:54:31.420Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 166,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-22T05:54:31.420Z",
+            "endAt": "2026-09-22T05:55:01.420Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.066666666666667,
+            "p95DurableCompletionMs": 168.45,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 92,
+            "terminalConfirmations": 92,
+            "balanced": true
+          }
+        ],
+        "latency": {
+          "role": "DESCRIPTIVE_NOT_A_CAPACITY_GATE",
+          "overall": {
+            "count": 1824,
+            "median": 149,
+            "p95": 30475.599999999977,
+            "p99": 51779.99
+          }
+        },
+        "fault": {
+          "role": "DESCRIPTIVE_WITH_CENSORING_NO_WINNER",
+          "scenario": "database-delay",
+          "injectedAt": "2026-09-22T05:49:01.568Z",
+          "clearedAt": "2026-09-22T05:50:01.702Z",
+          "recoveryEstimable": true,
+          "backlogEstimable": true,
+          "baseline": {
+            "windows": 3,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 169,
+            "backlogUpper": 0
+          },
+          "recoveryTimeSeconds": 119.718,
+          "recoveryCensored": false,
+          "recoveryObservationSeconds": 299.718,
+          "backlogClearanceSeconds": 59.718,
+          "backlogClearanceCensored": false,
+          "backlogObservationSeconds": 300.672
+        },
+        "completedDuringDrain": 0
+      }
+    },
+    {
+      "runId": "PILOT-001-fault-R4-R-A-1",
+      "conditionId": "R-A",
+      "phase": "fault",
+      "rate": 4,
+      "executionBlock": "PILOT-001-fault-R4-1",
+      "sessionId": "9acd2a83-b914-4d44-ac88-addfd570e88d",
+      "faultScenario": "database-delay",
+      "recordedAt": "2026-09-22T06:10:25.664Z",
+      "status": "QUALIFIED",
+      "stability": {
+        "schemaVersion": 1,
+        "rule": {
+          "version": "queue-observation-v2",
+          "policySha256": "efb8ab46dc456e5090536afb4e398d95ee1eb0bc184465a21517acfe433f7cc4"
+        },
+        "status": "OBSERVATION_RECORDED",
+        "role": "DESCRIPTIVE_FAULT_RESPONSE_NOT_CAPACITY_DECISION",
+        "automaticBoundaryDecision": null,
+        "capacityEstablished": false,
+        "checks": {
+          "evidenceValid": true,
+          "fullDuration": true,
+          "protocolIdentity": true,
+          "diagnosticsHealthy": true,
+          "offeredLoadDelivered": true,
+          "completeTiming": true,
+          "completeWindows": true,
+          "queueAccounting": true,
+          "safetyPassed": true,
+          "workloadChecks": true,
+          "terminalCallbacks": true,
+          "noFailedTransfers": true,
+          "noPendingAfterDrain": true,
+          "correctCompletions": true,
+          "faultEvidence": true
+        },
+        "queue": {
+          "version": "queue-observation-v2",
+          "status": "MIXED_RISES_AND_FALLS_REVIEW",
+          "blocks": [
+            {
+              "firstBoundary": 1,
+              "lastBoundary": 5,
+              "min": 0,
+              "max": 0
+            },
+            {
+              "firstBoundary": 6,
+              "lastBoundary": 10,
+              "min": 0,
+              "max": 110
+            },
+            {
+              "firstBoundary": 11,
+              "lastBoundary": 15,
+              "min": 0,
+              "max": 0
+            },
+            {
+              "firstBoundary": 16,
+              "lastBoundary": 20,
+              "min": 0,
+              "max": 0
+            }
+          ],
+          "role": "DESCRIPTIVE_FAULT_RESPONSE_NOT_CAPACITY_DECISION",
+          "capacityEstablished": false,
+          "automaticBoundaryDecision": null
+        },
+        "windows": [
+          {
+            "startAt": "2026-09-22T06:00:21.531Z",
+            "endAt": "2026-09-22T06:00:51.531Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 60.5,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-22T06:00:51.531Z",
+            "endAt": "2026-09-22T06:01:21.531Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 60.5,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-22T06:01:21.531Z",
+            "endAt": "2026-09-22T06:01:51.531Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 57.5,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-22T06:01:51.531Z",
+            "endAt": "2026-09-22T06:02:21.531Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 60.5,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-22T06:02:21.531Z",
+            "endAt": "2026-09-22T06:02:51.531Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.066666666666667,
+            "p95DurableCompletionMs": 61,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 92,
+            "terminalConfirmations": 92,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-22T06:02:51.531Z",
+            "endAt": "2026-09-22T06:03:21.531Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 61,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-22T06:03:21.531Z",
+            "endAt": "2026-09-22T06:03:51.531Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 61,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-22T06:03:51.531Z",
+            "endAt": "2026-09-22T06:04:21.531Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 64.5,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-22T06:04:21.531Z",
+            "endAt": "2026-09-22T06:04:51.531Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 1.1333333333333333,
+            "p95DurableCompletionMs": 17246.15,
+            "backlogAtEnd": 57,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 34,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-22T06:04:51.531Z",
+            "endAt": "2026-09-22T06:05:21.531Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 1.3,
+            "p95DurableCompletionMs": 36407.2,
+            "backlogAtEnd": 110,
+            "backlogAtStart": 57,
+            "arrivals": 92,
+            "terminalConfirmations": 39,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-22T06:05:21.531Z",
+            "endAt": "2026-09-22T06:05:51.531Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 6.7,
+            "p95DurableCompletionMs": 33423,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 110,
+            "arrivals": 91,
+            "terminalConfirmations": 201,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-22T06:05:51.531Z",
+            "endAt": "2026-09-22T06:06:21.531Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 61.5,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-22T06:06:21.531Z",
+            "endAt": "2026-09-22T06:06:51.531Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 59.5,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-22T06:06:51.531Z",
+            "endAt": "2026-09-22T06:07:21.531Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 60,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-22T06:07:21.531Z",
+            "endAt": "2026-09-22T06:07:51.531Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.066666666666667,
+            "p95DurableCompletionMs": 65.9,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 92,
+            "terminalConfirmations": 92,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-22T06:07:51.531Z",
+            "endAt": "2026-09-22T06:08:21.531Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 64,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-22T06:08:21.531Z",
+            "endAt": "2026-09-22T06:08:51.531Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 62,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-22T06:08:51.531Z",
+            "endAt": "2026-09-22T06:09:21.531Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 60,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-22T06:09:21.531Z",
+            "endAt": "2026-09-22T06:09:51.531Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 61,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-22T06:09:51.531Z",
+            "endAt": "2026-09-22T06:10:21.531Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.066666666666667,
+            "p95DurableCompletionMs": 62,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 92,
+            "terminalConfirmations": 92,
+            "balanced": true
+          }
+        ],
+        "latency": {
+          "role": "DESCRIPTIVE_NOT_A_CAPACITY_GATE",
+          "overall": {
+            "count": 1824,
+            "median": 54,
+            "p95": 19280.85,
+            "p99": 33308.22999999999
+          }
+        },
+        "fault": {
+          "role": "DESCRIPTIVE_WITH_CENSORING_NO_WINNER",
+          "scenario": "database-delay",
+          "injectedAt": "2026-09-22T06:04:21.739Z",
+          "clearedAt": "2026-09-22T06:05:21.880Z",
+          "recoveryEstimable": true,
+          "backlogEstimable": true,
+          "baseline": {
+            "windows": 3,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 61.39999999999998,
+            "backlogUpper": 0
+          },
+          "recoveryTimeSeconds": 119.651,
+          "recoveryCensored": false,
+          "recoveryObservationSeconds": 299.651,
+          "backlogClearanceSeconds": 59.651,
+          "backlogClearanceCensored": false,
+          "backlogObservationSeconds": 300.879
+        },
+        "completedDuringDrain": 0
+      }
+    }
+  ],
+  "batches": [
+    {
+      "schemaVersion": 1,
+      "kind": "CAPACITY_PILOT",
+      "protocolId": "exploratory-database-k4-2026-09-22",
+      "capacityRule": {
+        "version": "queue-observation-v2",
+        "policySha256": "efb8ab46dc456e5090536afb4e398d95ee1eb0bc184465a21517acfe433f7cc4"
+      },
+      "expectedRunCount": 2,
+      "runs": [
+        {
+          "conditionId": "K-A",
+          "composeProfile": "kafka-async",
+          "gatewayPort": 8184,
+          "apiPort": 8084,
+          "runId": "PILOT-001-fault-R4-K-A-1",
+          "block": "PILOT",
+          "phase": "fault",
+          "offeredRate": 4,
+          "offeredLoadPercent": null,
+          "repetition": 1,
+          "executionBlock": "PILOT-001-fault-R4-1",
+          "networkProfile": "standard",
+          "faultScenario": "database-delay",
+          "randomSeed": "lubanga-exploratory-database-k4-v5:PILOT-001-fault-R4:1",
+          "sequence": 1
+        },
+        {
+          "conditionId": "R-A",
+          "composeProfile": "rest-async",
+          "gatewayPort": 8182,
+          "apiPort": 8082,
+          "runId": "PILOT-001-fault-R4-R-A-1",
+          "block": "PILOT",
+          "phase": "fault",
+          "offeredRate": 4,
+          "offeredLoadPercent": null,
+          "repetition": 1,
+          "executionBlock": "PILOT-001-fault-R4-1",
+          "networkProfile": "standard",
+          "faultScenario": "database-delay",
+          "randomSeed": "lubanga-exploratory-database-k4-v5:PILOT-001-fault-R4:1",
+          "sequence": 2
+        }
+      ],
+      "file": "pilot-batch-001.json"
+    }
+  ],
+  "currentRun": null,
+  "sessions": [
+    {
+      "sessionId": "9acd2a83-b914-4d44-ac88-addfd570e88d",
+      "startedAt": "2026-09-22T05:39:40.084Z",
+      "endedAt": "2026-09-22T06:10:26.402Z",
+      "pid": 81285,
+      "resumed": false,
+      "runIds": [
+        "PILOT-001-fault-R4-K-A-1",
+        "PILOT-001-fault-R4-R-A-1"
+      ],
+      "activeMs": 1846318,
+      "status": "EXPLORATORY_PAIR_COMPLETE_REVIEW_REQUIRED",
+      "cleanup": {
+        "passed": true,
+        "checkedAt": "2026-09-22T06:10:25.810Z",
+        "project": "lubanga-coordination-pilot",
+        "remainingContainers": []
+      },
+      "restoreErrors": [],
+      "pausedContainers": [
+        {
+          "id": "redacted-container-id-a",
+          "name": "external-container-a"
+        },
+        {
+          "id": "redacted-container-id-b",
+          "name": "external-container-b"
+        },
+        {
+          "id": "redacted-container-id-c",
+          "name": "external-container-c"
+        }
+      ]
+    }
+  ],
+  "timing": {
+    "activeMs": 1846318,
+    "pausedMs": 0,
+    "activeSince": null,
+    "pausedSince": null
+  },
+  "sessionId": "9acd2a83-b914-4d44-ac88-addfd570e88d",
+  "pid": 81285,
+  "pauseRequested": null,
+  "cleanup": {
+    "passed": true,
+    "checkedAt": "2026-09-22T06:10:25.810Z",
+    "project": "lubanga-coordination-pilot",
+    "remainingContainers": []
+  },
+  "restoreErrors": [],
+  "containersRestoredAt": "2026-09-22T06:10:26.402Z",
+  "updatedAt": "2026-09-22T06:10:26.403Z",
+  "pausedContainers": [
+    {
+      "id": "redacted-container-id-a",
+      "name": "external-container-a"
+    },
+    {
+      "id": "redacted-container-id-b",
+      "name": "external-container-b"
+    },
+    {
+      "id": "redacted-container-id-c",
+      "name": "external-container-c"
+    }
+  ],
+  "capacityDecision": {
+    "action": "EXPLORATORY_PAIR_COMPLETE_REVIEW_REQUIRED",
+    "capacityEstablished": false
+  },
+  "confirmatoryFrozen": false
+}

@@ -1,0 +1,77 @@
+{
+  "generatedAt": "2026-09-20T15:43:27.157Z",
+  "resultsRoot": "<repo>/results-calibration-v1",
+  "observedRuns": 2,
+  "counts": {
+    "QUALIFIED": 2,
+    "CENSORED": 0,
+    "PERFORMANCE_FAILURE": 0,
+    "SAFETY_FAILURE": 0,
+    "INVALID": 0,
+    "EXCLUDED": 0,
+    "FAILED": 0,
+    "INCOMPLETE": 0
+  },
+  "runs": [
+    {
+      "runId": "CAL-001-calibration-R4-R-A-1",
+      "sequence": 1,
+      "block": "CALIBRATION",
+      "conditionId": "R-A",
+      "faultScenario": "none",
+      "offeredLoadPercent": null,
+      "offeredRate": 4,
+      "status": "QUALIFIED",
+      "correctGoodput": 3.04,
+      "p95DurableCompletionMs": 61,
+      "recoveryTimeSeconds": null,
+      "recoveryCensored": null,
+      "backlogClearanceSeconds": null,
+      "gates": {
+        "artifactsPresent": true,
+        "supportedMeasurementSchema": true,
+        "workloadCompositionWithinTolerance": true,
+        "clientAttemptsAccountedFor": true,
+        "timingEvidenceComplete": true,
+        "resourceCoverageComplete": true,
+        "architectureIsolated": true,
+        "offeredLoadDelivered": true,
+        "generatorCompleted": true,
+        "faultEvidenceComplete": true,
+        "fixedAsyncClientMode": true,
+        "configurationUnchanged": true
+      },
+      "error": null
+    },
+    {
+      "runId": "CAL-001-calibration-R4-K-A-1",
+      "sequence": 2,
+      "block": "CALIBRATION",
+      "conditionId": "K-A",
+      "faultScenario": "none",
+      "offeredLoadPercent": null,
+      "offeredRate": 4,
+      "status": "QUALIFIED",
+      "correctGoodput": 3.04,
+      "p95DurableCompletionMs": 170,
+      "recoveryTimeSeconds": null,
+      "recoveryCensored": null,
+      "backlogClearanceSeconds": null,
+      "gates": {
+        "artifactsPresent": true,
+        "supportedMeasurementSchema": true,
+        "workloadCompositionWithinTolerance": true,
+        "clientAttemptsAccountedFor": true,
+        "timingEvidenceComplete": true,
+        "resourceCoverageComplete": true,
+        "architectureIsolated": true,
+        "offeredLoadDelivered": true,
+        "generatorCompleted": true,
+        "faultEvidenceComplete": true,
+        "fixedAsyncClientMode": true,
+        "configurationUnchanged": true
+      },
+      "error": null
+    }
+  ]
+}

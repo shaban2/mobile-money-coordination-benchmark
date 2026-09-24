@@ -1,0 +1,51 @@
+{
+  "name": "mobile-money-coordination-experiment",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Reproducible comparison of REST orchestration and Kafka choreography under one fixed asynchronous mobile-money transfer contract.",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "start": "CLIENT_MODE=async node src/server.js",
+    "start:rest": "COORDINATION_MODE=rest CLIENT_MODE=async node src/server.js",
+    "start:rest-async": "COORDINATION_MODE=rest CLIENT_MODE=async node src/server.js",
+    "start:kafka": "COORDINATION_MODE=kafka CLIENT_MODE=async node src/server.js",
+    "start:kafka-async": "COORDINATION_MODE=kafka CLIENT_MODE=async node src/server.js",
+    "test": "node --test --test-reporter=spec",
+    "test:coverage": "node --test --experimental-test-coverage",
+    "check": "node --check src/server.js && node --test",
+    "smoke": "node scripts/smoke.mjs",
+    "manifest": "node scripts/generate-manifest.mjs",
+    "verify:invariants": "node scripts/verify-invariants.mjs",
+    "db:migrate": "node scripts/migrate-database.mjs",
+    "db:tables": "node scripts/list-database-tables.mjs",
+    "test:postgres": "node --test test/postgres.integration.test.js",
+    "toxiproxy:configure": "node scripts/toxiproxy-controller.mjs configure",
+    "fault:database-delay": "node scripts/toxiproxy-controller.mjs add-latency",
+    "fault:database-clear": "node scripts/toxiproxy-controller.mjs clear-latency",
+    "fault:adapter-crash": "node scripts/adapter-crash-controller.mjs",
+    "network:standard": "node scripts/network-profile-controller.mjs standard",
+    "network:clear": "node scripts/network-profile-controller.mjs clear",
+    "matrix:generate": "node scripts/generate-run-matrix.mjs",
+    "matrix:validate": "node scripts/validate-run-matrix.mjs",
+    "experiment": "node scripts/run-experiment.mjs",
+    "experiment:summary": "node scripts/summarize-experiment.mjs",
+    "experiment:analyze": "node scripts/analyze-experiment.mjs",
+    "pilot:prepare": "node scripts/prepare-capacity-pilot.mjs",
+    "calibration:prepare": "node scripts/prepare-capacity-pilot.mjs --calibration",
+    "pilot:run": "node scripts/capacity-pilot.mjs",
+    "pilot:status": "node scripts/capacity-pilot.mjs",
+    "pilot:launch": "node scripts/launch-capacity-pilot.mjs",
+    "pilot:pause": "node scripts/pause-capacity-pilot.mjs",
+    "pilot:resume": "node scripts/launch-capacity-pilot.mjs --resume",
+    "outcomes:derive": "node scripts/derive-run-outcomes.mjs",
+    "qualify": "node scripts/qualify-run.mjs"
+  },
+  "dependencies": {
+    "kafkajs": "2.2.4",
+    "pg": "8.22.0"
+  },
+  "license": "UNLICENSED"
+}

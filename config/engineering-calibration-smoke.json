@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "kind": "CAPACITY_PILOT",
+  "engineeringOnly": true,
+  "protocolId": "engineering-deep-diagnostics-smoke-not-calibration-evidence",
+  "expectedRunCount": 2,
+  "runs": [
+    { "runId": "ENGINEERING-DEEP-R-A", "block": "PILOT", "phase": "engineering", "offeredRate": 4, "conditionId": "R-A", "composeProfile": "rest-async", "apiPort": 8082, "gatewayPort": 8182, "sequence": 1, "networkProfile": "standard", "faultScenario": "none", "randomSeed": "engineering-deep-diagnostics" },
+    { "runId": "ENGINEERING-DEEP-K-A", "block": "PILOT", "phase": "engineering", "offeredRate": 4, "conditionId": "K-A", "composeProfile": "kafka-async", "apiPort": 8084, "gatewayPort": 8184, "sequence": 2, "networkProfile": "standard", "faultScenario": "none", "randomSeed": "engineering-deep-diagnostics" }
+  ]
+}

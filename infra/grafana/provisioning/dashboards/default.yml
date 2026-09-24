@@ -1,0 +1,11 @@
+apiVersion: 1
+
+providers:
+  - name: research-harness
+    orgId: 1
+    folder: Mobile Money Experiment
+    type: file
+    disableDeletion: true
+    editable: false
+    options:
+      path: /var/lib/grafana/dashboards

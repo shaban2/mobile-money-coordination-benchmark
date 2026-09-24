@@ -1,0 +1,171 @@
+openapi: 3.1.0
+info:
+  title: Experimental Bilateral P2P Mobile Money API Profile
+  version: 0.2.0
+  description: >-
+    A small GSMA-informed research profile for one synthetic person-to-person
+    transfer. It is not the full GSMA Mobile Money API and does not claim
+    conformance or certification.
+servers:
+  - url: http://localhost:8080
+paths:
+  /v1/transfers:
+    post:
+      operationId: createTransfer
+      summary: Create a synthetic P2P transfer
+      parameters:
+        - name: Idempotency-Key
+          in: header
+          required: true
+          schema:
+            type: string
+            minLength: 1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TransferRequest'
+      responses:
+        '202':
+          description: Accepted for asynchronous processing; the final result is delivered by callback or status retrieval
+          headers:
+            Location:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Transfer'
+        '400':
+          $ref: '#/components/responses/Problem'
+        '409':
+          $ref: '#/components/responses/Problem'
+  /v1/transfers/{transferId}:
+    get:
+      operationId: getTransfer
+      summary: Retrieve the current or final transfer status
+      parameters:
+        - name: transferId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Transfer status
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Transfer'
+        '404':
+          $ref: '#/components/responses/Problem'
+components:
+  schemas:
+    TransferRequest:
+      type: object
+      additionalProperties: false
+      required:
+        - payerId
+        - payeeId
+        - amount
+        - currency
+        - clientReference
+        - providerProfile
+      properties:
+        payerId:
+          type: string
+          minLength: 1
+        payeeId:
+          type: string
+          minLength: 1
+        amount:
+          type: string
+          pattern: '^[1-9][0-9]*$'
+          description: Positive amount in minor currency units
+        currency:
+          type: string
+          pattern: '^[A-Z]{3}$'
+        clientReference:
+          type: string
+          minLength: 1
+        providerProfile:
+          type: string
+          enum: [A, B]
+        callbackUrl:
+          type: string
+          format: uri
+    Transfer:
+      type: object
+      required:
+        - transferId
+        - clientReference
+        - payerId
+        - payeeId
+        - amount
+        - currency
+        - providerProfile
+        - status
+        - createdAt
+        - updatedAt
+      properties:
+        transferId:
+          type: string
+          format: uuid
+        clientReference:
+          type: string
+        providerReference:
+          type: [string, 'null']
+        payerId:
+          type: string
+        payeeId:
+          type: string
+        amount:
+          type: string
+        currency:
+          type: string
+        providerProfile:
+          type: string
+          enum: [A, B]
+        status:
+          type: string
+          enum: [PENDING, COMPLETED, FAILED]
+        failure:
+          oneOf:
+            - type: 'null'
+            - type: object
+              required: [code, message]
+              properties:
+                code:
+                  type: string
+                message:
+                  type: string
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+        completedAt:
+          type: [string, 'null']
+          format: date-time
+    Problem:
+      type: object
+      required: [error]
+      properties:
+        error:
+          type: object
+          required: [code, message]
+          properties:
+            code:
+              type: string
+            message:
+              type: string
+  responses:
+    Problem:
+      description: Request error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Problem'

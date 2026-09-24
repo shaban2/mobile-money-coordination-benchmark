@@ -1,0 +1,19 @@
+{
+  "builtAt": "2026-09-24T06:26:58.758Z",
+  "privateRepositoryCommit": "15bf434e851a794bc35544989adf65aac817bf52",
+  "filesCopied": 196,
+  "evidenceFiles": 471,
+  "redactionCounts": {
+    "companionContainerUnavailableDuringPilot": 1,
+    "pauseAndRestoreNamedExternalContainers": 1,
+    "external companion container": 12,
+    "external-container-c": 2,
+    "external-container-a": 3,
+    "external-container-b": 2,
+    "the external stack": 25,
+    "redacted-container-id-d": 1,
+    "external-container-d": 2,
+    "capture-host": 10
+  },
+  "analysisMatchesPrivate": true
+}

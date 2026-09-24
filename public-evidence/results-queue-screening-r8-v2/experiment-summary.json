@@ -1,0 +1,77 @@
+{
+  "generatedAt": "2026-09-21T04:07:32.931Z",
+  "resultsRoot": "<repo>/results-queue-screening-r8-v2",
+  "observedRuns": 2,
+  "counts": {
+    "QUALIFIED": 2,
+    "CENSORED": 0,
+    "PERFORMANCE_FAILURE": 0,
+    "SAFETY_FAILURE": 0,
+    "INVALID": 0,
+    "EXCLUDED": 0,
+    "FAILED": 0,
+    "INCOMPLETE": 0
+  },
+  "runs": [
+    {
+      "runId": "PILOT-001-screening-R8-R-A-1",
+      "sequence": 1,
+      "block": "PILOT",
+      "conditionId": "R-A",
+      "faultScenario": "none",
+      "offeredLoadPercent": null,
+      "offeredRate": 8,
+      "status": "QUALIFIED",
+      "correctGoodput": 6.079166666666667,
+      "p95DurableCompletionMs": 59,
+      "recoveryTimeSeconds": null,
+      "recoveryCensored": null,
+      "backlogClearanceSeconds": null,
+      "gates": {
+        "artifactsPresent": true,
+        "supportedMeasurementSchema": true,
+        "workloadCompositionWithinTolerance": true,
+        "clientAttemptsAccountedFor": true,
+        "timingEvidenceComplete": true,
+        "resourceCoverageComplete": true,
+        "architectureIsolated": true,
+        "offeredLoadDelivered": true,
+        "generatorCompleted": true,
+        "faultEvidenceComplete": true,
+        "fixedAsyncClientMode": true,
+        "configurationUnchanged": true
+      },
+      "error": null
+    },
+    {
+      "runId": "PILOT-001-screening-R8-K-A-1",
+      "sequence": 2,
+      "block": "PILOT",
+      "conditionId": "K-A",
+      "faultScenario": "none",
+      "offeredLoadPercent": null,
+      "offeredRate": 8,
+      "status": "QUALIFIED",
+      "correctGoodput": 6.079166666666667,
+      "p95DurableCompletionMs": 172.0999999999999,
+      "recoveryTimeSeconds": null,
+      "recoveryCensored": null,
+      "backlogClearanceSeconds": null,
+      "gates": {
+        "artifactsPresent": true,
+        "supportedMeasurementSchema": true,
+        "workloadCompositionWithinTolerance": true,
+        "clientAttemptsAccountedFor": true,
+        "timingEvidenceComplete": true,
+        "resourceCoverageComplete": true,
+        "architectureIsolated": true,
+        "offeredLoadDelivered": true,
+        "generatorCompleted": true,
+        "faultEvidenceComplete": true,
+        "fixedAsyncClientMode": true,
+        "configurationUnchanged": true
+      },
+      "error": null
+    }
+  ]
+}

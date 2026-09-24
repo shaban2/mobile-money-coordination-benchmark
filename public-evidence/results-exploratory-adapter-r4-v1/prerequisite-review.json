@@ -1,0 +1,248 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-09-21T04:12:45.580Z",
+  "decision": "APPROVED_NEXT_EXPLORATORY_PAIR",
+  "nextProtocolId": "exploratory-adapter-r4-2026-09-21",
+  "currentSourceSha256": "7995e55285b54ac33365084157467ded4bf816377074c648a762ed76e58f0d77",
+  "note": "Reviewed the completed 8/s matched pair under the approved six-run follow-up. Both records are QUALIFIED with 1459 correct measured completions each, zero failed and pending after drain, complete callbacks and timing, all descriptive checks true, and zero backlog at all eight 30-second boundaries. REST p95 was 59 ms and Kafka p95 was 172.1 ms; latency remains descriptive and no capacity or winner is inferred. Independent recomputation, full predecessor artifact hashes, source hash 7995e55285b54ac33365084157467ded4bf816377074c648a762ed76e58f0d77, diagnostics and frozen image checks passed. The ended session has no active run, lock, pause request or live controller; the project is empty and all exact approved the external stack instances are restored healthy. Proceed only to the authorized two-run fixed-4/s adapter-outage stage, with 5m warm-up and 10m measurement, then review.",
+  "predecessor": {
+    "root": "<repo>/results-queue-screening-r8-v2",
+    "protocolId": "exploratory-screening-r8-2026-09-21",
+    "sourceSha256": "7995e55285b54ac33365084157467ded4bf816377074c648a762ed76e58f0d77",
+    "status": "SCREENING_PAIR_COMPLETE_REVIEW_REQUIRED",
+    "sessionId": "2f1b90d8-b42b-47d6-a14e-bc8e8d324b2d",
+    "endedAt": "2026-09-21T04:07:33.740Z",
+    "pausedByUser": false,
+    "runs": [
+      {
+        "runId": "PILOT-001-screening-R8-R-A-1",
+        "conditionId": "R-A",
+        "rate": 8,
+        "phase": "screening",
+        "faultScenario": "none",
+        "status": "QUALIFIED",
+        "checks": {
+          "evidenceValid": true,
+          "fullDuration": true,
+          "protocolIdentity": true,
+          "diagnosticsHealthy": true,
+          "offeredLoadDelivered": true,
+          "completeTiming": true,
+          "completeWindows": true,
+          "queueAccounting": true,
+          "safetyPassed": true,
+          "workloadChecks": true,
+          "terminalCallbacks": true,
+          "noFailedTransfers": true,
+          "noPendingAfterDrain": true,
+          "correctCompletions": true
+        },
+        "queue": {
+          "version": "queue-observation-v2",
+          "status": "NO_INCREASE_AT_SAMPLED_BOUNDARIES",
+          "blocks": [
+            {
+              "firstBoundary": 1,
+              "lastBoundary": 2,
+              "min": 0,
+              "max": 0
+            },
+            {
+              "firstBoundary": 3,
+              "lastBoundary": 4,
+              "min": 0,
+              "max": 0
+            },
+            {
+              "firstBoundary": 5,
+              "lastBoundary": 6,
+              "min": 0,
+              "max": 0
+            },
+            {
+              "firstBoundary": 7,
+              "lastBoundary": 8,
+              "min": 0,
+              "max": 0
+            }
+          ],
+          "role": "DESCRIPTIVE_SCREENING_NOT_CAPACITY_DECISION",
+          "capacityEstablished": false,
+          "automaticBoundaryDecision": null
+        },
+        "counts": {
+          "total": 1459,
+          "completed": 1459,
+          "failed": 0,
+          "pendingAfterDrain": 0
+        },
+        "goodput": 6.079166666666667,
+        "latency": {
+          "count": 1459,
+          "median": 50,
+          "p95": 59,
+          "p99": 74.42000000000007
+        },
+        "fault": null,
+        "completedDuringDrain": 0
+      },
+      {
+        "runId": "PILOT-001-screening-R8-K-A-1",
+        "conditionId": "K-A",
+        "rate": 8,
+        "phase": "screening",
+        "faultScenario": "none",
+        "status": "QUALIFIED",
+        "checks": {
+          "evidenceValid": true,
+          "fullDuration": true,
+          "protocolIdentity": true,
+          "diagnosticsHealthy": true,
+          "offeredLoadDelivered": true,
+          "completeTiming": true,
+          "completeWindows": true,
+          "queueAccounting": true,
+          "safetyPassed": true,
+          "workloadChecks": true,
+          "terminalCallbacks": true,
+          "noFailedTransfers": true,
+          "noPendingAfterDrain": true,
+          "correctCompletions": true
+        },
+        "queue": {
+          "version": "queue-observation-v2",
+          "status": "NO_INCREASE_AT_SAMPLED_BOUNDARIES",
+          "blocks": [
+            {
+              "firstBoundary": 1,
+              "lastBoundary": 2,
+              "min": 0,
+              "max": 0
+            },
+            {
+              "firstBoundary": 3,
+              "lastBoundary": 4,
+              "min": 0,
+              "max": 0
+            },
+            {
+              "firstBoundary": 5,
+              "lastBoundary": 6,
+              "min": 0,
+              "max": 0
+            },
+            {
+              "firstBoundary": 7,
+              "lastBoundary": 8,
+              "min": 0,
+              "max": 0
+            }
+          ],
+          "role": "DESCRIPTIVE_SCREENING_NOT_CAPACITY_DECISION",
+          "capacityEstablished": false,
+          "automaticBoundaryDecision": null
+        },
+        "counts": {
+          "total": 1459,
+          "completed": 1459,
+          "failed": 0,
+          "pendingAfterDrain": 0
+        },
+        "goodput": 6.079166666666667,
+        "latency": {
+          "count": 1459,
+          "median": 141,
+          "p95": 172.0999999999999,
+          "p99": 213
+        },
+        "fault": null,
+        "completedDuringDrain": 0
+      }
+    ],
+    "capacityEstablished": false,
+    "files": {
+      "PILOT-001-screening-R8-K-A-1/callbacks.json": "b3b0432b1f99bc5953dbec8571c45857edd19b0be78ce888cb59b0aafd893277",
+      "PILOT-001-screening-R8-K-A-1/clean-start.json": "b32b3f588ef005c0b1fc155513b6cd18a52fa69fa6da0fac0ed4de8163119641",
+      "PILOT-001-screening-R8-K-A-1/cleanup.json": "fda723586b508f0d5d24398572c6c61f1cb6d8de0ccb87821799df651ca0b72f",
+      "PILOT-001-screening-R8-K-A-1/client-attempts.json": "3e684122f033eb3f278f849e7642eefdb6d985fc106d049b3f67af3a4d87ccdf",
+      "PILOT-001-screening-R8-K-A-1/compose.log": "9885a844360c4e881180be6a68cee7b15cf528138290a0a8ceff2cf9dbe0914a",
+      "PILOT-001-screening-R8-K-A-1/container-inspect.json": "15ffeb9c75aac1168a3a53dcb8ef83ce9fb3e941044d4cff4507854394b2578d",
+      "PILOT-001-screening-R8-K-A-1/controller-state.json": "0a7def0152fd05a16f0ef8efe11ca4917a76c0ce6101bc1bf5d6ecb51766f683",
+      "PILOT-001-screening-R8-K-A-1/database-diagnostics.json": "4ae9b9cb45d6178d2ae351037954c31e059b938f271f2dcd54d8d682d7486d4d",
+      "PILOT-001-screening-R8-K-A-1/diagnostics.json": "06f16b7e34d22a8be6e6e0d8d9193911a4bbb7bd8046f56aa0fd60581f4c45c3",
+      "PILOT-001-screening-R8-K-A-1/docker-stats-collector.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "PILOT-001-screening-R8-K-A-1/docker-stats.jsonl": "d715cec8b00f38d789d22dcbde911a942ba6f7410b3ceb44c3d4311e4ef37d1f",
+      "PILOT-001-screening-R8-K-A-1/end-checksums.json": "4f91256038982f2aae8d9c689d8ef28c402a37b49487f5d590862c63ae666e70",
+      "PILOT-001-screening-R8-K-A-1/invariants.json": "988dce4ad5acafe2917dfbe0084f634043f6066416fc42c9b27b1ac194e5093f",
+      "PILOT-001-screening-R8-K-A-1/isolation.json": "b94c2d3a7a6bab85f932207b78617b338e4b5021adc10d1317c8dce366d1e5ba",
+      "PILOT-001-screening-R8-K-A-1/load-exit.json": "6380f7ebf1263a94abaaef4f5a1323cf0f4fbc88e37d8f1792ae68f163e18807",
+      "PILOT-001-screening-R8-K-A-1/manifest.json": "692a0f3f7de423c75145f39997b1d4f8b0421c1ebad5eeb9560d775e6884a798",
+      "PILOT-001-screening-R8-K-A-1/measurement-clock.json": "61af1d27e5ff11faefdac3e9b629a2589b26665224723e11cdfe9b560a50c316",
+      "PILOT-001-screening-R8-K-A-1/measurement-metrics.json": "c85851b0b60953ea71aead8787e6ae3d6b1051245361ae107ddc11fce4ba1539",
+      "PILOT-001-screening-R8-K-A-1/measurement-summary.json": "dae8c99aec66d28826adf9274afd3e982117aa9308bbf317d94310028d868ac2",
+      "PILOT-001-screening-R8-K-A-1/measurement.log": "d3a24c90a0185b06d7dd0343f2d7ca31e40b70229bd6eeb8f9eeb759028187ca",
+      "PILOT-001-screening-R8-K-A-1/pilot-stability.json": "9a5620c269b20155eea5f04d4e3105c54e9fac1ecc5a8701971739ac94f77102",
+      "PILOT-001-screening-R8-K-A-1/provider-attempt-timings.json": "818d3dee669bfbd53093ebcb9e0286ccc260b0d45a4f30e231007a5011ee9e00",
+      "PILOT-001-screening-R8-K-A-1/qualification.json": "04759664977418c37734a88e0d93223f5441c711198df99144a28dec5ca0005e",
+      "PILOT-001-screening-R8-K-A-1/registered-run.json": "42b67b29a2831ee5c1f696376246dfc6bb2532e978b6fc21ce1e17c548a12e16",
+      "PILOT-001-screening-R8-K-A-1/resolved-compose.json": "3856b2cb3398fbb626cb18e60aa63ee5e3646a7926d98f17105ea9a0abe55f65",
+      "PILOT-001-screening-R8-K-A-1/resolved-compose.yaml": "9f9fd991289c641fbaeebc9c52a51d6ed30c9f74868bbb02ae1400e20b257be4",
+      "PILOT-001-screening-R8-K-A-1/run-outcomes.json": "4534b43239d3120963aa7ab043ca1460e5cd0c90a5ced8a5b12c8f04984be880",
+      "PILOT-001-screening-R8-K-A-1/telemetry.json": "2333da69121eb130aaacd58c30e5aa314864b6de6c97fd872a430cb5b4d97bbd",
+      "PILOT-001-screening-R8-K-A-1/traces.json": "4043a39898322834d4e0879ef2c810b0a6c6dac01564b6563ab167dc006838aa",
+      "PILOT-001-screening-R8-K-A-1/transfers.json": "704228a0f57ee33e882f32cc2b85d836b0fceee5dd176cf95d5ad3069348a409",
+      "PILOT-001-screening-R8-K-A-1/warmup-summary.json": "a0551b690bfd4339c0eb41806eb1136be58e008db0dd83f0181b28c68efe184d",
+      "PILOT-001-screening-R8-K-A-1/warmup.log": "4cce099b23d765174a2dc28215513ef18080927557701a98f1b77599b6d44717",
+      "PILOT-001-screening-R8-K-A-1-controller.log": "7edf8917af9adcf3ceb8e1a63ac8af789f9cce6dbaa73a03452b0efe60bb54ea",
+      "PILOT-001-screening-R8-R-A-1/callbacks.json": "4b9133d9a71d10ca6f71ad78f0a9f320642aa82aad56b12da464937a90d817c9",
+      "PILOT-001-screening-R8-R-A-1/clean-start.json": "831caeb21c38b2becdd0de2dbb5886fa5c7c9bdfabec4937b86f8f4a08228dd2",
+      "PILOT-001-screening-R8-R-A-1/cleanup.json": "6e1184186b290f8411d0370c0c1d0bd872669d36ea9515b2b21b1dfc20f93eb3",
+      "PILOT-001-screening-R8-R-A-1/client-attempts.json": "e7ab093e794052fa7fd2d004f8dd1dd46654d19487c42d9c6394cc7d265fa8b9",
+      "PILOT-001-screening-R8-R-A-1/compose.log": "e048b713659f46861efc8a596d109b9e519378b2afbf282fe8553a53b69eb323",
+      "PILOT-001-screening-R8-R-A-1/container-inspect.json": "4ef84fca6b2b58d7043eb393fdf4ae8a64acc0e0341a48bac53a4be04cd325f6",
+      "PILOT-001-screening-R8-R-A-1/controller-state.json": "371f10e9d0e81771d0fc18d11acbcfd3b007ef7b6a0fc5211e51d5be7971e69d",
+      "PILOT-001-screening-R8-R-A-1/database-diagnostics.json": "790c147fd5d4b4672dc994506b1d7f57f21ef5e5b74145f18fffd224c1ef07e3",
+      "PILOT-001-screening-R8-R-A-1/diagnostics.json": "c776db89623779cefe4ed376152bed3db4e697a0a3f8f9379ee1bc918a985822",
+      "PILOT-001-screening-R8-R-A-1/docker-stats-collector.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "PILOT-001-screening-R8-R-A-1/docker-stats.jsonl": "8ecba2560435f8826e4def38aa31f9362ebbc309a27b32c0ca30e978e4bc97c7",
+      "PILOT-001-screening-R8-R-A-1/end-checksums.json": "4f91256038982f2aae8d9c689d8ef28c402a37b49487f5d590862c63ae666e70",
+      "PILOT-001-screening-R8-R-A-1/invariants.json": "c89f4d05257fac45945e59db8e573204b51d85fd1d278e5b815d78fb2dfda2ac",
+      "PILOT-001-screening-R8-R-A-1/isolation.json": "c0acf7c2f11940c6d534be2be3129fc99c9aafe010de0aba1eb91285c24071d5",
+      "PILOT-001-screening-R8-R-A-1/load-exit.json": "6380f7ebf1263a94abaaef4f5a1323cf0f4fbc88e37d8f1792ae68f163e18807",
+      "PILOT-001-screening-R8-R-A-1/manifest.json": "029057e788814742ee8bdecc06c5b830eb323f04ad7634849756e74125e00284",
+      "PILOT-001-screening-R8-R-A-1/measurement-clock.json": "9b84f3ba153e87e2ccad4f7e67cb7e9754209503786ceea2ffba57a211b1b42a",
+      "PILOT-001-screening-R8-R-A-1/measurement-metrics.json": "272e61e5edeb28f18d68fcba3208ddeca5a52d7699c3f48b3d267669b06f5824",
+      "PILOT-001-screening-R8-R-A-1/measurement-summary.json": "f96436ca335a821b93aab53a4b2c9fa742d6bd1c9cb4858e757be50e0b525880",
+      "PILOT-001-screening-R8-R-A-1/measurement.log": "079e486a153f93f464d1e4f1e337c0de4cf7ef03f5037133cf3f97fb67e8a79d",
+      "PILOT-001-screening-R8-R-A-1/pilot-stability.json": "ed8e8c7c4c3aae8e00e6303ae47e0328a926784d84c8f67266ce4fb762e534c1",
+      "PILOT-001-screening-R8-R-A-1/provider-attempt-timings.json": "1320a073d721895a60785b24fbe061f910a96f603b5e1f9b567b7a63b862c801",
+      "PILOT-001-screening-R8-R-A-1/qualification.json": "306b17a0ae082c72a28ff9606fba4c631be746ae266ddc2357656206f05f7d64",
+      "PILOT-001-screening-R8-R-A-1/registered-run.json": "edb0e3e0c1f29f0da3d169f9d4d6fa0a2215bb8ecf5faa592ef75dd5aea57ec2",
+      "PILOT-001-screening-R8-R-A-1/resolved-compose.json": "39afc6206289ce230f5aab603cda59d2391d75c80e474c7af036fafd5667082e",
+      "PILOT-001-screening-R8-R-A-1/resolved-compose.yaml": "15ccccf4111df5eda5f60325bf1b4e765e054d03dca39adea5ad32c7a92732bc",
+      "PILOT-001-screening-R8-R-A-1/run-outcomes.json": "75a56a2ada926da32bc90a8e4d82831afe3fd792f0a7096d3c0a47297e5ab59e",
+      "PILOT-001-screening-R8-R-A-1/telemetry.json": "13c18e6378576dae6b8e978624f6ed57c4693e72b2282d48c528a0d02fe8d5d9",
+      "PILOT-001-screening-R8-R-A-1/traces.json": "2d4ff0676db14046f793414f4554e547aa34ca7cdbf20fa0c8d0a43062f408f2",
+      "PILOT-001-screening-R8-R-A-1/transfers.json": "c06d2fdd1f8770487869d6bcb97db8583ac59f351f05646db359d113bf397df3",
+      "PILOT-001-screening-R8-R-A-1/warmup-summary.json": "b24cf642eea01ef248a74baadee866f89ae24abdd8abc205d69b0da673bd06a2",
+      "PILOT-001-screening-R8-R-A-1/warmup.log": "7e907e8a65d460ee4e83d9a1d0e6cf0102025c6a6704a51fb87873ee59f2d83d",
+      "PILOT-001-screening-R8-R-A-1-controller.log": "ee43b1bf51fe4ff5faf883149e71826fa569d398c793d36fb2cdfdf1b8960750",
+      "archive-checksum.json": "076a7168567f31f243ffb12d28f39b43da18ea8856f8236d36c81e5c8b021a25",
+      "controller-invocation-1789962891222.json": "1c132243609377ae828e636cd17252e44966d2ade57af4c78797f6e02b459acf",
+      "controller-invocation-1789963271121.json": "f75c1e240482ab3567d52f5916d7874d4560e33b404acb24a19c029ff8417035",
+      "experiment-summary.json": "983c4fc2385f3fdcbf502f30dab2571aceb8846ba997ff038ccf8616b5185f67",
+      "freeze.json": "27362f625da1f65d902ddf3ef0de11ce308eac08b85b52c9ba0ea423978a961a",
+      "frozen-compose.json": "8b09be8c0610efbce6e6e087a3c275d4e28afafdf41bc231d21e216a7ea532fa",
+      "isolation-events.jsonl": "cab7c46163111c1ba12b4f091979a98245c3bb61533ad97a3a84f12ad6b5052d",
+      "launcher.json": "a5708c98447abf530133200f23d9efde12d1db7531865505a405ac01b2aa4793",
+      "launcher.log": "9bc5d14b2499993c13abf09cd69e2baed68cd53e99b451de2f285c4c7e9dd6c9",
+      "pilot-batch-001.json": "d85420c5adb6718d8dbb07536bba60ade9c3ab1f024a9b7dc8ff597c49f83d54",
+      "pilot-protocol.json": "b351006cb44718a99b1f0770517eb9f3e6c7a7e585e60af962141c1ba90b0fab",
+      "pilot-state.json": "4c21387c8c9bc0e313b9e8e79b40ff4ee6a2852f853c2ce66f470a91665e06b9",
+      "pilot.log": "9bc5d14b2499993c13abf09cd69e2baed68cd53e99b451de2f285c4c7e9dd6c9",
+      "prerequisite-review.json": "d5186453c6efae5cf77d22a153f9bdb9ae938546d939b05dd6797ad5dd2a9482",
+      "run-index.jsonl": "5ff4f723f05799edafdbd25e9d67ee5f5e9eaf236ecec4cc2388b263e9df3c13",
+      "source-snapshot.tar.gz": "73a16ba4023acfbc90e524ced9858c2855a8b297502b7cee7da1d6faf5b6b30a"
+    }
+  }
+}

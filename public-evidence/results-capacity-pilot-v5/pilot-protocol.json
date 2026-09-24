@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 2,
+  "protocolId": "capacity-pilot-v2-short-screening-pausable-2026-09-20",
+  "stage": "PILOT_ONLY",
+  "randomSeed": "lubanga-capacity-pilot-v1",
+  "warmupDuration": "5m",
+  "measurementDuration": "10m",
+  "screening": {
+    "warmupDuration": "2m",
+    "measurementDuration": "4m",
+    "role": "exploratory-only-requires-fresh-full-duration-confirmation"
+  },
+  "drainSeconds": 600,
+  "startRate": 4,
+  "maximumRate": 256,
+  "boundaryRelativeWidth": 0.1,
+  "boundaryReplicates": 3,
+  "screeningReplicates": 1,
+  "faultReplicates": 3,
+  "maximumRuns": 72,
+  "maximumHours": 24,
+  "timeBudgetBasis": "active-sessions",
+  "pauseBoundary": "matched-pair",
+  "minimumFreeDiskGiB": 15,
+  "stability": {
+    "lastCompleteWindows": 6,
+    "windowSeconds": 30,
+    "maximumBacklogSlopePerSecond": 0,
+    "maximumP95ToMedianRatio": 1.1,
+    "minimumWorkloadCheckRate": 0.995,
+    "requireNoPendingAfterDrain": true,
+    "requireTerminalCallbacks": true,
+    "requireNoSafetyFailures": true,
+    "requireNoDroppedIterations": true
+  },
+  "faults": {
+    "atSeconds": 240,
+    "adapterCrashSeconds": 30,
+    "databaseDelaySeconds": 60,
+    "databaseLatencyMs": 100,
+    "offeredLoadPercent": 90
+  },
+  "confirmatoryLoadPercentages": [
+    25,
+    50,
+    75,
+    90
+  ],
+  "backlogClearanceRole": "descriptive-secondary-no-winner-threshold",
+  "confirmatoryFreeze": "REQUIRES_REVIEW_AFTER_PILOT",
+  "stopRules": [
+    "Stop for invalid instrumentation or generator-limited delivery; never treat these as architecture capacity.",
+    "Stop for a safety failure or changed frozen source, images, protocol, or host configuration.",
+    "Stop for review if no stable initial rate exists, integer resolution cannot meet 10%, or the resource/active-time/run ceiling is reached. Intentional pauses do not reset consumed budget.",
+    "Graceful pauses require a complete matched pair and verified cleanup/restoration. Failed or interrupted sessions require review, not automatic resume.",
+    "Do not automatically change the stability rule after observing results.",
+    "Do not execute the confirmatory matrix or claim preregistration."
+  ]
+}

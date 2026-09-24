@@ -1,0 +1,8 @@
+node_modules
+.git
+.research-results
+results
+results-*
+coverage
+.DS_Store
+npm-debug.log

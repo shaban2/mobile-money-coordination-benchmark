@@ -1,0 +1,87 @@
+{
+  "annotations": { "list": [] },
+  "editable": false,
+  "graphTooltip": 1,
+  "panels": [
+    {
+      "id": 1,
+      "title": "Accepted requests / second",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 8, "x": 0, "y": 0 },
+      "targets": [{ "expr": "rate(transfer_requests_total[30s])", "legendFormat": "{{job}}" }]
+    },
+    {
+      "id": 2,
+      "title": "Correct goodput / second",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 8, "x": 8, "y": 0 },
+      "targets": [{ "expr": "rate(correct_transfers_total[30s])", "legendFormat": "{{job}}" }]
+    },
+    {
+      "id": 3,
+      "title": "Pending transfers and outbox backlog",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 8, "x": 16, "y": 0 },
+      "targets": [
+        { "expr": "transfers_pending", "legendFormat": "pending {{job}}" },
+        { "expr": "outbox_pending", "legendFormat": "outbox {{job}}" }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Mean durable-completion latency (ms)",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 8, "x": 0, "y": 8 },
+      "targets": [{
+        "expr": "rate(durable_completion_latency_milliseconds_sum[30s]) / rate(durable_completion_latency_milliseconds_count[30s])",
+        "legendFormat": "{{job}}"
+      }]
+    },
+    {
+      "id": 5,
+      "title": "Trace completeness",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 8, "x": 8, "y": 8 },
+      "fieldConfig": { "defaults": { "unit": "percentunit", "min": 0, "max": 1 }, "overrides": [] },
+      "targets": [{ "expr": "trace_completeness_ratio", "legendFormat": "{{job}}" }]
+    },
+    {
+      "id": 6,
+      "title": "Process memory (bytes)",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 8, "x": 16, "y": 8 },
+      "targets": [
+        { "expr": "process_resident_memory_bytes", "legendFormat": "RSS {{job}}" },
+        { "expr": "process_heap_used_bytes", "legendFormat": "heap {{job}}" }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "PostgreSQL block activity",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 16 },
+      "targets": [
+        { "expr": "rate(blks_read[30s])", "legendFormat": "disk reads {{job}}" },
+        { "expr": "rate(blks_hit[30s])", "legendFormat": "cache hits {{job}}" }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Failures and callback failures",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 16 },
+      "targets": [
+        { "expr": "transfers_failed", "legendFormat": "transfers {{job}}" },
+        { "expr": "callbacks_failed", "legendFormat": "callbacks {{job}}" }
+      ]
+    }
+  ],
+  "refresh": "5s",
+  "schemaVersion": 41,
+  "tags": ["research", "mobile-money", "2x2"],
+  "templating": { "list": [] },
+  "time": { "from": "now-15m", "to": "now" },
+  "title": "Mobile Money Architecture Experiment",
+  "uid": "lubanga-research-overview",
+  "version": 1
+}

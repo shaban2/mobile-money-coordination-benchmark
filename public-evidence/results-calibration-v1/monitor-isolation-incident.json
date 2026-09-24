@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "kind": "UNAPPROVED_COMPETING_CONTAINER_DURING_WARMUP",
+  "monitorCheckStartedAt": "2026-09-20T15:45:13.167Z",
+  "sessionId": "b01abb96-6a33-4905-8ff8-370ddae2c4c0",
+  "runId": "CAL-001-calibration-R4-K-A-2",
+  "observedPhase": "WARMUP",
+  "competingContainer": {
+    "id": "redacted-container-id-e",
+    "name": "external-container-e",
+    "image": "external-image:latest",
+    "startedAt": "2026-09-20T15:44:57.152687132Z",
+    "runningWhenInspected": true,
+    "autoRemove": true,
+    "approvedToStop": false
+  },
+  "completedRunsBeforeCompanionStart": [
+    "CAL-001-calibration-R4-R-A-1",
+    "CAL-001-calibration-R4-K-A-1"
+  ],
+  "intendedAction": "Gracefully interrupt only the verified calibration controller; let its existing cleanup and approved the external stack restoration execute. Do not stop or recreate the companion.",
+  "actualAction": {
+    "controllerPid": 84866,
+    "signal": "SIGTERM",
+    "signalledAt": "2026-09-20T15:47:35.058Z",
+    "sessionEndedAt": "2026-09-20T15:47:37.858Z",
+    "finalStatus": "INTERRUPTED",
+    "completedRecords": 2,
+    "cleanupPassed": true,
+    "remainingExperimentContainers": [],
+    "restoreErrors": [],
+    "exactApprovedExternalInstancesVerifiedRunningHealthy": true,
+    "companionUntouchedAndStillRunning": true,
+    "controllerExited": true,
+    "pilotLockRemoved": true
+  },
+  "interpretation": "Environmental isolation breach, not an architecture failure or a capacity boundary. Preserve all evidence; this interrupted matched pair is not a resumable PAUSED checkpoint. Further collection requires explicit review and user direction."
+}

@@ -1,0 +1,858 @@
+{
+  "schemaVersion": 2,
+  "startedAt": "2026-09-21T04:51:25.027Z",
+  "status": "EXPLORATORY_PAIR_COMPLETE_REVIEW_REQUIRED",
+  "records": [
+    {
+      "runId": "PILOT-001-fault-R4-R-A-1",
+      "conditionId": "R-A",
+      "phase": "fault",
+      "rate": 4,
+      "executionBlock": "PILOT-001-fault-R4-1",
+      "sessionId": "8b20cd29-ea64-4206-96d3-a9dc724cd382",
+      "faultScenario": "database-delay",
+      "recordedAt": "2026-09-21T05:06:46.046Z",
+      "status": "QUALIFIED",
+      "stability": {
+        "schemaVersion": 1,
+        "rule": {
+          "version": "queue-observation-v2",
+          "policySha256": "c174a8a54bd47d1b999085abb0e2bc4d0938bb21408ac618a5b2c49a076e0758"
+        },
+        "status": "OBSERVATION_RECORDED",
+        "role": "DESCRIPTIVE_FAULT_RESPONSE_NOT_CAPACITY_DECISION",
+        "automaticBoundaryDecision": null,
+        "capacityEstablished": false,
+        "checks": {
+          "evidenceValid": true,
+          "fullDuration": true,
+          "protocolIdentity": true,
+          "diagnosticsHealthy": true,
+          "offeredLoadDelivered": true,
+          "completeTiming": true,
+          "completeWindows": true,
+          "queueAccounting": true,
+          "safetyPassed": true,
+          "workloadChecks": true,
+          "terminalCallbacks": true,
+          "noFailedTransfers": true,
+          "noPendingAfterDrain": true,
+          "correctCompletions": true,
+          "faultEvidence": true
+        },
+        "queue": {
+          "version": "queue-observation-v2",
+          "status": "MIXED_RISES_AND_FALLS_REVIEW",
+          "blocks": [
+            {
+              "firstBoundary": 1,
+              "lastBoundary": 5,
+              "min": 0,
+              "max": 0
+            },
+            {
+              "firstBoundary": 6,
+              "lastBoundary": 10,
+              "min": 0,
+              "max": 111
+            },
+            {
+              "firstBoundary": 11,
+              "lastBoundary": 15,
+              "min": 0,
+              "max": 0
+            },
+            {
+              "firstBoundary": 16,
+              "lastBoundary": 20,
+              "min": 0,
+              "max": 0
+            }
+          ],
+          "role": "DESCRIPTIVE_FAULT_RESPONSE_NOT_CAPACITY_DECISION",
+          "capacityEstablished": false,
+          "automaticBoundaryDecision": null
+        },
+        "windows": [
+          {
+            "startAt": "2026-09-21T04:56:41.928Z",
+            "endAt": "2026-09-21T04:57:11.928Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 60.5,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T04:57:11.928Z",
+            "endAt": "2026-09-21T04:57:41.928Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 61,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T04:57:41.928Z",
+            "endAt": "2026-09-21T04:58:11.928Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 66.5,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T04:58:11.928Z",
+            "endAt": "2026-09-21T04:58:41.928Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 61,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T04:58:41.928Z",
+            "endAt": "2026-09-21T04:59:11.928Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.066666666666667,
+            "p95DurableCompletionMs": 60.45,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 92,
+            "terminalConfirmations": 92,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T04:59:11.928Z",
+            "endAt": "2026-09-21T04:59:41.928Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 58,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T04:59:41.928Z",
+            "endAt": "2026-09-21T05:00:11.928Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 61,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T05:00:11.928Z",
+            "endAt": "2026-09-21T05:00:41.928Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 71,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T05:00:41.928Z",
+            "endAt": "2026-09-21T05:01:11.928Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 1.1666666666666667,
+            "p95DurableCompletionMs": 17897.099999999995,
+            "backlogAtEnd": 56,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 35,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T05:01:11.928Z",
+            "endAt": "2026-09-21T05:01:41.928Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 1.2333333333333334,
+            "p95DurableCompletionMs": 36099.4,
+            "backlogAtEnd": 111,
+            "backlogAtStart": 56,
+            "arrivals": 92,
+            "terminalConfirmations": 37,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T05:01:41.928Z",
+            "endAt": "2026-09-21T05:02:11.928Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 6.733333333333333,
+            "p95DurableCompletionMs": 33550.899999999994,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 111,
+            "arrivals": 91,
+            "terminalConfirmations": 202,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T05:02:11.928Z",
+            "endAt": "2026-09-21T05:02:41.928Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 60,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T05:02:41.928Z",
+            "endAt": "2026-09-21T05:03:11.928Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 64,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T05:03:11.928Z",
+            "endAt": "2026-09-21T05:03:41.928Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 62,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T05:03:41.928Z",
+            "endAt": "2026-09-21T05:04:11.928Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.066666666666667,
+            "p95DurableCompletionMs": 64.45,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 92,
+            "terminalConfirmations": 92,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T05:04:11.928Z",
+            "endAt": "2026-09-21T05:04:41.928Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 62,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T05:04:41.928Z",
+            "endAt": "2026-09-21T05:05:11.928Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 61.5,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T05:05:11.928Z",
+            "endAt": "2026-09-21T05:05:41.928Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 58.5,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T05:05:41.928Z",
+            "endAt": "2026-09-21T05:06:11.928Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 59.5,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T05:06:11.928Z",
+            "endAt": "2026-09-21T05:06:41.928Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.066666666666667,
+            "p95DurableCompletionMs": 60,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 92,
+            "terminalConfirmations": 92,
+            "balanced": true
+          }
+        ],
+        "latency": {
+          "role": "DESCRIPTIVE_NOT_A_CAPACITY_GATE",
+          "overall": {
+            "count": 1824,
+            "median": 55,
+            "p95": 19237.149999999998,
+            "p99": 33206.22999999999
+          }
+        },
+        "fault": {
+          "role": "DESCRIPTIVE_WITH_CENSORING_NO_WINNER",
+          "scenario": "database-delay",
+          "injectedAt": "2026-09-21T05:00:42.055Z",
+          "clearedAt": "2026-09-21T05:01:42.179Z",
+          "recoveryEstimable": true,
+          "backlogEstimable": true,
+          "baseline": {
+            "windows": 3,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 61.39999999999998,
+            "backlogUpper": 0
+          },
+          "recoveryTimeSeconds": 119.749,
+          "recoveryCensored": false,
+          "recoveryObservationSeconds": 299.749,
+          "backlogClearanceSeconds": 59.749,
+          "backlogClearanceCensored": false,
+          "backlogObservationSeconds": 301.022
+        },
+        "completedDuringDrain": 0
+      }
+    },
+    {
+      "runId": "PILOT-001-fault-R4-K-A-1",
+      "conditionId": "K-A",
+      "phase": "fault",
+      "rate": 4,
+      "executionBlock": "PILOT-001-fault-R4-1",
+      "sessionId": "8b20cd29-ea64-4206-96d3-a9dc724cd382",
+      "faultScenario": "database-delay",
+      "recordedAt": "2026-09-21T05:22:11.158Z",
+      "status": "QUALIFIED",
+      "stability": {
+        "schemaVersion": 1,
+        "rule": {
+          "version": "queue-observation-v2",
+          "policySha256": "c174a8a54bd47d1b999085abb0e2bc4d0938bb21408ac618a5b2c49a076e0758"
+        },
+        "status": "OBSERVATION_RECORDED",
+        "role": "DESCRIPTIVE_FAULT_RESPONSE_NOT_CAPACITY_DECISION",
+        "automaticBoundaryDecision": null,
+        "capacityEstablished": false,
+        "checks": {
+          "evidenceValid": true,
+          "fullDuration": true,
+          "protocolIdentity": true,
+          "diagnosticsHealthy": true,
+          "offeredLoadDelivered": true,
+          "completeTiming": true,
+          "completeWindows": true,
+          "queueAccounting": true,
+          "safetyPassed": true,
+          "workloadChecks": true,
+          "terminalCallbacks": true,
+          "noFailedTransfers": true,
+          "noPendingAfterDrain": true,
+          "correctCompletions": true,
+          "faultEvidence": true
+        },
+        "queue": {
+          "version": "queue-observation-v2",
+          "status": "MIXED_RISES_AND_FALLS_REVIEW",
+          "blocks": [
+            {
+              "firstBoundary": 1,
+              "lastBoundary": 5,
+              "min": 0,
+              "max": 0
+            },
+            {
+              "firstBoundary": 6,
+              "lastBoundary": 10,
+              "min": 0,
+              "max": 168
+            },
+            {
+              "firstBoundary": 11,
+              "lastBoundary": 15,
+              "min": 0,
+              "max": 0
+            },
+            {
+              "firstBoundary": 16,
+              "lastBoundary": 20,
+              "min": 0,
+              "max": 0
+            }
+          ],
+          "role": "DESCRIPTIVE_FAULT_RESPONSE_NOT_CAPACITY_DECISION",
+          "capacityEstablished": false,
+          "automaticBoundaryDecision": null
+        },
+        "windows": [
+          {
+            "startAt": "2026-09-21T05:12:05.732Z",
+            "endAt": "2026-09-21T05:12:35.732Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 176,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T05:12:35.732Z",
+            "endAt": "2026-09-21T05:13:05.732Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 170,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T05:13:05.732Z",
+            "endAt": "2026-09-21T05:13:35.732Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 168,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T05:13:35.732Z",
+            "endAt": "2026-09-21T05:14:05.732Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 172.5,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T05:14:05.732Z",
+            "endAt": "2026-09-21T05:14:35.732Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.066666666666667,
+            "p95DurableCompletionMs": 173.9,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 92,
+            "terminalConfirmations": 92,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T05:14:35.732Z",
+            "endAt": "2026-09-21T05:15:05.732Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 173,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T05:15:05.732Z",
+            "endAt": "2026-09-21T05:15:35.732Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 167.5,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T05:15:35.732Z",
+            "endAt": "2026-09-21T05:16:05.732Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 169,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T05:16:05.732Z",
+            "endAt": "2026-09-21T05:16:35.732Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 0.26666666666666666,
+            "p95DurableCompletionMs": 26340.699999999997,
+            "backlogAtEnd": 83,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 8,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T05:16:35.732Z",
+            "endAt": "2026-09-21T05:17:05.732Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 0.23333333333333334,
+            "p95DurableCompletionMs": 53673.9,
+            "backlogAtEnd": 168,
+            "backlogAtStart": 83,
+            "arrivals": 92,
+            "terminalConfirmations": 7,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T05:17:05.732Z",
+            "endAt": "2026-09-21T05:17:35.732Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 8.633333333333333,
+            "p95DurableCompletionMs": 51512.2,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 168,
+            "arrivals": 91,
+            "terminalConfirmations": 259,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T05:17:35.732Z",
+            "endAt": "2026-09-21T05:18:05.732Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 167,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T05:18:05.732Z",
+            "endAt": "2026-09-21T05:18:35.732Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 168.5,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T05:18:35.732Z",
+            "endAt": "2026-09-21T05:19:05.732Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 169,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T05:19:05.732Z",
+            "endAt": "2026-09-21T05:19:35.732Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.066666666666667,
+            "p95DurableCompletionMs": 167.45,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 92,
+            "terminalConfirmations": 92,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T05:19:35.732Z",
+            "endAt": "2026-09-21T05:20:05.732Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 182,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T05:20:05.732Z",
+            "endAt": "2026-09-21T05:20:35.732Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 169,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T05:20:35.732Z",
+            "endAt": "2026-09-21T05:21:05.732Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 169,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T05:21:05.732Z",
+            "endAt": "2026-09-21T05:21:35.732Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 170,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 91,
+            "terminalConfirmations": 91,
+            "balanced": true
+          },
+          {
+            "startAt": "2026-09-21T05:21:35.732Z",
+            "endAt": "2026-09-21T05:22:05.732Z",
+            "complete": true,
+            "underLoad": true,
+            "correctGoodput": 3.066666666666667,
+            "p95DurableCompletionMs": 170,
+            "backlogAtEnd": 0,
+            "backlogAtStart": 0,
+            "arrivals": 92,
+            "terminalConfirmations": 92,
+            "balanced": true
+          }
+        ],
+        "latency": {
+          "role": "DESCRIPTIVE_NOT_A_CAPACITY_GATE",
+          "overall": {
+            "count": 1824,
+            "median": 148,
+            "p95": 28776.799999999996,
+            "p99": 50408.54
+          }
+        },
+        "fault": {
+          "role": "DESCRIPTIVE_WITH_CENSORING_NO_WINNER",
+          "scenario": "database-delay",
+          "injectedAt": "2026-09-21T05:16:05.870Z",
+          "clearedAt": "2026-09-21T05:17:05.990Z",
+          "recoveryEstimable": true,
+          "backlogEstimable": true,
+          "baseline": {
+            "windows": 3,
+            "correctGoodput": 3.033333333333333,
+            "p95DurableCompletionMs": 170,
+            "backlogUpper": 0
+          },
+          "recoveryTimeSeconds": 119.742,
+          "recoveryCensored": false,
+          "recoveryObservationSeconds": 299.742,
+          "backlogClearanceSeconds": 59.742,
+          "backlogClearanceCensored": false,
+          "backlogObservationSeconds": 300.904
+        },
+        "completedDuringDrain": 0
+      }
+    }
+  ],
+  "batches": [
+    {
+      "schemaVersion": 1,
+      "kind": "CAPACITY_PILOT",
+      "protocolId": "exploratory-database-r4-2026-09-21",
+      "capacityRule": {
+        "version": "queue-observation-v2",
+        "policySha256": "c174a8a54bd47d1b999085abb0e2bc4d0938bb21408ac618a5b2c49a076e0758"
+      },
+      "expectedRunCount": 2,
+      "runs": [
+        {
+          "conditionId": "R-A",
+          "composeProfile": "rest-async",
+          "gatewayPort": 8182,
+          "apiPort": 8082,
+          "runId": "PILOT-001-fault-R4-R-A-1",
+          "block": "PILOT",
+          "phase": "fault",
+          "offeredRate": 4,
+          "offeredLoadPercent": null,
+          "repetition": 1,
+          "executionBlock": "PILOT-001-fault-R4-1",
+          "networkProfile": "standard",
+          "faultScenario": "database-delay",
+          "randomSeed": "lubanga-exploratory-database-r4-v1:PILOT-001-fault-R4:1",
+          "sequence": 1
+        },
+        {
+          "conditionId": "K-A",
+          "composeProfile": "kafka-async",
+          "gatewayPort": 8184,
+          "apiPort": 8084,
+          "runId": "PILOT-001-fault-R4-K-A-1",
+          "block": "PILOT",
+          "phase": "fault",
+          "offeredRate": 4,
+          "offeredLoadPercent": null,
+          "repetition": 1,
+          "executionBlock": "PILOT-001-fault-R4-1",
+          "networkProfile": "standard",
+          "faultScenario": "database-delay",
+          "randomSeed": "lubanga-exploratory-database-r4-v1:PILOT-001-fault-R4:1",
+          "sequence": 2
+        }
+      ],
+      "file": "pilot-batch-001.json"
+    }
+  ],
+  "currentRun": null,
+  "sessions": [
+    {
+      "sessionId": "8b20cd29-ea64-4206-96d3-a9dc724cd382",
+      "startedAt": "2026-09-21T04:51:25.027Z",
+      "endedAt": "2026-09-21T05:22:11.905Z",
+      "pid": 80053,
+      "resumed": false,
+      "runIds": [
+        "PILOT-001-fault-R4-R-A-1",
+        "PILOT-001-fault-R4-K-A-1"
+      ],
+      "activeMs": 1846878,
+      "status": "EXPLORATORY_PAIR_COMPLETE_REVIEW_REQUIRED",
+      "cleanup": {
+        "passed": true,
+        "checkedAt": "2026-09-21T05:22:11.260Z",
+        "project": "lubanga-coordination-pilot",
+        "remainingContainers": []
+      },
+      "restoreErrors": [],
+      "pausedContainers": [
+        {
+          "id": "redacted-container-id-a",
+          "name": "external-container-a"
+        },
+        {
+          "id": "redacted-container-id-b",
+          "name": "external-container-b"
+        },
+        {
+          "id": "redacted-container-id-c",
+          "name": "external-container-c"
+        }
+      ]
+    }
+  ],
+  "timing": {
+    "activeMs": 1846878,
+    "pausedMs": 0,
+    "activeSince": null,
+    "pausedSince": null
+  },
+  "sessionId": "8b20cd29-ea64-4206-96d3-a9dc724cd382",
+  "pid": 80053,
+  "pauseRequested": null,
+  "cleanup": {
+    "passed": true,
+    "checkedAt": "2026-09-21T05:22:11.260Z",
+    "project": "lubanga-coordination-pilot",
+    "remainingContainers": []
+  },
+  "restoreErrors": [],
+  "containersRestoredAt": "2026-09-21T05:22:11.905Z",
+  "updatedAt": "2026-09-21T05:22:11.906Z",
+  "pausedContainers": [
+    {
+      "id": "redacted-container-id-a",
+      "name": "external-container-a"
+    },
+    {
+      "id": "redacted-container-id-b",
+      "name": "external-container-b"
+    },
+    {
+      "id": "redacted-container-id-c",
+      "name": "external-container-c"
+    }
+  ],
+  "capacityDecision": {
+    "action": "EXPLORATORY_PAIR_COMPLETE_REVIEW_REQUIRED",
+    "capacityEstablished": false
+  },
+  "confirmatoryFrozen": false
+}

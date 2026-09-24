@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "kind": "CAPACITY_PILOT",
+  "protocolId": "exploratory-adapter-r4-2026-09-21",
+  "capacityRule": {
+    "version": "queue-observation-v2",
+    "policySha256": "15c02e20073bfee0a062c0b8626d98123e8691c29b00d60f93a62256827405ad"
+  },
+  "expectedRunCount": 2,
+  "runs": [
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "PILOT-001-fault-R4-R-A-1",
+      "block": "PILOT",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 1,
+      "executionBlock": "PILOT-001-fault-R4-1",
+      "networkProfile": "standard",
+      "faultScenario": "adapter-crash",
+      "randomSeed": "lubanga-exploratory-adapter-r4-v1:PILOT-001-fault-R4:1",
+      "sequence": 1
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "PILOT-001-fault-R4-K-A-1",
+      "block": "PILOT",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 1,
+      "executionBlock": "PILOT-001-fault-R4-1",
+      "networkProfile": "standard",
+      "faultScenario": "adapter-crash",
+      "randomSeed": "lubanga-exploratory-adapter-r4-v1:PILOT-001-fault-R4:1",
+      "sequence": 2
+    }
+  ],
+  "file": "pilot-batch-001.json"
+}

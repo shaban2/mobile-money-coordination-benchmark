@@ -1,0 +1,13 @@
+{
+  "currentStatus": "WARMUP",
+  "events": [
+    {
+      "status": "STAGING",
+      "occurredAt": "2026-09-20T15:43:28.226Z"
+    },
+    {
+      "status": "WARMUP",
+      "occurredAt": "2026-09-20T15:43:43.495Z"
+    }
+  ]
+}

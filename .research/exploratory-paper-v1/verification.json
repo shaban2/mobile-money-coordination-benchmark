@@ -1,0 +1,32 @@
+{
+  "verifiedOn": "2026-09-21",
+  "document": "docs/REST_Kafka_Exploratory_Findings_Draft.docx",
+  "documentSha256": "02e7c12c3c69f07d8cd1f3cbf690e1be298c91984e4a952a420d7325a65afaf6",
+  "analysisSha256": "8cd70615a1fc05847b35975d595c9e995194503d88f98dec73cd7f5c78e2486d",
+  "originalManuscriptUnchanged": true,
+  "evidenceRootsVerifiedUnchanged": 3,
+  "evidenceFilesVerifiedUnchanged": 256,
+  "outcomeReportsExactlyRecomputed": 6,
+  "targetedTestsPassed": 18,
+  "targetedTestsFailed": 0,
+  "targetedTestCommand": "node --test test/exploratory-paper.test.js test/outcomes.test.js test/exploratory-followup.test.js",
+  "documentStructure": {
+    "tables": 4,
+    "figures": 4,
+    "references": 8,
+    "sections": 2,
+    "columnsAfterTitleBlock": 2
+  },
+  "visualReview": {
+    "renderer": "documents skill render_docx.py with bundled LibreOffice",
+    "pagesRendered": 6,
+    "pagesVisuallyInspected": [1, 2, 3, 4, 5, 6],
+    "passed": true,
+    "corrections": "Narrow table headers and cell padding corrected; final rerender inspected on every page.",
+    "limits": "No target venue template certified; rendering is not independent scientific reproduction."
+  },
+  "newExperimentRuns": 0,
+  "newProtocolFrozen": false,
+  "publicationOrSubmissionPerformed": false,
+  "readiness": "Author/supervisor review of an exploratory results draft"
+}

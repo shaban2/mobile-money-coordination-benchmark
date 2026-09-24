@@ -1,0 +1,5 @@
+{
+  "injectedAt": "2026-09-22T05:17:39.093Z",
+  "clearedAt": "2026-09-22T05:18:09.628Z",
+  "timingDefinition": "controller observation of container-stop acknowledgement to adapter health readiness"
+}

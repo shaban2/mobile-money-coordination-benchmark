@@ -1,0 +1,9 @@
+{
+  "scenario": "database-delay",
+  "scheduledAtMeasurementSecond": 240,
+  "requestedAt": "2026-09-22T06:04:21.533Z",
+  "injectedAt": "2026-09-22T06:04:21.739Z",
+  "clearedAt": "2026-09-22T06:05:21.880Z",
+  "completed": true,
+  "timingDefinition": "controller observation of toxic-add and toxic-remove command acknowledgements"
+}

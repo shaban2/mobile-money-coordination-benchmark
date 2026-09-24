@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 2,
+  "kind": "CAPACITY_QUEUE_PILOT",
+  "protocolId": "exploratory-adapter-r4-2026-09-21",
+  "ruleVersion": "queue-observation-v2",
+  "executionScope": "ONE_REVIEWED_EXPLORATORY_PAIR_ONLY",
+  "stage": "DESCRIPTIVE_EXPLORATORY_NOT_CAPACITY",
+  "randomSeed": "lubanga-exploratory-adapter-r4-v1",
+  "warmupDuration": "5m",
+  "measurementDuration": "10m",
+  "screening": {
+    "warmupDuration": "2m",
+    "measurementDuration": "4m"
+  },
+  "drainSeconds": 600,
+  "startRate": 4,
+  "maximumRate": 4,
+  "screeningReplicates": 1,
+  "maximumRuns": 2,
+  "maximumHours": 2,
+  "timeBudgetBasis": "active-sessions",
+  "pauseBoundary": "matched-pair",
+  "minimumFreeDiskGiB": 15,
+  "deepDiagnostics": true,
+  "latencyRole": "DESCRIPTIVE_NOT_A_CAPACITY_GATE",
+  "queueRole": "DESCRIPTIVE_FAULT_RESPONSE_NOT_CAPACITY_DECISION",
+  "observation": {
+    "equalBlocks": 4,
+    "automaticBoundaryDecision": null,
+    "capacityEstablished": false
+  },
+  "stability": {
+    "windowSeconds": 30,
+    "lastCompleteWindows": 6,
+    "minimumWorkloadCheckRate": 0.995,
+    "minimumOfferedLoadDelivery": 0.995,
+    "maximumDroppedIterations": 0,
+    "timingCompletenessRatio": 1
+  },
+  "faults": {
+    "atSeconds": 240,
+    "adapterCrashSeconds": 30,
+    "databaseDelaySeconds": 60,
+    "databaseLatencyMs": 100
+  },
+  "stopRules": [
+    "Exactly one matched REST/Kafka pair at the specified fixed rate and scenario; stop for review after two runs. No automatic rate search or repetition.",
+    "Stop immediately for invalid evidence, safety/correctness failure, controller/cleanup failure, changed provenance or competing containers.",
+    "Queue patterns, latency, recovery and backlog clearance are descriptive. Censored recovery is retained, not zero, and never a capacity or correctness failure by itself.",
+    "Review the prerequisite pair and bind its immutable evidence before preparing or launching this stage. Preserve all historical evidence.",
+    "Pause only at a complete matched pair; a completed pair cannot resume. No further stage may start after a user pause until explicitly requested.",
+    "Two hours per pair is a cumulative safety ceiling, not an ETA. No capacity verdict or confirmatory study is authorized."
+  ],
+  "exploratoryPair": {
+    "key": "adapter-r4",
+    "rate": 4,
+    "phase": "fault",
+    "faultScenario": "adapter-crash",
+    "root": "results-exploratory-adapter-r4-v1",
+    "predecessorRoot": "results-queue-screening-r8-v2",
+    "predecessorProtocolId": "exploratory-screening-r8-2026-09-21"
+  },
+  "faultLoadBasis": "FIXED_COMMON_4_OPS_PER_SECOND_NOT_CAPACITY_NORMALIZED",
+  "faultEndpointRole": "DESCRIPTIVE_WITH_CENSORING_NO_WINNER"
+}

@@ -1,0 +1,172 @@
+{
+  "schemaVersion": 1,
+  "stage": "DESCRIPTIVE_EXPLORATORY_FROZEN_NOT_CAPACITY_EVIDENCE",
+  "frozenAt": "2026-09-21T04:13:02.548Z",
+  "project": "lubanga-coordination-pilot",
+  "postgresPort": 25432,
+  "sourceSha256": "7995e55285b54ac33365084157467ded4bf816377074c648a762ed76e58f0d77",
+  "protocolSha256": "c72aa1de0a6905e9912aa5d46fc933840b076aa96635a5476eadfb283945c052",
+  "frozenComposeSha256": "8b09be8c0610efbce6e6e087a3c275d4e28afafdf41bc231d21e216a7ea532fa",
+  "images": {
+    "adapter-service": {
+      "reference": "lubanga-coordination-pilot-adapter-service:latest",
+      "id": "sha256:9863e9d64edf956f64eb29faef26b79165883b1a7f69eb8384f9b3344e39d2fd",
+      "repoDigests": [
+        "lubanga-coordination-pilot-adapter-service@sha256:9863e9d64edf956f64eb29faef26b79165883b1a7f69eb8384f9b3344e39d2fd"
+      ],
+      "platform": "linux/arm64"
+    },
+    "callback-receiver": {
+      "reference": "lubanga-coordination-pilot-callback-receiver:latest",
+      "id": "sha256:96807bf8cee2456a28a965fcc0a45d407151a0cf414fa22e4bb79c6338318588",
+      "repoDigests": [
+        "lubanga-coordination-pilot-callback-receiver@sha256:96807bf8cee2456a28a965fcc0a45d407151a0cf414fa22e4bb79c6338318588"
+      ],
+      "platform": "linux/arm64"
+    },
+    "gateway-kafka-async": {
+      "reference": "lubanga-coordination-pilot-gateway-kafka-async:latest",
+      "id": "sha256:32f62c74c36d3f82df8e6350ed86689713a53dd3481a1a96b118fa363e9a6d62",
+      "repoDigests": [
+        "lubanga-coordination-pilot-gateway-kafka-async@sha256:32f62c74c36d3f82df8e6350ed86689713a53dd3481a1a96b118fa363e9a6d62"
+      ],
+      "platform": "linux/arm64"
+    },
+    "gateway-rest-async": {
+      "reference": "lubanga-coordination-pilot-gateway-rest-async:latest",
+      "id": "sha256:6e1d9c3aa48a48af32401ef01c23b39fe1485663fedcf65a9c641689ecb92576",
+      "repoDigests": [
+        "lubanga-coordination-pilot-gateway-rest-async@sha256:6e1d9c3aa48a48af32401ef01c23b39fe1485663fedcf65a9c641689ecb92576"
+      ],
+      "platform": "linux/arm64"
+    },
+    "grafana": {
+      "reference": "grafana/grafana:12.4.0",
+      "id": "sha256:b0ae311af06228bcfd4a620504b653db80f5b91e94dc3dc2a5b7dab202bcde20",
+      "repoDigests": [
+        "grafana/grafana@sha256:b0ae311af06228bcfd4a620504b653db80f5b91e94dc3dc2a5b7dab202bcde20"
+      ],
+      "platform": "linux/arm64"
+    },
+    "k6": {
+      "reference": "grafana/k6:1.8.0",
+      "id": "sha256:b992f241070f3f3a7d78096fa6020db1edcda49297ee8ed9eb0ab847ef3dcb32",
+      "repoDigests": [
+        "grafana/k6@sha256:b992f241070f3f3a7d78096fa6020db1edcda49297ee8ed9eb0ab847ef3dcb32"
+      ],
+      "platform": "linux/arm64"
+    },
+    "kafka-async": {
+      "reference": "lubanga-coordination-pilot-kafka-async:latest",
+      "id": "sha256:778420ade8599410fe53ade17f211df9388c8f129ba7a70b7b56f1cca5d1e98d",
+      "repoDigests": [
+        "lubanga-coordination-pilot-kafka-async@sha256:778420ade8599410fe53ade17f211df9388c8f129ba7a70b7b56f1cca5d1e98d"
+      ],
+      "platform": "linux/arm64"
+    },
+    "postgres": {
+      "reference": "postgres:17-alpine",
+      "id": "sha256:18cfe3ef5e6815560c98237d6216d1e5119702fb0f3894c8785dd58b8bbe5d73",
+      "repoDigests": [
+        "postgres@sha256:18cfe3ef5e6815560c98237d6216d1e5119702fb0f3894c8785dd58b8bbe5d73"
+      ],
+      "platform": "linux/arm64"
+    },
+    "prometheus": {
+      "reference": "prom/prometheus:v3.13.1",
+      "id": "sha256:3c42b892cf723fa54d2f262c37a0e1f80aa8c8ddb1da7b9b0df9455a35a7f893",
+      "repoDigests": [
+        "prom/prometheus@sha256:3c42b892cf723fa54d2f262c37a0e1f80aa8c8ddb1da7b9b0df9455a35a7f893"
+      ],
+      "platform": "linux/arm64"
+    },
+    "redpanda": {
+      "reference": "docker.redpanda.com/redpandadata/redpanda:v26.1.14",
+      "id": "sha256:e61a2b5ad26a7c37b50d04c4df42db84e5ddebaa2a453143942fb621b1b09498",
+      "repoDigests": [
+        "docker.redpanda.com/redpandadata/redpanda@sha256:e61a2b5ad26a7c37b50d04c4df42db84e5ddebaa2a453143942fb621b1b09498"
+      ],
+      "platform": "linux/arm64"
+    },
+    "rest-async": {
+      "reference": "lubanga-coordination-pilot-rest-async:latest",
+      "id": "sha256:f854aa7c8b92a221a21e9549f485db7e722a653b16a895e99ddaed41bb023a9e",
+      "repoDigests": [
+        "lubanga-coordination-pilot-rest-async@sha256:f854aa7c8b92a221a21e9549f485db7e722a653b16a895e99ddaed41bb023a9e"
+      ],
+      "platform": "linux/arm64"
+    },
+    "toxiproxy": {
+      "reference": "ghcr.io/shopify/toxiproxy:2.12.0",
+      "id": "sha256:9378ed52a28bc50edc1350f936f518f31fa95f0d15917d6eb40b8e376d1a214e",
+      "repoDigests": [
+        "ghcr.io/shopify/toxiproxy@sha256:9378ed52a28bc50edc1350f936f518f31fa95f0d15917d6eb40b8e376d1a214e"
+      ],
+      "platform": "linux/arm64"
+    },
+    "toxiproxy-init": {
+      "reference": "lubanga-coordination-pilot-toxiproxy-init:latest",
+      "id": "sha256:fa430f04c3aeabf4a8e1ab3f18bac5bfbbf2cc261ff7d8d39e592163266aba29",
+      "repoDigests": [
+        "lubanga-coordination-pilot-toxiproxy-init@sha256:fa430f04c3aeabf4a8e1ab3f18bac5bfbbf2cc261ff7d8d39e592163266aba29"
+      ],
+      "platform": "linux/arm64"
+    }
+  },
+  "pauseContainers": [
+    {
+      "id": "redacted-container-id-a",
+      "name": "external-container-a"
+    },
+    {
+      "id": "redacted-container-id-b",
+      "name": "external-container-b"
+    },
+    {
+      "id": "redacted-container-id-c",
+      "name": "external-container-c"
+    }
+  ],
+  "prerequisiteReviewSha256": "949c10c49ba62d890847a23e6499551286e063117c12da8e7287a575c7a174c5",
+  "approvalSource": "results-capacity-pilot-v5/freeze.json",
+  "approvalSourceSha256": "423537771c80f8302c71d411d0df4a52f1016720a02e9bfb8a61e57a8b15408f",
+  "host": {
+    "hostname": "capture-host",
+    "cpuModel": "Apple M2",
+    "cpuCount": 8,
+    "totalMemoryBytes": 17179869184,
+    "dockerId": "redacted-docker-id",
+    "dockerVersion": "29.2.1",
+    "dockerCPUs": 8,
+    "dockerMemoryBytes": 8217341952,
+    "dockerArchitecture": "aarch64"
+  },
+  "approvals": {
+    "fullPilotAndMonitoring": false,
+    "pauseAndRestoreNamedExternalContainers": true,
+    "companionContainerUnavailableDuringPilot": true,
+    "restoreCompanionByController": false,
+    "shortScreeningTwoMinuteWarmupFourMinuteMeasurement": true,
+    "firstPairOnly": true,
+    "noHigherRatesOrFaults": false,
+    "maximumRuns": 2,
+    "capacityRule": {
+      "version": "queue-observation-v2",
+      "policySha256": "15c02e20073bfee0a062c0b8626d98123e8691c29b00d60f93a62256827405ad"
+    },
+    "exactExploratoryPair": {
+      "key": "adapter-r4",
+      "rate": 4,
+      "phase": "fault",
+      "faultScenario": "adapter-crash",
+      "root": "results-exploratory-adapter-r4-v1",
+      "predecessorRoot": "results-queue-screening-r8-v2",
+      "predecessorProtocolId": "exploratory-screening-r8-2026-09-21"
+    },
+    "noAdaptiveSearchOrConfirmatoryStudy": true,
+    "descriptiveOnly": true,
+    "noCapacityDecision": true,
+    "backlogClearanceDescriptive": true
+  },
+  "confirmatoryFreeze": false
+}

@@ -1,0 +1,85 @@
+{
+  "runId": "PILOT-001-screening-R4-R-A-1",
+  "conditionId": "R-A",
+  "phase": "screening",
+  "rate": 4,
+  "executionBlock": "PILOT-001-screening-R4-1",
+  "sessionId": "e15d31da-ebea-4029-8717-d58b1b37bc6c",
+  "faultScenario": "none",
+  "recordedAt": "2026-09-20T14:22:56.355Z",
+  "status": "QUALIFIED",
+  "stability": {
+    "status": "UNSTABLE",
+    "stable": false,
+    "checks": {
+      "fullDuration": true,
+      "evidenceValid": true,
+      "safetyPassed": true,
+      "workloadChecks": true,
+      "noFailedTransfers": true,
+      "noPendingAfterDrain": true,
+      "terminalCallbacks": true,
+      "sixCompleteWindows": true,
+      "backlogNotGrowing": true,
+      "p95Stable": false
+    },
+    "backlogSlopePerSecond": 0,
+    "medianWindowP95Ms": 61.75,
+    "windows": [
+      {
+        "startAt": "2026-09-20T14:19:52.417Z",
+        "endAt": "2026-09-20T14:20:22.417Z",
+        "complete": true,
+        "underLoad": true,
+        "correctGoodput": 3.033333333333333,
+        "p95DurableCompletionMs": 60,
+        "backlogAtEnd": 0
+      },
+      {
+        "startAt": "2026-09-20T14:20:22.417Z",
+        "endAt": "2026-09-20T14:20:52.417Z",
+        "complete": true,
+        "underLoad": true,
+        "correctGoodput": 3.033333333333333,
+        "p95DurableCompletionMs": 62.5,
+        "backlogAtEnd": 0
+      },
+      {
+        "startAt": "2026-09-20T14:20:52.417Z",
+        "endAt": "2026-09-20T14:21:22.417Z",
+        "complete": true,
+        "underLoad": true,
+        "correctGoodput": 3.066666666666667,
+        "p95DurableCompletionMs": 66,
+        "backlogAtEnd": 0
+      },
+      {
+        "startAt": "2026-09-20T14:21:22.417Z",
+        "endAt": "2026-09-20T14:21:52.417Z",
+        "complete": true,
+        "underLoad": true,
+        "correctGoodput": 3.033333333333333,
+        "p95DurableCompletionMs": 74.5,
+        "backlogAtEnd": 0
+      },
+      {
+        "startAt": "2026-09-20T14:21:52.417Z",
+        "endAt": "2026-09-20T14:22:22.417Z",
+        "complete": true,
+        "underLoad": true,
+        "correctGoodput": 3.033333333333333,
+        "p95DurableCompletionMs": 61,
+        "backlogAtEnd": 0
+      },
+      {
+        "startAt": "2026-09-20T14:22:22.417Z",
+        "endAt": "2026-09-20T14:22:52.417Z",
+        "complete": true,
+        "underLoad": true,
+        "correctGoodput": 3.033333333333333,
+        "p95DurableCompletionMs": 60,
+        "backlogAtEnd": 0
+      }
+    ]
+  }
+}

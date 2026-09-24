@@ -1,0 +1,257 @@
+{
+  "runId": "CAL-001-calibration-R4-K-A-2",
+  "conditionId": "K-A",
+  "phase": "calibration",
+  "rate": 4,
+  "sequence": 3,
+  "executionBlock": "CAL-001-calibration-R4-2",
+  "sessionId": "340ee065-ec34-4ab3-9394-5872b8538ed4",
+  "faultScenario": "none",
+  "recordedAt": "2026-09-20T16:19:43.535Z",
+  "status": "QUALIFIED",
+  "stability": null,
+  "calibration": {
+    "schemaVersion": 1,
+    "checks": {
+      "evidenceValid": true,
+      "safetyPassed": true,
+      "workloadChecks": true,
+      "terminalCallbacks": true,
+      "noFailedTransfers": true,
+      "noPendingAfterDrain": true,
+      "outcomesPresent": true
+    },
+    "passed": true,
+    "correctness": "PASSED",
+    "sustainedLoad": {
+      "decision": "DESCRIPTIVE_REVIEW_REQUIRED",
+      "capacityEstablished": false,
+      "measuredTransfers": {
+        "total": 1824,
+        "completed": 1824,
+        "failed": 0,
+        "pendingAfterDrain": 0
+      },
+      "correctGoodput": 3.04,
+      "completedDuringDrain": 0,
+      "maximumOutstanding": 3,
+      "windows": [
+        {
+          "startAt": "2026-09-20T16:09:36.239Z",
+          "endAt": "2026-09-20T16:10:06.239Z",
+          "complete": true,
+          "underLoad": true,
+          "correctGoodput": 3.033333333333333,
+          "p95DurableCompletionMs": 171,
+          "backlogAtEnd": 0,
+          "arrivals": 91
+        },
+        {
+          "startAt": "2026-09-20T16:10:06.239Z",
+          "endAt": "2026-09-20T16:10:36.239Z",
+          "complete": true,
+          "underLoad": true,
+          "correctGoodput": 3.033333333333333,
+          "p95DurableCompletionMs": 168,
+          "backlogAtEnd": 0,
+          "arrivals": 91
+        },
+        {
+          "startAt": "2026-09-20T16:10:36.239Z",
+          "endAt": "2026-09-20T16:11:06.239Z",
+          "complete": true,
+          "underLoad": true,
+          "correctGoodput": 3.033333333333333,
+          "p95DurableCompletionMs": 172,
+          "backlogAtEnd": 0,
+          "arrivals": 91
+        },
+        {
+          "startAt": "2026-09-20T16:11:06.239Z",
+          "endAt": "2026-09-20T16:11:36.239Z",
+          "complete": true,
+          "underLoad": true,
+          "correctGoodput": 3.033333333333333,
+          "p95DurableCompletionMs": 169.5,
+          "backlogAtEnd": 0,
+          "arrivals": 91
+        },
+        {
+          "startAt": "2026-09-20T16:11:36.239Z",
+          "endAt": "2026-09-20T16:12:06.239Z",
+          "complete": true,
+          "underLoad": true,
+          "correctGoodput": 3.066666666666667,
+          "p95DurableCompletionMs": 169,
+          "backlogAtEnd": 0,
+          "arrivals": 92
+        },
+        {
+          "startAt": "2026-09-20T16:12:06.239Z",
+          "endAt": "2026-09-20T16:12:36.239Z",
+          "complete": true,
+          "underLoad": true,
+          "correctGoodput": 3.033333333333333,
+          "p95DurableCompletionMs": 168,
+          "backlogAtEnd": 0,
+          "arrivals": 91
+        },
+        {
+          "startAt": "2026-09-20T16:12:36.239Z",
+          "endAt": "2026-09-20T16:13:06.239Z",
+          "complete": true,
+          "underLoad": true,
+          "correctGoodput": 3.033333333333333,
+          "p95DurableCompletionMs": 218,
+          "backlogAtEnd": 0,
+          "arrivals": 91
+        },
+        {
+          "startAt": "2026-09-20T16:13:06.239Z",
+          "endAt": "2026-09-20T16:13:36.239Z",
+          "complete": true,
+          "underLoad": true,
+          "correctGoodput": 3.033333333333333,
+          "p95DurableCompletionMs": 173.5,
+          "backlogAtEnd": 0,
+          "arrivals": 91
+        },
+        {
+          "startAt": "2026-09-20T16:13:36.239Z",
+          "endAt": "2026-09-20T16:14:06.239Z",
+          "complete": true,
+          "underLoad": true,
+          "correctGoodput": 3.033333333333333,
+          "p95DurableCompletionMs": 170,
+          "backlogAtEnd": 0,
+          "arrivals": 91
+        },
+        {
+          "startAt": "2026-09-20T16:14:06.239Z",
+          "endAt": "2026-09-20T16:14:36.239Z",
+          "complete": true,
+          "underLoad": true,
+          "correctGoodput": 3.066666666666667,
+          "p95DurableCompletionMs": 169,
+          "backlogAtEnd": 0,
+          "arrivals": 92
+        },
+        {
+          "startAt": "2026-09-20T16:14:36.239Z",
+          "endAt": "2026-09-20T16:15:06.239Z",
+          "complete": true,
+          "underLoad": true,
+          "correctGoodput": 3.033333333333333,
+          "p95DurableCompletionMs": 168,
+          "backlogAtEnd": 0,
+          "arrivals": 91
+        },
+        {
+          "startAt": "2026-09-20T16:15:06.239Z",
+          "endAt": "2026-09-20T16:15:36.239Z",
+          "complete": true,
+          "underLoad": true,
+          "correctGoodput": 3.033333333333333,
+          "p95DurableCompletionMs": 169.5,
+          "backlogAtEnd": 0,
+          "arrivals": 91
+        },
+        {
+          "startAt": "2026-09-20T16:15:36.239Z",
+          "endAt": "2026-09-20T16:16:06.239Z",
+          "complete": true,
+          "underLoad": true,
+          "correctGoodput": 3.033333333333333,
+          "p95DurableCompletionMs": 168,
+          "backlogAtEnd": 0,
+          "arrivals": 91
+        },
+        {
+          "startAt": "2026-09-20T16:16:06.239Z",
+          "endAt": "2026-09-20T16:16:36.239Z",
+          "complete": true,
+          "underLoad": true,
+          "correctGoodput": 3.033333333333333,
+          "p95DurableCompletionMs": 163.5,
+          "backlogAtEnd": 0,
+          "arrivals": 91
+        },
+        {
+          "startAt": "2026-09-20T16:16:36.239Z",
+          "endAt": "2026-09-20T16:17:06.239Z",
+          "complete": true,
+          "underLoad": true,
+          "correctGoodput": 3.066666666666667,
+          "p95DurableCompletionMs": 170,
+          "backlogAtEnd": 0,
+          "arrivals": 92
+        },
+        {
+          "startAt": "2026-09-20T16:17:06.239Z",
+          "endAt": "2026-09-20T16:17:36.239Z",
+          "complete": true,
+          "underLoad": true,
+          "correctGoodput": 3.033333333333333,
+          "p95DurableCompletionMs": 169.5,
+          "backlogAtEnd": 0,
+          "arrivals": 91
+        },
+        {
+          "startAt": "2026-09-20T16:17:36.239Z",
+          "endAt": "2026-09-20T16:18:06.239Z",
+          "complete": true,
+          "underLoad": true,
+          "correctGoodput": 3.033333333333333,
+          "p95DurableCompletionMs": 184.5,
+          "backlogAtEnd": 0,
+          "arrivals": 91
+        },
+        {
+          "startAt": "2026-09-20T16:18:06.239Z",
+          "endAt": "2026-09-20T16:18:36.239Z",
+          "complete": true,
+          "underLoad": true,
+          "correctGoodput": 3.033333333333333,
+          "p95DurableCompletionMs": 171.5,
+          "backlogAtEnd": 0,
+          "arrivals": 91
+        },
+        {
+          "startAt": "2026-09-20T16:18:36.239Z",
+          "endAt": "2026-09-20T16:19:06.239Z",
+          "complete": true,
+          "underLoad": true,
+          "correctGoodput": 3.033333333333333,
+          "p95DurableCompletionMs": 171,
+          "backlogAtEnd": 0,
+          "arrivals": 91
+        },
+        {
+          "startAt": "2026-09-20T16:19:06.239Z",
+          "endAt": "2026-09-20T16:19:36.239Z",
+          "complete": true,
+          "underLoad": true,
+          "correctGoodput": 3.066666666666667,
+          "p95DurableCompletionMs": 166.45,
+          "backlogAtEnd": 0,
+          "arrivals": 92
+        }
+      ]
+    },
+    "latency": {
+      "role": "DESCRIPTIVE_NOT_A_CAPACITY_GATE",
+      "overall": {
+        "count": 1824,
+        "median": 146,
+        "p95": 170,
+        "p99": 210.07999999999993
+      },
+      "windowP95MedianMs": 169.5,
+      "windowP95MaximumMs": 218
+    }
+  },
+  "evidenceRoot": "<repo>/results-calibration-v1-continuation-1",
+  "retained": false,
+  "attempt": 2,
+  "supersedesWarmupOnlyAttempt": "<repo>/results-calibration-v1/CAL-001-calibration-R4-K-A-2"
+}
