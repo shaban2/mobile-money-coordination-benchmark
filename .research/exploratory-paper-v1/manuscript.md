@@ -267,7 +267,7 @@ The publication scope was selected after the observations, and we preserve that 
 
 All account identifiers, amounts, and provider responses are synthetic; no customer dataset or real funds are used. Local artifacts retain the evidence for all sixteen runs reported here (six reporting-set, four fresh, six archived), exact protocol/source/image identities, client attempts, transfer snapshots, traces, ledger checks, fault timings, and cleanup records. The analysis recomputes outcomes and verifies file inventories before and after reading. Tables and figures are generated from the resulting JSON rather than manually transcribed. The reporting-set source identity is 7995e552…, the fresh-pair identity is 713bbfc6…; full hashes, pinned image identities, and review receipts are in the results package.
 
-The code, a redacted copy of the evidence for all sixteen runs, the analysis, the figures, and this draft are publicly available [17] under Apache-2.0 for code and CC BY 4.0 for evidence and text, with an archival identifier pending. The public copy is generated from the private archive by scripts that replace the capture host name, home paths, Docker identity, and the names of unrelated containers with neutral tokens and record the SHA-256 of every original file, so it can be verified against the archive; no experiment number depends on a redacted field. The public repository also lets another site start its own guarded chain with the same protocols. Independent reproduction by a third party has not yet been established.
+The code, a redacted copy of the evidence for all sixteen runs, the analysis, the figures, and this draft are publicly available [17] under Apache-2.0 for code and CC BY 4.0 for evidence and text, archived at Zenodo (doi: 10.5281/zenodo.22933798). The public copy is generated from the private archive by scripts that replace the capture host name, home paths, Docker identity, and the names of unrelated containers with neutral tokens and record the SHA-256 of every original file, so it can be verified against the archive; no experiment number depends on a redacted field. The public repository also lets another site start its own guarded chain with the same protocols. Independent reproduction by a third party has not yet been established.
 
 ## VIII CONCLUSION
 
@@ -311,4 +311,4 @@ The author used Claude to improve the readability and language quality of this m
 
 [16] Mojaloop Foundation, “Mojaloop Hub,” Mojaloop documentation, 2022. https://docs.mojaloop.io/technical/overview/
 
-[17] S. Lubanga, “Mobile-money coordination benchmark: Code, redacted evidence, analysis and paper,” v1.2.0, GitHub, 2026. https://github.com/shaban2/mobile-money-coordination-benchmark
+[17] S. Lubanga, “Mobile-money coordination benchmark: Code, redacted evidence, analysis and paper,” v1.2.2, Zenodo, 2026. doi: 10.5281/zenodo.22933798. https://github.com/shaban2/mobile-money-coordination-benchmark

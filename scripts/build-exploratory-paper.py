@@ -43,8 +43,8 @@ assert len(same_pairs) == 3 and len(kafka_first_pairs) == 2 and len(other_app) =
 words = {1: 'one', 2: 'two', 3: 'three', 4: 'four'}
 # Public artifact: the redacted derivative repository and its Zenodo archive (DOI filled in once minted).
 ARTIFACT_URL = 'https://github.com/shaban2/mobile-money-coordination-benchmark'
-ARTIFACT_VERSION = 'v1.2.0'
-ARTIFACT_DOI = None
+ARTIFACT_VERSION = 'v1.2.2'
+ARTIFACT_DOI = '10.5281/zenodo.22933798'
 artifact_ref = f' Zenodo, 2026. doi: {ARTIFACT_DOI}.' if ARTIFACT_DOI else ' GitHub, 2026.'
 artifact_cite = (f'archived at Zenodo (doi: {ARTIFACT_DOI})' if ARTIFACT_DOI else 'with an archival identifier pending')
 fresh = {(r['key'], r['architecture']): r for r in data['freshFaultRuns']}

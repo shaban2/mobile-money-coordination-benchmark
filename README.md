@@ -1,5 +1,7 @@
 # Mobile-money coordination benchmark
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22933798.svg)](https://doi.org/10.5281/zenodo.22933798)
+
 A controlled synthetic benchmark comparing **REST orchestration** with **Kafka choreography** behind one asynchronous person-to-person (P2P) mobile-money transfer API. Both implementations expose the same API, use the same PostgreSQL ledger, the same provider adapters and the same k6 workload; only the internal coordination changes. Every transfer is timed from the moment the API receives it to the moment the database confirms its final commit, and only transfers that completed, were not duplicated and left the ledger balanced are counted.
 
 This is the **public derivative** of a private research archive. It contains the complete source code, the paper draft, the generated figures, and a redacted, analysis-sufficient export of the run evidence. See "What was redacted" below.
@@ -54,6 +56,6 @@ No experiment number depends on a redacted field: the recomputation reads run an
 
 Synthetic benchmark only. All accounts, amounts and provider responses are synthetic; the two provider interfaces are simulated; there is no real money, no customer data, and no connection to a live mobile-money provider. The prototype routes each transfer to one synthetic provider interface and records it in one local ledger; it does not model settlement between two independently operated ledgers.
 
-## Licence and citation
+## Licence, archive and citation
 
-Code: Apache-2.0 (`LICENSE`). Evidence, figures and paper: CC BY 4.0 (`LICENSE-DATA.md`). Cite using `CITATION.cff`.
+Code: Apache-2.0 (`LICENSE`). Evidence, figures and paper: CC BY 4.0 (`LICENSE-DATA.md`). Every GitHub release is archived on Zenodo; the concept DOI https://doi.org/10.5281/zenodo.22933798 always resolves to the latest archived version. Cite using `CITATION.cff`.

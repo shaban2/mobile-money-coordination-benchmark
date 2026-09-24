@@ -136,4 +136,4 @@ Editorial only. Fig. 1 label moved below the measured step; a plain one-sentence
 
 ## Revision 8 (24 September 2026): public artifact and acknowledgments
 
-Section VII now cites the public derivative repository as reference [17] (GitHub URL, version tag, and the Zenodo DOI once minted; `ARTIFACT_DOI` in the builder) and describes how the public copy is produced and verified. An Acknowledgments section precedes the references. No numbers changed.
+Section VII now cites the public derivative repository as reference [17] (GitHub URL, version tag, and the Zenodo DOI once minted; `ARTIFACT_DOI` in the builder; concept DOI 10.5281/zenodo.22933798 minted from release v1.2.1 on 24 September 2026) and describes how the public copy is produced and verified. An Acknowledgments section precedes the references. No numbers changed.
