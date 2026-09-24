@@ -267,11 +267,15 @@ The publication scope was selected after the observations, and we preserve that 
 
 All account identifiers, amounts, and provider responses are synthetic; no customer dataset or real funds are used. Local artifacts retain the evidence for all sixteen runs reported here (six reporting-set, four fresh, six archived), exact protocol/source/image identities, client attempts, transfer snapshots, traces, ledger checks, fault timings, and cleanup records. The analysis recomputes outcomes and verifies file inventories before and after reading. Tables and figures are generated from the resulting JSON rather than manually transcribed. The reporting-set source identity is 7995e552…, the fresh-pair identity is 713bbfc6…; full hashes, pinned image identities, and review receipts are in the results package.
 
-The accompanying local results package documents the evidence roots, software dependencies, analysis commands, resource scope, and unexecuted follow-up proposal. The original pre-results manuscript and frozen run evidence remain unchanged. A public archival identifier, redistribution licence, and independent reproduction have not yet been established; we therefore claim local reproducibility support, not a publicly verified artifact.
+The code, a redacted copy of the evidence for all sixteen runs, the analysis, the figures, and this draft are publicly available [17] under Apache-2.0 for code and CC BY 4.0 for evidence and text, with an archival identifier pending. The public copy is generated from the private archive by scripts that replace the capture host name, home paths, Docker identity, and the names of unrelated containers with neutral tokens and record the SHA-256 of every original file, so it can be verified against the archive; no experiment number depends on a redacted field. The public repository also lets another site start its own guarded chain with the same protocols. Independent reproduction by a third party has not yet been established.
 
 ## VIII CONCLUSION
 
 This exploratory benchmark links synthetic transfer traffic to durable completion and ledger correctness under one common asynchronous client contract. In sixteen executions (six reporting-set, six archived same-application, four fresh Kafka-first), every measured transfer completed correctly. REST had lower observed completion tails and sampled resource use in every pair, under both realized orders; both implementations accumulated and later cleared fault-induced backlogs. While database responses were delayed, in-fault completions were higher for REST (72) than for Kafka (15) in the original pair and higher for REST (73) than for Kafka (13) in the fresh Kafka-first pair, consistent in both pairs with Kafka's larger statement count. The results support a bounded comparison of these implementations and identify questions for further testing. They do not establish capacity, general architecture superiority, or equivalent recovery time. Further repetitions under both orders and focused configuration sensitivity would strengthen those inferences.
+
+## ACKNOWLEDGMENTS
+
+The author used Claude to improve the readability and language quality of this manuscript, and Claude Code for code development support. All content was reviewed and edited by the author, who takes full responsibility for the final work.
 
 ## REFERENCES
 
@@ -306,3 +310,5 @@ This exploratory benchmark links synthetic transfer traffic to durable completio
 [15] GSMA, “Mobile Money API Specification 1.2.0: Fundamentals,” GSMA, London, 2021. https://www.gsma.com/mobilefordevelopment/wp-content/uploads/2021/10/Mobile-Money-API-Specification-1.2.0-Fundamentals.pdf
 
 [16] Mojaloop Foundation, “Mojaloop Hub,” Mojaloop documentation, 2022. https://docs.mojaloop.io/technical/overview/
+
+[17] S. Lubanga, “Mobile-money coordination benchmark: Code, redacted evidence, analysis and paper,” v1.2.0, GitHub, 2026. https://github.com/shaban2/mobile-money-coordination-benchmark

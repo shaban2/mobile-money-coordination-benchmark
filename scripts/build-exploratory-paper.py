@@ -41,6 +41,12 @@ def rng(vals, fmt='{:.0f}'):
 same_r, same_k = arch_runs(same_app, 'REST'), arch_runs(same_app, 'Kafka')
 assert len(same_pairs) == 3 and len(kafka_first_pairs) == 2 and len(other_app) == 2
 words = {1: 'one', 2: 'two', 3: 'three', 4: 'four'}
+# Public artifact: the redacted derivative repository and its Zenodo archive (DOI filled in once minted).
+ARTIFACT_URL = 'https://github.com/shaban2/mobile-money-coordination-benchmark'
+ARTIFACT_VERSION = 'v1.2.0'
+ARTIFACT_DOI = None
+artifact_ref = f' Zenodo, 2026. doi: {ARTIFACT_DOI}.' if ARTIFACT_DOI else ' GitHub, 2026.'
+artifact_cite = (f'archived at Zenodo (doi: {ARTIFACT_DOI})' if ARTIFACT_DOI else 'with an archival identifier pending')
 fresh = {(r['key'], r['architecture']): r for r in data['freshFaultRuns']}
 far, fak = fresh['adapter', 'REST'], fresh['adapter', 'Kafka']
 fdr, fdk = fresh['database', 'REST'], fresh['database', 'Kafka']
@@ -261,10 +267,13 @@ para('The publication scope was selected after the observations, and we preserve
 
 heading('VII ETHICS AND REPRODUCIBILITY')
 para(f'All account identifiers, amounts, and provider responses are synthetic; no customer dataset or real funds are used. Local artifacts retain the evidence for all sixteen runs reported here (six reporting-set, four fresh, six archived), exact protocol/source/image identities, client attempts, transfer snapshots, traces, ledger checks, fault timings, and cleanup records. The analysis recomputes outcomes and verifies file inventories before and after reading. Tables and figures are generated from the resulting JSON rather than manually transcribed. The reporting-set source identity is 7995e552…, the fresh-pair identity is {data["freshFaultSourceSha256"][:8]}…; full hashes, pinned image identities, and review receipts are in the results package.')
-para('The accompanying local results package documents the evidence roots, software dependencies, analysis commands, resource scope, and unexecuted follow-up proposal. The original pre-results manuscript and frozen run evidence remain unchanged. A public archival identifier, redistribution licence, and independent reproduction have not yet been established; we therefore claim local reproducibility support, not a publicly verified artifact.')
+para(f'The code, a redacted copy of the evidence for all sixteen runs, the analysis, the figures, and this draft are publicly available [17] under Apache-2.0 for code and CC BY 4.0 for evidence and text, {artifact_cite}. The public copy is generated from the private archive by scripts that replace the capture host name, home paths, Docker identity, and the names of unrelated containers with neutral tokens and record the SHA-256 of every original file, so it can be verified against the archive; no experiment number depends on a redacted field. The public repository also lets another site start its own guarded chain with the same protocols. Independent reproduction by a third party has not yet been established.')
 
 heading('VIII CONCLUSION')
 para(f'This exploratory benchmark links synthetic transfer traffic to durable completion and ledger correctness under one common asynchronous client contract. In sixteen executions (six reporting-set, six archived same-application, four fresh Kafka-first), every measured transfer completed correctly. REST had lower observed completion tails and sampled resource use in every pair, under both realized orders; both implementations accumulated and later cleared fault-induced backlogs. While database responses were delayed, in-fault completions were {compare(infault(dr), infault(dk), "in-fault completions")} in the original pair and {compare(infault(fdr), infault(fdk), "in-fault completions")} in the fresh Kafka-first pair, consistent in both pairs with Kafka\'s larger statement count. The results support a bounded comparison of these implementations and identify questions for further testing. They do not establish capacity, general architecture superiority, or equivalent recovery time. Further repetitions under both orders and focused configuration sensitivity would strengthen those inferences.')
+
+heading('ACKNOWLEDGMENTS')
+para('The author used Claude to improve the readability and language quality of this manuscript, and Claude Code for code development support. All content was reviewed and edited by the author, who takes full responsibility for the final work.', indent=False)
 
 heading('REFERENCES')
 references = [
@@ -283,7 +292,8 @@ references = [
     '[13] M. Bianchi, M. Bouvard, R. Gomes, A. Rhodes, and V. Shreeti, “Mobile payments and interoperability: Insights from the academic literature,” Information Economics and Policy, vol. 65, art. 101068, 2023. doi: 10.1016/j.infoecopol.2023.101068.',
     '[14] Committee on Payments and Market Infrastructures, “Promoting the harmonisation of application programming interfaces to enhance cross-border payments: Recommendations and toolkit,” Bank for International Settlements, Basel, 2024. https://www.bis.org/cpmi/publ/d224.htm',
     '[15] GSMA, “Mobile Money API Specification 1.2.0: Fundamentals,” GSMA, London, 2021. https://www.gsma.com/mobilefordevelopment/wp-content/uploads/2021/10/Mobile-Money-API-Specification-1.2.0-Fundamentals.pdf',
-    '[16] Mojaloop Foundation, “Mojaloop Hub,” Mojaloop documentation, 2022. https://docs.mojaloop.io/technical/overview/'
+    '[16] Mojaloop Foundation, “Mojaloop Hub,” Mojaloop documentation, 2022. https://docs.mojaloop.io/technical/overview/',
+    f'[17] S. Lubanga, “Mobile-money coordination benchmark: Code, redacted evidence, analysis and paper,” {ARTIFACT_VERSION},{artifact_ref} {ARTIFACT_URL}'
 ]
 for ref in references:
     p = para(ref, size=8, indent=False)
