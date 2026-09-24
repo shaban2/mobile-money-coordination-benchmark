@@ -119,7 +119,7 @@ test('each stage retains a correctness failure, stops immediately and restores s
   }
 });
 test('review is required before any new stage; every imported protocol is part of source provenance', () => {
-  for (const p of exploratoryProtocols) {
+  for (const p of exploratoryProtocols.filter(p => p.exploratoryPair.predecessorRoot)) {
     assert.throws(() => assertPredecessorReview(p, null));
     assert.throws(() => assertPredecessorReview(p, { decision: 'APPROVED_NEXT_EXPLORATORY_PAIR', note: 'review', nextProtocolId: p.protocolId, currentSourceSha256: 'changed' }));
     assert.throws(() => assertExploratoryRootReview('/tmp/unapproved-root', p, {}));
@@ -163,7 +163,7 @@ test('stages form one linear predecessor chain with distinct roots; only the two
   const ids = new Set(approvedObservationProtocols.map(p => p.protocolId));
   const roots = exploratoryProtocols.map(p => p.exploratoryPair.root), predecessors = exploratoryProtocols.map(p => p.exploratoryPair.predecessorRoot);
   assert.equal(new Set(roots).size, roots.length); assert.equal(new Set(predecessors).size, predecessors.length);
-  for (const p of exploratoryProtocols) {
+  for (const p of exploratoryProtocols.filter(p => p.exploratoryPair.predecessorRoot)) {
     assert.ok(ids.has(p.exploratoryPair.predecessorProtocolId), `${p.exploratoryPair.key} predecessor protocol is approved`);
     assert.notEqual(p.exploratoryPair.root, p.exploratoryPair.predecessorRoot);
   }

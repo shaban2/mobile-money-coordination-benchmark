@@ -9,8 +9,10 @@ import { validateCalibrationProtocol } from '../src/experiment/calibration.js';
 import { validateQueueCapacityProtocol, capacityRuleIdentity, assertCapacityRuleLaunchReady } from '../src/experiment/capacity-queue.js';
 import { exploratoryProtocol, rebuildsImplementation } from '../src/experiment/queue-observation.js';
 import { assertPredecessorReview, predecessorReviewPath } from '../src/experiment/exploratory-review.js';
+import { parseSiteBootstrapArgs, assertChainStart, buildSiteApproval } from '../src/experiment/site-bootstrap.js';
 
 const args = process.argv.slice(2), calibration = args.includes('--calibration');
+const site = parseSiteBootstrapArgs(args);
 const exploratoryKey = args.find(a => a.startsWith('--exploratory='))?.split('=')[1];
 const exploratory = exploratoryKey ? exploratoryProtocol(exploratoryKey) : null;
 const observationPair = args.includes('--observation-pair') || Boolean(exploratory);
@@ -34,22 +36,28 @@ if (calibration) validateCalibrationProtocol(protocol);
 if (queuePair) { validateQueueCapacityProtocol(protocol); assertCapacityRuleLaunchReady(capacityRuleIdentity(protocol)); }
 let prerequisiteReview;
 let predecessorFreeze;
+const chainStart = assertChainStart(protocol, { siteBootstrap: site.siteBootstrap });
 if (exploratory) {
   if (root !== path.resolve(exploratory.exploratoryPair.root)) throw new Error('Use the exact approved exploratory evidence root.');
-  prerequisiteReview = JSON.parse(readFileSync(predecessorReviewPath(protocol), 'utf8'));
-  assertPredecessorReview(protocol, prerequisiteReview);
-  predecessorFreeze = JSON.parse(readFileSync(path.join(protocol.exploratoryPair.predecessorRoot, 'freeze.json'), 'utf8'));
+  if (!chainStart) {
+    prerequisiteReview = JSON.parse(readFileSync(predecessorReviewPath(protocol), 'utf8'));
+    assertPredecessorReview(protocol, prerequisiteReview);
+    predecessorFreeze = JSON.parse(readFileSync(path.join(protocol.exploratoryPair.predecessorRoot, 'freeze.json'), 'utf8'));
+  }
 }
+if (site.siteBootstrap && !chainStart && !observationPair) throw new Error('--site-bootstrap applies to a chain-start stage or an observation pair.');
+if (site.siteBootstrap && predecessorFreeze) throw new Error('--site-bootstrap cannot continue an existing chain; drop the flag for follow-up stages.');
 const deep = calibration || protocol.deepDiagnostics === true;
 for (const phase of calibration ? ['calibration'] : ['screening', 'confirmation', 'fault']) pilotTimingForPhase(protocol, phase);
 const running = command('docker', ['ps', '--no-trunc', '--format', '{{json .}}'], true).trim().split('\n').filter(Boolean).map(JSON.parse);
-// The user approved leaving the removed external companion container unavailable during
-// this pilot. Do not recreate it or stop a newly appearing companion instance.
-const approvedNames = ['external-container-a', 'external-container-b', 'external-container-c'];
+// Original capture host: the three approved external instances (by exact name and, below,
+// exact ID from the recorded approval source). Site bootstrap: whatever the operator listed.
+const approvedNames = site.siteBootstrap ? site.allowPause : ['external-container-a', 'external-container-b', 'external-container-c'];
 const isApproved = (c) => approvedNames.includes(c.Names);
 const pauseContainers = running.filter(isApproved).map((c) => ({ id: c.ID, name: c.Names }));
 // Calibration inherits authorization for exact instances, not names alone.
-const approvalSource = calibration || queuePair ? 'results-capacity-pilot-v5/freeze.json' : null;
+const approvalSource = site.siteBootstrap ? null : calibration || queuePair ? 'results-capacity-pilot-v5/freeze.json' : null;
+const siteApproval = site.siteBootstrap ? buildSiteApproval({ allowedPauseNames: approvedNames, noteText: readFileSync(site.approvalNote, 'utf8'), notePath: site.approvalNote }) : null;
 if (approvalSource) {
   const approved = JSON.parse(readFileSync(approvalSource, 'utf8')).pauseContainers;
   for (const c of pauseContainers) if (!approved.some(a => a.id === c.id && a.name === c.name)) {
@@ -64,6 +72,7 @@ for (const container of pauseContainers) {
 }
 mkdirSync(root, { recursive: true });
 if (prerequisiteReview) json('prerequisite-review.json', prerequisiteReview);
+if (siteApproval) json('site-approval.json', siteApproval);
 const config = JSON.parse(command('docker', compose('--profile', '*', 'config', '--format', 'json'), true));
 const buildServices = Object.entries(config.services).filter(([, s]) => s.build).map(([name]) => name);
 const reuseAllImages = exploratory && !rebuildsImplementation(protocol);
@@ -90,16 +99,17 @@ if (predecessorFreeze && (hostname() !== predecessorFreeze.host.hostname || tota
   || info.MemTotal !== predecessorFreeze.host.dockerMemoryBytes || info.ServerVersion !== predecessorFreeze.host.dockerVersion)) {
   throw new Error('Host/Docker configuration differs from the reviewed predecessor.');
 }
-json('freeze.json', { schemaVersion: 1, stage: exploratory ? 'DESCRIPTIVE_EXPLORATORY_FROZEN_NOT_CAPACITY_EVIDENCE' : observationPair ? 'DESCRIPTIVE_SCREENING_FROZEN_NOT_CAPACITY_EVIDENCE'
+json('freeze.json', { schemaVersion: 1, stage: siteApproval ? 'SITE_BOOTSTRAP_DESCRIPTIVE_FROZEN_NOT_CAPACITY_EVIDENCE' : exploratory ? 'DESCRIPTIVE_EXPLORATORY_FROZEN_NOT_CAPACITY_EVIDENCE' : observationPair ? 'DESCRIPTIVE_SCREENING_FROZEN_NOT_CAPACITY_EVIDENCE'
   : calibration ? 'DIAGNOSTIC_CALIBRATION_FROZEN_NOT_CAPACITY_EVIDENCE' : 'PILOT_RULES_AND_EXECUTION_FROZEN_NOT_CONFIRMATORY', frozenAt: new Date().toISOString(),
   project, postgresPort: 25432, sourceSha256: sourceSnapshotSha256(), protocolSha256: fileHash(path.join(root, 'pilot-protocol.json')),
   frozenComposeSha256: fileHash(path.join(root, 'frozen-compose.json')), images, pauseContainers,
   ...(prerequisiteReview ? { prerequisiteReviewSha256: fileHash(path.join(root, 'prerequisite-review.json')) } : {}),
   ...(approvalSource ? { approvalSource, approvalSourceSha256: fileHash(approvalSource) } : {}),
+  ...(siteApproval ? { siteApproval, siteApprovalSha256: fileHash(path.join(root, 'site-approval.json')) } : {}),
   host: { hostname: hostname(), cpuModel: cpus()[0]?.model, cpuCount: cpus().length, totalMemoryBytes: totalmem(),
     dockerId: info.ID, dockerVersion: info.ServerVersion, dockerCPUs: info.NCPU, dockerMemoryBytes: info.MemTotal, dockerArchitecture: info.Architecture },
-  approvals: { fullPilotAndMonitoring: !queuePair, pauseAndRestoreNamedExternalContainers: true,
-    companionContainerUnavailableDuringPilot: true, restoreCompanionByController: false,
+  approvals: { fullPilotAndMonitoring: !queuePair, ...(siteApproval ? { siteBootstrap: true, chainStart, pauseOnlyOperatorListedContainers: true }
+    : { pauseAndRestoreNamedExternalContainers: true, companionContainerUnavailableDuringPilot: true, restoreCompanionByController: false }),
     ...(calibration ? { fourRunsFourOperationsPerSecondFiveMinuteWarmupTenMinuteMeasurement: true, noFaultsOrCapacitySearch: true }
       : { shortScreeningTwoMinuteWarmupFourMinuteMeasurement: true }),
     ...(queuePair ? { firstPairOnly: true, noHigherRatesOrFaults: !exploratory, maximumRuns: 2, capacityRule: capacityRuleIdentity(protocol) } : {}),

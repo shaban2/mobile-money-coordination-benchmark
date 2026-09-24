@@ -63,6 +63,7 @@ function assertFrozen({ allowApproved = false } = {}) {
   assertExploratoryRootReview(root, protocol, freeze);
   if (sourceSnapshotSha256() !== freeze.sourceSha256 || fileHash(path.join(root, 'pilot-protocol.json')) !== freeze.protocolSha256
     || fileHash(path.join(root, 'frozen-compose.json')) !== freeze.frozenComposeSha256) throw new Error('Frozen source, protocol, or images override changed. Stop and review; never silently restart with a different treatment.');
+  if (freeze.siteApprovalSha256 && fileHash(path.join(root, 'site-approval.json')) !== freeze.siteApprovalSha256) throw new Error('Frozen site approval changed.');
   const info = JSON.parse(command('docker', ['info', '--format', '{{json .}}']));
   if (hostname() !== freeze.host.hostname || totalmem() !== freeze.host.totalMemoryBytes || info.ID !== freeze.host.dockerId
     || info.NCPU !== freeze.host.dockerCPUs || info.MemTotal !== freeze.host.dockerMemoryBytes || info.ServerVersion !== freeze.host.dockerVersion) throw new Error('Frozen host or Docker configuration changed.');

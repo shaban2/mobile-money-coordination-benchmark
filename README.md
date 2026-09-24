@@ -37,7 +37,7 @@ WARMUP_DURATION=10s MEASUREMENT_DURATION=30s DRAIN_SECONDS=60 DEEP_DIAGNOSTICS=t
 node scripts/run-experiment.mjs --execute --pilot-spec config/engineering-calibration-smoke.json --results results-engineering-smoke
 ```
 
-The research pilot chain (`scripts/prepare-capacity-pilot.mjs`, `scripts/capacity-pilot.mjs`) is intentionally bound to the original capture host: it checks frozen host and container identities and refuses to run elsewhere. Use `scripts/run-experiment.mjs` directly, as above, to run the same measurement pipeline on your own machine.
+The research pilot chain that produced the paper is bound to its capture host: it checks frozen host and container identities and refuses to continue elsewhere. To run the same guarded pair on your own machine, start your own chain with `--site-bootstrap`; `docs/SITE_BOOTSTRAP.md` gives the steps (register a protocol from `config/site-pair-protocol.example.json`, write an approval note, prepare, launch). Your host identity, images and source hash are then frozen and enforced exactly as they were for the paper's runs.
 
 ## What was redacted, and how to verify the export
 

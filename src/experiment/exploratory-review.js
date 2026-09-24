@@ -85,6 +85,8 @@ export function predecessorReviewPath(protocol) {
 export function assertPredecessorReview(protocol, receipt) {
   validateQueueCapacityProtocol(protocol);
   const scope = protocol.exploratoryPair;
+  // A chain-start stage (site bootstrap) has no predecessor; its approval is the frozen site-approval note.
+  if (scope && !scope.predecessorRoot) return true;
   assert.ok(scope && receipt?.decision === 'APPROVED_NEXT_EXPLORATORY_PAIR' && receipt.note?.trim(), 'An explicit recorded review is required.');
   assert.equal(receipt.nextProtocolId, protocol.protocolId);
   assert.equal(receipt.currentSourceSha256, sourceSnapshotSha256(), 'Source changed after review.');
@@ -102,6 +104,8 @@ export function assertPredecessorReview(protocol, receipt) {
 export function assertExploratoryRootReview(root, protocol, freeze) {
   if (!protocol.exploratoryPair) return;
   assert.equal(path.resolve(root), path.resolve(protocol.exploratoryPair.root), 'Use the exact approved evidence root.');
+  if (freeze.siteApprovalSha256) assert.equal(fileHash(path.join(root, 'site-approval.json')), freeze.siteApprovalSha256, 'Frozen site approval changed.');
+  if (!protocol.exploratoryPair.predecessorRoot) { assert.ok(freeze.siteApprovalSha256, 'A chain-start root must carry a frozen site approval.'); return; }
   const file = path.join(root, 'prerequisite-review.json');
   assert.equal(fileHash(file), freeze.prerequisiteReviewSha256, 'Frozen prerequisite review changed.');
   assertPredecessorReview(protocol, JSON.parse(readFileSync(file, 'utf8')));
