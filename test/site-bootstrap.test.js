@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { parseSiteBootstrapArgs, assertChainStart, isChainStart, buildSiteApproval } from '../src/experiment/site-bootstrap.js';
 import { pilotTimingForPhase } from '../src/experiment/pilot-timing.js';
-import { exploratoryProtocols } from '../src/experiment/queue-observation.js';
+import { exploratoryProtocols, rebuildsImplementation } from '../src/experiment/queue-observation.js';
 
 const template = JSON.parse(readFileSync('config/site-pair-protocol.example.json', 'utf8'));
 
@@ -16,7 +16,8 @@ test('site bootstrap arguments: pause list may be empty, the approval note is ma
 });
 test('a chain start is only accepted under site bootstrap and only as a rebuild stage', () => {
   assert.equal(isChainStart(template), true);
-  for (const p of exploratoryProtocols) assert.equal(isChainStart(p), false, p.exploratoryPair.key);
+  // The shipped stages all have predecessors; a registered site stage is a chain start and must be a rebuild stage.
+  for (const p of exploratoryProtocols) if (isChainStart(p)) assert.ok(rebuildsImplementation(p), p.exploratoryPair.key); else assert.ok(p.exploratoryPair.predecessorRoot);
   assert.throws(() => assertChainStart(template, { siteBootstrap: false }), /--site-bootstrap/);
   assert.throws(() => assertChainStart(template, { siteBootstrap: true, rebuildStages: new Set() }), /rebuild/);
   assert.equal(assertChainStart(template, { siteBootstrap: true, rebuildStages: new Set(['site-adapter']) }), true);
