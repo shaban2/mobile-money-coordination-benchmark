@@ -1,8 +1,8 @@
 {
   "original": "paper-template.docx",
-  "originalSha256": "2cc2fb12aa8223fbc4095d43496a84459297667d495a1830f3dcc68d834c43d1",
+  "originalSha256": "b95f2b93e3dab5357352a618120de5a0c2da0edcdadb6b218d65c829101e2851",
   "output": "docs/REST_Kafka_Exploratory_Findings_Draft.docx",
-  "outputSha256": "ef4bd304d25ee38308b525b52e43a52490a27b988868f6fd901a75a4bb941aa2",
+  "outputSha256": "8a3ec839eae997da7cc4e55de431ea05ea0549481c6e6a4112651c019b79a33f",
   "analysisSha256": "97b3b9abfba42363433f3e15d0daf423f83ce0946ed53cb7d55e407c1ed88d90",
   "originalUnchanged": true,
   "pythonDocxVersion": "1.2.0",

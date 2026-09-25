@@ -6,8 +6,8 @@ authors:
   - family-names: Lubanga
     given-names: Shaban
     affiliation: "Department of Information Systems, Institut Teknologi Sepuluh Nopember, Surabaya, Indonesia"
-version: 1.2.2
-date-released: "2026-09-24"
+version: 1.2.3
+date-released: "2026-09-25"
 repository-code: "https://github.com/shaban2/mobile-money-coordination-benchmark"
 doi: 10.5281/zenodo.22933798
 identifiers:
