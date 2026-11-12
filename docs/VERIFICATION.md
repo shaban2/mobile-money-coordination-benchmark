@@ -1,5 +1,16 @@
 # Engineering verification record
 
+## Current check (12 November 2026)
+
+- `npm test`: **289 tests, 287 passed, zero failed, 2 skipped**. The two skipped tests need a live PostgreSQL (`POSTGRES_TEST_URL`). There are 33 test files and 126 JavaScript files in `src/`, `scripts/` and `test/`.
+- New suites since September cover the campaign schedule and order balance (`campaign.test.js`), the fault catalog, its qualification rules and recovered confirmations (`fault-catalog.test.js`), serial and batched outbox dispatch (`outbox-dispatch-modes.test.js`), and the Swagger page (`api-docs.test.js`).
+- The replicated campaign itself is the large-scale check: 207 runs, no failed transfers, no duplicates and no ledger violations. See [REPLICATED_CAMPAIGN.md](REPLICATED_CAMPAIGN.md).
+- The public release build recomputes both studies' analyses from the redacted public export and requires an exact match with the private analysis.
+
+The rest of this page is the September record, kept as written.
+
+## September record
+
 Verification date: 20 September 2026. These are engineering checks, not research results.
 
 ## Completed checks
@@ -41,7 +52,7 @@ Failed runs were not overwritten or reclassified after fixes. Earlier successful
 ## Remaining research-readiness work
 
 1. Pilot stable capacity and freeze a common absolute load grid.
-2. Run the full-duration faults and a broader abrupt-crash/HTTP-response-loss campaign.
+2. Run the full-duration faults and a broader abrupt-crash/HTTP-response-loss campaign. (Since done in part: the campaign ran full-duration faults, an application kill and a database restart. A real HTTP response-loss injection was not added.)
 3. Assess run-level precision and justify or revise eight repetitions.
 4. Freeze the statistical plan, censoring rules, exclusions, images and source snapshot; register the protocol.
 5. Execute and analyze the complete measured study before reporting an architecture advantage.

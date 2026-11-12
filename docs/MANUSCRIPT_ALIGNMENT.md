@@ -1,5 +1,7 @@
 # Manuscript alignment notes
 
+> **Status (12 November 2026).** These notes cover the September exploratory draft and the earlier plan. The replicated campaign's manuscript is kept outside this repository. Its evidence and analysis are described in [REPLICATED_CAMPAIGN.md](REPLICATED_CAMPAIGN.md).
+
 Source: `IEEE_Conference_Paper_REST_vs_Kafka_PreResults_Draft.docx`. The original Word file is unchanged. These notes identify the wording and methods that must align with this implementation before submission.
 
 ## Exploratory results amendment on 21 September 2026

@@ -38,11 +38,11 @@ Both mappings produce the same public `PENDING`, `COMPLETED`, or `FAILED` meanin
 
 ## Durable completion
 
-Docker research conditions use PostgreSQL. A successful transfer locks the required rows and atomically commits account changes, ledger transaction, two postings, and `FULFILLED` state. Kafka additionally commits its outgoing event and inbox acknowledgement in that transaction. A separate `COMMIT_CONFIRMED` observation records when the application receives the commit acknowledgement. A crash between commit and that observation creates a timing gap; recovered state is never assigned a fabricated original commit time.
+Docker research conditions use PostgreSQL. A successful transfer locks the required rows and atomically commits account changes, ledger transaction, two postings, and `FULFILLED` state. Kafka additionally commits its outgoing event and inbox acknowledgement in that transaction. A separate `COMMIT_CONFIRMED` observation records when the application receives the commit acknowledgement. A crash between commit and that observation leaves no original confirmation. Restart recovery records a confirmation marked `recovered`, and its latency is reported as an upper bound, never as the original commit time.
 
 Both designs use the same provider retry burst, retry deadline, and durable request key. A definite decline or known unavailability can fail the transfer. A network timeout is an unknown provider outcome and remains pending for reconciliation. The deadline bounds retry bursts; it does not reverse an in-flight or potentially accepted provider effect. A startup and periodic recovery scan resumes pending REST states and retries undelivered terminal callbacks. Kafka progress resumes from its outbox and broker offsets, and uses local terminal notifications rather than per-transfer database polling.
 
-Application concurrency is bounded at four REST workflows or four Kafka provider handlers, with four Kafka partitions per topic and four concurrently consumed partitions. Each application has a default two-CPU, 1 GiB container budget. Kafka's broker overhead remains part of the system cost. This equal provider-concurrency ceiling does not imply identical scheduling or identical database write counts.
+Application concurrency defaults to four REST workflows or four Kafka provider handlers (`WORKER_CONCURRENCY`, tested at eight in the campaign), with four Kafka partitions per topic and four concurrently consumed partitions. Each application has a default two-CPU, 1 GiB container budget. Kafka's broker overhead remains part of the system cost. This equal provider-concurrency ceiling does not imply identical scheduling or identical database write counts.
 
 The simulator journal stores one response per provider request key and rejects changed payloads. It survives adapter container restarts on a dedicated volume. It is a synthetic effect registry, not a separate provider wallet ledger or real settlement system.
 
@@ -58,6 +58,6 @@ The simulator journal stores one response per provider request key and rejects c
 
 ## Whole-system measurement boundary
 
-Resource sampling includes every container in the active Compose project. K-A therefore includes Redpanda and its storage cost. Application-only resource use may be reported as a sensitivity view, but it is not the primary comparison.
+Resource sampling includes every container in the active Compose project. K-A therefore includes Redpanda and its storage cost. The exploratory study reported this whole-project total. The replicated campaign reports the system's own services and leaves out the monitoring stack, the test tools and the shared adapter, whose memory varied widely in both designs.
 
 The study does not deploy a national switch, settlement system, real mobile-money provider, or production customer data. It does not compare synchronous and asynchronous client delivery.

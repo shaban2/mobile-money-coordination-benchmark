@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "exportedAt": "2026-11-12T09:32:28.959Z",
-  "privateRepositoryCommit": "3acce55fd4936016be13cf0012f68274556c605c",
+  "exportedAt": "2026-11-12T10:01:54.165Z",
+  "privateRepositoryCommit": "0812f8d65dd6fabd522651ecbd98fe7d009abad5",
   "statement": "Redacted, analysis-sufficient export of the private evidence archive. originalSha256 is the SHA-256 of the file in the private repository at the stated commit; exportedSha256 is the SHA-256 of the file here. Redactions replace the capture host name, home paths, the Docker daemon identity, and names and identities of unrelated containers on the capture host with neutral tokens; no experiment number is affected because the analysis never reads those fields. Files not needed by the analysis (raw k6 metric streams, database diagnostics, container inspections, resolved compose files, logs) are not exported.",
   "roots": [
     "results-queue-screening-r8-v2",
@@ -449,7 +449,7 @@
       "path": "results-queue-screening-r8-v2/source-snapshot-application.tar.gz",
       "originalPath": "results-queue-screening-r8-v2/source-snapshot.tar.gz",
       "originalSha256": "73a16ba4023acfbc90e524ced9858c2855a8b297502b7cee7da1d6faf5b6b30a",
-      "exportedSha256": "72d57f61113d2d538ca05c439e12b3b432b62302aae7285da8aa3a6f300136c4",
+      "exportedSha256": "5dbdfa930fc019f5dc6abd09f4c65484a7ddb2592c8c9691e651d57de557bc21",
       "applicationFiles": 53,
       "droppedFiles": 110,
       "droppedPrefixes": [
@@ -878,7 +878,7 @@
       "path": "results-exploratory-adapter-r4-v1/source-snapshot-application.tar.gz",
       "originalPath": "results-exploratory-adapter-r4-v1/source-snapshot.tar.gz",
       "originalSha256": "00aa781bd11dba42d9872a1473a9809abfaf67d5db74618b82f0d1024eff2064",
-      "exportedSha256": "8539da873549e7fcf5789992d1f92438c3cf0c19eab90870efc02df18abf370c",
+      "exportedSha256": "8b620a5f7d12838850ee79d9b8b03d7cc21adcad6e44aef0c50518ce3650a2b6",
       "applicationFiles": 53,
       "droppedFiles": 110,
       "droppedPrefixes": [
@@ -1293,7 +1293,7 @@
       "path": "results-exploratory-database-r4-v1/source-snapshot-application.tar.gz",
       "originalPath": "results-exploratory-database-r4-v1/source-snapshot.tar.gz",
       "originalSha256": "96b52192b5c579ab337ec60f9460f8e94acb5c8137c12e16c45eec23b9562550",
-      "exportedSha256": "049b149a3b7515b5a0be8b865ee156853f7bd1bc47c7b3d4929bb2bc46152daa",
+      "exportedSha256": "06da201429dee9ef24ea05d71a94d3c9134305353f9d7a585fa391a66fd6e195",
       "applicationFiles": 53,
       "droppedFiles": 110,
       "droppedPrefixes": [
@@ -1721,7 +1721,7 @@
       "path": "results-exploratory-adapter-k4-v1/source-snapshot-application.tar.gz",
       "originalPath": "results-exploratory-adapter-k4-v1/source-snapshot.tar.gz",
       "originalSha256": "d22fb300a0366ade878b84762bdee6edbf7d2c3a7c42d0ed9117d3a675b01c15",
-      "exportedSha256": "46af028a8204a69c7d76f6dd0c65bf7be314f1056f86dc20bfac61fa35e18820",
+      "exportedSha256": "811cebdd0e55a4a727ce0ee8c7de9c414c265c58d4707014d8a668d98da07677",
       "applicationFiles": 53,
       "droppedFiles": 123,
       "droppedPrefixes": [
@@ -2135,7 +2135,7 @@
       "path": "results-exploratory-database-k4-v1/source-snapshot-application.tar.gz",
       "originalPath": "results-exploratory-database-k4-v1/source-snapshot.tar.gz",
       "originalSha256": "2247961bad7a72ad7ef619242a7bc42e21ad232103d66e030a82e5d34131a915",
-      "exportedSha256": "b9152605c3d386ad88a9284f2654e1f91ea261986a865db62937136a553fd104",
+      "exportedSha256": "ad153ff72a401ade7a6ad10d0c758f0a9c8825306e6d2742a30808a01de64b61",
       "applicationFiles": 53,
       "droppedFiles": 123,
       "droppedPrefixes": [
@@ -2560,7 +2560,7 @@
       "path": "results-calibration-v1/source-snapshot-application.tar.gz",
       "originalPath": "results-calibration-v1/source-snapshot.tar.gz",
       "originalSha256": "103d7f2d085d5e04d19169e4fff3d6f107aa55d6c424c16c4510cf1bdad36336",
-      "exportedSha256": "bb41584985935ac93d1081dbd41feef1589091cea5bce45848e881b076b76da8",
+      "exportedSha256": "a90f12460e1fbb4aa8647958abb5baf0d37c9fd8b66433621412498ef69a382a",
       "applicationFiles": 53,
       "droppedFiles": 87,
       "droppedPrefixes": [
@@ -3337,7 +3337,7 @@
       "path": "results-queue-screening-v2/source-snapshot-application.tar.gz",
       "originalPath": "results-queue-screening-v2/source-snapshot.tar.gz",
       "originalSha256": "857210d47eddc0018790fa2d81261f47a881bff5894a5e03473d565f6299fbe3",
-      "exportedSha256": "41b4a5349ab78c3781adcc63786682e83cc0ffb3fe56b716e7dd7b302b1784e6",
+      "exportedSha256": "2ba279a4f2e681e4dd446cda5fd08a8632c8df2b1617624ef47f2247b2ff03d1",
       "applicationFiles": 53,
       "droppedFiles": 102,
       "droppedPrefixes": [
@@ -3733,7 +3733,7 @@
       "path": "results-capacity-pilot-v5/source-snapshot-application.tar.gz",
       "originalPath": "results-capacity-pilot-v5/source-snapshot.tar.gz",
       "originalSha256": "5d321887db0490a7c51ffc5092fe4ab7ff068aca42cfde4fe6105ca121cb1667",
-      "exportedSha256": "ce5dc189ae3317b3b0ce06a1b70ba99c1c2075e7399e1261113ebfec964b8752",
+      "exportedSha256": "8776b386111c01b62e45dc19661cc3349eb85e2283a66dbe44a75eac0ca1c5a0",
       "applicationFiles": 52,
       "droppedFiles": 76,
       "droppedPrefixes": [
@@ -26876,7 +26876,7 @@
       "path": "results-revision-campaign-v2/source-snapshot-application.tar.gz",
       "originalPath": "results-revision-campaign-v2/source-snapshot.tar.gz",
       "originalSha256": "efc4f0b384280c82c5c48e4cdd8a966fcfe5780fba25bc898ce03b8fb9e164f6",
-      "exportedSha256": "9d10d5b053b2d4e5202f17173fb135002ec8ea4eae5afc7c2b7f16a8484ae4c7",
+      "exportedSha256": "949aa42ff69571d4e67a693edae4607f764cc9a2ac474ba57f197e261b40ba78",
       "applicationFiles": 52,
       "droppedFiles": 75,
       "droppedPrefixes": [
@@ -30343,7 +30343,7 @@
       "path": "results-revision-extension-v1/source-snapshot-application.tar.gz",
       "originalPath": "results-revision-extension-v1/source-snapshot.tar.gz",
       "originalSha256": "efc4f0b384280c82c5c48e4cdd8a966fcfe5780fba25bc898ce03b8fb9e164f6",
-      "exportedSha256": "2105e16ed81ffec3ccf1c918fb66ccb384891d88df64bd6097bfb15e2b52c5a8",
+      "exportedSha256": "b70cf9988fc3d3146ea28c1a3774295b55f1d611d9e85ebee2399534ce803afb",
       "applicationFiles": 52,
       "droppedFiles": 75,
       "droppedPrefixes": [

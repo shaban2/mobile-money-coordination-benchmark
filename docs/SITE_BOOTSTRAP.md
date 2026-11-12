@@ -1,10 +1,12 @@
 # Starting your own research chain on another machine (site bootstrap)
 
-The pilot chain in this repository freezes source, protocol, images, host identity and the list of containers it may pause, and re-checks all of them before every run. The chain that produced the paper is bound to its capture host. To run the same kind of guarded pair on your own machine you start a **new chain** with `--site-bootstrap`. Nothing is weakened: the only differences are that the list of containers the controller may pause comes from you instead of a recorded approval, and that the first stage has no predecessor to review. Your host identity, images and source hash are frozen at preparation and enforced from then on.
+> This page covers the exploratory study's guarded pair chain. To run the replicated campaign on your own machine, see [REPLICATED_CAMPAIGN.md](REPLICATED_CAMPAIGN.md#run-the-campaign-on-your-own-machine).
+
+The pilot chain in this repository freezes source, protocol, images, host identity and the list of containers it may pause, and re-checks all of them before every run. The chain that produced the exploratory paper is bound to its capture host. To run the same kind of guarded pair on your own machine you start a **new chain** with `--site-bootstrap`. Nothing is weakened: the only differences are that the list of containers the controller may pause comes from you instead of a recorded approval, and that the first stage has no predecessor to review. Your host identity, images and source hash are frozen at preparation and enforced from then on.
 
 ## 1. Register a protocol
 
-Copy the template and give the stage its own identity. Keep the timings if you want the paper's fault condition (5 min warm-up, 10 min measurement, adapter stopped for 30 s at second 240).
+Copy the template and give the stage its own identity. Keep the timings if you want the exploratory paper's fault condition (5 min warm-up, 10 min measurement, adapter stopped for 30 s at second 240).
 
 ```sh
 cp config/site-pair-protocol.example.json config/exploratory-site-adapter-protocol.json
@@ -44,4 +46,4 @@ A second stage follows the same rules as the paper's: create another protocol wh
 
 ## What this is not
 
-Runs collected this way are your own evidence under your own identity. They are not part of the paper's reporting set, and `scripts/analyze-exploratory-paper.mjs` does not read them unless you add your roots to its selection lists.
+Runs collected this way are your own evidence under your own identity. They are not part of the exploratory paper's reporting set, and `scripts/analyze-exploratory-paper.mjs` does not read them unless you add your roots to its selection lists.

@@ -66,6 +66,42 @@ In the private archive, run it without arguments. The script writes `.research/r
 
 Figures: `scripts/figures/campaign-results.py` and `scripts/figures/fault-timelines.py` (Python with matplotlib) read `campaign-analysis.json` and the run folders.
 
+## Run the campaign on your own machine
+
+You can run the same 181-run schedule on your own hardware. Your absolute numbers will differ from ours. The useful comparison is whether the same patterns appear.
+
+**Before you start**
+
+- macOS. The runner keeps the machine awake with `caffeinate` and records thermal state with `pmset`, so it does not start on Linux as written.
+- Docker Desktop. Ours had 8 CPUs and about 7.7 GiB of memory, and each application container is limited to 2 CPUs and 1 GiB.
+- Node.js 24 or newer, and `npm ci` run once.
+- At least 8 GiB of free disk. The runner checks this before every run. Our two roots took about 1.5 GB.
+- No other containers running. The runner refuses to start a run while any are up, and it never stops them for you.
+- A machine you can leave alone. Our 181 runs took about 36 hours of machine time: about 15 minutes per fault run and 6 minutes per other run.
+
+**Steps**
+
+```sh
+node scripts/campaign.mjs freeze results-my-campaign
+node scripts/campaign.mjs run results-my-campaign
+```
+
+- `freeze` builds the images, writes the same seeded schedule we used, and records your machine's identity, the image IDs and the source hash in `freeze.json`. The folder must not exist yet. Nothing is measured.
+- `run` works through the schedule. Before each run it checks that the source, schedule, images and machine still match the freeze. If you edit any source file, it stops, because the results would mix versions.
+- If the runner stops or the machine restarts, run the same `run` command again. Finished runs are kept and skipped. It also stops after three controller failures in a row, so you can look before continuing.
+- It is finished when `campaign-log.jsonl` ends with a `COMPLETE` event.
+
+**Analyze your runs**
+
+```sh
+cp .research/revision-v2/campaign-analysis.json campaign-analysis.published.json
+node scripts/analyze-campaign.mjs results-my-campaign
+```
+
+The script writes to `.research/revision-v2/`, so keep a copy of the published file first. Without a power log for your machine, the battery fields stay empty.
+
+**The extension.** Our `results-revision-extension-v1` schedule was written separately, after the main campaign. Its `campaign-schedule.json` records what it extends and why. No command regenerates it. `freeze` only writes the full campaign schedule, so extending your own campaign the same way needs a hand-written schedule in a new root.
+
 ## Two findings about configuration
 
 - **Broker kill:** in 5 of 10 runs one transfer stayed in RECEIVED. Redpanda ran in development container mode, which does not wait for writes to reach the disk, so the kill lost records it had already confirmed while the consumer group's committed offsets survived. A new event then reused a lost offset that the group had already passed. Disk synchronization or replication prevents this. Scripts: `.research/revision-v2/root-causes/`.

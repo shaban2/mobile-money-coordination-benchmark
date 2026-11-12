@@ -1,6 +1,6 @@
 # Mobile Money Coordination Experiment Technical Guide
 
-Onboarding and operational reference • 21 September 2026 • Repository version 0.2.0
+Onboarding and operational reference • 21 September 2026, updated 12 November 2026 for the replicated campaign • Repository version 0.2.0
 
 This guide explains how a command becomes synthetic traffic, how that traffic becomes durable transfer records, and how the records become research evidence. It is for junior developers, testers, researchers and technical stakeholders. Start with sections 1–5; use the later sections when you need to operate or change a particular component.
 
@@ -16,13 +16,17 @@ The REST label does not mean that every internal workflow stage is an HTTP micro
 
 ### What has actually been completed
 
+**Replicated campaign (November 2026, current).** 207 runs on one frozen build, in `results-revision-campaign-v2` (181 runs) and `results-revision-extension-v1` (26 runs). The main conditions (no fault, adapter outage, database delay, database delay with eight workers) are ten order-balanced REST/Kafka pairs each. Smaller blocks test outbox polling, batched dispatch, a load ladder from 8 to 256 operations/s and four crash faults. 191 runs qualified, 6 were censored, 9 were invalid and 1 failed during setup and was rerun. No run had a failed transfer, a duplicate or a ledger violation. The runner is `scripts/campaign.mjs`, the analysis is `scripts/analyze-campaign.mjs`, and the full description is [REPLICATED_CAMPAIGN.md](REPLICATED_CAMPAIGN.md).
+
+**Exploratory study (September 2026).** The table below is the earlier study, which shaped the campaign and is not pooled with it.
+
 | Evidence root | Pair and timing | What it supports |
 | --- | --- | --- |
 | results-queue-screening-r8-v2 | R-A and K-A; 8 operations/s; 2m warm-up and 4m measurement; no fault | Descriptive comparison at this tested rate |
 | results-exploratory-adapter-r4-v1 | R-A and K-A; 4 operations/s; 5m and 10m; adapter outage | Exploratory failure and recovery observations |
 | results-exploratory-database-r4-v1 | R-A and K-A; 4 operations/s; 5m and 10m; database-response delay | Exploratory delay and recovery observations |
 
-These six runs are the current paper selection, not the entire historical run archive. There is one execution per architecture per scenario. Older pilots, calibrations and failed attempts remain intact but are not interchangeable replications. The six-run analysis records 10,214 measured completed transfers. The number of transfers is not the number of independent experimental repetitions. Evidence: `scripts/analyze-exploratory-paper.mjs:selections` and `analyze`; `.research/exploratory-paper-v1/analysis.json`; the three roots' `pilot-state.json`.
+These six runs were the exploratory paper's selection, not the entire historical run archive. There is one execution per architecture per scenario. Older pilots, calibrations and failed attempts remain intact but are not interchangeable replications. The six-run analysis records 10,214 measured completed transfers. The number of transfers is not the number of independent experimental repetitions. Evidence: `scripts/analyze-exploratory-paper.mjs:selections` and `analyze`; `.research/exploratory-paper-v1/analysis.json`; the three roots' `pilot-state.json`.
 
 Capacity has not been established. The draft queue-growth-v1 capacity rule remains blocked after validation found problematic bounded-queue patterns. Approved queue-observation-v2 protocols describe sampled queue behavior, without automatically declaring a capacity pass or overload boundary. The older latency-jitter rule remains in legacy code/configuration; do not silently apply it to the newer exploratory evidence. The 96-run matrix is a separate, unlaunched confirmatory candidate. Evidence: `src/experiment/capacity-queue.js:6–18`, `src/experiment/queue-observation.js`, `config/pilot-protocol.json`, `scripts/generate-run-matrix.mjs`.
 
@@ -151,17 +155,22 @@ Read the diagram as control flow plus evidence flow, not as a claim that each bo
 | src/infrastructure | Memory and PostgreSQL persistence, messaging, concurrency, telemetry and diagnostics |
 | migrations | Ordered SQL changes applied by the PostgreSQL persistence startup |
 | src/experiment and scripts | Reusable controller logic and CLI entry points; see sections 9 and 17 |
+| scripts/campaign.mjs and src/experiment/campaign.js | Replicated campaign: seeded schedule, freeze, host checks, sequential runs and resume |
+| src/experiment/fault-catalog.js and scripts/service-fault-controller.mjs | What each fault stops, and the crash-fault controller (application kill, database disconnection, database restart, broker kill) |
+| src/http | Swagger UI page at /docs and the /openapi.yaml route |
+| scripts/figures | Python figure scripts for the campaign |
 | infra | k6 workloads, netem scripts, Prometheus scrape targets and Grafana dashboard |
 | test | Node test suites; live database tests are explicitly environment-gated |
 | results-* | Historical pilot state, frozen inputs and per-run evidence; not source fixtures to overwrite |
 | .research/exploratory-paper-v1 | Derived six-run analysis, evidence inventory, manuscript material and figures |
+| .research/revision-v2 | Campaign analysis (campaign-analysis.json, campaign-runs.csv), predictions written before the campaign, root-cause scripts |
 | docs | Guides, protocols, paper draft and this document's maintainable source/tooling |
 
 ### Libraries and services
 
 Node's ES-module imports make dependencies explicit. `createSystem` selects interfaces so memory tests and PostgreSQL experiments can exercise the same application logic. This supports cheap unit tests, but it does not make memory timings representative of database timings. This is an architectural inference from the wiring, not a measured equivalence.
 
-`pg` 8.22.0 provides parameterized SQL queries and connection pooling. `kafkajs` 2.2.4 provides producer, consumer and topic administration. The default persistence pool has maximum 10 connections. k6 1.8.0 supplies an open-loop arrival-rate workload. PostgreSQL 17 Alpine supplies durable state and SQL constraints. Redpanda 26.1.14 supplies Kafka-compatible messaging. Toxiproxy 2.12.0 delays database response traffic. Prometheus 3.13.1 scrapes telemetry; Grafana 12.4.0 displays it. See `package.json`, `compose.yaml` and `PostgresPersistence.constructor`; frozen runs additionally record exact image IDs.
+`pg` 8.22.0 provides parameterized SQL queries and connection pooling. `kafkajs` 2.2.4 provides producer, consumer and topic administration. The default persistence pool has maximum 10 connections. k6 1.8.0 supplies an open-loop arrival-rate workload. PostgreSQL 17 Alpine supplies durable state and SQL constraints. Redpanda 26.1.14 supplies Kafka-compatible messaging. Toxiproxy 2.12.0 delays database response traffic, and is disabled for 30 seconds to cut the application off from the database in the database-disconnection fault. Prometheus 3.13.1 scrapes telemetry; Grafana 12.4.0 displays it. See `package.json`, `compose.yaml` and `PostgresPersistence.constructor`; frozen runs additionally record exact image IDs.
 
 Only the application container is normally capped at 2 CPUs and 1 GiB through the experiment settings. Do not describe the whole stack as having that budget. Redpanda's single-node configuration and replication factor one are not a high-availability production cluster. Docker Desktop's VM and host activity also affect this environment.
 
@@ -336,7 +345,7 @@ In simple terms: a completed stage leaves a message telling the next stage there
 
 ### Outbox and inbox without jargon
 
-An outbox is a database table of messages that still need publishing. It is not the time spent returning a response. Updating a transfer and inserting its next event inside one SQL transaction avoids committing a state change while forgetting the message. `OutboxDispatcher` checks for eligible rows, publishes them, then marks them published. Its default interval is 50 ms and batch limit 100. Failed publications retain rows with exponential retry delay capped at 30 seconds.
+An outbox is a database table of messages that still need publishing. It is not the time spent returning a response. Updating a transfer and inserting its next event inside one SQL transaction avoids committing a state change while forgetting the message. `OutboxDispatcher` checks for eligible rows, publishes them, then marks them published. Its interval is `OUTBOX_POLL_MS` (default 50 ms) and its batch limit is 100. Serial dispatch, the default, publishes and marks one event at a time. `OUTBOX_DISPATCH_MODE=batched` publishes the batch and then marks it with one UPDATE. The campaign tested intervals of 5, 10 and 25 ms and the batched mode. Failed publications retain rows with exponential retry delay capped at 30 seconds.
 
 Publication and marking are not one atomic transaction across PostgreSQL and Kafka. A crash between them can cause duplicate delivery. Inbox event IDs, transfer state checks, provider request keys and unique ledger constraints make repeated handling safe. Do not call this implementation globally exactly-once messaging. The inbox records consumed event IDs within stage transactions. The provider journal independently deduplicates provider effects.
 
@@ -425,11 +434,12 @@ The gateway selects callback upstream for `/callbacks/` and `/deliveries`, other
 | launch-capacity-pilot.mjs | npm pilot:launch or pilot:resume; prepared root | Check root/lock/state; detach capacity-pilot process; write launcher.json/log |
 | capacity-pilot.mjs | Launcher or direct pilot:run --execute | Load freeze/protocol/state; supply IO hooks to executePilotSession |
 | pilot-session.js and pilot.js | Pilot controller; previous records and protocol | Select next step, make matched batch, save state, run trials sequentially, stop for review |
-| run-experiment.mjs | Pilot runTrial or npm experiment | Operate selected run(s), k6, faults, exports, qualification and verified cleanup |
+| run-experiment.mjs | Pilot runTrial, campaign runTrial or npm experiment | Operate selected run(s), k6, faults, exports, qualification and verified cleanup |
+| campaign.mjs | `node scripts/campaign.mjs freeze` or `run` with a campaign root | Freeze images, schedule, source and host; then check them before each run, spawn run-experiment.mjs with `--pilot-spec campaign-schedule.json` and `--run-id`, compress bulk evidence, and resume after interruption |
 
 The concrete crossing is `scripts/capacity-pilot.mjs:runTrial`: it spawns Node with `scripts/run-experiment.mjs`, `--execute`, `--pilot-spec`, `--run-id` and `--results`. The batch file contains the selected row; the environment carries fixed project, database port, resource limits, session ID, timings, deep diagnostics and frozen image override. This is the place to read when asking “where does the capacity pilot call the controller?”
 
-Source excerpt: `scripts/capacity-pilot.mjs:99–118`. Original code; visual line wrapping does not change the source.
+Source excerpt: `scripts/capacity-pilot.mjs:100–119`. Original code; visual line wrapping does not change the source.
 
 ```javascript
 async function runTrial(batchFile, run, sessionId) {
@@ -602,9 +612,9 @@ Several values are converted with Number or BigInt rather than exhaustively vali
 | randomSeed string | Protocol/batch or matrix seeded construction; paired rows share seed | k6 hashes string into account offset; batch generator also seeds order separately |
 | warmupDuration and measurementDuration strings | Pilot phase timing or runner env; units ms, s, m, h parsed | Two independent k6 invocations; measurement defines cohort window |
 | runId string | Matrix/batch identity; runner adds timestamp namespace and phase | Evidence directory, transfer keys/references, event topics and client tags |
-| faultScenario enum | none, adapter-crash or database-delay | Runner schedules the corresponding controller relative to k6 clock |
+| faultScenario enum | none, adapter-crash, database-delay, app-kill, postgres-restart, database-partition (prose: database disconnection) or broker-stop (Kafka only) | Runner schedules the corresponding controller relative to k6 clock; `src/experiment/fault-catalog.js` lists what each fault stops |
 | results root path | --results overrides RESULTS_ROOT; default results | Artifact directory; pilot passes its own root explicitly |
-| workerConcurrency integer | server env default 4; Compose default 4 | REST work limiter, Kafka provider limiter and partition concurrency wiring |
+| workerConcurrency integer | server env default 4; Compose reads `WORKER_CONCURRENCY` (default 4) | REST work limiter, Kafka provider limiter and partition concurrency wiring; the campaign also tested 8 |
 | callbackUrl string | k6 CALLBACK_URL → request → transfer | CallbackSink POST after terminal processing; runner uses selected gateway |
 
 ### Application settings
@@ -615,6 +625,7 @@ Several values are converted with Number or BigInt rather than exhaustively vali
 | PERSISTENCE_TYPE; DATABASE_URL | memory; unset | postgres requires a URL supplied privately; Compose uses PostgreSQL through Toxiproxy |
 | EVENT_BUS_TYPE or EVENT_BUS | memory | Kafka requires explicit kafka type; Compose K-A supplies it, R-A uses memory |
 | KAFKA_BROKERS; EVENT_NAMESPACE | redpanda:9092; unset | Comma-separated brokers; namespace isolates topics/groups; runner generates namespace |
+| OUTBOX_POLL_MS; OUTBOX_DISPATCH_MODE | 50; serial | Kafka outbox check interval and dispatch mode (serial or batched); Compose passes both to the K-A profile |
 | ADAPTER_BASE_URL; PROVIDER_DELAY_MS | unset; 25 | Unset selects local adapter; Compose supplies adapter-service and simulator delay 25ms |
 | DEFAULT_PAYER_BALANCE | 100000000 as BigInt | Synthetic account initialization, not imported customer balances |
 | PROVIDER_RETRY_MAX_ATTEMPTS; PROVIDER_RETRY_DELAY_MS | 1; 0 | Compose uses 8 and 5000; shared provider helper consumes them |
@@ -635,7 +646,9 @@ Several values are converted with Number or BigInt rather than exhaustively vali
 | WARMUP_DURATION; MEASUREMENT_DURATION; DRAIN_SECONDS | 5m; 10m; 600 | Pilot explicitly supplies phase timing; two drains may each consume the budget |
 | FAULT_AT_SECONDS; ADAPTER_CRASH_SECONDS | 240; 30 | Measurement-relative injection; stopped-adapter duration then readiness wait |
 | DATABASE_FAULT_SECONDS; DATABASE_LATENCY_MS | 60; 100 | Toxic duration and downstream delay; measurement must extend beyond clearance |
-| COMPOSE_PROJECT_NAME; POSTGRES_PORT | Runner lubanga-coordination; Compose 5432 | Pilot freezes lubanga-coordination-pilot and 25432; use explicit dedicated project |
+| FAULT_SECONDS | 30 | Duration of the crash-style faults before the service is restarted or the proxy re-enabled |
+| FAULT_SCENARIO; APP_SERVICE; APP_HEALTH_URL | Set by the runner | Inputs to `scripts/service-fault-controller.mjs`: which crash fault, which application service, and where to check its health |
+| COMPOSE_PROJECT_NAME; POSTGRES_PORT | Runner lubanga-coordination; Compose 5432 | Pilot freezes lubanga-coordination-pilot and 25432; the campaign uses lubanga-coordination-revision and 25432; use explicit dedicated project |
 | APP_CPUS; APP_MEMORY | 2; 1g | Application limits; pilot freezes them |
 | FROZEN_COMPOSE_OVERRIDE; PILOT_SESSION_ID | Optional paths/IDs set by pilot | Exact image override and cross-run session provenance |
 | DEEP_DIAGNOSTICS; POSTGRES_IO_TIMING | false unless enabled; off | Deep runner sets DB observer true and IO timing on; required by approved descriptive pairs |
@@ -759,6 +772,8 @@ k6 continues the same operation mix. At the scheduled measurement-relative time,
 
 Database delay adds a Toxiproxy downstream latency toxic named database-latency, with 100ms latency and zero jitter by default, for 60 seconds. It delays server-to-client database traffic, not every SQL statement by exactly 100ms and not the storage device itself. Fault operations validate existing proxy topology rather than re-PATCHing it and resetting live connections. See `scripts/toxiproxy-controller.mjs`, `scripts/adapter-crash-controller.mjs` and runner `applyFault`.
 
+The campaign added four crash-style faults, run by `scripts/service-fault-controller.mjs`. Application kill sends SIGKILL to the application container and starts it again. Database restart does the same to PostgreSQL. Broker kill does the same to Redpanda and applies to Kafka only. Database disconnection disables the Toxiproxy `postgres` proxy for 30 seconds, then enables it. Each records an observed interval: from the kill acknowledgement until the service reports ready (application health, `pg_isready`, or `rpk cluster health`), or from proxy disable to proxy enable. `src/experiment/fault-catalog.js` says which service may be missing from resource samples during each fault, and which faults are expected to reject client requests.
+
 Fault CLI aliases are provided for controlled engineering debugging only: `fault:adapter-crash`, `fault:database-delay`, `fault:database-clear`. Set the exact project/target before use. The runner normally calls them and records fault-evidence.json, including observed injection and readiness/clearance times. Do not inject manual faults during a frozen run outside its protocol.
 
 ### Repeating failed attempts
@@ -778,9 +793,9 @@ The current approved observation rule keeps correctness checks and reports queue
 | Metric | Definition in this code | Interpretation and criterion |
 | --- | --- | --- |
 | k6 checks | HTTP/status checks in load.js; threshold checks rate >= 0.995 | Request-level checks, not proof every transfer completed correctly |
-| Offered operations | Scheduled rate × measurement seconds; includes POST replays and GET reads | Qualification requires zero dropped iterations and at least 99.5% delivered scheduled operations |
+| Offered operations | Scheduled rate × measurement seconds; includes POST replays and GET reads | Qualification requires zero dropped iterations and at least 99.5% delivered scheduled operations, except in the load ladder (block D), where drops are a result |
 | HTTP request duration | k6's client-observed request timing | For POST async mode this mainly measures acknowledgement, not terminal ledger latency |
-| Durable completion latency | API_RECEIVED.details.receivedAt to non-recovered COMMIT_CONFIRMED.details.confirmedAt | Same application clock; excludes client network; reconciled measured cohort |
+| Durable completion latency | API_RECEIVED.details.receivedAt to the original COMMIT_CONFIRMED.details.confirmedAt; if only a recovered confirmation exists after a crash, its time is used and flagged `latencyUpperBound` | Same application clock; excludes client network; reconciled measured cohort; `recoveredConfirmations` counts the flagged transfers |
 | Primary p95 and p99 | Interpolated quantiles of correct cohort transfers completed before measurement end | No universal millisecond pass threshold is imposed by current descriptive protocol |
 | Correct goodput | Correct unique measured arrivals completed before measurement end divided by measurement seconds | Excludes reads/replays as new transfers and excludes drain completions |
 | Eventual correct completion rate | Correct measured arrivals completed by observation end divided by measurement seconds | Includes drain completions; not the primary sustained under-load throughput |
@@ -796,7 +811,7 @@ The primary cohort is transfers received in the half-open measurement interval [
 
 ### Qualification is more than a green k6 line
 
-`qualifyRun` verifies artifacts, schema, workload mix, client-attempt accounting, timestamps, resource coverage, architecture isolation, offered-load delivery, generator completion, fault evidence, fixed async conditions and unchanged checksums. For at least 100 operations, tolerated shares are 18–22% status reads, 4–6% replay among creates, and 48–52% profile A among creates. A k6 exit of 99 can be captured for evaluation instead of losing its evidence.
+`qualifyRun` verifies artifacts, schema, workload mix, client-attempt accounting, timestamps, resource coverage, architecture isolation, offered-load delivery, generator completion, fault evidence, that the fault held for its full duration, that client errors stayed within the fault (for client-visible faults), fixed async conditions and unchanged checksums. For client-visible faults the k6 check rate is not used as a performance gate. For at least 100 operations, tolerated shares are 18–22% status reads, 4–6% replay among creates, and 48–52% profile A among creates. A k6 exit of 99 can be captured for evaluation instead of losing its evidence.
 
 | qualification.json status | Meaning and next action |
 | --- | --- |
@@ -853,7 +868,7 @@ At the controller level, lifecycle labels include STAGING, WARMUP, STARTING_LOAD
 
 `compose.log` captures service logs; measurement.log and warmup.log capture k6; controller-error.json records runner failures; diagnostics.json and database-diagnostics.json capture instrumented observations; docker-stats.jsonl is time-series resource evidence; provider-attempt-timings.json relates adapter attempts to slow intervals. Failure-path captures may carry failure-specific names. Root `<run-id>-controller.log` connects pilot spawning to the per-run bundle.
 
-Inspect GET `/admin/diagnostics`, `/admin/database-diagnostics`, `/admin/telemetry`, `/admin/transfers`, `/admin/traces`, `/admin/provider-attempts`, `/admin/outbox` and `/admin/dead-letters` only on the intended running research service. GET `/admin/invariants` also persists reconciliation by default; it is not a purely inert health check. Use `/health` for a lightweight readiness query.
+Inspect GET `/admin/diagnostics`, `/admin/database-diagnostics`, `/admin/telemetry`, `/admin/transfers`, `/admin/traces`, `/admin/provider-attempts`, `/admin/outbox` and `/admin/dead-letters` only on the intended running research service. GET `/admin/invariants` also persists reconciliation by default; it is not a purely inert health check. Use `/health` for a lightweight readiness query. GET `/docs` serves a Swagger UI page and `/openapi.yaml` the API description. Pages on `localhost` may call either design, because the server sends CORS headers only to localhost origins.
 
 ### Visualization flow
 
@@ -861,7 +876,9 @@ Live path: application Metrics and persistence telemetry → GET /metrics → `i
 
 The custom Metrics class exports observation sums/counts, not a full latency histogram. Do not infer p95 from the dashboard's mean panel. Live counters and generic telemetry “correct” labels are operational indicators; reconciled measured-cohort correctness is established by outcomes plus invariants. Counter resets during runner resets also affect live charts.
 
-Paper path: archived manifests/traces/transfers/invariants/resources → `scripts/analyze-exploratory-paper.mjs:analyze` → `.research/exploratory-paper-v1/analysis.json` and evidence inventory → `scripts/render-exploratory-figures.mjs` → SVG/PNG figures → `scripts/build-exploratory-paper.py` → paper DOCX and manuscript material. The analysis recomputes outcomes exactly and checks selected runs/provenance. Figures use Sharp for SVG rasterization; it is an artifact-generation dependency, not an application runtime dependency.
+Paper path: archived manifests/traces/transfers/invariants/resources → `scripts/analyze-exploratory-paper.mjs:analyze` → `.research/exploratory-paper-v1/analysis.json` and evidence inventory → `scripts/render-exploratory-figures.mjs` → SVG/PNG figures → `scripts/build-exploratory-paper.py` → paper DOCX and manuscript material. The analysis recomputes outcomes exactly and checks selected runs/provenance.
+
+Campaign path: campaign run folders → `scripts/analyze-campaign.mjs` → `.research/revision-v2/campaign-analysis.json` and `campaign-runs.csv` → `scripts/figures/campaign-results.py` and `fault-timelines.py` (Python with matplotlib). It pairs runs by repetition, reports paired bootstrap intervals and Holm-adjusted exact sign tests for ten-pair cells, counts completions inside each exact fault interval, measures recovery at 1-second resolution, and sums resources over the system's own services, leaving out the monitoring stack, the test tools and the shared adapter. `scripts/reanalyze-v1-evidence.mjs` applied the added measures to the exploratory evidence. Figures use Sharp for SVG rasterization; it is an artifact-generation dependency, not an application runtime dependency.
 
 The six-run resource summary uses time-weighted interpolation between in-window samples without extrapolating to unobserved boundaries. It sums the manifest's included services, excluding k6, controller and host/VM overhead; Kafka includes its broker. It reports sampled aggregate peaks, not the sum of unrelated per-service peaks. A stopped adapter is zero only within the outage tolerance. See `summarizeResources` for this definition before claiming whole-machine resource efficiency.
 
@@ -1010,7 +1027,7 @@ This appendix is a navigation map, not a substitute for the workflows above. Ref
 
 `src/server.js` — HTTP entry point; reads environment, starts system, routes API/admin requests, shuts down on signals.
 
-Source navigation: `sendJson:28`; `readJson:33`; `shutdown:180`.
+Source navigation: `sendJson:31`; `readJson:36`; `shutdown:185`.
 
 ### system in src
 
@@ -1112,7 +1129,7 @@ Source navigation: `ProviderSimulator:7`; `constructor:8`; `setAvailable:24`; `s
 
 `src/infrastructure/in-memory-persistence.js` — Implements the application persistence interface using repository/ledger collections for fast tests; not durable PostgreSQL or a broker-backed outbox.
 
-Source navigation: `InMemoryPersistence:6`; `constructor:7`; `start:23`; `stop:25`; `createOrGet:27`; `get:33`; `list:37`; `transition:41`; `fulfill:55`; `fail:62`; `seed:72`; `balance:76`; `entries:80`; `checkConservation:84`; `checkAccountPostings:88`; `ensureProviderCommand:97`; `recordProviderAttempt:102`; `recordCallbackDelivery:110`; `recordTraceEvent:118`; `listTraceEvents:132`; `telemetrySnapshot:136`; `recordDeadLetter:162`; `listDeadLetters:174`; `enqueueOutbox:178`; `unpublishedOutbox:184`; `markOutboxPublished:188`; `markOutboxFailed:193`; `claimInbox:198`; `createExperimentRun:204`; `finishExperimentRun:214`; `recordReconciliation:223`; `listTables:231`; `listAccounts:249`; `listProviderAttempts:258`; `listOutbox:262`; `recoveryCandidates:266`; `reset:271`.
+Source navigation: `InMemoryPersistence:6`; `constructor:7`; `start:23`; `stop:25`; `createOrGet:27`; `get:33`; `list:37`; `transition:41`; `fulfill:55`; `fail:62`; `seed:72`; `balance:76`; `entries:80`; `checkConservation:84`; `checkAccountPostings:88`; `ensureProviderCommand:97`; `recordProviderAttempt:102`; `recordCallbackDelivery:110`; `recordTraceEvent:118`; `listTraceEvents:132`; `telemetrySnapshot:136`; `recordDeadLetter:162`; `listDeadLetters:174`; `enqueueOutbox:178`; `unpublishedOutbox:184`; `markOutboxPublished:188`; `markOutboxPublishedBatch:193`; `markOutboxFailed:197`; `claimInbox:202`; `createExperimentRun:208`; `finishExperimentRun:218`; `recordReconciliation:227`; `listTables:235`; `listAccounts:253`; `listProviderAttempts:262`; `listOutbox:266`; `recoveryCandidates:270`; `reset:275`.
 
 ### in memory transfer repository in src infrastructure
 
@@ -1140,9 +1157,9 @@ Source navigation: `KafkaEventBus:6`; `constructor:7`; `subscribe:28`; `start:34
 
 ### outbox dispatcher in src infrastructure
 
-`src/infrastructure/outbox-dispatcher.js` — start schedules polling; dispatchOnce prevents overlap; dispatchBatch publishes due rows and records success/backoff; stop waits for dispatch.
+`src/infrastructure/outbox-dispatcher.js` — start schedules polling at OUTBOX_POLL_MS; dispatchOnce prevents overlap; dispatchBatch publishes due rows serially or as one batch (OUTBOX_DISPATCH_MODE) and records success/backoff; stop waits for dispatch.
 
-Source navigation: `OutboxDispatcher:1`; `constructor:2`; `start:10`; `dispatchOnce:21`; `dispatchBatch:32`; `stop:44`.
+Source navigation: `OutboxDispatcher:1`; `constructor:2`; `start:13`; `dispatchOnce:24`; `dispatchBatch:35`; `publishThenMarkOnce:51`; `stop:68`.
 
 ### terminal notifier in src infrastructure
 
@@ -1166,13 +1183,13 @@ Source navigation: `Metrics:1`; `constructor:2`; `increment:7`; `observe:11`; `s
 
 `src/infrastructure/runtime-diagnostics.js` — RuntimeDiagnostics measures monotonic spans and runtime samples in bounded buffers; instrumentMethods wraps selected methods without changing their return/error semantics.
 
-Source navigation: `Ring:6`; `constructor:7`; `push:8`; `snapshot:9`; `RuntimeDiagnostics:19`; `constructor:20`; `reset:29`; `begin:40`; `finish:52`; `measure:71`; `start:80`; `sample:99`; `stop:119`; `snapshot:123`; `instrumentMethods:136`.
+Source navigation: `Ring:6`; `constructor:7`; `push:8`; `snapshot:9`; `RuntimeDiagnostics:19`; `constructor:20`; `reset:29`; `countStatement:42`; `statementDelta:50`; `begin:60`; `finish:72`; `measure:91`; `start:100`; `sample:119`; `stop:139`; `snapshot:143`; `instrumentMethods:157`.
 
 ### postgres persistence in src infrastructure postgres
 
 `src/infrastructure/postgres/postgres-persistence.js` — PostgresPersistence is the SQL transaction boundary. Sections 6 and 10 trace createOrGet, transition, fulfill, confirmTerminal, provider/callback recording, outbox, recoveryCandidates and reset.
 
-Source navigation: `iso:16`; `recordFromRow:21`; `updateTransfer:47`; `insertTrace:87`; `consumeInbox:96`; `insertOutbox:106`; `PostgresPersistence:117`; `constructor:118`; `start:142`; `stop:146`; `createOrGet:150`; `get:231`; `list:236`; `transition:241`; `fulfill:265`; `fail:346`; `confirmTerminal:356`; `ensureProviderCommand:366`; `isInboxProcessed:373`; `completeProviderEvent:377`; `seed:387`; `balance:399`; `entries:407`; `checkConservation:433`; `checkAccountPostings:442`; `recordProviderAttempt:450`; `recordCallbackDelivery:493`; `recordTraceEvent:533`; `listTraceEvents:545`; `telemetrySnapshot:553`; `enqueueOutbox:600`; `recordDeadLetter:611`; `listDeadLetters:626`; `unpublishedOutbox:633`; `markOutboxPublished:649`; `markOutboxFailed:660`; `claimInbox:672`; `createExperimentRun:684`; `finishExperimentRun:706`; `recordReconciliation:726`; `listTables:742`; `listAccounts:750`; `listProviderAttempts:765`; `listOutbox:772`; `recoveryCandidates:781`; `reset:788`.
+Source navigation: `iso:16`; `recordFromRow:21`; `updateTransfer:47`; `insertTrace:87`; `consumeInbox:96`; `insertOutbox:106`; `PostgresPersistence:117`; `constructor:118`; `start:142`; `stop:146`; `createOrGet:150`; `get:231`; `list:236`; `transition:241`; `fulfill:265`; `fail:346`; `confirmTerminal:356`; `ensureProviderCommand:366`; `isInboxProcessed:373`; `completeProviderEvent:377`; `seed:387`; `balance:399`; `entries:407`; `checkConservation:433`; `checkAccountPostings:442`; `recordProviderAttempt:450`; `recordCallbackDelivery:493`; `recordTraceEvent:533`; `listTraceEvents:545`; `telemetrySnapshot:553`; `enqueueOutbox:600`; `recordDeadLetter:611`; `listDeadLetters:626`; `unpublishedOutbox:633`; `markOutboxPublished:649`; `markOutboxPublishedBatch:660`; `markOutboxFailed:671`; `claimInbox:683`; `createExperimentRun:695`; `finishExperimentRun:717`; `recordReconciliation:737`; `listTables:753`; `listAccounts:761`; `listProviderAttempts:776`; `listOutbox:783`; `recoveryCandidates:792`; `reset:799`.
 
 ### migrate in src infrastructure postgres
 
@@ -1182,15 +1199,15 @@ Source navigation: `migrate:8`.
 
 ### diagnostic pool in src infrastructure postgres
 
-`src/infrastructure/postgres/diagnostic-pool.js` — instrumentPool wraps pool acquisition/query/release for diagnostic timing while preserving the pg API forms.
+`src/infrastructure/postgres/diagnostic-pool.js` — instrumentPool wraps pool acquisition/query/release for diagnostic timing while preserving the pg API forms; statementCategory tags each statement for the per-category counters.
 
-Source navigation: `instrumentPool:4`.
+Source navigation: `statementCategory:6`; `instrumentPool:22`.
 
 ### database diagnostics in src infrastructure postgres
 
 `src/infrastructure/postgres/database-diagnostics.js` — DatabaseDiagnostics samples through a separate read-only observer, including wait/IO/WAL/checkpoint counters without exporting SQL text.
 
-Source navigation: `DatabaseDiagnostics:29`; `constructor:30`; `reset:43`; `start:48`; `sample:63`; `stop:81`; `snapshot:82`.
+Source navigation: `DatabaseDiagnostics:30`; `constructor:31`; `reset:44`; `start:49`; `sample:64`; `stop:82`; `snapshot:83`.
 
 ### pilot in src experiment
 
@@ -1226,13 +1243,13 @@ Source navigation: `assertCapacityRuleLaunchReady:7`; `validateQueueCapacityProt
 
 `src/experiment/queue-observation.js` — Loads approved protocols; exploratoryProtocol and observationPairScope select a fixed scenario; describeQueueObservation reports finite sampled patterns without capacity pass/fail.
 
-Source navigation: `exploratoryProtocol:11`; `describeQueueObservation:20`.
+Source navigation: `exploratoryProtocol:19`; `describeQueueObservation:28`.
 
 ### exploratory review in src experiment
 
 `src/experiment/exploratory-review.js` — evidenceInventory hashes archived evidence; inspectCompletedObservationPair verifies it; predecessor/root review guards chain approved pairs.
 
-Source navigation: `evidenceInventory:9`; `inspectCompletedObservationPair:20`; `predecessorReviewPath:80`; `assertPredecessorReview:84`; `assertExploratoryRootReview:101`.
+Source navigation: `evidenceInventory:10`; `inspectCompletedObservationPair:21`; `predecessorReviewPath:81`; `assertPredecessorReview:85`; `assertExploratoryRootReview:104`.
 
 ### compose lifecycle in src experiment
 
@@ -1256,7 +1273,7 @@ Source navigation: `assertRestorablePilotContainer:3`.
 
 `src/experiment/provenance.js` — sourceFiles defines the runtime inventory; fileHash and sourceSnapshotSha256 fingerprint bytes and relative paths for freezes and end checks.
 
-Source navigation: `sourceFiles:4`; `sourceSnapshotSha256:16`.
+Source navigation: `sourceFiles:4`; `sourceSnapshotSha256:17`.
 
 ### controller diagnostics in src experiment
 
@@ -1290,15 +1307,27 @@ Source navigation: `sameProxyConfiguration:1`.
 
 ### outcomes in src experiment
 
-`src/experiment/outcomes.js` — durationSeconds parses lifecycle durations; quantile computes interpolated percentiles; deriveOutcomes joins measured cohort, traces and reconciliation into endpoint/window/fault results.
+`src/experiment/outcomes.js` — durationSeconds parses lifecycle durations; quantile computes interpolated percentiles; deriveOutcomes joins measured cohort, traces and reconciliation into endpoint/window/fault results, flagging recovered confirmations as latency upper bounds.
 
 Source navigation: `quantile:1`; `durationSeconds:7`; `deriveOutcomes:14`.
+
+### campaign in src experiment
+
+`src/experiment/campaign.js` — buildCampaign makes the seeded, interleaved 181-run schedule with order-balanced pairs; buildPilot the functional check; ladderSaturated and ladderSkip apply the load-ladder rules; environmentFor maps a run to its variant settings.
+
+Source navigation: `makeRun:14`; `pairUnits:21`; `kafkaUnits:30`; `buildCampaign:35`; `buildPilot:65`; `ladderSaturated:79`; `ladderSkip:90`; `environmentFor:97`.
+
+### fault catalog in src experiment
+
+`src/experiment/fault-catalog.js` — FAULTS says which service each fault may stop and which faults reject client requests; clientErrorSummary confines client errors to the fault interval.
+
+Source navigation: `faultFor:14`; `optionalServicesFor:21`; `assertFaultApplies:26`; `clientErrorSummary:32`.
 
 ### qualification in src experiment
 
 `src/experiment/qualification.js` — qualifyRun combines validity gates, safety, performance and censoring into separate fields and a status; called by qualify-run CLI.
 
-Source navigation: `qualifyRun:3`.
+Source navigation: `qualifyRun:4`.
 
 ### analysis in src experiment
 
@@ -1322,13 +1351,37 @@ Source navigation: `default:8`.
 
 `scripts/run-experiment.mjs` — validateMatrix/select filters rows; k6Arguments constructs load command; runOne operates lifecycle; applyFault/drain/export/qualification/cleanup connect measurement to evidence.
 
-Source navigation: `valueAfter:55`; `sha256:60`; `writeJson:64`; `command:68`; `capture:81`; `runProcess:85`; `fetchJson:106`; `validateMatrix:119`; `waitForGateway:147`; `compose:171`; `k6Arguments:175`; `durationSeconds:196`; `manifestFor:203`; `updateRunState:276`; `captureRuntimeDiagnostics:284`; `captureDatabaseDiagnostics:294`; `startStatsCollector:301`; `scheduleFault:326`; `waitForMeasurementClock:351`; `applyFault:365`; `drain:401`; `appendRunIndex:412`; `runOne:417`; `terminalEvidenceExists:601`.
+Source navigation: `valueAfter:57`; `sha256:62`; `writeJson:66`; `command:70`; `capture:83`; `runProcess:87`; `fetchJson:108`; `validateMatrix:121`; `waitForGateway:151`; `compose:179`; `k6Arguments:183`; `durationSeconds:204`; `manifestFor:211`; `updateRunState:284`; `captureRuntimeDiagnostics:292`; `faultDisturbsDiagnostics:304`; `captureDatabaseDiagnostics:308`; `startStatsCollector:315`; `scheduleFault:340`; `waitForMeasurementClock:368`; `applyFault:382`; `drain:426`; `appendRunIndex:437`; `runOne:442`; `terminalEvidenceExists:627`.
+
+### api docs in src http
+
+`src/http/api-docs.js` — handleDocs serves the Swagger UI page at /docs and contracts/openapi.yaml at /openapi.yaml; applyLocalCors allows localhost pages only.
+
+Source navigation: `applyLocalCors:40`; `handleDocs:52`.
+
+### campaign in scripts
+
+`scripts/campaign.mjs` — freeze builds images and records schedule, source, images and host; assertFrozen checks them before each run; execute runs or resumes the schedule and stops after three controller failures in a row.
+
+Source navigation: `command:21`; `freeze:29`; `assertFrozen:59`; `compressEvidence:76`; `runTrial:85`; `resultOf:99`; `execute:109`.
+
+### service fault controller in scripts
+
+`scripts/service-fault-controller.mjs` — Crash-style faults: SIGKILL and restart of the application, PostgreSQL or Redpanda, or disabling the database proxy; records the observed interval.
+
+Source navigation: `docker:14`; `mustDocker:19`; `toxiproxy:22`; `httpReady:26`; `until:29`.
+
+### analyze campaign in scripts
+
+`scripts/analyze-campaign.mjs` — Reads campaign roots and writes campaign-analysis.json and campaign-runs.csv: paired contrasts, exact fault-interval counts, 1 s recovery, step times and resources.
+
+Source navigation: `traceStages:53`; `hops:66`; `resources:73`; `faultMeasures:91`.
 
 ### capacity pilot in scripts
 
 `scripts/capacity-pilot.mjs` — assertFrozen and isolation hooks protect a session; runTrial spawns run-experiment with the batch/row; readEvidence feeds protocol evaluation.
 
-Source navigation: `command:51`; `assertFrozen:62`; `readEvidence:80`; `runTrial:99`.
+Source navigation: `command:51`; `assertFrozen:62`; `readEvidence:81`; `runTrial:100`.
 
 Other important entry points are individually traced in section 17. SQL migration responsibilities are in section 10; dashboard/provisioning files in section 14; protocol and test ownership in sections 11 and 16. Historical `continuations/` scripts belong to specific reviewed recovery episodes and are not generic new-pilot launchers.
 
@@ -1374,7 +1427,7 @@ Can these findings prove REST is always faster? No. They describe this implement
 
 This guide was reverse-engineered from application source, CLI scripts, protocol/configuration files, SQL migrations, test gates and selected archived evidence. Source snippets are extracted from the repository by the documentation builder rather than retyped examples. The maintainable guide is `docs/TECHNICAL_GUIDE.md`; its Word builder is under `docs/tooling`, outside the frozen runtime source inventory. The original codebase guide and exploratory manuscript are retained separately.
 
-The runtime source fingerprint inspected for this edition is `074e16c7b866617b3eff3e4f4c37936542b4e35ec760f31ebb245fdd608ea438`. Source identity is computed by `src/experiment/provenance.js`, not inferred from a missing Git commit. README/docs/test files are outside that particular runtime fingerprint, although prepared source archives can contain them. A source archive checksum identifies its bytes independently.
+The runtime source fingerprint inspected for this edition is `b05bfcbb80a91e690da908bbe6734af9b52fd6522c3cb6150d3eac8885bef23a`. The replicated campaign ran on an earlier fingerprint, `06c01f927878de28162cfae330eff43c45d3656a16c90387f1adfc26c17b2294`, recorded in each campaign root's `freeze.json` and tagged `campaign-freeze` in Git. The difference is later work: the Swagger page and its three-line hook in `src/server.js`, the API description, the analysis, figure and release scripts, and one code comment. None of it changes how a transfer is processed. Source identity is computed by `src/experiment/provenance.js`, not inferred from a missing Git commit. README/docs/test files are outside that particular runtime fingerprint, although prepared source archives can contain them. A source archive checksum identifies its bytes independently.
 
 The guide uses progressive disclosure, task-oriented examples and explicit source links, informed by [Write the Docs documentation principles](https://www.writethedocs.org/guide/writing/docs-principles/) and [GitHub documentation guidance](https://github.blog/developer-skills/documentation-done-right-a-developers-guide/#h-documenting-your-project). These are writing guidance, not evidence for this repository's behavior.
 

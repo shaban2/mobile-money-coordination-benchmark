@@ -1,6 +1,6 @@
 """Build the onboarding DOCX from TECHNICAL_GUIDE.md, without touching evidence.
 
-Requires python-docx and Pillow. Use the Codex bundled Python when available.
+Requires python-docx and Pillow.
 The Markdown contains Mermaid for repository readers; the DOCX uses compact
 equivalent flow diagrams. Source excerpts and the symbol index are materialized
 in Markdown before building, so the two deliverables contain the same text.
@@ -46,14 +46,14 @@ FILES = [
  ('src/infrastructure/in-memory-ledger.js', 'InMemoryLedger stores balances and synthetic entries; used by memory persistence and reconciliation tests.'),
  ('src/infrastructure/in-memory-event-bus.js', 'InMemoryEventBus registers handlers and dispatches published events locally; a Kafka-coordinator unit test can use this substitute.'),
  ('src/infrastructure/kafka-event-bus.js', 'KafkaEventBus starts namespaced topics, producer and group consumer; subscribe/publish connect handlers; persistence inbox checks protect redelivery.'),
- ('src/infrastructure/outbox-dispatcher.js', 'start schedules polling; dispatchOnce prevents overlap; dispatchBatch publishes due rows and records success/backoff; stop waits for dispatch.'),
+ ('src/infrastructure/outbox-dispatcher.js', 'start schedules polling at OUTBOX_POLL_MS; dispatchOnce prevents overlap; dispatchBatch publishes due rows serially or as one batch (OUTBOX_DISPATCH_MODE) and records success/backoff; stop waits for dispatch.'),
  ('src/infrastructure/terminal-notifier.js', 'TerminalNotifier.wait and notify connect durable terminal state to waiting workflow promises, with timeout cleanup.'),
  ('src/infrastructure/work-limiter.js', 'WorkLimiter.run bounds concurrently active tasks and releases queued work when a task settles.'),
  ('src/infrastructure/metrics.js', 'Metrics.increment/observe collect runtime counters and values; snapshot returns JSON; toPrometheus formats counters, sums/counts and gauges; reset clears them.'),
  ('src/infrastructure/runtime-diagnostics.js', 'RuntimeDiagnostics measures monotonic spans and runtime samples in bounded buffers; instrumentMethods wraps selected methods without changing their return/error semantics.'),
  ('src/infrastructure/postgres/postgres-persistence.js', 'PostgresPersistence is the SQL transaction boundary. Sections 6 and 10 trace createOrGet, transition, fulfill, confirmTerminal, provider/callback recording, outbox, recoveryCandidates and reset.'),
  ('src/infrastructure/postgres/migrate.js', 'migrate reads ordered SQL, skips recorded versions and applies each new migration atomically; called by persistence.start and the migration CLI.'),
- ('src/infrastructure/postgres/diagnostic-pool.js', 'instrumentPool wraps pool acquisition/query/release for diagnostic timing while preserving the pg API forms.'),
+ ('src/infrastructure/postgres/diagnostic-pool.js', 'instrumentPool wraps pool acquisition/query/release for diagnostic timing while preserving the pg API forms; statementCategory tags each statement for the per-category counters.'),
  ('src/infrastructure/postgres/database-diagnostics.js', 'DatabaseDiagnostics samples through a separate read-only observer, including wait/IO/WAL/checkpoint counters without exporting SQL text.'),
  ('src/experiment/pilot.js', 'evaluatePilotRun chooses protocol assessment; nextPilotStep selects bounded next work or review; makePilotBatch constructs paired rows with deterministic order.'),
  ('src/experiment/pilot-session.js', 'newPilotState, atPairBoundary, assertPilotCanStart/Budget/Evidence and executePilotSession implement durable sessions, pause/resume and cleanup/error disposition.'),
@@ -71,12 +71,18 @@ FILES = [
  ('src/experiment/host-resource-sampler.js', 'createHostResourceSampler captures host scope/counters; used by collect-docker-stats, not the transfer workflow.'),
  ('src/experiment/linux-resource-sampler.js', 'linuxDiagnosticCommand collects specified container files; parseLinuxDiagnostics preserves availability/validity and parses contention evidence.'),
  ('src/experiment/proxy-config.js', 'sameProxyConfiguration compares canonical equivalent listener/upstream topology; prevents fault injection from reconfiguring an already-correct live proxy.'),
- ('src/experiment/outcomes.js', 'durationSeconds parses lifecycle durations; quantile computes interpolated percentiles; deriveOutcomes joins measured cohort, traces and reconciliation into endpoint/window/fault results.'),
+ ('src/experiment/outcomes.js', 'durationSeconds parses lifecycle durations; quantile computes interpolated percentiles; deriveOutcomes joins measured cohort, traces and reconciliation into endpoint/window/fault results, flagging recovered confirmations as latency upper bounds.'),
+ ('src/experiment/campaign.js', 'buildCampaign makes the seeded, interleaved 181-run schedule with order-balanced pairs; buildPilot the functional check; ladderSaturated and ladderSkip apply the load-ladder rules; environmentFor maps a run to its variant settings.'),
+ ('src/experiment/fault-catalog.js', 'FAULTS says which service each fault may stop and which faults reject client requests; clientErrorSummary confines client errors to the fault interval.'),
  ('src/experiment/qualification.js', 'qualifyRun combines validity gates, safety, performance and censoring into separate fields and a status; called by qualify-run CLI.'),
  ('src/experiment/analysis.js', 'pairedContrast, holm, decision and restrictedDuration support the planned paired-analysis framework; descriptive paper analysis is a separate entry point.'),
  ('infra/k6/load.js', 'options declares open-loop scheduling; setup makes GET fixture; createTransfer generates mapped payload/key; recordAttempt emits evidence; default selects the mixed operation.'),
  ('infra/k6/smoke.js', 'Small four-iteration HTTP smoke workload, not a controller-managed scientific run.'),
  ('scripts/run-experiment.mjs', 'validateMatrix/select filters rows; k6Arguments constructs load command; runOne operates lifecycle; applyFault/drain/export/qualification/cleanup connect measurement to evidence.'),
+ ('src/http/api-docs.js', 'handleDocs serves the Swagger UI page at /docs and contracts/openapi.yaml at /openapi.yaml; applyLocalCors allows localhost pages only.'),
+ ('scripts/campaign.mjs', 'freeze builds images and records schedule, source, images and host; assertFrozen checks them before each run; execute runs or resumes the schedule and stops after three controller failures in a row.'),
+ ('scripts/service-fault-controller.mjs', 'Crash-style faults: SIGKILL and restart of the application, PostgreSQL or Redpanda, or disabling the database proxy; records the observed interval.'),
+ ('scripts/analyze-campaign.mjs', 'Reads campaign roots and writes campaign-analysis.json and campaign-runs.csv: paired contrasts, exact fault-interval counts, 1 s recovery, step times and resources.'),
  ('scripts/capacity-pilot.mjs', 'assertFrozen and isolation hooks protect a session; runTrial spawns run-experiment with the batch/row; readEvidence feeds protocol evaluation.'),
 ]
 
@@ -115,7 +121,7 @@ def excerpt(path, symbol):
     elif symbol == 'createTransfer':
         start, end = 51, 71
     elif symbol == 'runTrial':
-        start, end = 99, 118
+        start, end = 100, 119
     else:
         start = next(i for i, line in enumerate(lines, 1) if re.match(r'  (?:async )?' + symbol + r'\(', line))
         end = next(i for i in range(start + 1, len(lines) + 1) if lines[i - 1] == '  }')
@@ -258,7 +264,7 @@ def render(md):
     header.text = 'MOBILE MONEY COORDINATION EXPERIMENT  |  TECHNICAL GUIDE'
     header.runs[0].font.size = Pt(8)
     footer = sec.footer.paragraphs[0]; footer.alignment = WD_ALIGN_PARAGRAPH.RIGHT
-    r = footer.add_run('21 September 2026  •  '); r.font.size = Pt(8)
+    r = footer.add_run('Updated 12 November 2026  •  '); r.font.size = Pt(8)
     field = OxmlElement('w:fldSimple'); field.set(qn('w:instr'), 'PAGE'); footer._p.append(field)
     doc.core_properties.title = 'Mobile Money Coordination Experiment Technical Guide'
     doc.core_properties.subject = 'Codebase onboarding and operational reference'

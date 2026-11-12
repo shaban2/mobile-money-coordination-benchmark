@@ -1,8 +1,10 @@
 # Coordination-only experimental protocol
 
-This protocol implements the international conference paper's single design choice. The only manipulated factor is internal coordination architecture.
+This protocol implements the study's single design choice. The only manipulated factor is internal coordination architecture.
 
-Status: candidate confirmatory protocol, not yet frozen or externally preregistered. The separately frozen adaptive pilot is described in [CAPACITY_PILOT_EXECUTION.md](CAPACITY_PILOT_EXECUTION.md). Its runs are additional to the provisional confirmatory budget below.
+> **Status (12 November 2026).** This 96-run candidate protocol was never launched. The study that ran is the replicated campaign described in [REPLICATED_CAMPAIGN.md](REPLICATED_CAMPAIGN.md). It kept the factor, the held-constant elements, the measures and the safety gates below. It changed three things: it used fixed absolute rates (8 operations/s without faults, 4 operations/s with faults) instead of shares of a pilot capacity, it repeated the main conditions as ten order-balanced pairs, and it added four crash faults (application kill, database disconnection, database restart, broker kill). The rest of this page is kept as the September plan.
+
+September status: candidate confirmatory protocol, not yet frozen or externally preregistered. The separately frozen adaptive pilot is described in [CAPACITY_PILOT_EXECUTION.md](CAPACITY_PILOT_EXECUTION.md). Its runs are additional to the provisional confirmatory budget below.
 
 ## Research questions
 
@@ -41,14 +43,14 @@ The shared sustainable rate is the lower stable capacity of the two implementati
 
 ## Faults
 
-Fault runs use the 90% shared offered load.
+In this plan, fault runs use the 90% shared offered load. The campaign ran faults at 4 operations/s.
 
 | Fault | Injection | Duration | Evidence |
 |---|---|---:|---|
 | Common adapter-service crash | Docker Compose stops the shared adapter container at measurement minute four, then starts it | 30 seconds | Fault timestamps, controller log, retry evidence, recovery and reconciliation |
 | Database delay | Toxiproxy adds 100 ms downstream latency to the PostgreSQL path at measurement minute four | 60 seconds | Fault timestamps, Toxiproxy log, latency, recovery and reconciliation |
 
-Kafka-broker failure, weak client networks, internal network partitions, and regional failures are outside this paper.
+Weak client networks and regional failures are outside the study. The September plan also excluded Kafka-broker failure and internal network partitions. The campaign later added a broker kill and a database disconnection (see [REPLICATED_CAMPAIGN.md](REPLICATED_CAMPAIGN.md)).
 
 ## Run lifecycle
 

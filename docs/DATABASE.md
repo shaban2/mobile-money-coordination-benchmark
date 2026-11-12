@@ -58,7 +58,7 @@ erDiagram
 | `provider_attempts` | Provider profile, mapped request, response, outcome and timing |
 | `provider_commands` | Durable provider request key and normalized result reused during recovery |
 | `callback_deliveries` | Callback payload, attempt, HTTP outcome and error |
-| `outbox_events` | Events committed with workflow changes before broker publication |
+| `outbox_events` | Events committed with workflow changes before broker publication. Serial dispatch marks each event published after sending it. Batched dispatch (`OUTBOX_DISPATCH_MODE=batched`) sends a batch and marks it with one UPDATE (`markOutboxPublishedBatch`). The database observer samples the unpublished count every second as `outboxPending`. |
 | `inbox_events` | Consumed event IDs used to suppress duplicate Kafka delivery |
 | `trace_events` | Cross-boundary events keyed by transfer and trace ID |
 | `dead_letter_events` | Exhausted or non-recoverable provider-boundary failures |

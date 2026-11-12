@@ -1,6 +1,8 @@
 # Confirmatory experiment runbook
 
-This runbook describes the current 96-run confirmatory candidate, not the adaptive pilot (currently on hold). The final replication count and shared sustainable rate require pilot evidence and readiness review before protocol freeze and confirmatory execution. For pilot commands, variable run counts, timing, monitoring, and stop rules, use [CAPACITY_PILOT_EXECUTION.md](CAPACITY_PILOT_EXECUTION.md). No confirmatory execution is authorized merely by completing the pilot.
+> **Status (12 November 2026).** This runbook is a record of the September plan. The 96-run candidate it describes was never launched. To run the study that did run, use `scripts/campaign.mjs` as described in [REPLICATED_CAMPAIGN.md](REPLICATED_CAMPAIGN.md#run-the-campaign-on-your-own-machine).
+
+This runbook describes the September 96-run confirmatory candidate, not the adaptive pilot (currently on hold). The final replication count and shared sustainable rate require pilot evidence and readiness review before protocol freeze and confirmatory execution. For pilot commands, variable run counts, timing, monitoring, and stop rules, use [CAPACITY_PILOT_EXECUTION.md](CAPACITY_PILOT_EXECUTION.md). No confirmatory execution is authorized merely by completing the pilot.
 
 ## 1. Freeze the environment
 

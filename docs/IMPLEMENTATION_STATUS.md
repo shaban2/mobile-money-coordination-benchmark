@@ -1,5 +1,17 @@
 # Implementation status and research-readiness gates
 
+> **Status (12 November 2026).** The replicated campaign has run: 207 runs on one frozen build, described in [REPLICATED_CAMPAIGN.md](REPLICATED_CAMPAIGN.md). The items added for it are listed first. The 96-run matrix and the September readiness gates further down were not used, and are kept as a record.
+
+## Added for the replicated campaign
+
+- Seeded, interleaved campaign schedule with order-balanced pairs, frozen source and images, and host checks (`scripts/campaign.mjs`, `src/experiment/campaign.js`).
+- Four crash faults: application kill, database disconnection, database restart, and broker kill for Kafka (`src/experiment/fault-catalog.js`, `scripts/service-fault-controller.mjs`).
+- Outbox polling interval (`OUTBOX_POLL_MS`), serial or batched dispatch (`OUTBOX_DISPATCH_MODE`) and worker count (`WORKER_CONCURRENCY`) as configuration, so every variant uses the same image.
+- Database statements counted by category, and outbox queue depth sampled every second.
+- Recovered commit confirmations after a crash, reported as latency upper bounds.
+- Campaign analysis with exact fault-interval counts, recovery at 1 s resolution, step times and per-service resources (`scripts/analyze-campaign.mjs`).
+- Swagger UI at `/docs` for trying the API.
+
 ## Implemented
 
 - Fixed asynchronous bilateral P2P API and status resource.
@@ -22,7 +34,7 @@
 - Post-commit observations, measured-cohort goodput, explicit drain completions, and backlog retaining unfinished transfers.
 - Atomic state/outbox/inbox updates, durable provider intent/result, REST restart recovery, and persistent simulator idempotency.
 - Actual ledger-posting and per-currency account reconciliation.
-- Four-worker application limits and Kafka partition concurrency; notification-based completion.
+- Four-worker application limits by default, and Kafka partition concurrency; notification-based completion.
 - Paired run-level analysis, exact sign-randomization tests, Holm endpoint families, and administrative-horizon recovery estimates.
 - Checked-out PostgreSQL connection-error handling; latency fault control without live proxy reconfiguration.
 - Pre-start trial database reset, source/configuration hash comparison, resolved Compose and runtime-limit evidence, and failed-run diagnostics.
@@ -33,7 +45,7 @@
 The user authorized the exploratory capacity pilot on 20 September 2026. Its execution rules are frozen, not the confirmatory protocol. Broader crash/response-loss checks below remain outstanding confirmatory-readiness requirements; launching the pilot does not mark them passed or waive them. See [CAPACITY_PILOT_EXECUTION.md](CAPACITY_PILOT_EXECUTION.md).
 
 - Review the engineering evidence and retained failures in `VERIFICATION.md`.
-- Extend the passing in-memory fixed-corpus comparison to a durable, multi-process crash-boundary campaign, including abrupt application termination around provider acceptance and database commit.
+- Extend the passing in-memory fixed-corpus comparison to a durable, multi-process crash-boundary campaign, including abrupt application termination around provider acceptance and database commit. (Partly covered since: the campaign's application kill and database restart terminate the process or database under load. A kill aimed at the exact moment of provider acceptance or commit was not done.)
 - Extend the passing simulated lost-response and provider-journal restart tests to a real HTTP response-loss injection after acceptance.
 - Confirm stability of the standard client-network profile and resource coverage at pilot-scale load; short-run checks do not establish this.
 

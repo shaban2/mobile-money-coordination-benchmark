@@ -15,12 +15,17 @@
 | Adapter crash | separate adapter container and timed controller | `fault-evidence.json` and fault log |
 | Database delay | PostgreSQL through Toxiproxy | `fault-evidence.json` and Toxiproxy log |
 | Whole-system resources | time-series Compose-project Docker sampler | `docker-stats.jsonl` gate |
-| Timing completeness | API ingress and COMMIT acknowledgement observations | 99.5% timing gate; no reconstruction after crash |
+| Timing completeness | API ingress and COMMIT acknowledgement observations | 99.5% timing gate; a confirmation recovered after a crash counts only as a latency upper bound |
 | Correct goodput inputs | measured arrival cohort, commit confirmations, ledger reconciliation | drain separation and unfinished-backlog tests |
 | Statistical contrasts | `scripts/analyze-experiment.mjs` | paired bootstrap, sign-randomization, Holm and censoring tests |
 | Candidate confirmatory replication | Current matrix: 64 load runs and 32 fault runs, eight per cell; final count pending precision review | matrix validator and controller sequence; no claim of sample-size adequacy or preregistration |
 | Separate adaptive capacity pilot | `config/pilot-protocol.json`, `scripts/capacity-pilot.mjs` | paired screening, fresh confirmations, full-fault checks, preserved evidence, 72-run/24-hour ceilings; excluded from confirmatory counts |
 | Evidence preservation | run manifest, state history, index, no-overwrite rule | per-run result directory |
+| Replicated campaign schedule | `src/experiment/campaign.js`, `scripts/campaign.mjs` | `campaign.test.js` (order balance, cells, ladder rules); freeze and host checks before every run |
+| Crash faults (application kill, database disconnection, database restart, broker kill) | `src/experiment/fault-catalog.js`, `scripts/service-fault-controller.mjs` | `fault-catalog.test.js`; `fault-evidence.json` per run |
+| Outbox polling, dispatch mode and worker count | `OUTBOX_POLL_MS`, `OUTBOX_DISPATCH_MODE`, `WORKER_CONCURRENCY` in `src/system.js`, `src/infrastructure/outbox-dispatcher.js` | `outbox-dispatch-modes.test.js` |
+| Campaign analysis | `scripts/analyze-campaign.mjs` | `.research/revision-v2/campaign-analysis.json`; recomputed exactly from the public export |
+| Interactive API documentation | `src/http/api-docs.js`, `contracts/openapi.yaml` | `api-docs.test.js` |
 
 ## Standards boundary
 
