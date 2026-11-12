@@ -77,16 +77,25 @@ You can run the same 181-run schedule on your own hardware. Your absolute number
 - Node.js 24 or newer, and `npm ci` run once.
 - At least 8 GiB of free disk. The runner checks this before every run. Our two roots took about 1.5 GB.
 - No other containers running. The runner refuses to start a run while any are up, and it never stops them for you.
+- These ports free on the Mac: 25432, 8082, 8084, 8182, 8184, 8090, 8095, 8474, 15432, 19092, 19644, 9090 and 3000. Stopping containers does not free a port that another program uses, such as a local Grafana on 3000.
+- A fixed computer name. The runner checks the Mac's name before every run, and macOS can change it when you join another network. Set it once in System Settings → General → Sharing (Local hostname).
 - A machine you can leave alone. Our 181 runs took about 36 hours of machine time: about 15 minutes per fault run and 6 minutes per other run.
 
 **Steps**
 
 ```sh
+git clone https://github.com/shaban2/mobile-money-coordination-benchmark.git
+cd mobile-money-coordination-benchmark
+npm ci
+docker compose --profile '*' pull --ignore-buildable
 node scripts/campaign.mjs freeze results-my-campaign
 node scripts/campaign.mjs run results-my-campaign
 ```
 
-- `freeze` builds the images, writes the same seeded schedule we used, and records your machine's identity, the image IDs and the source hash in `freeze.json`. The folder must not exist yet. Nothing is measured.
+You can also download the release archive from Zenodo instead of cloning.
+
+- The `pull` step downloads the six ready-made images (PostgreSQL, Redpanda, Toxiproxy, k6, Prometheus, Grafana). `freeze` does not download them. It looks them up and stops if one is missing.
+- `freeze` builds the application images, writes the same seeded schedule we used, and records your machine's identity, the image IDs and the source hash in `freeze.json`. The folder must not exist yet. Nothing is measured.
 - `run` works through the schedule. Before each run it checks that the source, schedule, images and machine still match the freeze. If you edit any source file, it stops, because the results would mix versions.
 - If the runner stops or the machine restarts, run the same `run` command again. Finished runs are kept and skipped. It also stops after three controller failures in a row, so you can look before continuing.
 - It is finished when `campaign-log.jsonl` ends with a `COMPLETE` event.
@@ -95,10 +104,13 @@ node scripts/campaign.mjs run results-my-campaign
 
 ```sh
 cp .research/revision-v2/campaign-analysis.json campaign-analysis.published.json
+mv .research/revision-v2/power-log.txt power-log.published.txt
 node scripts/analyze-campaign.mjs results-my-campaign
 ```
 
-The script writes to `.research/revision-v2/`, so keep a copy of the published file first. Without a power log for your machine, the battery fields stay empty.
+- The script writes to `.research/revision-v2/`, so keep a copy of the published file first.
+- `power-log.txt` is our laptop's record of switching between mains and battery. Move it aside, or the analysis applies our record to your runs and marks them all as on battery. Without it, the battery fields stay empty. To fill them for your own Mac, put your own switches in that file, one per line as `date time AC` or `date time Batt`, for example `2026-11-10 18:23:53 AC`. The script reads these times as UTC+7, so convert yours to that time zone. `pmset -g log` lists the switches.
+- The code you run is the current code. It differs from the code our runs used only by later additions outside transfer processing, such as the Swagger page. Our runs' exact application code is in `public-evidence/results-revision-campaign-v2/source-snapshot-application.tar.gz`, with its hash in that root's `freeze.json`.
 
 **The extension.** Our `results-revision-extension-v1` schedule was written separately, after the main campaign. Its `campaign-schedule.json` records what it extends and why. No command regenerates it. `freeze` only writes the full campaign schedule, so extending your own campaign the same way needs a hand-written schedule in a new root.
 
