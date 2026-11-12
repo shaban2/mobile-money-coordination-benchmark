@@ -15,6 +15,7 @@ This is the **public derivative** of a private research archive. It contains the
 - Analysis package: `.research/exploratory-paper-v1/` (`analysis.json`, figures, revision notes)
 - Evidence: `public-evidence/` (both studies, plus `EXPORT-MANIFEST.json`)
 - Replicated campaign analysis: `.research/revision-v2/` (`campaign-analysis.json`, `campaign-runs.csv`, predictions written before the campaign in `PREDICTIONS.md`)
+- Replicated campaign guide: `docs/REPLICATED_CAMPAIGN.md` (design, faults, run files, how to recompute)
 - Technical guide: `docs/TECHNICAL_GUIDE.md`
 
 ## Reproduce the paper's numbers
