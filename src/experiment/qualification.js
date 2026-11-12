@@ -1,4 +1,5 @@
 import { checkContainerSet, resourceServicesFor } from './compose-lifecycle.js';
+import { clientErrorSummary, faultFor, optionalServicesFor } from './fault-catalog.js';
 
 export function qualifyRun({ manifest, invariants, telemetry, summary, callbacks, outcomes, traces, attempts, resources,
   fault, composeHash, endChecksums, isolation, cleanStart, resolvedCompose, exitCode = 0 }) {
@@ -27,9 +28,8 @@ export function qualifyRun({ manifest, invariants, telemetry, summary, callbacks
   const expectedServices = manifest?.resourceServices ?? [];
   const containerReports = resources.filter((s) => s.commandStatus === 0).map((s) => checkContainerSet(s.containers, expectedServices, {
     project: manifest?.composeProject ?? s.composeProject, allowK6: true,
-    optionalServices: manifest?.run?.faultScenario === 'adapter-crash'
-      && Date.parse(s.capturedAt) >= Date.parse(fault?.injectedAt) - maxGapMs
-      && Date.parse(s.capturedAt) <= Date.parse(fault?.clearedAt) + maxGapMs ? ['adapter-service'] : []
+    optionalServices: Date.parse(s.capturedAt) >= Date.parse(fault?.injectedAt) - maxGapMs
+      && Date.parse(s.capturedAt) <= Date.parse(fault?.clearedAt) + maxGapMs ? optionalServicesFor(manifest?.run) : []
   }));
   const containersComplete = containerReports.length > 0 && containerReports.every((r) => !r.missing.length);
   const containersIsolated = containerReports.length > 0 && containerReports.every((r) => !r.unexpected.length && !r.duplicates.length);
@@ -47,6 +47,8 @@ export function qualifyRun({ manifest, invariants, telemetry, summary, callbacks
       })
       && sameSet(Object.keys(resolvedCompose?.services ?? {}), [...canonicalServices, 'toxiproxy-init']);
   }
+  const clientVisibleFault = faultFor(manifest?.run?.faultScenario)?.clientVisible === true;
+  const clientErrors = clientErrorSummary(attemptRows, fault);
   const gates = {
     artifactsPresent: Boolean(manifest && invariants && telemetry && summary && callbacks && outcomes && traces && attempts),
     supportedMeasurementSchema: outcomes?.schemaVersion === 2,
@@ -57,9 +59,12 @@ export function qualifyRun({ manifest, invariants, telemetry, summary, callbacks
     timingEvidenceComplete: (outcomes?.timingCompletenessRatio ?? 0) >= .995,
     resourceCoverageComplete: coverage && containersComplete,
     architectureIsolated: containersIsolated && lifecycleIsolation,
-    offeredLoadDelivered: count('dropped_iterations') === 0 && operations >= (manifest?.run?.offeredRate ?? Infinity) * (outcomes?.measurementSeconds ?? 0) * .995,
+    // A load-ladder step is meant to find where delivery breaks, so drops are a result there.
+    offeredLoadDelivered: manifest?.run?.studyBlock === 'D' || count('dropped_iterations') === 0 && operations >= (manifest?.run?.offeredRate ?? Infinity) * (outcomes?.measurementSeconds ?? 0) * .995,
     generatorCompleted: [0, 99].includes(exitCode),
     faultEvidenceComplete: manifest?.run?.faultScenario === 'none' || fault?.completed === true,
+    faultHeldForFullDuration: fault?.restartedByPolicyDuringFault !== true,
+    clientErrorsConfinedToFault: !clientVisibleFault || clientErrors.outsideFault === 0,
     fixedAsyncClientMode: manifest?.study?.fixedClientMode === 'async' && ['R-A', 'K-A'].includes(manifest?.run?.conditionId),
     configurationUnchanged: manifest?.checksums?.composeSha256 === (endChecksums?.composeSha256 ?? composeHash)
       && (manifest?.schemaVersion < 4 || !manifest?.schemaVersion || Boolean(endChecksums))
@@ -67,7 +72,7 @@ export function qualifyRun({ manifest, invariants, telemetry, summary, callbacks
   };
   const valid = Object.values(gates).every(Boolean);
   const safetyPassed = invariants?.passed === true;
-  const performancePassed = checks >= .995 && callbackComplete && Number(telemetry?.transfers_failed ?? 0) === 0;
+  const performancePassed = (clientVisibleFault || checks >= .995) && callbackComplete && Number(telemetry?.transfers_failed ?? 0) === 0;
   const censored = Number(telemetry?.transfers_pending ?? 0) > 0 || outcomes?.faultAnalysis?.recoveryCensored === true || outcomes?.faultAnalysis?.backlogClearanceCensored === true;
   const status = !valid ? 'INVALID' : !safetyPassed ? 'SAFETY_FAILURE' : censored ? 'CENSORED' : !performancePassed ? 'PERFORMANCE_FAILURE' : 'QUALIFIED';
   return { schemaVersion: 2, runId: manifest?.run?.runId, qualified: valid, valid, status, gates,
@@ -75,6 +80,6 @@ export function qualifyRun({ manifest, invariants, telemetry, summary, callbacks
     safety: { passed: safetyPassed, checks: invariants?.checks },
     performance: { passed: performancePassed, workloadCheckRate: checks, terminalCallbacksComplete: callbackComplete, censored },
     observed: { workloadComposition: { totalOperations: operations, statusShare, replayShareWithinCreateAttempts: replayShare, providerAShare: providerShare },
-      resourceSampleLines: samples.length, uniqueCallbackTransfers: delivered.size, pending: telemetry?.transfers_pending },
+      clientErrors, resourceSampleLines: samples.length, uniqueCallbackTransfers: delivered.size, pending: telemetry?.transfers_pending },
     qualifiedAt: new Date().toISOString() };
 }

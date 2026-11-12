@@ -1,0 +1,741 @@
+{
+  "schemaVersion": 1,
+  "kind": "REVISION_CAMPAIGN",
+  "protocolId": "revision-campaign-lubanga-revision-v2-extension-1",
+  "expectedRunCount": 26,
+  "extensionOf": {
+    "protocolId": "revision-campaign-lubanga-revision-v2",
+    "scheduleSha256": "8b4c58c47003a09799ad60149ec6e052f33bd120f10ffe819f500ace24947363",
+    "reason": "Added after the main campaign at the author's request: repetitions 6-10 for C-WORKERS8, E-PGRESTART and E-BROKER, plus one replacement for a run that failed during setup before measurement."
+  },
+  "runs": [
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-E-BROKER-R4-K-10",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-BROKER-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 10,
+      "executionBlock": "E-BROKER-R4-10",
+      "networkProfile": "standard",
+      "faultScenario": "broker-stop",
+      "randomSeed": "lubanga-revision-v2:E-BROKER-R4:10",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 1
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-E-PGRESTART-R4-K-10",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-PGRESTART-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 10,
+      "executionBlock": "E-PGRESTART-R4-10",
+      "networkProfile": "standard",
+      "faultScenario": "postgres-restart",
+      "randomSeed": "lubanga-revision-v2:E-PGRESTART-R4:10",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 2
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-E-PGRESTART-R4-R-10",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-PGRESTART-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 10,
+      "executionBlock": "E-PGRESTART-R4-10",
+      "networkProfile": "standard",
+      "faultScenario": "postgres-restart",
+      "randomSeed": "lubanga-revision-v2:E-PGRESTART-R4:10",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 3
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-E-PGRESTART-R4-R-07",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-PGRESTART-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 7,
+      "executionBlock": "E-PGRESTART-R4-7",
+      "networkProfile": "standard",
+      "faultScenario": "postgres-restart",
+      "randomSeed": "lubanga-revision-v2:E-PGRESTART-R4:7",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 4
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-E-PGRESTART-R4-K-07",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-PGRESTART-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 7,
+      "executionBlock": "E-PGRESTART-R4-7",
+      "networkProfile": "standard",
+      "faultScenario": "postgres-restart",
+      "randomSeed": "lubanga-revision-v2:E-PGRESTART-R4:7",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 5
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-C-WORKERS8-DATABASE-R4-R-07",
+      "block": "CAMPAIGN",
+      "studyBlock": "C",
+      "cell": "C-WORKERS8-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 7,
+      "executionBlock": "C-WORKERS8-DATABASE-R4-7",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:C-WORKERS8-DATABASE-R4:7",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 8
+      },
+      "sequence": 6
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-C-WORKERS8-DATABASE-R4-K-07",
+      "block": "CAMPAIGN",
+      "studyBlock": "C",
+      "cell": "C-WORKERS8-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 7,
+      "executionBlock": "C-WORKERS8-DATABASE-R4-7",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:C-WORKERS8-DATABASE-R4:7",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 8
+      },
+      "sequence": 7
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-C-WORKERS8-DATABASE-R4-R-10",
+      "block": "CAMPAIGN",
+      "studyBlock": "C",
+      "cell": "C-WORKERS8-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 10,
+      "executionBlock": "C-WORKERS8-DATABASE-R4-10",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:C-WORKERS8-DATABASE-R4:10",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 8
+      },
+      "sequence": 8
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-C-WORKERS8-DATABASE-R4-K-10",
+      "block": "CAMPAIGN",
+      "studyBlock": "C",
+      "cell": "C-WORKERS8-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 10,
+      "executionBlock": "C-WORKERS8-DATABASE-R4-10",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:C-WORKERS8-DATABASE-R4:10",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 8
+      },
+      "sequence": 9
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-E-PGRESTART-R4-K-06",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-PGRESTART-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 6,
+      "executionBlock": "E-PGRESTART-R4-6",
+      "networkProfile": "standard",
+      "faultScenario": "postgres-restart",
+      "randomSeed": "lubanga-revision-v2:E-PGRESTART-R4:6",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 10
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-E-PGRESTART-R4-R-06",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-PGRESTART-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 6,
+      "executionBlock": "E-PGRESTART-R4-6",
+      "networkProfile": "standard",
+      "faultScenario": "postgres-restart",
+      "randomSeed": "lubanga-revision-v2:E-PGRESTART-R4:6",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 11
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-E-BROKER-R4-K-07",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-BROKER-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 7,
+      "executionBlock": "E-BROKER-R4-7",
+      "networkProfile": "standard",
+      "faultScenario": "broker-stop",
+      "randomSeed": "lubanga-revision-v2:E-BROKER-R4:7",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 12
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-E-PGRESTART-R4-K-08",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-PGRESTART-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 8,
+      "executionBlock": "E-PGRESTART-R4-8",
+      "networkProfile": "standard",
+      "faultScenario": "postgres-restart",
+      "randomSeed": "lubanga-revision-v2:E-PGRESTART-R4:8",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 13
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-E-PGRESTART-R4-R-08",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-PGRESTART-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 8,
+      "executionBlock": "E-PGRESTART-R4-8",
+      "networkProfile": "standard",
+      "faultScenario": "postgres-restart",
+      "randomSeed": "lubanga-revision-v2:E-PGRESTART-R4:8",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 14
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-E-PGRESTART-R4-R-09",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-PGRESTART-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 9,
+      "executionBlock": "E-PGRESTART-R4-9",
+      "networkProfile": "standard",
+      "faultScenario": "postgres-restart",
+      "randomSeed": "lubanga-revision-v2:E-PGRESTART-R4:9",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 15
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-E-PGRESTART-R4-K-09",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-PGRESTART-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 9,
+      "executionBlock": "E-PGRESTART-R4-9",
+      "networkProfile": "standard",
+      "faultScenario": "postgres-restart",
+      "randomSeed": "lubanga-revision-v2:E-PGRESTART-R4:9",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 16
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-C-BATCHED-DATABASE-R4-K-03",
+      "block": "CAMPAIGN",
+      "studyBlock": "C",
+      "cell": "C-BATCHED-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 3,
+      "executionBlock": "C-BATCHED-DATABASE-R4-3",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:C-BATCHED-DATABASE-R4:3",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "batched",
+        "workerConcurrency": 4
+      },
+      "sequence": 17
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-E-BROKER-R4-K-06",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-BROKER-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 6,
+      "executionBlock": "E-BROKER-R4-6",
+      "networkProfile": "standard",
+      "faultScenario": "broker-stop",
+      "randomSeed": "lubanga-revision-v2:E-BROKER-R4:6",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 18
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-E-BROKER-R4-K-08",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-BROKER-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 8,
+      "executionBlock": "E-BROKER-R4-8",
+      "networkProfile": "standard",
+      "faultScenario": "broker-stop",
+      "randomSeed": "lubanga-revision-v2:E-BROKER-R4:8",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 19
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-C-WORKERS8-DATABASE-R4-R-06",
+      "block": "CAMPAIGN",
+      "studyBlock": "C",
+      "cell": "C-WORKERS8-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 6,
+      "executionBlock": "C-WORKERS8-DATABASE-R4-6",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:C-WORKERS8-DATABASE-R4:6",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 8
+      },
+      "sequence": 20
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-C-WORKERS8-DATABASE-R4-K-06",
+      "block": "CAMPAIGN",
+      "studyBlock": "C",
+      "cell": "C-WORKERS8-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 6,
+      "executionBlock": "C-WORKERS8-DATABASE-R4-6",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:C-WORKERS8-DATABASE-R4:6",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 8
+      },
+      "sequence": 21
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-C-WORKERS8-DATABASE-R4-K-09",
+      "block": "CAMPAIGN",
+      "studyBlock": "C",
+      "cell": "C-WORKERS8-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 9,
+      "executionBlock": "C-WORKERS8-DATABASE-R4-9",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:C-WORKERS8-DATABASE-R4:9",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 8
+      },
+      "sequence": 22
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-C-WORKERS8-DATABASE-R4-R-09",
+      "block": "CAMPAIGN",
+      "studyBlock": "C",
+      "cell": "C-WORKERS8-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 9,
+      "executionBlock": "C-WORKERS8-DATABASE-R4-9",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:C-WORKERS8-DATABASE-R4:9",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 8
+      },
+      "sequence": 23
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-C-WORKERS8-DATABASE-R4-K-08",
+      "block": "CAMPAIGN",
+      "studyBlock": "C",
+      "cell": "C-WORKERS8-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 8,
+      "executionBlock": "C-WORKERS8-DATABASE-R4-8",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:C-WORKERS8-DATABASE-R4:8",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 8
+      },
+      "sequence": 24
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-C-WORKERS8-DATABASE-R4-R-08",
+      "block": "CAMPAIGN",
+      "studyBlock": "C",
+      "cell": "C-WORKERS8-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 8,
+      "executionBlock": "C-WORKERS8-DATABASE-R4-8",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:C-WORKERS8-DATABASE-R4:8",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 8
+      },
+      "sequence": 25
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-E-BROKER-R4-K-09",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-BROKER-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 9,
+      "executionBlock": "E-BROKER-R4-9",
+      "networkProfile": "standard",
+      "faultScenario": "broker-stop",
+      "randomSeed": "lubanga-revision-v2:E-BROKER-R4:9",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 26
+    }
+  ]
+}

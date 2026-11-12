@@ -4,11 +4,17 @@
 
 A controlled synthetic benchmark comparing **REST orchestration** with **Kafka choreography** behind one asynchronous person-to-person (P2P) mobile-money transfer API. Both implementations expose the same API, use the same PostgreSQL ledger, the same provider adapters and the same k6 workload; only the internal coordination changes. Every transfer is timed from the moment the API receives it to the moment the database confirms its final commit, and only transfers that completed, were not duplicated and left the ledger balanced are counted.
 
-This is the **public derivative** of a private research archive. It contains the complete source code, the paper draft, the generated figures, and a redacted, analysis-sufficient export of the run evidence. See "What was redacted" below.
+This is the **public derivative** of a private research archive. It contains the complete source code, the first study's paper draft and figures, and a redacted, analysis-sufficient export of the run evidence for two studies. See "What was redacted" below.
+
+| Study | Runs | Evidence | Analysis |
+|---|---|---|---|
+| Exploratory study | 16 qualified runs, one per condition | eight `public-evidence/results-*` roots | `.research/exploratory-paper-v1/` |
+| Replicated campaign | 207 runs on one frozen build: ten order-balanced pairs for no fault, adapter outage, database delay and database delay with eight workers, plus an outbox polling sweep, a batched-dispatch test, a load ladder from 8 to 256 operations/s, and four crash faults (application kill, database disconnection, database restart, broker kill) | `public-evidence/results-revision-campaign-v2`, `public-evidence/results-revision-extension-v1` | `.research/revision-v2/` |
 
 - Paper draft: `docs/REST_Kafka_Exploratory_Findings_Draft.docx` (Markdown companion in `.research/exploratory-paper-v1/manuscript.md`)
 - Analysis package: `.research/exploratory-paper-v1/` (`analysis.json`, figures, revision notes)
-- Evidence: `public-evidence/` (sixteen qualified runs across eight evidence roots, plus `EXPORT-MANIFEST.json`)
+- Evidence: `public-evidence/` (both studies, plus `EXPORT-MANIFEST.json`)
+- Replicated campaign analysis: `.research/revision-v2/` (`campaign-analysis.json`, `campaign-runs.csv`, predictions written before the campaign in `PREDICTIONS.md`)
 - Technical guide: `docs/TECHNICAL_GUIDE.md`
 
 ## Reproduce the paper's numbers
@@ -28,6 +34,27 @@ NODE_PATH=<directory containing sharp> node scripts/render-exploratory-figures.m
 cp docs/REST_Kafka_Exploratory_Findings_Draft.docx /tmp/template.docx
 python3 scripts/build-exploratory-paper.py /tmp/template.docx
 ```
+
+## Reproduce the replicated campaign's numbers
+
+```sh
+npm ci
+node scripts/analyze-campaign.mjs public-evidence/results-revision-campaign-v2 public-evidence/results-revision-extension-v1
+```
+
+This rebuilds `.research/revision-v2/campaign-analysis.json` and `campaign-runs.csv` from the exported runs: paired contrasts with bootstrap intervals and Holm-adjusted sign tests, completions inside each fault interval, recovery at 1 s resolution, per-service CPU and memory, and the drift and battery checks. The release build checks that the result matches the private analysis exactly. The figure scripts are in `scripts/figures/` (Python with matplotlib). Each campaign root's `freeze.json` records the SHA-256 of the source the runs used, and `source-snapshot-application.tar.gz` holds that application code. Later changes to this repository, such as the Swagger page, are not part of it.
+
+## Try the API in a browser (Swagger UI)
+
+Start one implementation and open `/docs`:
+
+| Start with | Open |
+|---|---|
+| `npm run start:rest` (memory only) | http://localhost:8080/docs |
+| `docker compose --profile rest-async up -d` | http://localhost:8082/docs |
+| `docker compose --profile kafka-async up -d` | http://localhost:8084/docs |
+
+The page reads `contracts/openapi.yaml`. It covers the transfer API, read-only checks such as `/admin/invariants` (the ledger checks), and two demo controls. Swagger UI loads from a CDN.
 
 ## Run the system yourself
 

@@ -1,8 +1,8 @@
 {
-  "builtAt": "2026-09-25T09:36:32.333Z",
-  "privateRepositoryCommit": "6f39c1799de37494070e9e3d3067b57c510af746",
-  "filesCopied": 200,
-  "evidenceFiles": 471,
+  "builtAt": "2026-11-12T09:00:03.907Z",
+  "privateRepositoryCommit": "bbdb9ea8685f040c00e333b945033d4f025b6910",
+  "filesCopied": 225,
+  "evidenceFiles": 4121,
   "redactionCounts": {
     "companionContainerUnavailableDuringPilot": 1,
     "pauseAndRestoreNamedExternalContainers": 1,
@@ -15,5 +15,6 @@
     "external-container-d": 2,
     "capture-host": 10
   },
-  "analysisMatchesPrivate": true
+  "analysisMatchesPrivate": true,
+  "campaignAnalysisMatchesPrivate": true
 }

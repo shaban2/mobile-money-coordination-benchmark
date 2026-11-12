@@ -1,0 +1,39 @@
+{
+  "currentStatus": "CENSORED",
+  "events": [
+    {
+      "status": "STAGING",
+      "occurredAt": "2026-11-08T13:56:45.532Z"
+    },
+    {
+      "status": "WARMUP",
+      "occurredAt": "2026-11-08T13:57:01.051Z"
+    },
+    {
+      "status": "STARTING_LOAD",
+      "occurredAt": "2026-11-08T14:02:02.092Z",
+      "offeredRate": 4
+    },
+    {
+      "status": "MEASUREMENT",
+      "occurredAt": "2026-11-08T14:02:02.698Z",
+      "measurementStartedAt": "2026-11-08T14:02:02.494Z"
+    },
+    {
+      "status": "DRAINING",
+      "occurredAt": "2026-11-08T14:12:03.685Z"
+    },
+    {
+      "status": "OBSERVATION_ENDED",
+      "occurredAt": "2026-11-08T14:22:04.660Z"
+    },
+    {
+      "status": "QUALIFYING",
+      "occurredAt": "2026-11-08T14:22:05.671Z"
+    },
+    {
+      "status": "CENSORED",
+      "occurredAt": "2026-11-08T14:22:05.811Z"
+    }
+  ]
+}

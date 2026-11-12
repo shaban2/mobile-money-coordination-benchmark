@@ -73,7 +73,9 @@ else {
   // live proxy to 0.0.0.0 resets its connections, contaminating a latency-only
   // fault. Fault operations validate topology and never reconfigure it.
   const current = await request(`/proxies/${proxyName}`);
-  if (!sameProxyConfiguration(current, { listen, upstream })) throw new Error('Proxy configuration differs from the frozen fault target; run configure before the trial.');
+  // A partition disables the proxy on purpose, so re-enabling checks everything except that flag.
+  const comparable = action === 'enable' ? { ...current, enabled: true } : current;
+  if (!sameProxyConfiguration(comparable, { listen, upstream })) throw new Error('Proxy configuration differs from the frozen fault target; run configure before the trial.');
 }
 
 if (action === 'add-latency') {
@@ -91,6 +93,9 @@ if (action === 'add-latency') {
   process.stdout.write(`Added ${latencyMs} ms database-response latency.\n`);
 } else if (action === 'clear-latency') {
   await clearLatency();
+} else if (action === 'disable' || action === 'enable') {
+  await request(`/proxies/${proxyName}`, { method: 'PATCH', body: JSON.stringify({ enabled: action === 'enable' }) });
+  process.stdout.write(`Toxiproxy ${proxyName} ${action}d.\n`);
 } else if (action !== 'configure') {
   throw new Error(`Unknown action: ${action}`);
 }

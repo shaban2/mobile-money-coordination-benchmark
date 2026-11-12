@@ -37,6 +37,8 @@ export function createSystem({
   callbackRetryDelayMs = 0,
   workerConcurrency = 4,
   recoveryIntervalMs = 1000,
+  outboxPollIntervalMs = 50,
+  outboxDispatchMode = 'serial',
   diagnosticsEnabled = false,
   databaseDiagnosticsEnabled = false
 } = {}) {
@@ -63,6 +65,8 @@ export function createSystem({
   instrumentMethods(persistence, diagnostics, ['createOrGet', 'get', 'transition', 'fulfill', 'fail',
     'ensureProviderCommand', 'recordProviderAttempt', 'completeProviderEvent'], 'persistence', (name, args) => ({
       transferId: name === 'createOrGet' ? null : typeof args[0] === 'string' ? args[0] : args[0]?.transferId ?? null,
+      // createOrGet has no transfer ID yet, but its statements are still transfer work.
+      ...(name === 'createOrGet' ? { transferWork: true } : {}),
       ...(name === 'transition' ? { nextState: args[1] } : {})
     }));
   const eventBus = eventBusType === 'kafka'
@@ -74,7 +78,8 @@ export function createSystem({
       })
     : new InMemoryEventBus();
   const metrics = new Metrics();
-  const outboxDispatcher = new OutboxDispatcher({ persistence, eventBus });
+  const outboxDispatcher = new OutboxDispatcher({ persistence, eventBus,
+    pollIntervalMs: outboxPollIntervalMs, dispatchMode: outboxDispatchMode });
   const provider = new ProviderSimulator({ delayMs: providerDelayMs });
   const callbackSink = new CallbackSink({
     sendHttp: sendHttpCallbacks,
@@ -126,7 +131,8 @@ export function createSystem({
       workflowTimeoutMs,
       callbackMaxAttempts,
       callbackRetryDelayMs,
-      workerConcurrency, recoveryIntervalMs, diagnosticsEnabled, databaseDiagnosticsEnabled
+      workerConcurrency, recoveryIntervalMs, outboxPollIntervalMs, outboxDispatchMode,
+      diagnosticsEnabled, databaseDiagnosticsEnabled
     },
     application,
     persistence,

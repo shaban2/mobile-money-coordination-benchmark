@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "stage": "REVISION_CAMPAIGN",
+  "frozenAt": "2026-11-07T06:38:15.217Z",
+  "project": "lubanga-coordination-revision",
+  "seed": "lubanga-revision-v2",
+  "sourceSha256": "06c01f927878de28162cfae330eff43c45d3656a16c90387f1adfc26c17b2294",
+  "scheduleSha256": "8b4c58c47003a09799ad60149ec6e052f33bd120f10ffe819f500ace24947363",
+  "frozenComposeSha256": "2c9fd1505cad0890c93c2f8c3cc582ab674cd0d11c2a13078836fe56813f50b5",
+  "images": {
+    "adapter-service": {
+      "reference": "lubanga-coordination-revision-adapter-service:latest",
+      "id": "sha256:0b484317e8dec58776eccf6f475f44e7e9038e7a74929bcf3dc8943170fce200"
+    },
+    "callback-receiver": {
+      "reference": "lubanga-coordination-revision-callback-receiver:latest",
+      "id": "sha256:def4b828e14c9c54d350d5e3f3d6d53bd3f61f952cb79dcd0a7fcb952bd9f333"
+    },
+    "gateway-kafka-async": {
+      "reference": "lubanga-coordination-revision-gateway-kafka-async:latest",
+      "id": "sha256:cda7c8cef50ed4ef9748aca367a4034460e4c6a661a00b47dcdca048ca6e0717"
+    },
+    "gateway-rest-async": {
+      "reference": "lubanga-coordination-revision-gateway-rest-async:latest",
+      "id": "sha256:e3ebd2081b2afef0f5cd5b264ad02d03a44c34b0d80822514877129eace3a84f"
+    },
+    "grafana": {
+      "reference": "grafana/grafana:12.4.0",
+      "id": "sha256:b0ae311af06228bcfd4a620504b653db80f5b91e94dc3dc2a5b7dab202bcde20"
+    },
+    "k6": {
+      "reference": "grafana/k6:1.8.0",
+      "id": "sha256:b992f241070f3f3a7d78096fa6020db1edcda49297ee8ed9eb0ab847ef3dcb32"
+    },
+    "kafka-async": {
+      "reference": "lubanga-coordination-revision-kafka-async:latest",
+      "id": "sha256:377fad9b10e55ed659cbb473e52db88faf24b209a9fc605f0caa54a9008ba65b"
+    },
+    "postgres": {
+      "reference": "postgres:17-alpine",
+      "id": "sha256:18cfe3ef5e6815560c98237d6216d1e5119702fb0f3894c8785dd58b8bbe5d73"
+    },
+    "prometheus": {
+      "reference": "prom/prometheus:v3.13.1",
+      "id": "sha256:3c42b892cf723fa54d2f262c37a0e1f80aa8c8ddb1da7b9b0df9455a35a7f893"
+    },
+    "redpanda": {
+      "reference": "docker.redpanda.com/redpandadata/redpanda:v26.1.14",
+      "id": "sha256:e61a2b5ad26a7c37b50d04c4df42db84e5ddebaa2a453143942fb621b1b09498"
+    },
+    "rest-async": {
+      "reference": "lubanga-coordination-revision-rest-async:latest",
+      "id": "sha256:78e99e5e926293f4a2bf2037e6bf906ea0c763957f1ab2e34ddfbfb7574e3dff"
+    },
+    "toxiproxy": {
+      "reference": "ghcr.io/shopify/toxiproxy:2.12.0",
+      "id": "sha256:9378ed52a28bc50edc1350f936f518f31fa95f0d15917d6eb40b8e376d1a214e"
+    },
+    "toxiproxy-init": {
+      "reference": "lubanga-coordination-revision-toxiproxy-init:latest",
+      "id": "sha256:3dd8429f1087190d686dd9c7ee94d3e9ef3b322c21de852f6c8a0fd90be72f8f"
+    }
+  },
+  "host": {
+    "hostname": "capture-host",
+    "cpuModel": "Apple M2",
+    "cpuCount": 8,
+    "totalMemoryBytes": 17179869184,
+    "dockerId": "redacted-docker-id",
+    "dockerVersion": "29.2.1",
+    "dockerCPUs": 8,
+    "dockerMemoryBytes": 8217341952
+  }
+}

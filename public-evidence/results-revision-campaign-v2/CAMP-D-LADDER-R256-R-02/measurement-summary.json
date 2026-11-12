@@ -1,0 +1,173 @@
+{
+  "root_group": {
+    "name": "",
+    "path": "",
+    "id": "d41d8cd98f00b204e9800998ecf8427e",
+    "groups": {},
+    "checks": {
+      "transfer request accepted": {
+        "path": "::transfer request accepted",
+        "id": "8387f91e511d5ff85ded014dc6717e76",
+        "passes": 47964,
+        "fails": 0,
+        "name": "transfer request accepted"
+      },
+      "status retrieval succeeds": {
+        "fails": 0,
+        "name": "status retrieval succeeds",
+        "path": "::status retrieval succeeds",
+        "id": "9c96d577c67d89264fdc808a57274dfd",
+        "passes": 11990
+      }
+    }
+  },
+  "metrics": {
+    "http_req_blocked": {
+      "p(95)": 0.009125,
+      "avg": 0.06112564028020969,
+      "min": 0.000916,
+      "med": 0.002333,
+      "max": 1038.92375,
+      "p(90)": 0.006709
+    },
+    "http_req_receiving": {
+      "max": 19.614375,
+      "p(90)": 0.06344160000000006,
+      "p(95)": 0.093458,
+      "avg": 0.03865633431740452,
+      "min": 0.00675,
+      "med": 0.023375
+    },
+    "workload_status_retrievals": {
+      "count": 11990,
+      "rate": 49.910057847141246
+    },
+    "checks": {
+      "passes": 59954,
+      "fails": 0,
+      "thresholds": {
+        "rate>=0.995": false
+      },
+      "value": 1
+    },
+    "workload_unique_creates": {
+      "count": 45566,
+      "rate": 189.6748703805536
+    },
+    "workload_replay_creates": {
+      "count": 2398,
+      "rate": 9.982011569428249
+    },
+    "dropped_iterations": {
+      "rate": 6.189846206730528,
+      "count": 1487
+    },
+    "http_reqs": {
+      "rate": 249.57110243747735,
+      "count": 59955
+    },
+    "http_req_tls_handshaking": {
+      "avg": 0,
+      "min": 0,
+      "med": 0,
+      "max": 0,
+      "p(90)": 0,
+      "p(95)": 0
+    },
+    "workload_provider_b_requests": {
+      "count": 23982,
+      "rate": 99.82844097499094
+    },
+    "http_req_duration": {
+      "avg": 56.91634473781985,
+      "min": 16.539875,
+      "med": 23.660666,
+      "max": 3115.603168,
+      "p(90)": 62.31425820000005,
+      "p(95)": 125.3513707999998
+    },
+    "http_req_waiting": {
+      "med": 23.611209,
+      "max": 3115.530418,
+      "p(90)": 62.167150400000004,
+      "p(95)": 125.04520429999972,
+      "avg": 56.856117583887716,
+      "min": 16.52375
+    },
+    "vus": {
+      "max": 200,
+      "value": 10,
+      "min": 5
+    },
+    "vus_max": {
+      "max": 200,
+      "value": 200,
+      "min": 20
+    },
+    "measurement_started_at": {
+      "value": 1794209599157,
+      "min": 1794209599157,
+      "max": 1794209599157
+    },
+    "data_sent": {
+      "count": 24386606,
+      "rate": 101512.67023815194
+    },
+    "workload_provider_a_requests": {
+      "count": 23982,
+      "rate": 99.82844097499094
+    },
+    "http_req_sending": {
+      "p(90)": 0.020167,
+      "p(95)": 0.03025,
+      "avg": 0.021570819614710794,
+      "min": 0.002458,
+      "med": 0.010125,
+      "max": 88.825291
+    },
+    "http_req_connecting": {
+      "max": 1038.713834,
+      "p(90)": 0,
+      "p(95)": 0,
+      "avg": 0.05544303512634476,
+      "min": 0,
+      "med": 0
+    },
+    "http_req_failed": {
+      "passes": 0,
+      "fails": 59955,
+      "value": 0
+    },
+    "iterations": {
+      "count": 59954,
+      "rate": 249.56693979712313
+    },
+    "data_received": {
+      "count": 44693615,
+      "rate": 186043.44537513424
+    },
+    "client_attempts": {
+      "count": 59954,
+      "rate": 249.56693979712313
+    },
+    "http_req_duration{expected_response:true}": {
+      "max": 3115.603168,
+      "p(90)": 62.31425820000005,
+      "p(95)": 125.3513707999998,
+      "avg": 56.91634473781985,
+      "min": 16.539875,
+      "med": 23.660666
+    },
+    "iteration_duration": {
+      "p(95)": 126.5006124,
+      "avg": 57.24393407307249,
+      "min": 16.689208,
+      "med": 23.833229,
+      "max": 3116.121251,
+      "p(90)": 63.24640010000003
+    }
+  },
+  "setup_data": {
+    "transferId": "4e6f85d3-5f7d-464e-b05c-c392cee526f4"
+  }
+}

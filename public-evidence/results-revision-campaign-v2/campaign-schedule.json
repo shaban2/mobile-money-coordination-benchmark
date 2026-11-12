@@ -1,0 +1,5076 @@
+{
+  "schemaVersion": 1,
+  "kind": "REVISION_CAMPAIGN",
+  "protocolId": "revision-campaign-lubanga-revision-v2",
+  "expectedRunCount": 181,
+  "runs": [
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-A-NOFAULT-R8-R-09",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-NOFAULT-R8",
+      "phase": "screening",
+      "offeredRate": 8,
+      "offeredLoadPercent": null,
+      "repetition": 9,
+      "executionBlock": "A-NOFAULT-R8-9",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:A-NOFAULT-R8:9",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 1
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-A-NOFAULT-R8-K-09",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-NOFAULT-R8",
+      "phase": "screening",
+      "offeredRate": 8,
+      "offeredLoadPercent": null,
+      "repetition": 9,
+      "executionBlock": "A-NOFAULT-R8-9",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:A-NOFAULT-R8:9",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 2
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-A-DATABASE-R4-K-04",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 4,
+      "executionBlock": "A-DATABASE-R4-4",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:A-DATABASE-R4:4",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 3
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-A-DATABASE-R4-R-04",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 4,
+      "executionBlock": "A-DATABASE-R4-4",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:A-DATABASE-R4:4",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 4
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-B-POLL10-DATABASE-R4-K-05",
+      "block": "CAMPAIGN",
+      "studyBlock": "B",
+      "cell": "B-POLL10-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 5,
+      "executionBlock": "B-POLL10-DATABASE-R4-5",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:B-POLL10-DATABASE-R4:5",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 10,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 5
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-E-APPKILL-R4-K-04",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-APPKILL-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 4,
+      "executionBlock": "E-APPKILL-R4-4",
+      "networkProfile": "standard",
+      "faultScenario": "app-kill",
+      "randomSeed": "lubanga-revision-v2:E-APPKILL-R4:4",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 6
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-E-APPKILL-R4-R-04",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-APPKILL-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 4,
+      "executionBlock": "E-APPKILL-R4-4",
+      "networkProfile": "standard",
+      "faultScenario": "app-kill",
+      "randomSeed": "lubanga-revision-v2:E-APPKILL-R4:4",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 7
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-A-ADAPTER-R4-R-09",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-ADAPTER-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 9,
+      "executionBlock": "A-ADAPTER-R4-9",
+      "networkProfile": "standard",
+      "faultScenario": "adapter-crash",
+      "randomSeed": "lubanga-revision-v2:A-ADAPTER-R4:9",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 8
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-A-ADAPTER-R4-K-09",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-ADAPTER-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 9,
+      "executionBlock": "A-ADAPTER-R4-9",
+      "networkProfile": "standard",
+      "faultScenario": "adapter-crash",
+      "randomSeed": "lubanga-revision-v2:A-ADAPTER-R4:9",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 9
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-A-DATABASE-R4-K-05",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 5,
+      "executionBlock": "A-DATABASE-R4-5",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:A-DATABASE-R4:5",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 10
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-A-DATABASE-R4-R-05",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 5,
+      "executionBlock": "A-DATABASE-R4-5",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:A-DATABASE-R4:5",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 11
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-A-DATABASE-R4-K-03",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 3,
+      "executionBlock": "A-DATABASE-R4-3",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:A-DATABASE-R4:3",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 12
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-A-DATABASE-R4-R-03",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 3,
+      "executionBlock": "A-DATABASE-R4-3",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:A-DATABASE-R4:3",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 13
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-B-POLL10-NOFAULT-R8-K-03",
+      "block": "CAMPAIGN",
+      "studyBlock": "B",
+      "cell": "B-POLL10-NOFAULT-R8",
+      "phase": "screening",
+      "offeredRate": 8,
+      "offeredLoadPercent": null,
+      "repetition": 3,
+      "executionBlock": "B-POLL10-NOFAULT-R8-3",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:B-POLL10-NOFAULT-R8:3",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 10,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 14
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-A-DATABASE-R4-R-06",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 6,
+      "executionBlock": "A-DATABASE-R4-6",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:A-DATABASE-R4:6",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 15
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-A-DATABASE-R4-K-06",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 6,
+      "executionBlock": "A-DATABASE-R4-6",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:A-DATABASE-R4:6",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 16
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-C-WORKERS8-DATABASE-R4-R-02",
+      "block": "CAMPAIGN",
+      "studyBlock": "C",
+      "cell": "C-WORKERS8-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 2,
+      "executionBlock": "C-WORKERS8-DATABASE-R4-2",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:C-WORKERS8-DATABASE-R4:2",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 8
+      },
+      "sequence": 17
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-C-WORKERS8-DATABASE-R4-K-02",
+      "block": "CAMPAIGN",
+      "studyBlock": "C",
+      "cell": "C-WORKERS8-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 2,
+      "executionBlock": "C-WORKERS8-DATABASE-R4-2",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:C-WORKERS8-DATABASE-R4:2",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 8
+      },
+      "sequence": 18
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-A-ADAPTER-R4-K-05",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-ADAPTER-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 5,
+      "executionBlock": "A-ADAPTER-R4-5",
+      "networkProfile": "standard",
+      "faultScenario": "adapter-crash",
+      "randomSeed": "lubanga-revision-v2:A-ADAPTER-R4:5",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 19
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-A-ADAPTER-R4-R-05",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-ADAPTER-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 5,
+      "executionBlock": "A-ADAPTER-R4-5",
+      "networkProfile": "standard",
+      "faultScenario": "adapter-crash",
+      "randomSeed": "lubanga-revision-v2:A-ADAPTER-R4:5",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 20
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-D-LADDER-R8-K-03",
+      "block": "CAMPAIGN",
+      "studyBlock": "D",
+      "cell": "D-LADDER-R8",
+      "phase": "screening",
+      "offeredRate": 8,
+      "offeredLoadPercent": null,
+      "repetition": 3,
+      "executionBlock": "D-LADDER-R8-3",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:D-LADDER-R8:3",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 21
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-D-LADDER-R16-K-03",
+      "block": "CAMPAIGN",
+      "studyBlock": "D",
+      "cell": "D-LADDER-R16",
+      "phase": "screening",
+      "offeredRate": 16,
+      "offeredLoadPercent": null,
+      "repetition": 3,
+      "executionBlock": "D-LADDER-R16-3",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:D-LADDER-R16:3",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 22
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-D-LADDER-R32-K-03",
+      "block": "CAMPAIGN",
+      "studyBlock": "D",
+      "cell": "D-LADDER-R32",
+      "phase": "screening",
+      "offeredRate": 32,
+      "offeredLoadPercent": null,
+      "repetition": 3,
+      "executionBlock": "D-LADDER-R32-3",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:D-LADDER-R32:3",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 23
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-D-LADDER-R64-K-03",
+      "block": "CAMPAIGN",
+      "studyBlock": "D",
+      "cell": "D-LADDER-R64",
+      "phase": "screening",
+      "offeredRate": 64,
+      "offeredLoadPercent": null,
+      "repetition": 3,
+      "executionBlock": "D-LADDER-R64-3",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:D-LADDER-R64:3",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 24
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-D-LADDER-R128-K-03",
+      "block": "CAMPAIGN",
+      "studyBlock": "D",
+      "cell": "D-LADDER-R128",
+      "phase": "screening",
+      "offeredRate": 128,
+      "offeredLoadPercent": null,
+      "repetition": 3,
+      "executionBlock": "D-LADDER-R128-3",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:D-LADDER-R128:3",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 25
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-D-LADDER-R256-K-03",
+      "block": "CAMPAIGN",
+      "studyBlock": "D",
+      "cell": "D-LADDER-R256",
+      "phase": "screening",
+      "offeredRate": 256,
+      "offeredLoadPercent": null,
+      "repetition": 3,
+      "executionBlock": "D-LADDER-R256-3",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:D-LADDER-R256:3",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 26
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-A-ADAPTER-R4-R-02",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-ADAPTER-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 2,
+      "executionBlock": "A-ADAPTER-R4-2",
+      "networkProfile": "standard",
+      "faultScenario": "adapter-crash",
+      "randomSeed": "lubanga-revision-v2:A-ADAPTER-R4:2",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 27
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-A-ADAPTER-R4-K-02",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-ADAPTER-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 2,
+      "executionBlock": "A-ADAPTER-R4-2",
+      "networkProfile": "standard",
+      "faultScenario": "adapter-crash",
+      "randomSeed": "lubanga-revision-v2:A-ADAPTER-R4:2",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 28
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-C-BATCHED-DATABASE-R4-K-05",
+      "block": "CAMPAIGN",
+      "studyBlock": "C",
+      "cell": "C-BATCHED-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 5,
+      "executionBlock": "C-BATCHED-DATABASE-R4-5",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:C-BATCHED-DATABASE-R4:5",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "batched",
+        "workerConcurrency": 4
+      },
+      "sequence": 29
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-C-BATCHED-NOFAULT-R8-K-04",
+      "block": "CAMPAIGN",
+      "studyBlock": "C",
+      "cell": "C-BATCHED-NOFAULT-R8",
+      "phase": "screening",
+      "offeredRate": 8,
+      "offeredLoadPercent": null,
+      "repetition": 4,
+      "executionBlock": "C-BATCHED-NOFAULT-R8-4",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:C-BATCHED-NOFAULT-R8:4",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "batched",
+        "workerConcurrency": 4
+      },
+      "sequence": 30
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-A-NOFAULT-R8-R-04",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-NOFAULT-R8",
+      "phase": "screening",
+      "offeredRate": 8,
+      "offeredLoadPercent": null,
+      "repetition": 4,
+      "executionBlock": "A-NOFAULT-R8-4",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:A-NOFAULT-R8:4",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 31
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-A-NOFAULT-R8-K-04",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-NOFAULT-R8",
+      "phase": "screening",
+      "offeredRate": 8,
+      "offeredLoadPercent": null,
+      "repetition": 4,
+      "executionBlock": "A-NOFAULT-R8-4",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:A-NOFAULT-R8:4",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 32
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-A-ADAPTER-R4-K-07",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-ADAPTER-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 7,
+      "executionBlock": "A-ADAPTER-R4-7",
+      "networkProfile": "standard",
+      "faultScenario": "adapter-crash",
+      "randomSeed": "lubanga-revision-v2:A-ADAPTER-R4:7",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 33
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-A-ADAPTER-R4-R-07",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-ADAPTER-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 7,
+      "executionBlock": "A-ADAPTER-R4-7",
+      "networkProfile": "standard",
+      "faultScenario": "adapter-crash",
+      "randomSeed": "lubanga-revision-v2:A-ADAPTER-R4:7",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 34
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-C-WORKERS8-DATABASE-R4-K-01",
+      "block": "CAMPAIGN",
+      "studyBlock": "C",
+      "cell": "C-WORKERS8-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 1,
+      "executionBlock": "C-WORKERS8-DATABASE-R4-1",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:C-WORKERS8-DATABASE-R4:1",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 8
+      },
+      "sequence": 35
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-C-WORKERS8-DATABASE-R4-R-01",
+      "block": "CAMPAIGN",
+      "studyBlock": "C",
+      "cell": "C-WORKERS8-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 1,
+      "executionBlock": "C-WORKERS8-DATABASE-R4-1",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:C-WORKERS8-DATABASE-R4:1",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 8
+      },
+      "sequence": 36
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-B-POLL10-NOFAULT-R8-K-01",
+      "block": "CAMPAIGN",
+      "studyBlock": "B",
+      "cell": "B-POLL10-NOFAULT-R8",
+      "phase": "screening",
+      "offeredRate": 8,
+      "offeredLoadPercent": null,
+      "repetition": 1,
+      "executionBlock": "B-POLL10-NOFAULT-R8-1",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:B-POLL10-NOFAULT-R8:1",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 10,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 37
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-C-WORKERS8-DATABASE-R4-K-03",
+      "block": "CAMPAIGN",
+      "studyBlock": "C",
+      "cell": "C-WORKERS8-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 3,
+      "executionBlock": "C-WORKERS8-DATABASE-R4-3",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:C-WORKERS8-DATABASE-R4:3",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 8
+      },
+      "sequence": 38
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-C-WORKERS8-DATABASE-R4-R-03",
+      "block": "CAMPAIGN",
+      "studyBlock": "C",
+      "cell": "C-WORKERS8-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 3,
+      "executionBlock": "C-WORKERS8-DATABASE-R4-3",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:C-WORKERS8-DATABASE-R4:3",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 8
+      },
+      "sequence": 39
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-C-WORKERS8-DATABASE-R4-K-05",
+      "block": "CAMPAIGN",
+      "studyBlock": "C",
+      "cell": "C-WORKERS8-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 5,
+      "executionBlock": "C-WORKERS8-DATABASE-R4-5",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:C-WORKERS8-DATABASE-R4:5",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 8
+      },
+      "sequence": 40
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-C-WORKERS8-DATABASE-R4-R-05",
+      "block": "CAMPAIGN",
+      "studyBlock": "C",
+      "cell": "C-WORKERS8-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 5,
+      "executionBlock": "C-WORKERS8-DATABASE-R4-5",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:C-WORKERS8-DATABASE-R4:5",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 8
+      },
+      "sequence": 41
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-A-ADAPTER-R4-K-01",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-ADAPTER-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 1,
+      "executionBlock": "A-ADAPTER-R4-1",
+      "networkProfile": "standard",
+      "faultScenario": "adapter-crash",
+      "randomSeed": "lubanga-revision-v2:A-ADAPTER-R4:1",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 42
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-A-ADAPTER-R4-R-01",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-ADAPTER-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 1,
+      "executionBlock": "A-ADAPTER-R4-1",
+      "networkProfile": "standard",
+      "faultScenario": "adapter-crash",
+      "randomSeed": "lubanga-revision-v2:A-ADAPTER-R4:1",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 43
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-A-NOFAULT-R8-R-03",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-NOFAULT-R8",
+      "phase": "screening",
+      "offeredRate": 8,
+      "offeredLoadPercent": null,
+      "repetition": 3,
+      "executionBlock": "A-NOFAULT-R8-3",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:A-NOFAULT-R8:3",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 44
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-A-NOFAULT-R8-K-03",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-NOFAULT-R8",
+      "phase": "screening",
+      "offeredRate": 8,
+      "offeredLoadPercent": null,
+      "repetition": 3,
+      "executionBlock": "A-NOFAULT-R8-3",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:A-NOFAULT-R8:3",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 45
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-E-PARTITION-R4-R-01",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-PARTITION-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 1,
+      "executionBlock": "E-PARTITION-R4-1",
+      "networkProfile": "standard",
+      "faultScenario": "database-partition",
+      "randomSeed": "lubanga-revision-v2:E-PARTITION-R4:1",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 46
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-E-PARTITION-R4-K-01",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-PARTITION-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 1,
+      "executionBlock": "E-PARTITION-R4-1",
+      "networkProfile": "standard",
+      "faultScenario": "database-partition",
+      "randomSeed": "lubanga-revision-v2:E-PARTITION-R4:1",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 47
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-C-BATCHED-NOFAULT-R8-K-02",
+      "block": "CAMPAIGN",
+      "studyBlock": "C",
+      "cell": "C-BATCHED-NOFAULT-R8",
+      "phase": "screening",
+      "offeredRate": 8,
+      "offeredLoadPercent": null,
+      "repetition": 2,
+      "executionBlock": "C-BATCHED-NOFAULT-R8-2",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:C-BATCHED-NOFAULT-R8:2",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "batched",
+        "workerConcurrency": 4
+      },
+      "sequence": 48
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-C-WORKERS8-DATABASE-R4-R-04",
+      "block": "CAMPAIGN",
+      "studyBlock": "C",
+      "cell": "C-WORKERS8-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 4,
+      "executionBlock": "C-WORKERS8-DATABASE-R4-4",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:C-WORKERS8-DATABASE-R4:4",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 8
+      },
+      "sequence": 49
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-C-WORKERS8-DATABASE-R4-K-04",
+      "block": "CAMPAIGN",
+      "studyBlock": "C",
+      "cell": "C-WORKERS8-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 4,
+      "executionBlock": "C-WORKERS8-DATABASE-R4-4",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:C-WORKERS8-DATABASE-R4:4",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 8
+      },
+      "sequence": 50
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-A-NOFAULT-R8-R-06",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-NOFAULT-R8",
+      "phase": "screening",
+      "offeredRate": 8,
+      "offeredLoadPercent": null,
+      "repetition": 6,
+      "executionBlock": "A-NOFAULT-R8-6",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:A-NOFAULT-R8:6",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 51
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-A-NOFAULT-R8-K-06",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-NOFAULT-R8",
+      "phase": "screening",
+      "offeredRate": 8,
+      "offeredLoadPercent": null,
+      "repetition": 6,
+      "executionBlock": "A-NOFAULT-R8-6",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:A-NOFAULT-R8:6",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 52
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-A-DATABASE-R4-R-08",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 8,
+      "executionBlock": "A-DATABASE-R4-8",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:A-DATABASE-R4:8",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 53
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-A-DATABASE-R4-K-08",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 8,
+      "executionBlock": "A-DATABASE-R4-8",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:A-DATABASE-R4:8",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 54
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-B-POLL5-NOFAULT-R8-K-05",
+      "block": "CAMPAIGN",
+      "studyBlock": "B",
+      "cell": "B-POLL5-NOFAULT-R8",
+      "phase": "screening",
+      "offeredRate": 8,
+      "offeredLoadPercent": null,
+      "repetition": 5,
+      "executionBlock": "B-POLL5-NOFAULT-R8-5",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:B-POLL5-NOFAULT-R8:5",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 5,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 55
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-E-BROKER-R4-K-04",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-BROKER-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 4,
+      "executionBlock": "E-BROKER-R4-4",
+      "networkProfile": "standard",
+      "faultScenario": "broker-stop",
+      "randomSeed": "lubanga-revision-v2:E-BROKER-R4:4",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 56
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-D-LADDER-R8-R-03",
+      "block": "CAMPAIGN",
+      "studyBlock": "D",
+      "cell": "D-LADDER-R8",
+      "phase": "screening",
+      "offeredRate": 8,
+      "offeredLoadPercent": null,
+      "repetition": 3,
+      "executionBlock": "D-LADDER-R8-3",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:D-LADDER-R8:3",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 57
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-D-LADDER-R16-R-03",
+      "block": "CAMPAIGN",
+      "studyBlock": "D",
+      "cell": "D-LADDER-R16",
+      "phase": "screening",
+      "offeredRate": 16,
+      "offeredLoadPercent": null,
+      "repetition": 3,
+      "executionBlock": "D-LADDER-R16-3",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:D-LADDER-R16:3",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 58
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-D-LADDER-R32-R-03",
+      "block": "CAMPAIGN",
+      "studyBlock": "D",
+      "cell": "D-LADDER-R32",
+      "phase": "screening",
+      "offeredRate": 32,
+      "offeredLoadPercent": null,
+      "repetition": 3,
+      "executionBlock": "D-LADDER-R32-3",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:D-LADDER-R32:3",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 59
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-D-LADDER-R64-R-03",
+      "block": "CAMPAIGN",
+      "studyBlock": "D",
+      "cell": "D-LADDER-R64",
+      "phase": "screening",
+      "offeredRate": 64,
+      "offeredLoadPercent": null,
+      "repetition": 3,
+      "executionBlock": "D-LADDER-R64-3",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:D-LADDER-R64:3",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 60
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-D-LADDER-R128-R-03",
+      "block": "CAMPAIGN",
+      "studyBlock": "D",
+      "cell": "D-LADDER-R128",
+      "phase": "screening",
+      "offeredRate": 128,
+      "offeredLoadPercent": null,
+      "repetition": 3,
+      "executionBlock": "D-LADDER-R128-3",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:D-LADDER-R128:3",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 61
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-D-LADDER-R256-R-03",
+      "block": "CAMPAIGN",
+      "studyBlock": "D",
+      "cell": "D-LADDER-R256",
+      "phase": "screening",
+      "offeredRate": 256,
+      "offeredLoadPercent": null,
+      "repetition": 3,
+      "executionBlock": "D-LADDER-R256-3",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:D-LADDER-R256:3",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 62
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-B-POLL25-DATABASE-R4-K-03",
+      "block": "CAMPAIGN",
+      "studyBlock": "B",
+      "cell": "B-POLL25-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 3,
+      "executionBlock": "B-POLL25-DATABASE-R4-3",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:B-POLL25-DATABASE-R4:3",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 25,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 63
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-A-NOFAULT-R8-K-08",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-NOFAULT-R8",
+      "phase": "screening",
+      "offeredRate": 8,
+      "offeredLoadPercent": null,
+      "repetition": 8,
+      "executionBlock": "A-NOFAULT-R8-8",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:A-NOFAULT-R8:8",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 64
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-A-NOFAULT-R8-R-08",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-NOFAULT-R8",
+      "phase": "screening",
+      "offeredRate": 8,
+      "offeredLoadPercent": null,
+      "repetition": 8,
+      "executionBlock": "A-NOFAULT-R8-8",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:A-NOFAULT-R8:8",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 65
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-A-NOFAULT-R8-K-10",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-NOFAULT-R8",
+      "phase": "screening",
+      "offeredRate": 8,
+      "offeredLoadPercent": null,
+      "repetition": 10,
+      "executionBlock": "A-NOFAULT-R8-10",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:A-NOFAULT-R8:10",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 66
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-A-NOFAULT-R8-R-10",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-NOFAULT-R8",
+      "phase": "screening",
+      "offeredRate": 8,
+      "offeredLoadPercent": null,
+      "repetition": 10,
+      "executionBlock": "A-NOFAULT-R8-10",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:A-NOFAULT-R8:10",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 67
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-A-DATABASE-R4-R-02",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 2,
+      "executionBlock": "A-DATABASE-R4-2",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:A-DATABASE-R4:2",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 68
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-A-DATABASE-R4-K-02",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 2,
+      "executionBlock": "A-DATABASE-R4-2",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:A-DATABASE-R4:2",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 69
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-E-PGRESTART-R4-K-05",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-PGRESTART-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 5,
+      "executionBlock": "E-PGRESTART-R4-5",
+      "networkProfile": "standard",
+      "faultScenario": "postgres-restart",
+      "randomSeed": "lubanga-revision-v2:E-PGRESTART-R4:5",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 70
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-E-PGRESTART-R4-R-05",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-PGRESTART-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 5,
+      "executionBlock": "E-PGRESTART-R4-5",
+      "networkProfile": "standard",
+      "faultScenario": "postgres-restart",
+      "randomSeed": "lubanga-revision-v2:E-PGRESTART-R4:5",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 71
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-B-POLL10-DATABASE-R4-K-02",
+      "block": "CAMPAIGN",
+      "studyBlock": "B",
+      "cell": "B-POLL10-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 2,
+      "executionBlock": "B-POLL10-DATABASE-R4-2",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:B-POLL10-DATABASE-R4:2",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 10,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 72
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-D-LADDER-R8-R-01",
+      "block": "CAMPAIGN",
+      "studyBlock": "D",
+      "cell": "D-LADDER-R8",
+      "phase": "screening",
+      "offeredRate": 8,
+      "offeredLoadPercent": null,
+      "repetition": 1,
+      "executionBlock": "D-LADDER-R8-1",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:D-LADDER-R8:1",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 73
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-D-LADDER-R16-R-01",
+      "block": "CAMPAIGN",
+      "studyBlock": "D",
+      "cell": "D-LADDER-R16",
+      "phase": "screening",
+      "offeredRate": 16,
+      "offeredLoadPercent": null,
+      "repetition": 1,
+      "executionBlock": "D-LADDER-R16-1",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:D-LADDER-R16:1",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 74
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-D-LADDER-R32-R-01",
+      "block": "CAMPAIGN",
+      "studyBlock": "D",
+      "cell": "D-LADDER-R32",
+      "phase": "screening",
+      "offeredRate": 32,
+      "offeredLoadPercent": null,
+      "repetition": 1,
+      "executionBlock": "D-LADDER-R32-1",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:D-LADDER-R32:1",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 75
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-D-LADDER-R64-R-01",
+      "block": "CAMPAIGN",
+      "studyBlock": "D",
+      "cell": "D-LADDER-R64",
+      "phase": "screening",
+      "offeredRate": 64,
+      "offeredLoadPercent": null,
+      "repetition": 1,
+      "executionBlock": "D-LADDER-R64-1",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:D-LADDER-R64:1",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 76
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-D-LADDER-R128-R-01",
+      "block": "CAMPAIGN",
+      "studyBlock": "D",
+      "cell": "D-LADDER-R128",
+      "phase": "screening",
+      "offeredRate": 128,
+      "offeredLoadPercent": null,
+      "repetition": 1,
+      "executionBlock": "D-LADDER-R128-1",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:D-LADDER-R128:1",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 77
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-D-LADDER-R256-R-01",
+      "block": "CAMPAIGN",
+      "studyBlock": "D",
+      "cell": "D-LADDER-R256",
+      "phase": "screening",
+      "offeredRate": 256,
+      "offeredLoadPercent": null,
+      "repetition": 1,
+      "executionBlock": "D-LADDER-R256-1",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:D-LADDER-R256:1",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 78
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-B-POLL25-NOFAULT-R8-K-04",
+      "block": "CAMPAIGN",
+      "studyBlock": "B",
+      "cell": "B-POLL25-NOFAULT-R8",
+      "phase": "screening",
+      "offeredRate": 8,
+      "offeredLoadPercent": null,
+      "repetition": 4,
+      "executionBlock": "B-POLL25-NOFAULT-R8-4",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:B-POLL25-NOFAULT-R8:4",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 25,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 79
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-B-POLL5-NOFAULT-R8-K-04",
+      "block": "CAMPAIGN",
+      "studyBlock": "B",
+      "cell": "B-POLL5-NOFAULT-R8",
+      "phase": "screening",
+      "offeredRate": 8,
+      "offeredLoadPercent": null,
+      "repetition": 4,
+      "executionBlock": "B-POLL5-NOFAULT-R8-4",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:B-POLL5-NOFAULT-R8:4",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 5,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 80
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-A-ADAPTER-R4-R-10",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-ADAPTER-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 10,
+      "executionBlock": "A-ADAPTER-R4-10",
+      "networkProfile": "standard",
+      "faultScenario": "adapter-crash",
+      "randomSeed": "lubanga-revision-v2:A-ADAPTER-R4:10",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 81
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-A-ADAPTER-R4-K-10",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-ADAPTER-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 10,
+      "executionBlock": "A-ADAPTER-R4-10",
+      "networkProfile": "standard",
+      "faultScenario": "adapter-crash",
+      "randomSeed": "lubanga-revision-v2:A-ADAPTER-R4:10",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 82
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-C-BATCHED-DATABASE-R4-K-03",
+      "block": "CAMPAIGN",
+      "studyBlock": "C",
+      "cell": "C-BATCHED-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 3,
+      "executionBlock": "C-BATCHED-DATABASE-R4-3",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:C-BATCHED-DATABASE-R4:3",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "batched",
+        "workerConcurrency": 4
+      },
+      "sequence": 83
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-E-BROKER-R4-K-05",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-BROKER-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 5,
+      "executionBlock": "E-BROKER-R4-5",
+      "networkProfile": "standard",
+      "faultScenario": "broker-stop",
+      "randomSeed": "lubanga-revision-v2:E-BROKER-R4:5",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 84
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-B-POLL5-DATABASE-R4-K-05",
+      "block": "CAMPAIGN",
+      "studyBlock": "B",
+      "cell": "B-POLL5-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 5,
+      "executionBlock": "B-POLL5-DATABASE-R4-5",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:B-POLL5-DATABASE-R4:5",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 5,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 85
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-B-POLL10-NOFAULT-R8-K-05",
+      "block": "CAMPAIGN",
+      "studyBlock": "B",
+      "cell": "B-POLL10-NOFAULT-R8",
+      "phase": "screening",
+      "offeredRate": 8,
+      "offeredLoadPercent": null,
+      "repetition": 5,
+      "executionBlock": "B-POLL10-NOFAULT-R8-5",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:B-POLL10-NOFAULT-R8:5",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 10,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 86
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-E-APPKILL-R4-R-05",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-APPKILL-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 5,
+      "executionBlock": "E-APPKILL-R4-5",
+      "networkProfile": "standard",
+      "faultScenario": "app-kill",
+      "randomSeed": "lubanga-revision-v2:E-APPKILL-R4:5",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 87
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-E-APPKILL-R4-K-05",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-APPKILL-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 5,
+      "executionBlock": "E-APPKILL-R4-5",
+      "networkProfile": "standard",
+      "faultScenario": "app-kill",
+      "randomSeed": "lubanga-revision-v2:E-APPKILL-R4:5",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 88
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-B-POLL5-DATABASE-R4-K-03",
+      "block": "CAMPAIGN",
+      "studyBlock": "B",
+      "cell": "B-POLL5-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 3,
+      "executionBlock": "B-POLL5-DATABASE-R4-3",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:B-POLL5-DATABASE-R4:3",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 5,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 89
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-B-POLL5-NOFAULT-R8-K-02",
+      "block": "CAMPAIGN",
+      "studyBlock": "B",
+      "cell": "B-POLL5-NOFAULT-R8",
+      "phase": "screening",
+      "offeredRate": 8,
+      "offeredLoadPercent": null,
+      "repetition": 2,
+      "executionBlock": "B-POLL5-NOFAULT-R8-2",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:B-POLL5-NOFAULT-R8:2",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 5,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 90
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-A-ADAPTER-R4-K-06",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-ADAPTER-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 6,
+      "executionBlock": "A-ADAPTER-R4-6",
+      "networkProfile": "standard",
+      "faultScenario": "adapter-crash",
+      "randomSeed": "lubanga-revision-v2:A-ADAPTER-R4:6",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 91
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-A-ADAPTER-R4-R-06",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-ADAPTER-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 6,
+      "executionBlock": "A-ADAPTER-R4-6",
+      "networkProfile": "standard",
+      "faultScenario": "adapter-crash",
+      "randomSeed": "lubanga-revision-v2:A-ADAPTER-R4:6",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 92
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-A-NOFAULT-R8-R-07",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-NOFAULT-R8",
+      "phase": "screening",
+      "offeredRate": 8,
+      "offeredLoadPercent": null,
+      "repetition": 7,
+      "executionBlock": "A-NOFAULT-R8-7",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:A-NOFAULT-R8:7",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 93
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-A-NOFAULT-R8-K-07",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-NOFAULT-R8",
+      "phase": "screening",
+      "offeredRate": 8,
+      "offeredLoadPercent": null,
+      "repetition": 7,
+      "executionBlock": "A-NOFAULT-R8-7",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:A-NOFAULT-R8:7",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 94
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-B-POLL10-DATABASE-R4-K-04",
+      "block": "CAMPAIGN",
+      "studyBlock": "B",
+      "cell": "B-POLL10-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 4,
+      "executionBlock": "B-POLL10-DATABASE-R4-4",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:B-POLL10-DATABASE-R4:4",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 10,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 95
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-B-POLL25-DATABASE-R4-K-02",
+      "block": "CAMPAIGN",
+      "studyBlock": "B",
+      "cell": "B-POLL25-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 2,
+      "executionBlock": "B-POLL25-DATABASE-R4-2",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:B-POLL25-DATABASE-R4:2",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 25,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 96
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-B-POLL25-DATABASE-R4-K-05",
+      "block": "CAMPAIGN",
+      "studyBlock": "B",
+      "cell": "B-POLL25-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 5,
+      "executionBlock": "B-POLL25-DATABASE-R4-5",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:B-POLL25-DATABASE-R4:5",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 25,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 97
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-C-BATCHED-NOFAULT-R8-K-05",
+      "block": "CAMPAIGN",
+      "studyBlock": "C",
+      "cell": "C-BATCHED-NOFAULT-R8",
+      "phase": "screening",
+      "offeredRate": 8,
+      "offeredLoadPercent": null,
+      "repetition": 5,
+      "executionBlock": "C-BATCHED-NOFAULT-R8-5",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:C-BATCHED-NOFAULT-R8:5",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "batched",
+        "workerConcurrency": 4
+      },
+      "sequence": 98
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-E-PGRESTART-R4-R-02",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-PGRESTART-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 2,
+      "executionBlock": "E-PGRESTART-R4-2",
+      "networkProfile": "standard",
+      "faultScenario": "postgres-restart",
+      "randomSeed": "lubanga-revision-v2:E-PGRESTART-R4:2",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 99
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-E-PGRESTART-R4-K-02",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-PGRESTART-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 2,
+      "executionBlock": "E-PGRESTART-R4-2",
+      "networkProfile": "standard",
+      "faultScenario": "postgres-restart",
+      "randomSeed": "lubanga-revision-v2:E-PGRESTART-R4:2",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 100
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-E-PARTITION-R4-R-05",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-PARTITION-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 5,
+      "executionBlock": "E-PARTITION-R4-5",
+      "networkProfile": "standard",
+      "faultScenario": "database-partition",
+      "randomSeed": "lubanga-revision-v2:E-PARTITION-R4:5",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 101
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-E-PARTITION-R4-K-05",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-PARTITION-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 5,
+      "executionBlock": "E-PARTITION-R4-5",
+      "networkProfile": "standard",
+      "faultScenario": "database-partition",
+      "randomSeed": "lubanga-revision-v2:E-PARTITION-R4:5",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 102
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-C-BATCHED-DATABASE-R4-K-01",
+      "block": "CAMPAIGN",
+      "studyBlock": "C",
+      "cell": "C-BATCHED-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 1,
+      "executionBlock": "C-BATCHED-DATABASE-R4-1",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:C-BATCHED-DATABASE-R4:1",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "batched",
+        "workerConcurrency": 4
+      },
+      "sequence": 103
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-C-BATCHED-NOFAULT-R8-K-01",
+      "block": "CAMPAIGN",
+      "studyBlock": "C",
+      "cell": "C-BATCHED-NOFAULT-R8",
+      "phase": "screening",
+      "offeredRate": 8,
+      "offeredLoadPercent": null,
+      "repetition": 1,
+      "executionBlock": "C-BATCHED-NOFAULT-R8-1",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:C-BATCHED-NOFAULT-R8:1",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "batched",
+        "workerConcurrency": 4
+      },
+      "sequence": 104
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-B-POLL25-DATABASE-R4-K-01",
+      "block": "CAMPAIGN",
+      "studyBlock": "B",
+      "cell": "B-POLL25-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 1,
+      "executionBlock": "B-POLL25-DATABASE-R4-1",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:B-POLL25-DATABASE-R4:1",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 25,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 105
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-A-DATABASE-R4-K-07",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 7,
+      "executionBlock": "A-DATABASE-R4-7",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:A-DATABASE-R4:7",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 106
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-A-DATABASE-R4-R-07",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 7,
+      "executionBlock": "A-DATABASE-R4-7",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:A-DATABASE-R4:7",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 107
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-B-POLL10-DATABASE-R4-K-01",
+      "block": "CAMPAIGN",
+      "studyBlock": "B",
+      "cell": "B-POLL10-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 1,
+      "executionBlock": "B-POLL10-DATABASE-R4-1",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:B-POLL10-DATABASE-R4:1",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 10,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 108
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-A-ADAPTER-R4-R-04",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-ADAPTER-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 4,
+      "executionBlock": "A-ADAPTER-R4-4",
+      "networkProfile": "standard",
+      "faultScenario": "adapter-crash",
+      "randomSeed": "lubanga-revision-v2:A-ADAPTER-R4:4",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 109
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-A-ADAPTER-R4-K-04",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-ADAPTER-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 4,
+      "executionBlock": "A-ADAPTER-R4-4",
+      "networkProfile": "standard",
+      "faultScenario": "adapter-crash",
+      "randomSeed": "lubanga-revision-v2:A-ADAPTER-R4:4",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 110
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-A-DATABASE-R4-R-10",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 10,
+      "executionBlock": "A-DATABASE-R4-10",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:A-DATABASE-R4:10",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 111
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-A-DATABASE-R4-K-10",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 10,
+      "executionBlock": "A-DATABASE-R4-10",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:A-DATABASE-R4:10",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 112
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-B-POLL10-DATABASE-R4-K-03",
+      "block": "CAMPAIGN",
+      "studyBlock": "B",
+      "cell": "B-POLL10-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 3,
+      "executionBlock": "B-POLL10-DATABASE-R4-3",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:B-POLL10-DATABASE-R4:3",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 10,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 113
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-D-LADDER-R8-K-01",
+      "block": "CAMPAIGN",
+      "studyBlock": "D",
+      "cell": "D-LADDER-R8",
+      "phase": "screening",
+      "offeredRate": 8,
+      "offeredLoadPercent": null,
+      "repetition": 1,
+      "executionBlock": "D-LADDER-R8-1",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:D-LADDER-R8:1",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 114
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-D-LADDER-R16-K-01",
+      "block": "CAMPAIGN",
+      "studyBlock": "D",
+      "cell": "D-LADDER-R16",
+      "phase": "screening",
+      "offeredRate": 16,
+      "offeredLoadPercent": null,
+      "repetition": 1,
+      "executionBlock": "D-LADDER-R16-1",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:D-LADDER-R16:1",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 115
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-D-LADDER-R32-K-01",
+      "block": "CAMPAIGN",
+      "studyBlock": "D",
+      "cell": "D-LADDER-R32",
+      "phase": "screening",
+      "offeredRate": 32,
+      "offeredLoadPercent": null,
+      "repetition": 1,
+      "executionBlock": "D-LADDER-R32-1",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:D-LADDER-R32:1",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 116
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-D-LADDER-R64-K-01",
+      "block": "CAMPAIGN",
+      "studyBlock": "D",
+      "cell": "D-LADDER-R64",
+      "phase": "screening",
+      "offeredRate": 64,
+      "offeredLoadPercent": null,
+      "repetition": 1,
+      "executionBlock": "D-LADDER-R64-1",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:D-LADDER-R64:1",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 117
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-D-LADDER-R128-K-01",
+      "block": "CAMPAIGN",
+      "studyBlock": "D",
+      "cell": "D-LADDER-R128",
+      "phase": "screening",
+      "offeredRate": 128,
+      "offeredLoadPercent": null,
+      "repetition": 1,
+      "executionBlock": "D-LADDER-R128-1",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:D-LADDER-R128:1",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 118
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-D-LADDER-R256-K-01",
+      "block": "CAMPAIGN",
+      "studyBlock": "D",
+      "cell": "D-LADDER-R256",
+      "phase": "screening",
+      "offeredRate": 256,
+      "offeredLoadPercent": null,
+      "repetition": 1,
+      "executionBlock": "D-LADDER-R256-1",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:D-LADDER-R256:1",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 119
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-E-APPKILL-R4-R-01",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-APPKILL-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 1,
+      "executionBlock": "E-APPKILL-R4-1",
+      "networkProfile": "standard",
+      "faultScenario": "app-kill",
+      "randomSeed": "lubanga-revision-v2:E-APPKILL-R4:1",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 120
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-E-APPKILL-R4-K-01",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-APPKILL-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 1,
+      "executionBlock": "E-APPKILL-R4-1",
+      "networkProfile": "standard",
+      "faultScenario": "app-kill",
+      "randomSeed": "lubanga-revision-v2:E-APPKILL-R4:1",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 121
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-D-LADDER-R8-R-02",
+      "block": "CAMPAIGN",
+      "studyBlock": "D",
+      "cell": "D-LADDER-R8",
+      "phase": "screening",
+      "offeredRate": 8,
+      "offeredLoadPercent": null,
+      "repetition": 2,
+      "executionBlock": "D-LADDER-R8-2",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:D-LADDER-R8:2",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 122
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-D-LADDER-R16-R-02",
+      "block": "CAMPAIGN",
+      "studyBlock": "D",
+      "cell": "D-LADDER-R16",
+      "phase": "screening",
+      "offeredRate": 16,
+      "offeredLoadPercent": null,
+      "repetition": 2,
+      "executionBlock": "D-LADDER-R16-2",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:D-LADDER-R16:2",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 123
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-D-LADDER-R32-R-02",
+      "block": "CAMPAIGN",
+      "studyBlock": "D",
+      "cell": "D-LADDER-R32",
+      "phase": "screening",
+      "offeredRate": 32,
+      "offeredLoadPercent": null,
+      "repetition": 2,
+      "executionBlock": "D-LADDER-R32-2",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:D-LADDER-R32:2",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 124
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-D-LADDER-R64-R-02",
+      "block": "CAMPAIGN",
+      "studyBlock": "D",
+      "cell": "D-LADDER-R64",
+      "phase": "screening",
+      "offeredRate": 64,
+      "offeredLoadPercent": null,
+      "repetition": 2,
+      "executionBlock": "D-LADDER-R64-2",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:D-LADDER-R64:2",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 125
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-D-LADDER-R128-R-02",
+      "block": "CAMPAIGN",
+      "studyBlock": "D",
+      "cell": "D-LADDER-R128",
+      "phase": "screening",
+      "offeredRate": 128,
+      "offeredLoadPercent": null,
+      "repetition": 2,
+      "executionBlock": "D-LADDER-R128-2",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:D-LADDER-R128:2",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 126
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-D-LADDER-R256-R-02",
+      "block": "CAMPAIGN",
+      "studyBlock": "D",
+      "cell": "D-LADDER-R256",
+      "phase": "screening",
+      "offeredRate": 256,
+      "offeredLoadPercent": null,
+      "repetition": 2,
+      "executionBlock": "D-LADDER-R256-2",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:D-LADDER-R256:2",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 127
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-B-POLL10-NOFAULT-R8-K-02",
+      "block": "CAMPAIGN",
+      "studyBlock": "B",
+      "cell": "B-POLL10-NOFAULT-R8",
+      "phase": "screening",
+      "offeredRate": 8,
+      "offeredLoadPercent": null,
+      "repetition": 2,
+      "executionBlock": "B-POLL10-NOFAULT-R8-2",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:B-POLL10-NOFAULT-R8:2",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 10,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 128
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-A-NOFAULT-R8-K-05",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-NOFAULT-R8",
+      "phase": "screening",
+      "offeredRate": 8,
+      "offeredLoadPercent": null,
+      "repetition": 5,
+      "executionBlock": "A-NOFAULT-R8-5",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:A-NOFAULT-R8:5",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 129
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-A-NOFAULT-R8-R-05",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-NOFAULT-R8",
+      "phase": "screening",
+      "offeredRate": 8,
+      "offeredLoadPercent": null,
+      "repetition": 5,
+      "executionBlock": "A-NOFAULT-R8-5",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:A-NOFAULT-R8:5",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 130
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-C-BATCHED-NOFAULT-R8-K-03",
+      "block": "CAMPAIGN",
+      "studyBlock": "C",
+      "cell": "C-BATCHED-NOFAULT-R8",
+      "phase": "screening",
+      "offeredRate": 8,
+      "offeredLoadPercent": null,
+      "repetition": 3,
+      "executionBlock": "C-BATCHED-NOFAULT-R8-3",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:C-BATCHED-NOFAULT-R8:3",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "batched",
+        "workerConcurrency": 4
+      },
+      "sequence": 131
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-E-BROKER-R4-K-03",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-BROKER-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 3,
+      "executionBlock": "E-BROKER-R4-3",
+      "networkProfile": "standard",
+      "faultScenario": "broker-stop",
+      "randomSeed": "lubanga-revision-v2:E-BROKER-R4:3",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 132
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-B-POLL5-NOFAULT-R8-K-01",
+      "block": "CAMPAIGN",
+      "studyBlock": "B",
+      "cell": "B-POLL5-NOFAULT-R8",
+      "phase": "screening",
+      "offeredRate": 8,
+      "offeredLoadPercent": null,
+      "repetition": 1,
+      "executionBlock": "B-POLL5-NOFAULT-R8-1",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:B-POLL5-NOFAULT-R8:1",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 5,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 133
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-B-POLL25-NOFAULT-R8-K-03",
+      "block": "CAMPAIGN",
+      "studyBlock": "B",
+      "cell": "B-POLL25-NOFAULT-R8",
+      "phase": "screening",
+      "offeredRate": 8,
+      "offeredLoadPercent": null,
+      "repetition": 3,
+      "executionBlock": "B-POLL25-NOFAULT-R8-3",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:B-POLL25-NOFAULT-R8:3",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 25,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 134
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-E-PGRESTART-R4-R-01",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-PGRESTART-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 1,
+      "executionBlock": "E-PGRESTART-R4-1",
+      "networkProfile": "standard",
+      "faultScenario": "postgres-restart",
+      "randomSeed": "lubanga-revision-v2:E-PGRESTART-R4:1",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 135
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-E-PGRESTART-R4-K-01",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-PGRESTART-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 1,
+      "executionBlock": "E-PGRESTART-R4-1",
+      "networkProfile": "standard",
+      "faultScenario": "postgres-restart",
+      "randomSeed": "lubanga-revision-v2:E-PGRESTART-R4:1",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 136
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-A-DATABASE-R4-K-01",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 1,
+      "executionBlock": "A-DATABASE-R4-1",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:A-DATABASE-R4:1",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 137
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-A-DATABASE-R4-R-01",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 1,
+      "executionBlock": "A-DATABASE-R4-1",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:A-DATABASE-R4:1",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 138
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-D-LADDER-R8-K-02",
+      "block": "CAMPAIGN",
+      "studyBlock": "D",
+      "cell": "D-LADDER-R8",
+      "phase": "screening",
+      "offeredRate": 8,
+      "offeredLoadPercent": null,
+      "repetition": 2,
+      "executionBlock": "D-LADDER-R8-2",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:D-LADDER-R8:2",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 139
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-D-LADDER-R16-K-02",
+      "block": "CAMPAIGN",
+      "studyBlock": "D",
+      "cell": "D-LADDER-R16",
+      "phase": "screening",
+      "offeredRate": 16,
+      "offeredLoadPercent": null,
+      "repetition": 2,
+      "executionBlock": "D-LADDER-R16-2",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:D-LADDER-R16:2",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 140
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-D-LADDER-R32-K-02",
+      "block": "CAMPAIGN",
+      "studyBlock": "D",
+      "cell": "D-LADDER-R32",
+      "phase": "screening",
+      "offeredRate": 32,
+      "offeredLoadPercent": null,
+      "repetition": 2,
+      "executionBlock": "D-LADDER-R32-2",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:D-LADDER-R32:2",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 141
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-D-LADDER-R64-K-02",
+      "block": "CAMPAIGN",
+      "studyBlock": "D",
+      "cell": "D-LADDER-R64",
+      "phase": "screening",
+      "offeredRate": 64,
+      "offeredLoadPercent": null,
+      "repetition": 2,
+      "executionBlock": "D-LADDER-R64-2",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:D-LADDER-R64:2",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 142
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-D-LADDER-R128-K-02",
+      "block": "CAMPAIGN",
+      "studyBlock": "D",
+      "cell": "D-LADDER-R128",
+      "phase": "screening",
+      "offeredRate": 128,
+      "offeredLoadPercent": null,
+      "repetition": 2,
+      "executionBlock": "D-LADDER-R128-2",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:D-LADDER-R128:2",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 143
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-D-LADDER-R256-K-02",
+      "block": "CAMPAIGN",
+      "studyBlock": "D",
+      "cell": "D-LADDER-R256",
+      "phase": "screening",
+      "offeredRate": 256,
+      "offeredLoadPercent": null,
+      "repetition": 2,
+      "executionBlock": "D-LADDER-R256-2",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:D-LADDER-R256:2",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 144
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-E-BROKER-R4-K-02",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-BROKER-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 2,
+      "executionBlock": "E-BROKER-R4-2",
+      "networkProfile": "standard",
+      "faultScenario": "broker-stop",
+      "randomSeed": "lubanga-revision-v2:E-BROKER-R4:2",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 145
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-C-BATCHED-DATABASE-R4-K-02",
+      "block": "CAMPAIGN",
+      "studyBlock": "C",
+      "cell": "C-BATCHED-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 2,
+      "executionBlock": "C-BATCHED-DATABASE-R4-2",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:C-BATCHED-DATABASE-R4:2",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "batched",
+        "workerConcurrency": 4
+      },
+      "sequence": 146
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-A-NOFAULT-R8-K-01",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-NOFAULT-R8",
+      "phase": "screening",
+      "offeredRate": 8,
+      "offeredLoadPercent": null,
+      "repetition": 1,
+      "executionBlock": "A-NOFAULT-R8-1",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:A-NOFAULT-R8:1",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 147
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-A-NOFAULT-R8-R-01",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-NOFAULT-R8",
+      "phase": "screening",
+      "offeredRate": 8,
+      "offeredLoadPercent": null,
+      "repetition": 1,
+      "executionBlock": "A-NOFAULT-R8-1",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:A-NOFAULT-R8:1",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 148
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-A-ADAPTER-R4-R-03",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-ADAPTER-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 3,
+      "executionBlock": "A-ADAPTER-R4-3",
+      "networkProfile": "standard",
+      "faultScenario": "adapter-crash",
+      "randomSeed": "lubanga-revision-v2:A-ADAPTER-R4:3",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 149
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-A-ADAPTER-R4-K-03",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-ADAPTER-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 3,
+      "executionBlock": "A-ADAPTER-R4-3",
+      "networkProfile": "standard",
+      "faultScenario": "adapter-crash",
+      "randomSeed": "lubanga-revision-v2:A-ADAPTER-R4:3",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 150
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-E-BROKER-R4-K-01",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-BROKER-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 1,
+      "executionBlock": "E-BROKER-R4-1",
+      "networkProfile": "standard",
+      "faultScenario": "broker-stop",
+      "randomSeed": "lubanga-revision-v2:E-BROKER-R4:1",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 151
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-B-POLL5-NOFAULT-R8-K-03",
+      "block": "CAMPAIGN",
+      "studyBlock": "B",
+      "cell": "B-POLL5-NOFAULT-R8",
+      "phase": "screening",
+      "offeredRate": 8,
+      "offeredLoadPercent": null,
+      "repetition": 3,
+      "executionBlock": "B-POLL5-NOFAULT-R8-3",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:B-POLL5-NOFAULT-R8:3",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 5,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 152
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-B-POLL25-NOFAULT-R8-K-02",
+      "block": "CAMPAIGN",
+      "studyBlock": "B",
+      "cell": "B-POLL25-NOFAULT-R8",
+      "phase": "screening",
+      "offeredRate": 8,
+      "offeredLoadPercent": null,
+      "repetition": 2,
+      "executionBlock": "B-POLL25-NOFAULT-R8-2",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:B-POLL25-NOFAULT-R8:2",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 25,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 153
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-C-BATCHED-DATABASE-R4-K-04",
+      "block": "CAMPAIGN",
+      "studyBlock": "C",
+      "cell": "C-BATCHED-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 4,
+      "executionBlock": "C-BATCHED-DATABASE-R4-4",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:C-BATCHED-DATABASE-R4:4",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "batched",
+        "workerConcurrency": 4
+      },
+      "sequence": 154
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-A-ADAPTER-R4-K-08",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-ADAPTER-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 8,
+      "executionBlock": "A-ADAPTER-R4-8",
+      "networkProfile": "standard",
+      "faultScenario": "adapter-crash",
+      "randomSeed": "lubanga-revision-v2:A-ADAPTER-R4:8",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 155
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-A-ADAPTER-R4-R-08",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-ADAPTER-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 8,
+      "executionBlock": "A-ADAPTER-R4-8",
+      "networkProfile": "standard",
+      "faultScenario": "adapter-crash",
+      "randomSeed": "lubanga-revision-v2:A-ADAPTER-R4:8",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 156
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-A-DATABASE-R4-R-09",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 9,
+      "executionBlock": "A-DATABASE-R4-9",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:A-DATABASE-R4:9",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 157
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-A-DATABASE-R4-K-09",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 9,
+      "executionBlock": "A-DATABASE-R4-9",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:A-DATABASE-R4:9",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 158
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-E-PGRESTART-R4-R-03",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-PGRESTART-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 3,
+      "executionBlock": "E-PGRESTART-R4-3",
+      "networkProfile": "standard",
+      "faultScenario": "postgres-restart",
+      "randomSeed": "lubanga-revision-v2:E-PGRESTART-R4:3",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 159
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-E-PGRESTART-R4-K-03",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-PGRESTART-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 3,
+      "executionBlock": "E-PGRESTART-R4-3",
+      "networkProfile": "standard",
+      "faultScenario": "postgres-restart",
+      "randomSeed": "lubanga-revision-v2:E-PGRESTART-R4:3",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 160
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-B-POLL5-DATABASE-R4-K-04",
+      "block": "CAMPAIGN",
+      "studyBlock": "B",
+      "cell": "B-POLL5-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 4,
+      "executionBlock": "B-POLL5-DATABASE-R4-4",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:B-POLL5-DATABASE-R4:4",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 5,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 161
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-E-APPKILL-R4-K-03",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-APPKILL-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 3,
+      "executionBlock": "E-APPKILL-R4-3",
+      "networkProfile": "standard",
+      "faultScenario": "app-kill",
+      "randomSeed": "lubanga-revision-v2:E-APPKILL-R4:3",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 162
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-E-APPKILL-R4-R-03",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-APPKILL-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 3,
+      "executionBlock": "E-APPKILL-R4-3",
+      "networkProfile": "standard",
+      "faultScenario": "app-kill",
+      "randomSeed": "lubanga-revision-v2:E-APPKILL-R4:3",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 163
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-B-POLL25-NOFAULT-R8-K-05",
+      "block": "CAMPAIGN",
+      "studyBlock": "B",
+      "cell": "B-POLL25-NOFAULT-R8",
+      "phase": "screening",
+      "offeredRate": 8,
+      "offeredLoadPercent": null,
+      "repetition": 5,
+      "executionBlock": "B-POLL25-NOFAULT-R8-5",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:B-POLL25-NOFAULT-R8:5",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 25,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 164
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-B-POLL5-DATABASE-R4-K-01",
+      "block": "CAMPAIGN",
+      "studyBlock": "B",
+      "cell": "B-POLL5-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 1,
+      "executionBlock": "B-POLL5-DATABASE-R4-1",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:B-POLL5-DATABASE-R4:1",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 5,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 165
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-A-NOFAULT-R8-K-02",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-NOFAULT-R8",
+      "phase": "screening",
+      "offeredRate": 8,
+      "offeredLoadPercent": null,
+      "repetition": 2,
+      "executionBlock": "A-NOFAULT-R8-2",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:A-NOFAULT-R8:2",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 166
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-A-NOFAULT-R8-R-02",
+      "block": "CAMPAIGN",
+      "studyBlock": "A",
+      "cell": "A-NOFAULT-R8",
+      "phase": "screening",
+      "offeredRate": 8,
+      "offeredLoadPercent": null,
+      "repetition": 2,
+      "executionBlock": "A-NOFAULT-R8-2",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:A-NOFAULT-R8:2",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 167
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-E-APPKILL-R4-K-02",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-APPKILL-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 2,
+      "executionBlock": "E-APPKILL-R4-2",
+      "networkProfile": "standard",
+      "faultScenario": "app-kill",
+      "randomSeed": "lubanga-revision-v2:E-APPKILL-R4:2",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 168
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-E-APPKILL-R4-R-02",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-APPKILL-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 2,
+      "executionBlock": "E-APPKILL-R4-2",
+      "networkProfile": "standard",
+      "faultScenario": "app-kill",
+      "randomSeed": "lubanga-revision-v2:E-APPKILL-R4:2",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 169
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-B-POLL5-DATABASE-R4-K-02",
+      "block": "CAMPAIGN",
+      "studyBlock": "B",
+      "cell": "B-POLL5-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 2,
+      "executionBlock": "B-POLL5-DATABASE-R4-2",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:B-POLL5-DATABASE-R4:2",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 5,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 170
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-B-POLL10-NOFAULT-R8-K-04",
+      "block": "CAMPAIGN",
+      "studyBlock": "B",
+      "cell": "B-POLL10-NOFAULT-R8",
+      "phase": "screening",
+      "offeredRate": 8,
+      "offeredLoadPercent": null,
+      "repetition": 4,
+      "executionBlock": "B-POLL10-NOFAULT-R8-4",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:B-POLL10-NOFAULT-R8:4",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 10,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 171
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-E-PGRESTART-R4-K-04",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-PGRESTART-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 4,
+      "executionBlock": "E-PGRESTART-R4-4",
+      "networkProfile": "standard",
+      "faultScenario": "postgres-restart",
+      "randomSeed": "lubanga-revision-v2:E-PGRESTART-R4:4",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 172
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-E-PGRESTART-R4-R-04",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-PGRESTART-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 4,
+      "executionBlock": "E-PGRESTART-R4-4",
+      "networkProfile": "standard",
+      "faultScenario": "postgres-restart",
+      "randomSeed": "lubanga-revision-v2:E-PGRESTART-R4:4",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 173
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-E-PARTITION-R4-K-03",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-PARTITION-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 3,
+      "executionBlock": "E-PARTITION-R4-3",
+      "networkProfile": "standard",
+      "faultScenario": "database-partition",
+      "randomSeed": "lubanga-revision-v2:E-PARTITION-R4:3",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 174
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-E-PARTITION-R4-R-03",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-PARTITION-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 3,
+      "executionBlock": "E-PARTITION-R4-3",
+      "networkProfile": "standard",
+      "faultScenario": "database-partition",
+      "randomSeed": "lubanga-revision-v2:E-PARTITION-R4:3",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 175
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-E-PARTITION-R4-R-02",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-PARTITION-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 2,
+      "executionBlock": "E-PARTITION-R4-2",
+      "networkProfile": "standard",
+      "faultScenario": "database-partition",
+      "randomSeed": "lubanga-revision-v2:E-PARTITION-R4:2",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 176
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-E-PARTITION-R4-K-02",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-PARTITION-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 2,
+      "executionBlock": "E-PARTITION-R4-2",
+      "networkProfile": "standard",
+      "faultScenario": "database-partition",
+      "randomSeed": "lubanga-revision-v2:E-PARTITION-R4:2",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 177
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-B-POLL25-NOFAULT-R8-K-01",
+      "block": "CAMPAIGN",
+      "studyBlock": "B",
+      "cell": "B-POLL25-NOFAULT-R8",
+      "phase": "screening",
+      "offeredRate": 8,
+      "offeredLoadPercent": null,
+      "repetition": 1,
+      "executionBlock": "B-POLL25-NOFAULT-R8-1",
+      "networkProfile": "standard",
+      "faultScenario": "none",
+      "randomSeed": "lubanga-revision-v2:B-POLL25-NOFAULT-R8:1",
+      "timing": {
+        "warmupDuration": "2m",
+        "measurementDuration": "4m"
+      },
+      "variant": {
+        "outboxPollMs": 25,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 178
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-E-PARTITION-R4-K-04",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-PARTITION-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 4,
+      "executionBlock": "E-PARTITION-R4-4",
+      "networkProfile": "standard",
+      "faultScenario": "database-partition",
+      "randomSeed": "lubanga-revision-v2:E-PARTITION-R4:4",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 179
+    },
+    {
+      "conditionId": "R-A",
+      "composeProfile": "rest-async",
+      "gatewayPort": 8182,
+      "apiPort": 8082,
+      "runId": "CAMP-E-PARTITION-R4-R-04",
+      "block": "CAMPAIGN",
+      "studyBlock": "E",
+      "cell": "E-PARTITION-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 4,
+      "executionBlock": "E-PARTITION-R4-4",
+      "networkProfile": "standard",
+      "faultScenario": "database-partition",
+      "randomSeed": "lubanga-revision-v2:E-PARTITION-R4:4",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 50,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 180
+    },
+    {
+      "conditionId": "K-A",
+      "composeProfile": "kafka-async",
+      "gatewayPort": 8184,
+      "apiPort": 8084,
+      "runId": "CAMP-B-POLL25-DATABASE-R4-K-04",
+      "block": "CAMPAIGN",
+      "studyBlock": "B",
+      "cell": "B-POLL25-DATABASE-R4",
+      "phase": "fault",
+      "offeredRate": 4,
+      "offeredLoadPercent": null,
+      "repetition": 4,
+      "executionBlock": "B-POLL25-DATABASE-R4-4",
+      "networkProfile": "standard",
+      "faultScenario": "database-delay",
+      "randomSeed": "lubanga-revision-v2:B-POLL25-DATABASE-R4:4",
+      "timing": {
+        "warmupDuration": "5m",
+        "measurementDuration": "10m"
+      },
+      "variant": {
+        "outboxPollMs": 25,
+        "outboxDispatchMode": "serial",
+        "workerConcurrency": 4
+      },
+      "sequence": 181
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "failedAt": "2026-11-08T13:56:41.440Z",
+  "message": "POST http://127.0.0.1:8084/admin/reset returned 500: {\"error\":{\"code\":\"INTERNAL_ERROR\",\"message\":\"The request could not be completed.\"}}",
+  "stack": "Error: POST http://127.0.0.1:8084/admin/reset returned 500: {\"error\":{\"code\":\"INTERNAL_ERROR\",\"message\":\"The request could not be completed.\"}}\n    at fetchJson (file://<repo>/scripts/run-experiment.mjs:116:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async runOne (file://<repo>/scripts/run-experiment.mjs:479:5)\n    at async file://<repo>/scripts/run-experiment.mjs:684:7",
+  "code": null,
+  "exitCode": null,
+  "signal": null,
+  "cause": null
+}

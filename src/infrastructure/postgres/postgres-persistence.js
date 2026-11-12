@@ -657,6 +657,17 @@ export class PostgresPersistence {
     );
   }
 
+  async markOutboxPublishedBatch(eventIds) {
+    await this.pool.query(
+      `UPDATE outbox_events
+          SET published_at = clock_timestamp(),
+              publish_attempts = publish_attempts + 1,
+              last_error = NULL
+        WHERE event_id = ANY($1::uuid[])`,
+      [eventIds]
+    );
+  }
+
   async markOutboxFailed(eventId, error) {
     await this.pool.query(
       `UPDATE outbox_events

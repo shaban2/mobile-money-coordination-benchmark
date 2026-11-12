@@ -1,6 +1,7 @@
 import http from 'node:http';
 import { asErrorBody } from './domain/errors.js';
 import { createSystem } from './system.js';
+import { applyLocalCors, handleDocs } from './http/api-docs.js';
 
 const port = Number(process.env.PORT ?? 8080);
 const system = createSystem({
@@ -21,6 +22,8 @@ const system = createSystem({
   callbackMaxAttempts: Number(process.env.CALLBACK_MAX_ATTEMPTS ?? 1),
   callbackRetryDelayMs: Number(process.env.CALLBACK_RETRY_DELAY_MS ?? 0),
   workerConcurrency: Number(process.env.WORKER_CONCURRENCY ?? 4),
+  outboxPollIntervalMs: Number(process.env.OUTBOX_POLL_MS ?? 50),
+  outboxDispatchMode: process.env.OUTBOX_DISPATCH_MODE ?? 'serial',
   diagnosticsEnabled: process.env.DIAGNOSTICS_ENABLED === 'true',
   databaseDiagnosticsEnabled: process.env.DATABASE_DIAGNOSTICS_ENABLED === 'true'
 });
@@ -55,6 +58,8 @@ const server = http.createServer(async (request, response) => {
   const receivedAt = new Date().toISOString();
   const url = new URL(request.url, `http://${request.headers.host ?? 'localhost'}`);
   try {
+    applyLocalCors(request, response);
+    if (await handleDocs(request, url, response)) return;
     if (request.method === 'GET' && url.pathname === '/health') {
       return sendJson(response, 200, { status: 'UP', condition: system.config });
     }

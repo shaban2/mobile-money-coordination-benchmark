@@ -1,0 +1,173 @@
+{
+  "root_group": {
+    "groups": {},
+    "checks": {
+      "transfer request accepted": {
+        "name": "transfer request accepted",
+        "path": "::transfer request accepted",
+        "id": "8387f91e511d5ff85ded014dc6717e76",
+        "passes": 24172,
+        "fails": 0
+      },
+      "status retrieval succeeds": {
+        "passes": 6042,
+        "fails": 0,
+        "name": "status retrieval succeeds",
+        "path": "::status retrieval succeeds",
+        "id": "9c96d577c67d89264fdc808a57274dfd"
+      }
+    },
+    "name": "",
+    "path": "",
+    "id": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "metrics": {
+    "http_req_duration": {
+      "max": 1574.304459,
+      "p(90)": 39.02791700000001,
+      "p(95)": 78.17205429999997,
+      "avg": 47.70938059765012,
+      "min": 16.5655,
+      "med": 23.736083
+    },
+    "http_req_duration{expected_response:true}": {
+      "avg": 47.70938059765012,
+      "min": 16.5655,
+      "med": 23.736083,
+      "max": 1574.304459,
+      "p(90)": 39.02791700000001,
+      "p(95)": 78.17205429999997
+    },
+    "dropped_iterations": {
+      "count": 506,
+      "rate": 4.213686669886774
+    },
+    "http_req_blocked": {
+      "p(90)": 0.005334,
+      "p(95)": 0.007166299999999999,
+      "avg": 0.09353409319874147,
+      "min": 0.000875,
+      "med": 0.002209,
+      "max": 98.193583
+    },
+    "workload_status_retrievals": {
+      "count": 6042,
+      "rate": 50.31441671829227
+    },
+    "data_sent": {
+      "count": 12093887,
+      "rate": 100711.16687552756
+    },
+    "workload_provider_b_requests": {
+      "rate": 100.64548832460781,
+      "count": 12086
+    },
+    "vus": {
+      "min": 4,
+      "max": 200,
+      "value": 6
+    },
+    "http_req_sending": {
+      "max": 109.269208,
+      "p(90)": 0.01925,
+      "p(95)": 0.028179299999999945,
+      "avg": 0.028837429654145198,
+      "min": 0.00275,
+      "med": 0.0105
+    },
+    "http_req_receiving": {
+      "avg": 0.0409389575707427,
+      "min": 0.006834,
+      "med": 0.023833,
+      "max": 89.823375,
+      "p(90)": 0.064708,
+      "p(95)": 0.088875
+    },
+    "client_attempts": {
+      "count": 30214,
+      "rate": 251.6053933675079
+    },
+    "http_req_connecting": {
+      "avg": 0.08585358288929341,
+      "min": 0,
+      "med": 0,
+      "max": 91.111375,
+      "p(90)": 0,
+      "p(95)": 0
+    },
+    "data_received": {
+      "count": 22367574,
+      "rate": 186264.72016107902
+    },
+    "http_req_waiting": {
+      "p(95)": 78.10730449999998,
+      "avg": 47.63960421042545,
+      "min": 16.546708,
+      "med": 23.689708,
+      "max": 1574.268959,
+      "p(90)": 38.869833
+    },
+    "measurement_started_at": {
+      "value": 1794219650669,
+      "min": 1794219650669,
+      "max": 1794219650669
+    },
+    "workload_unique_creates": {
+      "count": 22964,
+      "rate": 191.23142428316183
+    },
+    "iterations": {
+      "count": 30214,
+      "rate": 251.6053933675079
+    },
+    "workload_replay_creates": {
+      "count": 1208,
+      "rate": 10.0595523660538
+    },
+    "vus_max": {
+      "min": 29,
+      "max": 200,
+      "value": 200
+    },
+    "checks": {
+      "passes": 30214,
+      "fails": 0,
+      "thresholds": {
+        "rate>=0.995": false
+      },
+      "value": 1
+    },
+    "http_reqs": {
+      "rate": 251.61372081151953,
+      "count": 30215
+    },
+    "http_req_failed": {
+      "passes": 0,
+      "fails": 30215,
+      "value": 0
+    },
+    "iteration_duration": {
+      "avg": 48.078897319619635,
+      "min": 16.673958,
+      "med": 23.8802915,
+      "max": 1586.842751,
+      "p(90)": 39.268958600000005,
+      "p(95)": 78.70128344999996
+    },
+    "http_req_tls_handshaking": {
+      "p(95)": 0,
+      "avg": 0,
+      "min": 0,
+      "med": 0,
+      "max": 0,
+      "p(90)": 0
+    },
+    "workload_provider_a_requests": {
+      "count": 12086,
+      "rate": 100.64548832460781
+    }
+  },
+  "setup_data": {
+    "transferId": "9cb1a8bb-58da-4b3c-917e-2b8b51bfa25b"
+  }
+}

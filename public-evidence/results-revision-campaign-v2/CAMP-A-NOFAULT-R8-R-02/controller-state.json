@@ -1,0 +1,39 @@
+{
+  "currentStatus": "QUALIFIED",
+  "events": [
+    {
+      "status": "STAGING",
+      "occurredAt": "2026-11-10T05:57:55.411Z"
+    },
+    {
+      "status": "WARMUP",
+      "occurredAt": "2026-11-10T05:58:09.331Z"
+    },
+    {
+      "status": "STARTING_LOAD",
+      "occurredAt": "2026-11-10T06:00:10.482Z",
+      "offeredRate": 8
+    },
+    {
+      "status": "MEASUREMENT",
+      "occurredAt": "2026-11-10T06:00:11.091Z",
+      "measurementStartedAt": "2026-11-10T06:00:10.817Z"
+    },
+    {
+      "status": "DRAINING",
+      "occurredAt": "2026-11-10T06:04:12.842Z"
+    },
+    {
+      "status": "OBSERVATION_ENDED",
+      "occurredAt": "2026-11-10T06:04:12.862Z"
+    },
+    {
+      "status": "QUALIFYING",
+      "occurredAt": "2026-11-10T06:04:13.471Z"
+    },
+    {
+      "status": "QUALIFIED",
+      "occurredAt": "2026-11-10T06:04:13.577Z"
+    }
+  ]
+}

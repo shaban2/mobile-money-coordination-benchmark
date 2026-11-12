@@ -31,10 +31,30 @@ export class RuntimeDiagnostics {
     this.startedAt = new Date(this.wallClock()).toISOString();
     this.startedMonotonic = this.clock();
     this.sequence = 0; this.aggregates = new Map(); this.recordingErrors = 0;
+    this.statementCounts = new Map(); this.previousStatementCounts = new Map();
     this.spans = new Ring(this.maxSpans); this.samples = new Ring(this.maxSamples);
     this.eventLoop?.reset();
     this.previousCpu = process.cpuUsage(); this.previousUsage = process.resourceUsage();
     this.previousElu = performance.eventLoopUtilization(); this.previousSample = this.clock();
+  }
+
+  // Every statement is counted, unlike spans, which keep only slow ones.
+  countStatement(category) {
+    if (!this.enabled) return;
+    const store = this.context.getStore();
+    const scope = store?.transferId || store?.attributes?.transferWork ? 'transfer' : 'background';
+    const key = `${category}.${scope}`;
+    this.statementCounts.set(key, (this.statementCounts.get(key) ?? 0) + 1);
+  }
+
+  statementDelta() {
+    const delta = {};
+    for (const [key, count] of this.statementCounts) {
+      const change = count - (this.previousStatementCounts.get(key) ?? 0);
+      if (change) delta[key] = change;
+    }
+    this.previousStatementCounts = new Map(this.statementCounts);
+    return delta;
   }
 
   begin(label, attributes = {}) {
@@ -110,7 +130,7 @@ export class RuntimeDiagnostics {
         involuntaryContextSwitches: usage.involuntaryContextSwitches - this.previousUsage.involuntaryContextSwitches,
         voluntaryContextSwitches: usage.voluntaryContextSwitches - this.previousUsage.voluntaryContextSwitches,
         majorPageFaults: usage.majorPageFault - this.previousUsage.majorPageFault,
-        pool: this.poolSnapshot?.() ?? null });
+        pool: this.poolSnapshot?.() ?? null, statements: this.statementDelta() });
       this.previousCpu = cpu; this.previousUsage = usage; this.previousElu = elu; this.previousSample = now;
       this.eventLoop?.reset();
     } catch { this.recordingErrors++; }
@@ -129,6 +149,7 @@ export class RuntimeDiagnostics {
       recordingErrors: this.recordingErrors, histogramUpperMs,
       aggregates: Object.fromEntries([...this.aggregates].map(([key, s]) => [key,
         { ...s, totalMs: rounded(s.totalMs), maxMs: rounded(s.maxMs), meanMs: rounded(s.totalMs / s.count) }])),
+      statementCounts: Object.fromEntries(this.statementCounts),
       spans: this.spans.snapshot(), runtimeSamples: this.samples.snapshot() };
   }
 }

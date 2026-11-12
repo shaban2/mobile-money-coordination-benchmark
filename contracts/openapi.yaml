@@ -7,12 +7,31 @@ info:
     transfer. It is not the full GSMA Mobile Money API and does not claim
     conformance or certification.
 servers:
+  - url: /
+    description: The design serving this page
+  - url: http://localhost:8082
+    description: REST orchestration (docker compose --profile rest-async up)
+  - url: http://localhost:8084
+    description: Kafka choreography (docker compose --profile kafka-async up)
   - url: http://localhost:8080
+    description: Local process (npm start)
+tags:
+  - name: Transfers
+    description: The public P2P transfer API that both designs share.
+  - name: Checks
+    description: Read-only views for inspecting correctness and internal state.
+  - name: Demo controls
+    description: Change system state. For local demos only.
 paths:
   /v1/transfers:
     post:
+      tags: [Transfers]
       operationId: createTransfer
       summary: Create a synthetic P2P transfer
+      description: >-
+        Returns HTTP 202 at once with status PENDING. Read the final result with
+        GET /v1/transfers/{transferId}. Sending the same Idempotency-Key again
+        returns the original transfer instead of creating a new one.
       parameters:
         - name: Idempotency-Key
           in: header
@@ -20,12 +39,20 @@ paths:
           schema:
             type: string
             minLength: 1
+          example: demo-0001
       requestBody:
         required: true
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/TransferRequest'
+            example:
+              payerId: payer-1
+              payeeId: payee-1
+              amount: '1000'
+              currency: UGX
+              clientReference: DEMO-0001
+              providerProfile: A
       responses:
         '202':
           description: Accepted for asynchronous processing; the final result is delivered by callback or status retrieval
@@ -43,6 +70,7 @@ paths:
           $ref: '#/components/responses/Problem'
   /v1/transfers/{transferId}:
     get:
+      tags: [Transfers]
       operationId: getTransfer
       summary: Retrieve the current or final transfer status
       parameters:
@@ -61,6 +89,138 @@ paths:
                 $ref: '#/components/schemas/Transfer'
         '404':
           $ref: '#/components/responses/Problem'
+  /health:
+    get:
+      tags: [Checks]
+      operationId: health
+      summary: Health and the running design's configuration
+      responses:
+        '200':
+          $ref: '#/components/responses/AnyJson'
+  /admin/invariants:
+    get:
+      tags: [Checks]
+      operationId: checkInvariants
+      summary: Run the ledger and correctness checks
+      description: >-
+        Checks that final states never reverse, every completed transfer has
+        exactly one balanced ledger entry, failed transfers have none, money is
+        conserved, account balances match postings, and idempotency keys are
+        unique. "passed" is true only when every check holds. Each call also
+        stores a reconciliation record.
+      parameters:
+        - name: experimentRunId
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Check results
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvariantReport'
+  /admin/transfers:
+    get:
+      tags: [Checks]
+      operationId: listTransfers
+      summary: All transfers with their internal state history
+      responses:
+        '200':
+          $ref: '#/components/responses/AnyJson'
+  /admin/accounts:
+    get:
+      tags: [Checks]
+      operationId: listAccounts
+      summary: Account balances
+      responses:
+        '200':
+          $ref: '#/components/responses/AnyJson'
+  /admin/outbox:
+    get:
+      tags: [Checks]
+      operationId: listOutbox
+      summary: Outbox events and whether each was published (Kafka design)
+      responses:
+        '200':
+          $ref: '#/components/responses/AnyJson'
+  /admin/traces:
+    get:
+      tags: [Checks]
+      operationId: listTraces
+      summary: Timestamped workflow steps per transfer
+      responses:
+        '200':
+          $ref: '#/components/responses/AnyJson'
+  /admin/provider-attempts:
+    get:
+      tags: [Checks]
+      operationId: listProviderAttempts
+      summary: Calls made to the synthetic providers, including retries
+      responses:
+        '200':
+          $ref: '#/components/responses/AnyJson'
+  /admin/dead-letters:
+    get:
+      tags: [Checks]
+      operationId: listDeadLetters
+      summary: Events that could not be processed
+      responses:
+        '200':
+          $ref: '#/components/responses/AnyJson'
+  /admin/callbacks:
+    get:
+      tags: [Checks]
+      operationId: listCallbacks
+      summary: Callback deliveries recorded by the application
+      responses:
+        '200':
+          $ref: '#/components/responses/AnyJson'
+  /admin/telemetry:
+    get:
+      tags: [Checks]
+      operationId: telemetry
+      summary: Counters such as backlog and completions
+      responses:
+        '200':
+          $ref: '#/components/responses/AnyJson'
+  /admin/provider-availability:
+    post:
+      tags: [Demo controls]
+      operationId: setProviderAvailability
+      summary: Make the provider adapter unavailable or available again
+      description: >-
+        Simulates a provider outage. Set available to false, create transfers,
+        then set it back to true and watch them finish. This works only when the
+        app runs on its own (npm start, port 8080). Under Docker the adapter is a
+        separate container and this returns 409. Use
+        "docker compose stop adapter-service" and "docker compose start
+        adapter-service" instead.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [available]
+              properties:
+                available:
+                  type: boolean
+            example:
+              available: false
+      responses:
+        '200':
+          $ref: '#/components/responses/AnyJson'
+  /admin/reset:
+    post:
+      tags: [Demo controls]
+      operationId: reset
+      summary: Delete all transfers, ledger entries and events
+      description: Wipes this design's database state. Use it to start a demo from zero.
+      responses:
+        '200':
+          $ref: '#/components/responses/AnyJson'
 components:
   schemas:
     TransferRequest:
@@ -162,7 +322,29 @@ components:
               type: string
             message:
               type: string
+    InvariantReport:
+      type: object
+      required: [passed, checks]
+      properties:
+        passed:
+          type: boolean
+        checks:
+          type: object
+          additionalProperties:
+            type: boolean
+        transferCount:
+          type: integer
+        ledgerEntryCount:
+          type: integer
+      additionalProperties: true
   responses:
+    AnyJson:
+      description: JSON response
+      content:
+        application/json:
+          schema:
+            type: object
+            additionalProperties: true
     Problem:
       description: Request error
       content:

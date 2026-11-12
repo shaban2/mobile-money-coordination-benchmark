@@ -1,0 +1,10 @@
+{
+  "scenario": "app-kill",
+  "scheduledAtMeasurementSecond": 240,
+  "requestedAt": "2026-11-09T06:51:07.989Z",
+  "injectedAt": "2026-11-09T06:51:08.423Z",
+  "clearedAt": "2026-11-09T06:52:40.284Z",
+  "completed": true,
+  "timingDefinition": "SIGKILL acknowledgement to application health readiness",
+  "restartedByPolicyDuringFault": false
+}

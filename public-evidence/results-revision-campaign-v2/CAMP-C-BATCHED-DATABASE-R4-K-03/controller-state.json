@@ -1,0 +1,14 @@
+{
+  "currentStatus": "FAILED",
+  "events": [
+    {
+      "status": "STAGING",
+      "occurredAt": "2026-11-08T13:56:25.199Z"
+    },
+    {
+      "status": "FAILED",
+      "occurredAt": "2026-11-08T13:56:41.658Z",
+      "message": "POST http://127.0.0.1:8084/admin/reset returned 500: {\"error\":{\"code\":\"INTERNAL_ERROR\",\"message\":\"The request could not be completed.\"}}"
+    }
+  ]
+}

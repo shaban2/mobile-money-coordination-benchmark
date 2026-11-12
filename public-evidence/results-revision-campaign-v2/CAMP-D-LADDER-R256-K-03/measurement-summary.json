@@ -1,0 +1,173 @@
+{
+  "root_group": {
+    "checks": {
+      "transfer request accepted": {
+        "name": "transfer request accepted",
+        "path": "::transfer request accepted",
+        "id": "8387f91e511d5ff85ded014dc6717e76",
+        "passes": 48526,
+        "fails": 0
+      },
+      "status retrieval succeeds": {
+        "name": "status retrieval succeeds",
+        "path": "::status retrieval succeeds",
+        "id": "9c96d577c67d89264fdc808a57274dfd",
+        "passes": 12131,
+        "fails": 0
+      }
+    },
+    "name": "",
+    "path": "",
+    "id": "d41d8cd98f00b204e9800998ecf8427e",
+    "groups": {}
+  },
+  "metrics": {
+    "vus": {
+      "value": 40,
+      "min": 4,
+      "max": 200
+    },
+    "vus_max": {
+      "value": 200,
+      "min": 27,
+      "max": 200
+    },
+    "workload_provider_a_requests": {
+      "count": 24263,
+      "rate": 100.95844680021133
+    },
+    "http_req_connecting": {
+      "avg": 0.03859670613933859,
+      "min": 0,
+      "med": 0,
+      "max": 30.838584,
+      "p(90)": 0,
+      "p(95)": 0
+    },
+    "dropped_iterations": {
+      "count": 783,
+      "rate": 3.258066349773955
+    },
+    "http_req_duration": {
+      "avg": 61.914329006165495,
+      "min": 16.245458,
+      "med": 24.170021,
+      "max": 1772.054834,
+      "p(90)": 120.16989630000002,
+      "p(95)": 224.3750794999999
+    },
+    "http_req_receiving": {
+      "p(95)": 0.10200629999999988,
+      "avg": 0.0518606793992549,
+      "min": 0.006208,
+      "med": 0.025833,
+      "max": 93.329459,
+      "p(90)": 0.07347130000000004
+    },
+    "http_req_failed": {
+      "passes": 0,
+      "fails": 60658,
+      "value": 0
+    },
+    "iterations": {
+      "count": 60657,
+      "rate": 252.39403649838928
+    },
+    "workload_replay_creates": {
+      "count": 2426,
+      "rate": 10.094596378737695
+    },
+    "http_reqs": {
+      "count": 60658,
+      "rate": 252.3981975026674
+    },
+    "workload_status_retrievals": {
+      "count": 12131,
+      "rate": 50.4771428979666
+    },
+    "client_attempts": {
+      "count": 60657,
+      "rate": 252.39403649838928
+    },
+    "checks": {
+      "passes": 60657,
+      "fails": 0,
+      "thresholds": {
+        "rate>=0.995": false
+      },
+      "value": 1
+    },
+    "http_req_blocked": {
+      "p(95)": 0.010917,
+      "avg": 0.05251473175838291,
+      "min": 0.000875,
+      "med": 0.002458,
+      "max": 404.692667,
+      "p(90)": 0.007666
+    },
+    "iteration_duration": {
+      "avg": 62.32517268926848,
+      "min": 16.414292,
+      "med": 24.359708,
+      "max": 2093.257668,
+      "p(90)": 121.005108,
+      "p(95)": 225.58590839999977
+    },
+    "data_received": {
+      "count": 45217618,
+      "rate": 188150.70194474215
+    },
+    "measurement_started_at": {
+      "value": 1794052613700,
+      "min": 1794052613700,
+      "max": 1794052613700
+    },
+    "http_req_tls_handshaking": {
+      "med": 0,
+      "max": 0,
+      "p(90)": 0,
+      "p(95)": 0,
+      "avg": 0,
+      "min": 0
+    },
+    "data_sent": {
+      "count": 24781800,
+      "rate": 103117.17581970396
+    },
+    "http_req_duration{expected_response:true}": {
+      "min": 16.245458,
+      "med": 24.170021,
+      "max": 1772.054834,
+      "p(90)": 120.16989630000002,
+      "p(95)": 224.3750794999999,
+      "avg": 61.914329006165495
+    },
+    "http_req_waiting": {
+      "min": 16.099875,
+      "med": 24.122375,
+      "max": 1769.323376,
+      "p(90)": 120.01213750000004,
+      "p(95)": 224.24583744999978,
+      "avg": 61.82074621807472
+    },
+    "workload_provider_b_requests": {
+      "rate": 100.95844680021133,
+      "count": 24263
+    },
+    "http_req_sending": {
+      "avg": 0.04172210869135142,
+      "min": 0.002583,
+      "med": 0.011166,
+      "max": 238.531792,
+      "p(90)": 0.023541,
+      "p(95)": 0.03491615
+    },
+    "workload_unique_creates": {
+      "count": 46100,
+      "rate": 191.82229722168498
+    }
+  },
+  "setup_data": {
+    "transferId": "342ad3b5-4e02-45d2-81b9-d58cd57dfcaa"
+  }
+}

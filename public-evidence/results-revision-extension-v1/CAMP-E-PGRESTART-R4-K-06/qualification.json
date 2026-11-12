@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 2,
+  "runId": "CAMP-E-PGRESTART-R4-K-06",
+  "qualified": false,
+  "valid": false,
+  "status": "INVALID",
+  "gates": {
+    "artifactsPresent": true,
+    "supportedMeasurementSchema": true,
+    "workloadCompositionWithinTolerance": true,
+    "clientAttemptsAccountedFor": true,
+    "timingEvidenceComplete": true,
+    "resourceCoverageComplete": true,
+    "architectureIsolated": true,
+    "offeredLoadDelivered": false,
+    "generatorCompleted": true,
+    "faultEvidenceComplete": true,
+    "faultHeldForFullDuration": true,
+    "clientErrorsConfinedToFault": true,
+    "fixedAsyncClientMode": true,
+    "configurationUnchanged": true
+  },
+  "eligibleToLead": false,
+  "safety": {
+    "passed": true,
+    "checks": {
+      "terminalStatesNeverReversed": true,
+      "fulfilledHaveOneLedgerEntry": true,
+      "failedHaveNoLedgerEntry": true,
+      "uniqueLedgerEntries": true,
+      "balancedLedgerEntries": true,
+      "ledgerMatchesTransfers": true,
+      "valueConserved": true,
+      "accountBalancesMatchPostings": true,
+      "uniqueIdempotencyKeys": true
+    }
+  },
+  "performance": {
+    "passed": true,
+    "workloadCheckRate": 1,
+    "terminalCallbacksComplete": true,
+    "censored": false
+  },
+  "observed": {
+    "workloadComposition": {
+      "totalOperations": 2339,
+      "statusShare": 0.1996579734929457,
+      "replayShareWithinCreateAttempts": 0.050213675213675216,
+      "providerAShare": 0.5
+    },
+    "clientErrors": {
+      "total": 2339,
+      "failed": 0,
+      "duringFault": 0,
+      "outsideFault": 0
+    },
+    "resourceSampleLines": 294,
+    "uniqueCallbackTransfers": 1778,
+    "pending": 0
+  },
+  "qualifiedAt": "2026-11-10T12:56:31.125Z"
+}

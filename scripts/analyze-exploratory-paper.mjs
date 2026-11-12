@@ -264,7 +264,11 @@ export function analyzeObservationRun(root, selection, record) {
   const recomputed = deriveOutcomes({ manifest, telemetry: read('telemetry'), traces: read('traces'),
     controller: read('controller-state'), invariants: read('invariants'), snapshot: read('transfers'),
     clock: read('measurement-clock'), fault });
-  assert.deepEqual(recomputed, outcomes, 'Archived outcomes must recompute exactly');
+  // The revision harness added two fields that v1 archives do not have. They are dropped only when they
+  // hold their neutral value, so any real difference still fails the exact comparison.
+  const v1Shape = JSON.parse(JSON.stringify(recomputed, (k, v) =>
+    (k === 'recoveredConfirmations' && v === 0) || (k === 'latencyUpperBound' && v === false) ? undefined : v));
+  assert.deepEqual(v1Shape, outcomes, 'Archived outcomes must recompute exactly');
   const qualified = read('qualification');
   assert.equal(qualified.status, 'QUALIFIED');
   const latenciesMs = outcomes.transfers.filter(t => t.correct && Date.parse(t.terminalAt) < Date.parse(outcomes.measurementEnd)).map(t => t.latencyMs).sort((a, b) => a - b);

@@ -1,0 +1,10 @@
+{
+  "scenario": "postgres-restart",
+  "scheduledAtMeasurementSecond": 240,
+  "requestedAt": "2026-11-09T02:19:22.050Z",
+  "injectedAt": "2026-11-09T02:19:22.359Z",
+  "clearedAt": "2026-11-09T02:19:53.032Z",
+  "completed": true,
+  "timingDefinition": "SIGKILL acknowledgement to pg_isready success after crash recovery",
+  "restartedByPolicyDuringFault": false
+}

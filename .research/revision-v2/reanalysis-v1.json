@@ -1,0 +1,665 @@
+{
+  "schemaVersion": 1,
+  "sourceAnalysis": ".research/exploratory-paper-v1/analysis.json",
+  "note": "Retrospective recomputation of the 10 v1 reporting and fresh runs. One run per cell, so no uncertainty is estimated.",
+  "runs": [
+    {
+      "cohort": "reporting",
+      "scenario": "screening",
+      "architecture": "REST",
+      "sequence": 1,
+      "runId": "PILOT-001-screening-R8-R-A-1",
+      "evidenceRoot": "results-queue-screening-r8-v2",
+      "hops": [
+        {
+          "from": "API_RECEIVED",
+          "to": "STATE_TRANSITION:VALIDATED",
+          "count": 1459,
+          "medianMs": 5,
+          "p95Ms": 8
+        },
+        {
+          "from": "STATE_TRANSITION:VALIDATED",
+          "to": "STATE_TRANSITION:PREPARED",
+          "count": 1459,
+          "medianMs": 2,
+          "p95Ms": 4
+        },
+        {
+          "from": "STATE_TRANSITION:PREPARED",
+          "to": "PROVIDER_ATTEMPT",
+          "count": 1459,
+          "medianMs": 34,
+          "p95Ms": 39
+        },
+        {
+          "from": "PROVIDER_ATTEMPT",
+          "to": "TERMINAL_STATE",
+          "count": 1459,
+          "medianMs": 5,
+          "p95Ms": 7
+        },
+        {
+          "from": "TERMINAL_STATE",
+          "to": "COMMIT_CONFIRMED",
+          "count": 1459,
+          "medianMs": 1,
+          "p95Ms": 2
+        }
+      ],
+      "fault": null,
+      "dispatch": null
+    },
+    {
+      "cohort": "reporting",
+      "scenario": "screening",
+      "architecture": "Kafka",
+      "sequence": 2,
+      "runId": "PILOT-001-screening-R8-K-A-1",
+      "evidenceRoot": "results-queue-screening-r8-v2",
+      "hops": [
+        {
+          "from": "API_RECEIVED",
+          "to": "STATE_TRANSITION:VALIDATED",
+          "count": 1459,
+          "medianMs": 9,
+          "p95Ms": 27
+        },
+        {
+          "from": "STATE_TRANSITION:VALIDATED",
+          "to": "STATE_TRANSITION:PREPARED",
+          "count": 1459,
+          "medianMs": 30,
+          "p95Ms": 53
+        },
+        {
+          "from": "STATE_TRANSITION:PREPARED",
+          "to": "PROVIDER_ATTEMPT",
+          "count": 1459,
+          "medianMs": 79,
+          "p95Ms": 86
+        },
+        {
+          "from": "PROVIDER_ATTEMPT",
+          "to": "TERMINAL_STATE",
+          "count": 1459,
+          "medianMs": 21,
+          "p95Ms": 26
+        },
+        {
+          "from": "TERMINAL_STATE",
+          "to": "COMMIT_CONFIRMED",
+          "count": 1459,
+          "medianMs": 1,
+          "p95Ms": 2
+        }
+      ],
+      "fault": null,
+      "dispatch": null
+    },
+    {
+      "cohort": "reporting",
+      "scenario": "adapter",
+      "architecture": "REST",
+      "sequence": 1,
+      "runId": "PILOT-001-fault-R4-R-A-1",
+      "evidenceRoot": "results-exploratory-adapter-r4-v1",
+      "hops": [
+        {
+          "from": "API_RECEIVED",
+          "to": "STATE_TRANSITION:VALIDATED",
+          "count": 1824,
+          "medianMs": 6,
+          "p95Ms": 1274.5
+        },
+        {
+          "from": "STATE_TRANSITION:VALIDATED",
+          "to": "STATE_TRANSITION:PREPARED",
+          "count": 1824,
+          "medianMs": 3,
+          "p95Ms": 5
+        },
+        {
+          "from": "STATE_TRANSITION:PREPARED",
+          "to": "PROVIDER_ATTEMPT",
+          "count": 1824,
+          "medianMs": 34,
+          "p95Ms": 41
+        },
+        {
+          "from": "PROVIDER_ATTEMPT",
+          "to": "TERMINAL_STATE",
+          "count": 1824,
+          "medianMs": 5,
+          "p95Ms": 7
+        },
+        {
+          "from": "TERMINAL_STATE",
+          "to": "COMMIT_CONFIRMED",
+          "count": 1824,
+          "medianMs": 1,
+          "p95Ms": 2
+        }
+      ],
+      "fault": {
+        "injectedAt": "2026-09-21T04:22:58.754Z",
+        "clearedAt": "2026-09-21T04:23:29.201Z",
+        "durationSeconds": 30.447,
+        "windowsEndingInside": 1,
+        "doneWindowBased": 1,
+        "doneExactInterval": 0,
+        "exactRatePerSecond": 0,
+        "arrivalsInFault": 93,
+        "arrivedAndDoneInFault": 0,
+        "arrivedInFaultDoneAfter": 93,
+        "recovery": {
+          "baselineGoodput": 3.033,
+          "baselineP95Ms": 64,
+          "completionRateRestoredSeconds": 59.217,
+          "faultCohortClearedSeconds": 4.849,
+          "latencyRestoredByCompletionSeconds": 59.217,
+          "latencyRestoredByArrivalSeconds": 59.217,
+          "sustainedThreeWindowSeconds": 119.217
+        }
+      },
+      "dispatch": null
+    },
+    {
+      "cohort": "reporting",
+      "scenario": "adapter",
+      "architecture": "Kafka",
+      "sequence": 2,
+      "runId": "PILOT-001-fault-R4-K-A-1",
+      "evidenceRoot": "results-exploratory-adapter-r4-v1",
+      "hops": [
+        {
+          "from": "API_RECEIVED",
+          "to": "STATE_TRANSITION:VALIDATED",
+          "count": 1824,
+          "medianMs": 7,
+          "p95Ms": 5011.8
+        },
+        {
+          "from": "STATE_TRANSITION:VALIDATED",
+          "to": "STATE_TRANSITION:PREPARED",
+          "count": 1824,
+          "medianMs": 33,
+          "p95Ms": 77.8
+        },
+        {
+          "from": "STATE_TRANSITION:PREPARED",
+          "to": "PROVIDER_ATTEMPT",
+          "count": 1824,
+          "medianMs": 83,
+          "p95Ms": 230.8
+        },
+        {
+          "from": "PROVIDER_ATTEMPT",
+          "to": "TERMINAL_STATE",
+          "count": 1824,
+          "medianMs": 21,
+          "p95Ms": 561.7
+        },
+        {
+          "from": "TERMINAL_STATE",
+          "to": "COMMIT_CONFIRMED",
+          "count": 1824,
+          "medianMs": 1,
+          "p95Ms": 2
+        }
+      ],
+      "fault": {
+        "injectedAt": "2026-09-21T04:38:23.651Z",
+        "clearedAt": "2026-09-21T04:38:54.095Z",
+        "durationSeconds": 30.444,
+        "windowsEndingInside": 1,
+        "doneWindowBased": 1,
+        "doneExactInterval": 0,
+        "exactRatePerSecond": 0,
+        "arrivalsInFault": 93,
+        "arrivedAndDoneInFault": 0,
+        "arrivedInFaultDoneAfter": 93,
+        "recovery": {
+          "baselineGoodput": 3.033,
+          "baselineP95Ms": 195.6,
+          "completionRateRestoredSeconds": 59.166,
+          "faultCohortClearedSeconds": 6.231,
+          "latencyRestoredByCompletionSeconds": 59.166,
+          "latencyRestoredByArrivalSeconds": 59.166,
+          "sustainedThreeWindowSeconds": 119.166
+        }
+      },
+      "dispatch": null
+    },
+    {
+      "cohort": "reporting",
+      "scenario": "database",
+      "architecture": "REST",
+      "sequence": 1,
+      "runId": "PILOT-001-fault-R4-R-A-1",
+      "evidenceRoot": "results-exploratory-database-r4-v1",
+      "hops": [
+        {
+          "from": "API_RECEIVED",
+          "to": "STATE_TRANSITION:VALIDATED",
+          "count": 1824,
+          "medianMs": 6,
+          "p95Ms": 18166
+        },
+        {
+          "from": "STATE_TRANSITION:VALIDATED",
+          "to": "STATE_TRANSITION:PREPARED",
+          "count": 1824,
+          "medianMs": 3,
+          "p95Ms": 7
+        },
+        {
+          "from": "STATE_TRANSITION:PREPARED",
+          "to": "PROVIDER_ATTEMPT",
+          "count": 1824,
+          "medianMs": 34,
+          "p95Ms": 42
+        },
+        {
+          "from": "PROVIDER_ATTEMPT",
+          "to": "TERMINAL_STATE",
+          "count": 1824,
+          "medianMs": 5,
+          "p95Ms": 9
+        },
+        {
+          "from": "TERMINAL_STATE",
+          "to": "COMMIT_CONFIRMED",
+          "count": 1824,
+          "medianMs": 1,
+          "p95Ms": 2
+        }
+      ],
+      "fault": {
+        "injectedAt": "2026-09-21T05:00:42.055Z",
+        "clearedAt": "2026-09-21T05:01:42.179Z",
+        "durationSeconds": 60.124,
+        "windowsEndingInside": 2,
+        "doneWindowBased": 72,
+        "doneExactInterval": 73,
+        "exactRatePerSecond": 1.214,
+        "arrivalsInFault": 183,
+        "arrivedAndDoneInFault": 73,
+        "arrivedInFaultDoneAfter": 110,
+        "recovery": {
+          "baselineGoodput": 3.033,
+          "baselineP95Ms": 61.4,
+          "completionRateRestoredSeconds": 59.749,
+          "faultCohortClearedSeconds": 0.984,
+          "latencyRestoredByCompletionSeconds": 59.749,
+          "latencyRestoredByArrivalSeconds": 59.749,
+          "sustainedThreeWindowSeconds": 119.749
+        }
+      },
+      "dispatch": {
+        "statementsOver10Ms": 4001,
+        "linkedToTransfer": 2317,
+        "notLinkedToTransfer": 1684,
+        "outboxMarks": 0,
+        "outboxMarksPerSecond": 0,
+        "outboxMarkMedianMs": null
+      }
+    },
+    {
+      "cohort": "reporting",
+      "scenario": "database",
+      "architecture": "Kafka",
+      "sequence": 2,
+      "runId": "PILOT-001-fault-R4-K-A-1",
+      "evidenceRoot": "results-exploratory-database-r4-v1",
+      "hops": [
+        {
+          "from": "API_RECEIVED",
+          "to": "STATE_TRANSITION:VALIDATED",
+          "count": 1824,
+          "medianMs": 8,
+          "p95Ms": 13287
+        },
+        {
+          "from": "STATE_TRANSITION:VALIDATED",
+          "to": "STATE_TRANSITION:PREPARED",
+          "count": 1824,
+          "medianMs": 35,
+          "p95Ms": 2746.8
+        },
+        {
+          "from": "STATE_TRANSITION:PREPARED",
+          "to": "PROVIDER_ATTEMPT",
+          "count": 1824,
+          "medianMs": 83,
+          "p95Ms": 911.4
+        },
+        {
+          "from": "PROVIDER_ATTEMPT",
+          "to": "TERMINAL_STATE",
+          "count": 1824,
+          "medianMs": 21,
+          "p95Ms": 509.8
+        },
+        {
+          "from": "TERMINAL_STATE",
+          "to": "COMMIT_CONFIRMED",
+          "count": 1824,
+          "medianMs": 1,
+          "p95Ms": 2
+        }
+      ],
+      "fault": {
+        "injectedAt": "2026-09-21T05:16:05.870Z",
+        "clearedAt": "2026-09-21T05:17:05.990Z",
+        "durationSeconds": 60.12,
+        "windowsEndingInside": 2,
+        "doneWindowBased": 15,
+        "doneExactInterval": 17,
+        "exactRatePerSecond": 0.283,
+        "arrivalsInFault": 183,
+        "arrivedAndDoneInFault": 16,
+        "arrivedInFaultDoneAfter": 167,
+        "recovery": {
+          "baselineGoodput": 3.033,
+          "baselineP95Ms": 170,
+          "completionRateRestoredSeconds": 59.742,
+          "faultCohortClearedSeconds": 2.173,
+          "latencyRestoredByCompletionSeconds": 59.742,
+          "latencyRestoredByArrivalSeconds": 59.742,
+          "sustainedThreeWindowSeconds": 119.742
+        }
+      },
+      "dispatch": {
+        "statementsOver10Ms": 4443,
+        "linkedToTransfer": 2120,
+        "notLinkedToTransfer": 2323,
+        "outboxMarks": 382,
+        "outboxMarksPerSecond": 6.35,
+        "outboxMarkMedianMs": 102.7
+      }
+    },
+    {
+      "cohort": "fresh",
+      "scenario": "adapter",
+      "architecture": "Kafka",
+      "sequence": 1,
+      "runId": "PILOT-001-fault-R4-K-A-1",
+      "evidenceRoot": "results-exploratory-adapter-k4-v1",
+      "hops": [
+        {
+          "from": "API_RECEIVED",
+          "to": "STATE_TRANSITION:VALIDATED",
+          "count": 1824,
+          "medianMs": 7,
+          "p95Ms": 5041
+        },
+        {
+          "from": "STATE_TRANSITION:VALIDATED",
+          "to": "STATE_TRANSITION:PREPARED",
+          "count": 1824,
+          "medianMs": 33,
+          "p95Ms": 77
+        },
+        {
+          "from": "STATE_TRANSITION:PREPARED",
+          "to": "PROVIDER_ATTEMPT",
+          "count": 1824,
+          "medianMs": 83,
+          "p95Ms": 215.5
+        },
+        {
+          "from": "PROVIDER_ATTEMPT",
+          "to": "TERMINAL_STATE",
+          "count": 1824,
+          "medianMs": 20,
+          "p95Ms": 179
+        },
+        {
+          "from": "TERMINAL_STATE",
+          "to": "COMMIT_CONFIRMED",
+          "count": 1824,
+          "medianMs": 1,
+          "p95Ms": 2
+        }
+      ],
+      "fault": {
+        "injectedAt": "2026-09-22T05:17:39.093Z",
+        "clearedAt": "2026-09-22T05:18:09.628Z",
+        "durationSeconds": 30.535,
+        "windowsEndingInside": 1,
+        "doneWindowBased": 4,
+        "doneExactInterval": 0,
+        "exactRatePerSecond": 0,
+        "arrivalsInFault": 94,
+        "arrivedAndDoneInFault": 0,
+        "arrivedInFaultDoneAfter": 94,
+        "recovery": {
+          "baselineGoodput": 3.033,
+          "baselineP95Ms": 173,
+          "completionRateRestoredSeconds": 57.976,
+          "faultCohortClearedSeconds": 5.814,
+          "latencyRestoredByCompletionSeconds": 57.976,
+          "latencyRestoredByArrivalSeconds": 57.976,
+          "sustainedThreeWindowSeconds": 117.976
+        }
+      },
+      "dispatch": null
+    },
+    {
+      "cohort": "fresh",
+      "scenario": "adapter",
+      "architecture": "REST",
+      "sequence": 2,
+      "runId": "PILOT-001-fault-R4-R-A-1",
+      "evidenceRoot": "results-exploratory-adapter-k4-v1",
+      "hops": [
+        {
+          "from": "API_RECEIVED",
+          "to": "STATE_TRANSITION:VALIDATED",
+          "count": 1824,
+          "medianMs": 6,
+          "p95Ms": 584.7
+        },
+        {
+          "from": "STATE_TRANSITION:VALIDATED",
+          "to": "STATE_TRANSITION:PREPARED",
+          "count": 1824,
+          "medianMs": 3,
+          "p95Ms": 4
+        },
+        {
+          "from": "STATE_TRANSITION:PREPARED",
+          "to": "PROVIDER_ATTEMPT",
+          "count": 1824,
+          "medianMs": 34,
+          "p95Ms": 40
+        },
+        {
+          "from": "PROVIDER_ATTEMPT",
+          "to": "TERMINAL_STATE",
+          "count": 1824,
+          "medianMs": 5,
+          "p95Ms": 7
+        },
+        {
+          "from": "TERMINAL_STATE",
+          "to": "COMMIT_CONFIRMED",
+          "count": 1824,
+          "medianMs": 1,
+          "p95Ms": 2
+        }
+      ],
+      "fault": {
+        "injectedAt": "2026-09-22T05:32:58.108Z",
+        "clearedAt": "2026-09-22T05:33:28.608Z",
+        "durationSeconds": 30.5,
+        "windowsEndingInside": 1,
+        "doneWindowBased": 2,
+        "doneExactInterval": 4,
+        "exactRatePerSecond": 0.131,
+        "arrivalsInFault": 92,
+        "arrivedAndDoneInFault": 4,
+        "arrivedInFaultDoneAfter": 88,
+        "recovery": {
+          "baselineGoodput": 3.033,
+          "baselineP95Ms": 74.8,
+          "completionRateRestoredSeconds": 58.958,
+          "faultCohortClearedSeconds": 4.649,
+          "latencyRestoredByCompletionSeconds": 58.958,
+          "latencyRestoredByArrivalSeconds": 58.958,
+          "sustainedThreeWindowSeconds": 118.958
+        }
+      },
+      "dispatch": null
+    },
+    {
+      "cohort": "fresh",
+      "scenario": "database",
+      "architecture": "Kafka",
+      "sequence": 1,
+      "runId": "PILOT-001-fault-R4-K-A-1",
+      "evidenceRoot": "results-exploratory-database-k4-v1",
+      "hops": [
+        {
+          "from": "API_RECEIVED",
+          "to": "STATE_TRANSITION:VALIDATED",
+          "count": 1824,
+          "medianMs": 8,
+          "p95Ms": 14292
+        },
+        {
+          "from": "STATE_TRANSITION:VALIDATED",
+          "to": "STATE_TRANSITION:PREPARED",
+          "count": 1824,
+          "medianMs": 35,
+          "p95Ms": 597.6
+        },
+        {
+          "from": "STATE_TRANSITION:PREPARED",
+          "to": "PROVIDER_ATTEMPT",
+          "count": 1824,
+          "medianMs": 83,
+          "p95Ms": 1009.8
+        },
+        {
+          "from": "PROVIDER_ATTEMPT",
+          "to": "TERMINAL_STATE",
+          "count": 1824,
+          "medianMs": 21,
+          "p95Ms": 464.8
+        },
+        {
+          "from": "TERMINAL_STATE",
+          "to": "COMMIT_CONFIRMED",
+          "count": 1824,
+          "medianMs": 1,
+          "p95Ms": 2
+        }
+      ],
+      "fault": {
+        "injectedAt": "2026-09-22T05:49:01.568Z",
+        "clearedAt": "2026-09-22T05:50:01.702Z",
+        "durationSeconds": 60.134,
+        "windowsEndingInside": 2,
+        "doneWindowBased": 13,
+        "doneExactInterval": 13,
+        "exactRatePerSecond": 0.216,
+        "arrivalsInFault": 184,
+        "arrivedAndDoneInFault": 12,
+        "arrivedInFaultDoneAfter": 172,
+        "recovery": {
+          "baselineGoodput": 3.033,
+          "baselineP95Ms": 169,
+          "completionRateRestoredSeconds": 59.718,
+          "faultCohortClearedSeconds": 2.226,
+          "latencyRestoredByCompletionSeconds": 59.718,
+          "latencyRestoredByArrivalSeconds": 59.718,
+          "sustainedThreeWindowSeconds": 119.718
+        }
+      },
+      "dispatch": {
+        "statementsOver10Ms": 4112,
+        "linkedToTransfer": 1847,
+        "notLinkedToTransfer": 2265,
+        "outboxMarks": 352,
+        "outboxMarksPerSecond": 5.85,
+        "outboxMarkMedianMs": 103.1
+      }
+    },
+    {
+      "cohort": "fresh",
+      "scenario": "database",
+      "architecture": "REST",
+      "sequence": 2,
+      "runId": "PILOT-001-fault-R4-R-A-1",
+      "evidenceRoot": "results-exploratory-database-k4-v1",
+      "hops": [
+        {
+          "from": "API_RECEIVED",
+          "to": "STATE_TRANSITION:VALIDATED",
+          "count": 1824,
+          "medianMs": 6,
+          "p95Ms": 18267.8
+        },
+        {
+          "from": "STATE_TRANSITION:VALIDATED",
+          "to": "STATE_TRANSITION:PREPARED",
+          "count": 1824,
+          "medianMs": 3,
+          "p95Ms": 6
+        },
+        {
+          "from": "STATE_TRANSITION:PREPARED",
+          "to": "PROVIDER_ATTEMPT",
+          "count": 1824,
+          "medianMs": 34,
+          "p95Ms": 42
+        },
+        {
+          "from": "PROVIDER_ATTEMPT",
+          "to": "TERMINAL_STATE",
+          "count": 1824,
+          "medianMs": 5,
+          "p95Ms": 9
+        },
+        {
+          "from": "TERMINAL_STATE",
+          "to": "COMMIT_CONFIRMED",
+          "count": 1824,
+          "medianMs": 1,
+          "p95Ms": 2
+        }
+      ],
+      "fault": {
+        "injectedAt": "2026-09-22T06:04:21.739Z",
+        "clearedAt": "2026-09-22T06:05:21.880Z",
+        "durationSeconds": 60.141,
+        "windowsEndingInside": 2,
+        "doneWindowBased": 73,
+        "doneExactInterval": 73,
+        "exactRatePerSecond": 1.214,
+        "arrivalsInFault": 184,
+        "arrivedAndDoneInFault": 73,
+        "arrivedInFaultDoneAfter": 111,
+        "recovery": {
+          "baselineGoodput": 3.033,
+          "baselineP95Ms": 61.4,
+          "completionRateRestoredSeconds": 59.651,
+          "faultCohortClearedSeconds": 0.98,
+          "latencyRestoredByCompletionSeconds": 59.651,
+          "latencyRestoredByArrivalSeconds": 59.651,
+          "sustainedThreeWindowSeconds": 119.651
+        }
+      },
+      "dispatch": {
+        "statementsOver10Ms": 4007,
+        "linkedToTransfer": 2317,
+        "notLinkedToTransfer": 1690,
+        "outboxMarks": 0,
+        "outboxMarksPerSecond": 0,
+        "outboxMarkMedianMs": null
+      }
+    }
+  ]
+}

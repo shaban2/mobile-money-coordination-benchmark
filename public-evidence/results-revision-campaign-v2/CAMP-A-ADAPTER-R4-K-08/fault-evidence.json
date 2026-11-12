@@ -1,0 +1,9 @@
+{
+  "scenario": "adapter-crash",
+  "scheduledAtMeasurementSecond": 240,
+  "requestedAt": "2026-11-10T03:20:18.898Z",
+  "injectedAt": "2026-11-10T03:20:19.276Z",
+  "clearedAt": "2026-11-10T03:20:52.657Z",
+  "completed": true,
+  "timingDefinition": "controller observation of container-stop acknowledgement to adapter health readiness"
+}

@@ -13,6 +13,7 @@ SELECT clock_timestamp() AS database_time,
  (SELECT count(*)::int FROM observed) AS observed_backends,
  COALESCE((SELECT jsonb_agg(to_jsonb(a)) FROM (SELECT * FROM observed ORDER BY pid LIMIT 32) a), '[]'::jsonb) AS activity,
  CASE WHEN $1::boolean THEN jsonb_build_object(
+   'outboxPending', (SELECT count(*) FROM outbox_events WHERE published_at IS NULL),
    'wal', (SELECT to_jsonb(w) FROM pg_stat_wal w),
    'checkpointer', (SELECT to_jsonb(c) FROM pg_stat_checkpointer c),
    'io', (SELECT jsonb_agg(to_jsonb(i)) FROM (

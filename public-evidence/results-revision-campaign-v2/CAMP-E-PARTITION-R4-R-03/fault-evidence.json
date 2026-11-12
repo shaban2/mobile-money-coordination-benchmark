@@ -1,0 +1,10 @@
+{
+  "scenario": "database-partition",
+  "scheduledAtMeasurementSecond": 240,
+  "requestedAt": "2026-11-10T07:52:23.457Z",
+  "injectedAt": "2026-11-10T07:52:23.671Z",
+  "clearedAt": "2026-11-10T07:52:53.787Z",
+  "completed": true,
+  "timingDefinition": "proxy disable acknowledgement to proxy enable acknowledgement",
+  "restartedByPolicyDuringFault": false
+}

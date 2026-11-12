@@ -18,6 +18,7 @@ import { captureCommandToFile, recordControllerFailure, collectFailureDiagnostic
 import { assertDeepDiagnosticEvidence } from '../src/experiment/deep-diagnostic-evidence.js';
 import { assertCapacityRuleLaunchReady, assertObservationBatchScope } from '../src/experiment/capacity-queue.js';
 import { assertExploratoryRootReview } from '../src/experiment/exploratory-review.js';
+import { assertFaultApplies, faultFor } from '../src/experiment/fault-catalog.js';
 
 const arguments_ = process.argv.slice(2);
 const execute = arguments_.includes('--execute');
@@ -40,6 +41,7 @@ const faultAtSeconds = Number(process.env.FAULT_AT_SECONDS ?? 240);
 const adapterCrashSeconds = Number(process.env.ADAPTER_CRASH_SECONDS ?? 30);
 const databaseFaultSeconds = Number(process.env.DATABASE_FAULT_SECONDS ?? 60);
 const databaseLatencyMs = Number(process.env.DATABASE_LATENCY_MS ?? 100);
+const faultSeconds = Number(process.env.FAULT_SECONDS ?? 30);
 const keepServices = process.env.KEEP_SERVICES === 'true';
 const matrix = JSON.parse(readFileSync(matrixPath, 'utf8'));
 if (execute && matrix.capacityRule) assertCapacityRuleLaunchReady(matrix.capacityRule);
@@ -118,8 +120,9 @@ async function fetchJson(url, options = {}, accepted = [200]) {
 
 function validateMatrix() {
   if (pilotSpec) {
-    if (matrix.schemaVersion !== 1 || !['CAPACITY_PILOT', 'DIAGNOSTIC_CALIBRATION'].includes(matrix.kind) || !matrix.runs?.length
-      || matrix.expectedRunCount !== matrix.runs.length || matrix.runs.some((r) => r.block !== (calibration ? 'CALIBRATION' : 'PILOT') || !(r.offeredRate > 0))) throw new Error('Invalid absolute-rate pilot specification.');
+    const expectedBlock = calibration ? 'CALIBRATION' : matrix.kind === 'REVISION_CAMPAIGN' ? 'CAMPAIGN' : 'PILOT';
+    if (matrix.schemaVersion !== 1 || !['CAPACITY_PILOT', 'DIAGNOSTIC_CALIBRATION', 'REVISION_CAMPAIGN'].includes(matrix.kind) || !matrix.runs?.length
+      || matrix.expectedRunCount !== matrix.runs.length || matrix.runs.some((r) => r.block !== expectedBlock || !(r.offeredRate > 0))) throw new Error('Invalid absolute-rate pilot specification.');
     if (matrix.capacityRule) {
       const protocol = assertObservationBatchScope(matrix, { warmupDuration, measurementDuration, drainSeconds,
         faultAtSeconds, adapterCrashSeconds, databaseFaultSeconds, databaseLatencyMs }, deepDiagnostics);
@@ -134,6 +137,7 @@ function validateMatrix() {
   }
   for (const run of matrix.runs) {
     resourceServicesFor(run);
+    assertFaultApplies(run);
     if (!['R-A', 'K-A'].includes(run.conditionId) || !['rest-async', 'kafka-async'].includes(run.composeProfile)) {
       throw new Error(`Run ${run.runId} is not an approved asynchronous coordination condition.`);
     }
@@ -157,6 +161,10 @@ async function waitForGateway(run) {
       }
       if (config.diagnosticsEnabled !== true) throw new Error('Diagnostic instrumentation is not enabled in the selected image.');
       if (deepDiagnostics && config.databaseDiagnosticsEnabled !== true) throw new Error('Database diagnostics are not enabled.');
+      if (run.variant && (config.outboxPollIntervalMs !== run.variant.outboxPollMs || config.outboxDispatchMode !== run.variant.outboxDispatchMode
+        || config.workerConcurrency !== run.variant.workerConcurrency)) {
+        throw new Error(`Runtime settings do not match the ${run.runId} variant.`);
+      }
       const callback = await fetchJson(`http://127.0.0.1:${run.gatewayPort}/deliveries`);
       if (!Array.isArray(callback?.deliveries)) throw new Error('Callback receiver was not ready.');
       return;
@@ -291,11 +299,17 @@ async function captureRuntimeDiagnostics(apiBase, resultDirectory, failure = fal
   }
 }
 
-async function captureDatabaseDiagnostics(apiBase, resultDirectory, failure = false) {
+// Killing a service necessarily interrupts its samplers. Those runs still export
+// what survived, and results for them come from the database, not from diagnostics.
+function faultDisturbsDiagnostics(run) {
+  return faultFor(run.faultScenario)?.disturbsDiagnostics === true;
+}
+
+async function captureDatabaseDiagnostics(run, apiBase, resultDirectory, failure = false) {
   if (!deepDiagnostics) return;
   const snapshot = await fetchJson(`${apiBase}/admin/database-diagnostics`, { signal: AbortSignal.timeout(10_000) });
   writeFileSync(path.join(resultDirectory, failure ? 'database-diagnostics-at-failure.json' : 'database-diagnostics.json'), `${JSON.stringify(snapshot, null, 2)}\n`, { flag: 'wx' });
-  if (!failure) assertDeepDiagnosticEvidence(snapshot, readFileSync(path.join(resultDirectory, 'docker-stats.jsonl'), 'utf8'));
+  if (!failure && !faultDisturbsDiagnostics(run)) assertDeepDiagnosticEvidence(snapshot, readFileSync(path.join(resultDirectory, 'docker-stats.jsonl'), 'utf8'));
 }
 
 function startStatsCollector(resultDirectory) {
@@ -336,6 +350,9 @@ function scheduleFault(run, resultDirectory, measurementStartedAt) {
       applyFault(run, resultDirectory).then(resolve, reject);
     }, Math.max(0, Date.parse(measurementStartedAt) + faultAtSeconds * 1000 - Date.now()));
   });
+  // The fault can fail while the controller is still awaiting k6. The rejection is
+  // handled at `await scheduledFault.promise`, so it must not crash before cleanup.
+  promise.catch(() => {});
   return {
     promise,
     cancel() {
@@ -389,6 +406,14 @@ async function applyFault(run, resultDirectory) {
     writeJson(path.join(resultDirectory, 'fault-evidence.json'), evidence);
     await wait(databaseFaultSeconds * 1_000);
     await runProcess('node', ['scripts/toxiproxy-controller.mjs', 'clear-latency'], { logFile: faultLog });
+  } else if (faultFor(run.faultScenario)) {
+    const timingFile = path.join(resultDirectory, 'service-fault-timing.json');
+    await runProcess('node', ['scripts/service-fault-controller.mjs'], {
+      env: { COMPOSE_PROJECT_NAME: composeProject, FAULT_SCENARIO: run.faultScenario, FAULT_SECONDS: String(faultSeconds),
+        APP_SERVICE: run.composeProfile, APP_HEALTH_URL: `http://127.0.0.1:${run.apiPort}/health`, FAULT_EVIDENCE_PATH: timingFile },
+      logFile: faultLog
+    });
+    Object.assign(evidence, JSON.parse(readFileSync(timingFile, 'utf8')));
   } else {
     throw new Error(`Unsupported fault scenario: ${run.faultScenario}`);
   }
@@ -510,7 +535,7 @@ async function runOne(run) {
     updateRunState(resultDirectory, 'OBSERVATION_ENDED');
     verifyIsolation('after-observation');
     await captureRuntimeDiagnostics(apiBase, resultDirectory);
-    await captureDatabaseDiagnostics(apiBase, resultDirectory);
+    await captureDatabaseDiagnostics(run, apiBase, resultDirectory);
     const providerAttempts = await fetchJson(`${apiBase}/admin/provider-attempts`);
     writeJson(path.join(resultDirectory, 'provider-attempt-timings.json'), { attempts: providerAttempts.attempts.map((a) => ({
       transferId: a.transfer_id, attemptNumber: a.attempt_number, providerProfile: a.provider_profile,
@@ -565,7 +590,7 @@ async function runOne(run) {
     } : {});
     if (servicesStarted) await collectFailureDiagnostics(resultDirectory, {
       runtimeDiagnostics: () => captureRuntimeDiagnostics(apiBase, resultDirectory, true),
-      databaseDiagnostics: () => captureDatabaseDiagnostics(apiBase, resultDirectory, true)
+      databaseDiagnostics: () => captureDatabaseDiagnostics(run, apiBase, resultDirectory, true)
     });
     updateRunState(resultDirectory, 'FAILED', { message: error.message });
     appendRunIndex({ runId: run.runId, sequence: run.sequence, status: 'FAILED', recordedAt: new Date().toISOString(), error: error.message });
@@ -582,6 +607,7 @@ async function runOne(run) {
         env: { COMPOSE_PROJECT_NAME: composeProject },
         acceptFailure: true
       });
+      if (run.faultScenario === 'database-partition') command('node', ['scripts/toxiproxy-controller.mjs', 'enable'], { acceptFailure: true });
       command('node', ['scripts/toxiproxy-controller.mjs', 'clear-latency'], { acceptFailure: true });
       if (!keepServices) {
         try {

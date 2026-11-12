@@ -30,8 +30,11 @@ export function deriveOutcomes({ manifest, telemetry, traces, controller, fault,
   const observedTransfers = snapshot.transfers.map((record) => {
     const events = grouped.get(record.transferId) ?? [];
     const received = events.find((e) => e.type === 'API_RECEIVED');
-    const terminal = events.filter((e) => e.type === 'COMMIT_CONFIRMED' && !e.details.recovered)
-      .sort((a, b) => at(a.details.confirmedAt) - at(b.details.confirmedAt))[0];
+    // A recovered confirmation is written after a crash between COMMIT and the
+    // confirmation record. The commit is real, but its time is only an upper bound.
+    const confirmations = events.filter((e) => e.type === 'COMMIT_CONFIRMED')
+      .sort((a, b) => at(a.details.confirmedAt) - at(b.details.confirmedAt));
+    const terminal = confirmations.find((e) => !e.details.recovered) ?? confirmations[0];
     const receivedAt = received?.details.receivedAt;
     const confirmedAt = terminal?.details.confirmedAt;
     const terminalState = record.internalState;
@@ -39,6 +42,7 @@ export function deriveOutcomes({ manifest, telemetry, traces, controller, fault,
       terminalAt: confirmedAt ?? null, terminalState,
       correct: terminalState === 'FULFILLED' && reconciled.has(record.transferId) && Boolean(confirmedAt),
       latencyMs: terminal ? at(confirmedAt) - at(receivedAt) : null,
+      latencyUpperBound: Boolean(terminal?.details.recovered),
       timingComplete: Number.isFinite(at(receivedAt)) && (record.publicStatus === 'PENDING'
         || (Number.isFinite(at(confirmedAt)) && at(confirmedAt) >= at(receivedAt) && at(confirmedAt) <= observationEnd)) };
   });
@@ -96,6 +100,7 @@ export function deriveOutcomes({ manifest, telemetry, traces, controller, fault,
     completedDuringDrain: correct.length - measured.length,
     unplaceableTransfers,
     timingCompletenessRatio: transfers.length + unplaceableTransfers ? transfers.filter((t) => t.timingComplete).length / (transfers.length + unplaceableTransfers) : 1,
+    recoveredConfirmations: transfers.filter((t) => t.latencyUpperBound).length,
     durableCompletionMs: { count: times.length, median: quantile(times, .5), p95: quantile(times, .95), p99: quantile(times, .99) },
     eventualCompletionMs: { p95: quantile(correct.map((t) => t.latencyMs), .95) },
     faultAnalysis, windowSeconds, windowSeries: windows, transfers };

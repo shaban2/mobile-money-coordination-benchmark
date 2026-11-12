@@ -5,7 +5,7 @@ x-app: &app
   restart: unless-stopped
   environment: &app-environment
     PORT: 8080
-    WORKER_CONCURRENCY: 4
+    WORKER_CONCURRENCY: '${WORKER_CONCURRENCY:-4}'
     DIAGNOSTICS_ENABLED: 'true'
     DATABASE_DIAGNOSTICS_ENABLED: '${DATABASE_DIAGNOSTICS_ENABLED:-false}'
     PROVIDER_DELAY_MS: 25
@@ -83,6 +83,8 @@ services:
       CLIENT_MODE: async
       EVENT_BUS_TYPE: kafka
       KAFKA_BROKERS: redpanda:9092
+      OUTBOX_POLL_MS: '${OUTBOX_POLL_MS:-50}'
+      OUTBOX_DISPATCH_MODE: '${OUTBOX_DISPATCH_MODE:-serial}'
       EVENT_NAMESPACE: '${EVENT_NAMESPACE:-kafka-async-v2}'
       EXPERIMENT_CONDITION: K-A
 

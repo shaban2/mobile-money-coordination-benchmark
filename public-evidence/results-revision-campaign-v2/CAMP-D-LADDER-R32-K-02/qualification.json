@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 2,
+  "runId": "CAMP-D-LADDER-R32-K-02",
+  "qualified": true,
+  "valid": true,
+  "status": "QUALIFIED",
+  "gates": {
+    "artifactsPresent": true,
+    "supportedMeasurementSchema": true,
+    "workloadCompositionWithinTolerance": true,
+    "clientAttemptsAccountedFor": true,
+    "timingEvidenceComplete": true,
+    "resourceCoverageComplete": true,
+    "architectureIsolated": true,
+    "offeredLoadDelivered": true,
+    "generatorCompleted": true,
+    "faultEvidenceComplete": true,
+    "faultHeldForFullDuration": true,
+    "clientErrorsConfinedToFault": true,
+    "fixedAsyncClientMode": true,
+    "configurationUnchanged": true
+  },
+  "eligibleToLead": true,
+  "safety": {
+    "passed": true,
+    "checks": {
+      "terminalStatesNeverReversed": true,
+      "fulfilledHaveOneLedgerEntry": true,
+      "failedHaveNoLedgerEntry": true,
+      "uniqueLedgerEntries": true,
+      "balancedLedgerEntries": true,
+      "ledgerMatchesTransfers": true,
+      "valueConserved": true,
+      "accountBalancesMatchPostings": true,
+      "uniqueIdempotencyKeys": true
+    }
+  },
+  "performance": {
+    "passed": true,
+    "workloadCheckRate": 1,
+    "terminalCallbacksComplete": true,
+    "censored": false
+  },
+  "observed": {
+    "workloadComposition": {
+      "totalOperations": 7681,
+      "statusShare": 0.19997396172373388,
+      "replayShareWithinCreateAttempts": 0.05012205044751831,
+      "providerAShare": 0.5000813669650122
+    },
+    "clientErrors": {
+      "total": 7681,
+      "failed": 0,
+      "duringFault": 0,
+      "outsideFault": 0
+    },
+    "resourceSampleLines": 119,
+    "uniqueCallbackTransfers": 5837,
+    "pending": 0
+  },
+  "qualifiedAt": "2026-11-09T10:06:17.154Z"
+}

@@ -1,0 +1,10 @@
+{
+  "scenario": "broker-stop",
+  "scheduledAtMeasurementSecond": 240,
+  "requestedAt": "2026-11-08T09:40:47.788Z",
+  "injectedAt": "2026-11-08T09:40:48.173Z",
+  "clearedAt": "2026-11-08T09:41:20.147Z",
+  "completed": true,
+  "timingDefinition": "SIGKILL acknowledgement to rpk cluster health success",
+  "restartedByPolicyDuringFault": false
+}

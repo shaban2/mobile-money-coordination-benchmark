@@ -1,0 +1,173 @@
+{
+  "root_group": {
+    "id": "d41d8cd98f00b204e9800998ecf8427e",
+    "groups": {},
+    "checks": {
+      "transfer request accepted": {
+        "path": "::transfer request accepted",
+        "id": "8387f91e511d5ff85ded014dc6717e76",
+        "passes": 48896,
+        "fails": 0,
+        "name": "transfer request accepted"
+      },
+      "status retrieval succeeds": {
+        "fails": 0,
+        "name": "status retrieval succeeds",
+        "path": "::status retrieval succeeds",
+        "id": "9c96d577c67d89264fdc808a57274dfd",
+        "passes": 12223
+      }
+    },
+    "name": "",
+    "path": ""
+  },
+  "metrics": {
+    "iterations": {
+      "count": 61119,
+      "rate": 254.5667855838463
+    },
+    "vus": {
+      "min": 4,
+      "max": 125,
+      "value": 40
+    },
+    "vus_max": {
+      "min": 20,
+      "max": 170,
+      "value": 170
+    },
+    "data_received": {
+      "count": 45562233,
+      "rate": 189771.28550585327
+    },
+    "checks": {
+      "passes": 61119,
+      "fails": 0,
+      "thresholds": {
+        "rate>=0.995": false
+      },
+      "value": 1
+    },
+    "http_req_blocked": {
+      "med": 0.002084,
+      "max": 208.31425,
+      "p(90)": 0.006458,
+      "p(95)": 0.008834,
+      "avg": 0.04292906426701366,
+      "min": 0.000709
+    },
+    "data_sent": {
+      "count": 24860802,
+      "rate": 103547.7421452651
+    },
+    "workload_status_retrievals": {
+      "count": 12223,
+      "rate": 50.91002503626292
+    },
+    "http_req_waiting": {
+      "avg": 38.80406135718241,
+      "min": 16.469958,
+      "med": 23.3581455,
+      "max": 1161.599042,
+      "p(90)": 56.64897530000001,
+      "p(95)": 119.17466634999992
+    },
+    "workload_provider_a_requests": {
+      "count": 24447,
+      "rate": 101.82421517315876
+    },
+    "workload_provider_b_requests": {
+      "count": 24449,
+      "rate": 101.83254537442463
+    },
+    "workload_unique_creates": {
+      "count": 46451,
+      "rate": 193.47308950007763
+    },
+    "dropped_iterations": {
+      "count": 322,
+      "rate": 1.341162403802394
+    },
+    "measurement_started_at": {
+      "min": 1794133356980,
+      "max": 1794133356980,
+      "value": 1794133356980
+    },
+    "http_req_duration{expected_response:true}": {
+      "p(90)": 56.70043760000003,
+      "p(95)": 119.5269357499999,
+      "avg": 38.86975500626608,
+      "min": 16.49575,
+      "med": 23.402333,
+      "max": 1161.752834
+    },
+    "http_req_duration": {
+      "avg": 38.86975500626608,
+      "min": 16.49575,
+      "med": 23.402333,
+      "max": 1161.752834,
+      "p(90)": 56.70043760000003,
+      "p(95)": 119.5269357499999
+    },
+    "http_req_failed": {
+      "passes": 0,
+      "fails": 61120,
+      "value": 0
+    },
+    "iteration_duration": {
+      "max": 1162.045459,
+      "p(90)": 57.42242460000002,
+      "p(95)": 120.44841599999998,
+      "avg": 39.219808843043815,
+      "min": 16.648459,
+      "med": 23.559375
+    },
+    "http_req_receiving": {
+      "med": 0.021625,
+      "max": 89.8125,
+      "p(90)": 0.05742110000000006,
+      "p(95)": 0.085208,
+      "avg": 0.03996819036322022,
+      "min": 0.0065
+    },
+    "client_attempts": {
+      "count": 61119,
+      "rate": 254.5667855838463
+    },
+    "http_req_sending": {
+      "avg": 0.02572545872055005,
+      "min": 0.002666,
+      "med": 0.009958,
+      "max": 77.077667,
+      "p(90)": 0.018792,
+      "p(95)": 0.027333
+    },
+    "workload_replay_creates": {
+      "count": 2445,
+      "rate": 10.183671047505754
+    },
+    "http_req_connecting": {
+      "max": 61.350375,
+      "p(90)": 0,
+      "p(95)": 0,
+      "avg": 0.03403002504908375,
+      "min": 0,
+      "med": 0
+    },
+    "http_req_tls_handshaking": {
+      "min": 0,
+      "med": 0,
+      "max": 0,
+      "p(90)": 0,
+      "p(95)": 0,
+      "avg": 0
+    },
+    "http_reqs": {
+      "count": 61120,
+      "rate": 254.57095068447924
+    }
+  },
+  "setup_data": {
+    "transferId": "cf5625ab-1fba-4e87-8dd8-f1b97155165c"
+  }
+}

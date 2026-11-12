@@ -190,6 +190,10 @@ export class InMemoryPersistence {
     if (event) event.publishedAt = new Date().toISOString();
   }
 
+  async markOutboxPublishedBatch(eventIds) {
+    for (const eventId of eventIds) await this.markOutboxPublished(eventId);
+  }
+
   async markOutboxFailed(eventId, error) {
     const event = this.outbox.find((item) => item.eventId === eventId);
     if (event) event.lastError = error.message;

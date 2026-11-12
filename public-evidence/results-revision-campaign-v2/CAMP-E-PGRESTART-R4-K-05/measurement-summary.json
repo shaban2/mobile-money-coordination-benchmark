@@ -1,0 +1,173 @@
+{
+  "setup_data": {
+    "transferId": "e915aebe-7002-46f2-850f-2d49b0e11d63"
+  },
+  "root_group": {
+    "name": "",
+    "path": "",
+    "id": "d41d8cd98f00b204e9800998ecf8427e",
+    "groups": {},
+    "checks": {
+      "transfer request accepted": {
+        "id": "8387f91e511d5ff85ded014dc6717e76",
+        "passes": 1872,
+        "fails": 0,
+        "name": "transfer request accepted",
+        "path": "::transfer request accepted"
+      },
+      "status retrieval succeeds": {
+        "name": "status retrieval succeeds",
+        "path": "::status retrieval succeeds",
+        "id": "9c96d577c67d89264fdc808a57274dfd",
+        "passes": 467,
+        "fails": 0
+      }
+    }
+  },
+  "metrics": {
+    "workload_replay_creates": {
+      "count": 94,
+      "rate": 0.15663880464815386
+    },
+    "iteration_duration": {
+      "min": 19.9545,
+      "med": 37.618208,
+      "max": 35829.801891,
+      "p(90)": 48.9400254,
+      "p(95)": 53.987358999999984,
+      "avg": 729.2263905579314
+    },
+    "http_reqs": {
+      "rate": 3.8993064135817024,
+      "count": 2340
+    },
+    "workload_unique_creates": {
+      "count": 1778,
+      "rate": 2.962806326217208
+    },
+    "workload_provider_a_requests": {
+      "count": 936,
+      "rate": 1.559722565432681
+    },
+    "http_req_tls_handshaking": {
+      "p(90)": 0,
+      "p(95)": 0,
+      "avg": 0,
+      "min": 0,
+      "med": 0,
+      "max": 0
+    },
+    "workload_status_retrievals": {
+      "count": 467,
+      "rate": 0.7781949124541261
+    },
+    "checks": {
+      "passes": 2339,
+      "fails": 0,
+      "thresholds": {
+        "rate>=0.995": false
+      },
+      "value": 1
+    },
+    "http_req_duration": {
+      "p(95)": 42.03942535,
+      "avg": 721.3292839329057,
+      "min": 18.789584,
+      "med": 29.439625,
+      "max": 35828.966447,
+      "p(90)": 36.623174999999996
+    },
+    "http_req_blocked": {
+      "p(95)": 14.614769049999996,
+      "avg": 6.937665293162403,
+      "min": 0.002916,
+      "med": 9.802083,
+      "max": 61.26025,
+      "p(90)": 13.7520291
+    },
+    "http_req_waiting": {
+      "med": 29.21225,
+      "max": 35828.911739,
+      "p(90)": 36.3504791,
+      "p(95)": 41.61854789999998,
+      "avg": 721.1104681841864,
+      "min": 18.6695
+    },
+    "workload_provider_b_requests": {
+      "count": 936,
+      "rate": 1.559722565432681
+    },
+    "measurement_started_at": {
+      "value": 1794138471544,
+      "min": 1794138471544,
+      "max": 1794138471544
+    },
+    "http_req_duration{expected_response:true}": {
+      "avg": 721.3292839329057,
+      "min": 18.789584,
+      "med": 29.439625,
+      "max": 35828.966447,
+      "p(90)": 36.623174999999996,
+      "p(95)": 42.03942535
+    },
+    "data_sent": {
+      "count": 955254,
+      "rate": 1591.806858461357
+    },
+    "vus": {
+      "value": 0,
+      "min": 0,
+      "max": 81
+    },
+    "dropped_iterations": {
+      "rate": 0.10331495625729296,
+      "count": 62
+    },
+    "http_req_receiving": {
+      "avg": 0.10232624743589742,
+      "min": 0.007583,
+      "med": 0.0942295,
+      "max": 0.733,
+      "p(90)": 0.157208,
+      "p(95)": 0.18941039999999992
+    },
+    "data_received": {
+      "count": 1748204,
+      "rate": 2913.1551578842677
+    },
+    "http_req_sending": {
+      "med": 0.087646,
+      "max": 9.353875,
+      "p(90)": 0.20112030000000003,
+      "p(95)": 0.25626459999999995,
+      "avg": 0.1164895012820513,
+      "min": 0.010333
+    },
+    "http_req_connecting": {
+      "avg": 6.834637695299145,
+      "min": 0,
+      "med": 9.6511665,
+      "max": 49.971042,
+      "p(90)": 13.576967000000002,
+      "p(95)": 14.436716949999997
+    },
+    "iterations": {
+      "count": 2339,
+      "rate": 3.897640043319488
+    },
+    "client_attempts": {
+      "count": 2339,
+      "rate": 3.897640043319488
+    },
+    "vus_max": {
+      "value": 82,
+      "min": 20,
+      "max": 82
+    },
+    "http_req_failed": {
+      "passes": 0,
+      "fails": 2340,
+      "value": 0
+    }
+  }
+}
