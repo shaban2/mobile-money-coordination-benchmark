@@ -6,8 +6,8 @@ authors:
   - family-names: Lubanga
     given-names: Shaban
     affiliation: "Department of Information Systems, Institut Teknologi Sepuluh Nopember, Surabaya, Indonesia"
-version: 1.2.3
-date-released: "2026-09-25"
+version: 1.3.0
+date-released: "2026-11-12"
 repository-code: "https://github.com/shaban2/mobile-money-coordination-benchmark"
 doi: 10.5281/zenodo.22933798
 identifiers:
@@ -25,4 +25,5 @@ keywords:
   - synthetic benchmark
   - durable completion
   - fault injection
-abstract: "A controlled synthetic benchmark comparing REST orchestration with Kafka choreography behind one asynchronous mobile-money P2P transfer API, measuring correct goodput, ingress-to-commit completion latency, fault response and ledger correctness. Includes the redacted run evidence, the reproducible analysis, and the paper draft."
+  - replicated benchmark
+abstract: "A controlled synthetic benchmark comparing REST orchestration with Kafka choreography behind one asynchronous mobile-money P2P transfer API, measuring correct goodput, ingress-to-commit completion latency, fault response and ledger correctness. Includes the code, the redacted run evidence and reproducible analysis for an exploratory 16-run study and a replicated 207-run campaign on one frozen build (ten order-balanced pairs for the main conditions, an outbox polling sweep, a batched-dispatch test, a load ladder and four crash faults), the exploratory study's paper draft, and a Swagger UI for the API."
